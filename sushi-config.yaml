@@ -1,0 +1,25 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: registry
+canonical: http://example.org
+name: registry
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2022+
+releaseLabel: ci-build
+dependencies:
+  hl7.fhir.us.core: 3.1.1
+  hl7.fhir.us.odh: 1.0.0
+  hl7.terminology: 2.1.0
+  # hl7.fhir.us.davinci: 1.1.0 
+  hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
