@@ -2,14 +2,21 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: registry
+id: fhir-human-services-directory
 canonical: http://example.org
-name: registry
-status: draft
+title: "fhir-human-services-directory"
+description: "fhir-human-services-directory"
+status: draft # draft | active | retired | unknown
+name: fhir-human-services-directory
 version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2022+
-releaseLabel: ci-build
+releaseLabel: ci-draft
+publisher:
+  name: Example Publisher
+  url: http://example.org/example-publisher
+  # email: test@example.org
+
 dependencies:
   hl7.fhir.us.core: 3.1.1
   hl7.fhir.us.odh: 1.0.0
