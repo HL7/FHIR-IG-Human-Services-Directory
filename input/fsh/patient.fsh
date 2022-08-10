@@ -35,12 +35,12 @@ Source: HSDSLocation
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
- * meta.id -> "HSDS"
- * meta.versionId -> "HSDS"
- * meta.lastUpdated -> "HSDS"
- * meta.source -> "HSDS"
- * extension[Accessibility] -> "HSDS.accessibility_for_disabilities.id"
- * telecom.extension[ContactPointAvailableTime] -> "HSDS"
+* meta.id -> "HSDS"
+* meta.versionId -> "HSDS"
+* meta.lastUpdated -> "HSDS"
+* meta.source -> "HSDS"
+* extension[Accessibility] -> "HSDS.accessibility_for_disabilities.id"
+* telecom.extension[ContactPointAvailableTime] -> "HSDS"
 //  * telecom.extension[ContactPointAvailableTime].system -> "HSDS.phone.service_at_location_id"
  
  
