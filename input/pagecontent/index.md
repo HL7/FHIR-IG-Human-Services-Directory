@@ -21,7 +21,12 @@ This STU1 release of the Implementation Guide focuses on read-only queries cover
 - Community-Based Organization/social navigators (re-)directing incoming referral/requests to another other CBO best suited to a patient/client's situation
 - Consumers/clients/care givers searching for help in their area using a mobile application.
 
-Eligibility for services is not currently in scope, though may be added to a future release.
+**Note:** Eligibility for services is not currently in scope, though may be added to a future release.
+
+Figure 1 depicts the current scope for this release of the implementation guide (IG). The IG defines the API that exposes a community-based organization’s database for access by a consumer or provider application (EHR-System, consumer mobile app). This is a query-only API (GET) and does not support PUT or POST.
+
+<img src="temp Read Only pic.png" alt="Read Only Scope*" width="100%" />
+*Figure 1: Read Only Scope*
 
 
 ##	Introduction
@@ -38,9 +43,6 @@ Many desktop and mobile applications use APIs to retrieve, store, and update dat
 
 The FHIR Implementation Guide for Human and Social Services Resource Directories defines a FHIR interface to a directory of information about services provided by community-based organizations at the locations in which they operate. Publication of this data through a standard FHIR-based API will enable third parties to develop applications used by healthcare providers and consumers, to query for community-based services for access by patients and clients to help address circumstances that make it difficult to live healthy lives, and unmet social needs. 
 
-Figure 1 depicts the current scope for this release of the implementation guide (IG). The IG defines the API that exposes a community-based organization’s database for access by a consumer or provider application (EHR-System, consumer mobile app). This is a query-only API (GET) and does not support PUT or POST.
-
-Insert diagram Figure 1
 
 ##	 Background
 Social determinants of health (SDOH) are the conditions in the environment where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.
@@ -54,7 +56,9 @@ Past and current efforts to offer a standards-based approach to directories that
 The ACL Social Care Referrals Challenge searched for solutions to an interoperable social services directory that could be used by the varying states’ resource directory and referral management systems and platforms. The Challenge participants will develop prototypes for implementable solutions to help track social service referral patterns that can demonstrate the impact of social services on health-related outcomes over time.
 
 ## Relation to US Core and other IGs
-Add IG Hierarchy Diagram
+
+<img src="IG Hierarchy.png" width="100%" />
+*Figure 2: Relatonship between IGs*
 
 The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach that is intended to minimize the integration of a social services directory into their workflow practices and implementation environment by extending the functionality of a recognized standard for healthcare provider directories.
 
@@ -62,3 +66,8 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 This IG was developed by FEISystems under the direction of the authors using FHIR Shorthand (FSH) (https://build.fhir.org/ig/HL7/fhir-shorthand/) and the SUSHI toolkit (https://github.com/FHIR/sushi ) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. Generous assistance was provided by Sean Muir, Greg Bloom, OpenReferral; Open Data Services, HL7 Health & Human Services Work Group members, and …
 
 ## Authors
+The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide:
+| Name                                           	| Email        	|
+|----------------------------------------------------	|---------------------------	|
+| A                       	| MissouriHIE, NCoastHealth 	|
+| CBO providing maternal services to local hospitals 	| EveryMotherCounts         	|
