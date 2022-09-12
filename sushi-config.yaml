@@ -2,7 +2,7 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: fhir-human-services-directory
+id: hl7.fhir.us.hsds
 canonical: http://example.org
 title: "fhir-human-services-directory"
 description: "fhir-human-services-directory"
