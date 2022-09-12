@@ -63,11 +63,8 @@ The ACL Social Care Referrals Challenge searched for solutions to an interoperab
 The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach that is intended to minimize the integration of a social services directory into their workflow practices and implementation environment by extending the functionality of a recognized standard for healthcare provider directories.
 
 ## Credits
-This IG was developed by FEISystems under the direction of the authors using FHIR Shorthand (FSH) (https://build.fhir.org/ig/HL7/fhir-shorthand/) and the SUSHI toolkit (https://github.com/FHIR/sushi ) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. Generous assistance was provided by Sean Muir, Greg Bloom, OpenReferral; Open Data Services, HL7 Health & Human Services Work Group members, and …
+This IG was developed by FEISystems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. Generous assistance was provided by the Department of Health and Human Services Administration for Children and Families (ACF); Sean Muir; Greg Bloom, OpenReferral; Open Data Services; HL7 Health & Human Services Work Group members; and …
 
 ## Authors
 The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide:
-| Name                                           	| Email        	|
-|----------------------------------------------------	|---------------------------	|
-| A                       	| MissouriHIE, NCoastHealth 	|
-| CBO providing maternal services to local hospitals 	| EveryMotherCounts         	|
+
