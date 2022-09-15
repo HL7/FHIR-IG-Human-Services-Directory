@@ -11,6 +11,7 @@ Source: HSDSHealthcareService
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
+Description: "This section describes the way HSDS elements have been mapped from HSDS tables to elements in the FHIR HealthcareService profile. The left hand column represents the FHIR HealthcareService element name, the right column contains the HSDS table.element followed by its description within parenthesis. Comments related to the mapping may follow the HSDS element description."
 * id  -> "	service.id	(Each service must have a unique identifier.)	"
 * meta  -> "	metadata	(The metadata table contains a record of the changes that have been made to the data in order to maintain provenance information)	"
 // * id  -> "	GAP		"

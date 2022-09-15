@@ -11,6 +11,7 @@ Source: HSDSOrganization
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
+Description: "This section describes the way HSDS elements have been mapped from HSDS tables to elements in the FHIR Organization profile. The left hand column represents the FHIR Organization element name, the right column contains the HSDS table.element followed by its description within parenthesis. Comments related to the mapping may follow the HSDS element description."
 * id  -> "	organization.id	Each organization must have a unique identifier.	"
 * meta  -> "	metadata	The metadata table contains a record of the changes that have been made to the data in order to maintain provenance information	"
 * meta.id -> " GAP  metadata.resource_id doesn't appear to refer to Organizations. Is this intentional? HSDS definition (Each service, program. location, address, or contact will have a unique identifier.) "

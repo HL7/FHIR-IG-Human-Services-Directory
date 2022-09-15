@@ -4,9 +4,10 @@ This page contains miscellaneous information on FHIR implementation. This conten
 The HSDS model is mapped to corresponding elements in the FHIR profiles contained within this Implementation Guide (Organization, Location, HealthcareService).
 ### Conformance Requirements
 The primary focus of this implementation guide is a RESTful API for obtaining data from a FHIR-enabled Human and Social Service Resource Directory. This API currently only supports a one-directional flow of information from a FHIR-enabled Human Services Directory into local environments (i.e., HTTP GETs).
+
 An implementation that is conformant to this IG:
-•	SHALL support profiles: Organization, HealthcareService, Location, and maybe PractitionerRole, and Practitioner
-•	SHOULD support profiles: Endpoint
+- SHALL support profiles: Organization, HealthcareService, Location, and maybe PractitionerRole, and Practitioner
+- SHOULD support profiles: Endpoint
 
 The conformance verbs (**SHALL, SHALL NOT, SHOULD, MAY**) used in this guide are defined in [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html).
 

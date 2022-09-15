@@ -19,6 +19,7 @@ Source: HSDSLocation
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
+Description: "This section describes the way HSDS elements have been mapped from HSDS tables to elements in the FHIR Location profile. The left hand column represents the FHIR Location element name, the right column contains the HSDS table.element followed by its description within parenthesis. Comments related to the mapping may follow the HSDS element description."
 * id -> "	location.id	(Each location must have a unique identifier.)	"
 * meta -> "	metadata (The metadata table contains a record of the changes that have been made to the data in order to maintain provenance information.)	"
 * meta.id -> " metadata.location_id (Each service, program. location, address, or contact will have a unique identifier.) "
