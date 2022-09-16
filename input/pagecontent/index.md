@@ -57,10 +57,14 @@ The ACL Social Care Referrals Challenge searched for solutions to an interoperab
 
 ## Relation to US Core and other IGs
 
+The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach that is intended to minimize the integration of a social services directory into their workflow practices and implementation environment by extending the functionality of a recognized standard for healthcare provider directories.
+
 <img src="IG Hierarchy.png" width="100%" />
 *Figure 2: Relatonship between IGs*
 
-The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach that is intended to minimize the integration of a social services directory into their workflow practices and implementation environment by extending the functionality of a recognized standard for healthcare provider directories.
+- FHIR US Core addresses USCDI and it is designated by the HL7 US Realm Steering Committee as the “base specification” for any US-realm FHIR API.
+- PDEX Plan Net reuses “US Core” 
+- The FHIR Human Services and Resource Directory FHIR IG reuses “Plan Net” and constrains/limits it to the data elements, terminology, and search capabilities required to support human and social service providers and resource to support a set of directories that uses a FHIR-based standard API, rather than a single directory.
 
 ## Credits
 This IG was developed by FEISystems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. Generous assistance was provided by the Department of Health and Human Services Administration for Children and Families (ACF); Sean Muir; Greg Bloom, OpenReferral; Open Data Services; HL7 Health & Human Services Work Group members; and …
