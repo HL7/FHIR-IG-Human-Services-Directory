@@ -13,9 +13,9 @@ fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: ci-draft
 publisher:
-  name: Example Publisher
-  url: http://example.org/example-publisher
-  # email: test@example.org
+  name: HL7 Human and Social Services Work Group
+  url: http://www.hl7.org/Special/committees/hsswg/index.cfm
+  # email: hsswg@lists.hl7.org
 
 dependencies:
   hl7.fhir.us.core: 3.1.1
