@@ -7,19 +7,21 @@ Title:    "HSDSHealthcareService"
 Description: "The HSDSHealthcareService resource describes the social and human services offered by Community-Based Organizations (CBO) at a given location. This resource may be used to encompass a variety of human and social care services that assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
 
 * extension[newpatients] 0..0 
-* extension[delivery-method] 0..0 
+// * extension[delivery-method] 0..0 
 * language 0..0 
 * text 0..0 
 * active = true
 // * specialty 0..0 
 * identifier.use.value = "official"
 * identifier.system 0..0 
-* identifier.value 0..0 
+// * identifier.value 0..0 
 * identifier.period 0..0  
 * telecom.use.value = "work" 
 * telecom.rank 0..0 
 * telecom.period 0..0 
 * eligibility 0..0 
+// * identifier.value = http://hl7.org/fhir/us/sdoh-clinicalcare/ValueSet/SDOHCC-ValueSet211LACounty
+// * category.coding = http://hl7.org/fhir/us/sdoh-clinicalcare/ValueSet/SDOHCC-ValueSetSDOHCategory
 
 
 Mapping: HSDSHealthcareServiceToHSDS
@@ -83,7 +85,7 @@ Description: "This section describes the way HSDS version 2.0.1 elements are map
 // * eligibility.code  -> "	required_document.service_id	(The identifier of the service for which this entry describes the required document.)	"
 // * eligibility.comment  -> "	required_document.document	(The document required to apply for or receive the service. e.g. ‘Government-issued ID’, ‘EU Passport’.)	"
 * program  -> "	Program[0].text = program.name (The name of the program.) This is list of codeableConcepts. Since HSDS does not have any code for program, only the display and text elements of codeableConcept have to be mapped.  	"
-* characteristic  -> "	This is list of codeableConcepts but there are no codes in HSDS. The mapping have to be without codes as follows: characteristic[0].text = service.interpretation_services  (A description of any interpretation services available for accessing this service.)	"
+* characteristic  -> "	This FHIR element is indended to be bound to a list of codeableConcepts. Until such time as valueset are developed to represent HSDS data for potentially searchable fields, this mapping to HealthcareService.characteristic will be as follows: characteristic[0].text = service.interpretation_services  (A description of any interpretation services available for accessing this service.)	"
 * communication  -> "	This is list of codeableConcepts but there are no codes in HSDS. So the mapping have to be without codes as follows: communication[0].text = language.language	(Languages, other than English, in which the service is delivered. Languages are listed as ISO639-1 codes.) Based on HSDS updates, table.field name may change - from 9/1 Natl Dir minutes, fix to naming of tables where field and table name are the same.	"
 * referralMethod  -> "	GAP in HSDS. This is a FHIR CodeableConcept used to identify the ways that a referral is communicated when referring to a specific HealthCareService resource. Codes drawn from an example valueset: http://terminology.hl7.org/CodeSystem/service-referral-method. The HSDS required_document table contains details of any documents that are required in order to access or use services and is the closest HSDS table/fields that could be mapped to the HealthcareService.referralMethod concept. 		"
 * appointmentRequired  -> "	GAP in HSDS. This FHIR boolean could be set based on information that at times is captured in the service.status field (e.g., appointment needed). HSDS service.status needs to be transformed to HealthcareService.active (boolean)  when status = active; this HSDS element is also sometimes used to capture if an appointment is required to access this service (at this location).		"
