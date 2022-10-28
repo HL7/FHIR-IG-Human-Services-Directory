@@ -60,7 +60,7 @@ The ACL Social Care Referrals Challenge searched for solutions to an interoperab
 
 The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach that is intended to minimize the integration of a social services directory into their workflow practices and implementation environment by extending the functionality of a recognized standard for healthcare provider directories.
 
-<img src="IG Hierarchy.png" width="100%" />
+<img src="HSDS.png" width="100%" />
 *Figure 2: Relationship between IGs*
 
 - FHIR US Core addresses USCDI and it is designated by the HL7 US Realm Steering Committee as the “base specification” for any US-realm FHIR API.
