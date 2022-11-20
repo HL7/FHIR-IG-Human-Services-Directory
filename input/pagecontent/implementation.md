@@ -37,7 +37,7 @@ Each profile in this guide requires that the lastUpdate timestamp be provided as
 
 ### General Security Considerations
 
-Will be added
+No Content
 
 ###	Representing and Searching Social and Human Service Resource Directory Data
 
@@ -45,11 +45,11 @@ This section provides examples of the canonical use of the profiles provided in 
 
 The design is based on the following search types:
 
-| Search               	| Example 	| Focal Resource and Field                             	| Qualifications of Search 	|
-|----------------------	|---------	|------------------------------------------------------	|--------------------------	|
-| General Search       	| TBD     	| HealthcareService.category,   HealthcareService.type 	| Location                 	|
-| Organization by Name 	| TBD     	| Organization.name                                    	| Location                 	|
-| Others?              	| TBD     	| TBD                                                  	| TBD                      	|
+| Search               	| Example 	    | Focal Resource and Field                             	| Qualifications of Search 	|
+|----------------------	|---------------|------------------------------------------------------	|--------------------------	|
+| General Search       	| Food Bank     | HealthcareService.category,   HealthcareService.type 	| Location                 	|
+| Organization by Name 	| Sanctuary City| Organization.name                                    	| Location                 	|
+| Service by Language  	| Spanish       | HealthcareService.communication                      	| HealthcareService         	|
  			
 The content in this section of the IG is based on the examples provided and on the patterns provided here.
 Specific examples are referenced in the text below.
@@ -61,7 +61,7 @@ To search for Organizations that will be active at a future time, change the dat
 
 If no period is provided, then it is assumed the Organization is active with no expiration date.
 #### HealthcareService
-The first type of search starts from HealthcareService.category and/or HealthcareService.type, so it is essential that each organization's services are supported by an appropriate set of HealthcareService instances. (Need to add language related to mapping local services to a standard taxonomy.)
+The first type of search starts from HealthcareService.category and/or HealthcareService.type, so it is essential that each organization's services are supported by an appropriate set of HealthcareService instances.
 
 Human and Social Service Resource HealthcareServices are typically provided by community-based organizations which are linked to a set of locations where each service is provided (or identified as a virtual service through an indicated set of virtual modalities within the scope of these requirements). 
 

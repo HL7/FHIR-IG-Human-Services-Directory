@@ -6,8 +6,8 @@ Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/S
 Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
-Alias: boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
-// Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+// Alias: boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 
 Profile: HSDSLocation
@@ -22,58 +22,80 @@ Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
 Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR Location profile. The left hand column represents the FHIR Location element name, while the right column contains the HSDS table.element name followed by the element name's description in parenthesis. Comments related to the mapping may follow the HSDS element description."
-* id -> "location.id	(Each location must have a unique identifier.)"
-* meta -> "metadata (The metadata table contains a record of the changes that have been made to the data in order to maintain provenance information.)"
-* meta.lastUpdated -> "metadata.last_action_date (The date when directory data was last changed.) Since there may be more than one metadata record for each location, we need use max(metadata.last_action_date) from HSDS metadata where (FHIR) Location.id = (HSDS) metadata.resource_id."
-* extension[newpatients] -> "GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network. The extension provides needed flexibility for specifying whether a provider accepts new patients by location and network."
-* extension[accessibility] ->  "This FHIR extension describes accessibility options offered by the organization or location. Map Location.extension:accessibilty.value[x]= HSDS location.transportation AND Location.extension:accessibility.url = 'pubtrans'; map Location.extension:accessibilty.value[x]= accessibility_for_disabilities.accessibility concatenated with accessibility_for_disabilities.details AND Location.extension:accessibility.url = 'adacomp'."
-* extension[accessibility].url -> "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility" 
-* extension[accessibility].value[x] -> "coding.system = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/AccessibilityCS, coding.code 'adacomp', coding.display = accessibility_for_disabilities.accessibility where accessibility_for_disabilities.location_id is matches coding.code = 'pubtrabs', coding.display = location.transformation"
-* extension[location-boundary-geojson] -> "GAP in HSDS. This is the location-boundary-geojson extension (Attachment) but displays in the structure mapping table as extension(region). The Plan-Net profile displays the extension in the structure with the proper name 'location-boundary-geojson' indicates the slice name is Region, not location-boundary-geojson but points to the URL for the extension named boundary-geojson http://hl7.org/fhir/StructureDefinition/location-boundary-geojson."
-// * extension[location-boundary-geojson].id -> "service_area.service.id (The identifier of the service for which this entry describes the service area.)" 
-/* * extension[location-boundary-geojson].value[x] -> "service_area.service_area (The geographic area where a service is available. This is a free-text description, and so may be precise or indefinite as necessary.)" */
-* identifier.id -> "GAP in HSDS. There are no business identifiers associated with locations in HSDS."
-* identifier.use -> "This FHIR element represents a code to identify the purpose for this identifier if known. If any idenfiers are found in the source data, default to 'official' drawn from the IdentifierUse value set: http://hl7.org/fhir/ValueSet/identifier-use."
-* identifier.type -> "This FHIR element represents a coded type for an identifier that can be used to determine which identifier to use for a specific purpose, drawn from the extensible value set Identifier Type Codes:http://hl7.org/fhir/ValueSet/identifier-type. New value(s) for community based organizations could be added if there's a need to search for location by type."
-* status -> "HSDS locations default to 'active'. This is a GAP in HSDS, but a Required element in the profile. Drawn from the LocationStatus value set: http://hl7.org/fhir/ValueSet/location-status (required binding)."
-* name -> "location.name (The name of the location.)"
-* alias -> "location.alternate_name	(An alternative name for the location.)"
-* description -> "location.description	(A description of this location.)"
-* type -> "GAP in HSDS. This is a Must Support but optional element."
-* telecom -> "This FHIR structure contains contact details of the location using the ContactPoint datatype (Details for all kinds of technology-mediated contact points for a person or organization, including telephone, email, etc.)."
-* telecom.id -> "This is for cross-reference purposes and typically not relevant for .id  (ContactPoint in this case) when it is contained within a resource. It is best practice to avoid exposing iternal database ids to external systems.  It may be possible to populate this somehow using HSDS phone.id, but note that phone.id isn't always relevant if telcom is URL or Email."
-* telecom.extension -> "phone.description	(A description providing extra information about the phone service (e.g. any special arrangements for accessing, or details of availability at particular times.)"
-* telecom.extension[contactpoint-availabletime] -> "This FHIR extension represents the days and times a contact point is available. There is no equivalent mapping to Location.telecom.extension:contactpoint-availabletime from HSDS as it's a GAP in the HSDS location table. This extension is meant to be the times when phone contact is available (say the phone lines open from 8AM-8PM). It may not necessarily be same as location open and close times. HSDS schedule table contains details when a service or location is open, but is not (directly) associated with a Location's phone and therefore not approriate to map to contactpoint-availabletime. This is MUST Support extension/element in the profile, but it is optional, so can be ignored."
-* telecom.extension[via-intermediary] -> "The 'via-intermediary' extension is a reference to an alternative point of contact (PractitionerRole, Organization, OrganizationAffiliation, or Location) for this organization. That definition implies some sort of organizational relationship that is not defined in HSDS. HSDS contacts may more appropriately map to the PractitionerRole resource. This extension is Must  Support, but optional in the base profile and can be ignored."
-* telecom.system -> "Default value to 'phone' drawn from the ContactPointSystem value set (http://hl7.org/fhir/ValueSet/contact-point-system)"
-* telecom.value -> "phone.number (The phone number.) Implementer comments: For Phone:  phone.number where type = voice and phone.location_id = location.id (use latest if multiple)"
-* telecom.use -> "GAP in HSDS. Default to value work drawn from the ContactPointUse value set (http://hl7.org/fhir/ValueSet/contact-point-use)"
-* telecom.rank -> "GAP in HSDS and optional in base profile."
-* telecom.period -> "GAP in HSDS. This is not a Must Supported or required element in the base profile and will be ignored. Most source systems will not have date ranges for telecom."
-* address -> "In HSDS two tables are used for addresses associated with locations, one for postal_address, the other for physical_address. In a future HSDS update, these tables will be collapsed, assumably along with a new type field to distinguish the type of address, but the following elements reflect mapping to both tables."
-* address.id -> "It may be possible to populate the ids from physical_address and postal_address but generally better avoid exposing internal ids (resource level .id may be exception to link back to the source system data.)."
-* address.use -> "GAP in HSDS. Default to value work drawn from the ContactPointUse value set (http://hl7.org/fhir/ValueSet/contact-point-use)."
-* address.type -> "GAP in HSDS. Populate with 'physical' or 'postal', drawn from the AddressType value set (http://hl7.org/fhir/ValueSet/address-type) depending on which table address comes from (HSDS physical_address, postal_address).  Once HSDS is updated to collapse the separate tables used for postal versus physical address, a new HSDS address_type element will map to this FHIR element that distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses)."
-* address.text -> "Concatentation of the appropriate HSDS address elements (all or some of the following - HSDS postal/physical address_1, city, region, state_province, postal_code, country) depending on whether the displayed address should be the postal versus physical address. In FHIR, this element specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts."
-* address.line -> "physical_address.address_1, postal_address.address_1 (The first line(s) of the address, including office, building number and street.)"
-* address.city -> "physical_address.city, postal_address.city (The city in which the address is located.)"
-* address.district -> "postal_address.location_region, physical_address.location_region (The region in which the address is located (optional).)"
-* address.state -> "physical_address.state_province,postal_address.state_province (The state in which the address is located.)"
-* address.postalCode -> "postal_address.postal_code, physical_address.postal_code (The postal code for the address.)"
-* address.country -> "postal_address.country, physical_address.country (The country in which the address is located. This should be given as an ISO 3361-1 country code (two letter abbreviation).)"
-* address.period -> "GAP in HSDS. This is a Must Support or required element in the base Plan-Net profile. Most source systems will not have date ranges for address."
-* physicalType -> "GAP in HSDS. This element is bound to an example value set location-physical-type that defines a set of codes to indicate the physical form of the Location. Not found to be relevant to HSDS during initial mapping with Open Data Services."
+* id -> "location.id Note: Each location must have a unique system identifier in the source system."
+* meta -> "Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
+* meta.lastUpdated -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each location, the latest max(last_action_date) needs to be used from metadata where location.id =  metadata.resource_id."
+* text -> "No Source. May be excluded from the mapping. Note: This DomainResource.text is meant for textual summary of the resource."
+* extension[newpatients] -> "No Source. Note: This is a GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network."
+* extension[accessibility] ->  "For ADA compliant disability options:     
+    location.extension:accessibility.value[x] = HSDS  
+            location.transportation 
+    location.extension:accessibility.url = 'pubtrans'; 
+
+For public transportation:     
+      location.extension:accessibility.value[x]= 
+             accessibility_for_disabilities.accessibility                   
+       location.extension:accessibility.url = 'adacomp'.
+
+Note: This FHIR extension describes accessibility options offered by the location. Based on the the Accessibility valuset defined for this extension i.e.  http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/AccessibilityVS, there are two different data sources in HSDS that may be mapped. However, the HSDS source for this is not coded data so the content in value may not be in sync with the code used as extension.url."
+* extension[location-boundary-geojson] -> "No Source. Note: This is a GAP in HSDS. This is a Plan-Net extension to represent the location boundary in GEOJson format as an Attachment data type."
+* identifier -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.id -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.use -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.type -> "No Source. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.system -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.value -> "No Source. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* identifier.assigner -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
+* status -> "Fixed value = 'true' Note: HSDS location does not have a status but this is required in FHIR so fixed value is proposed to indicate that location  is active."
+* name -> "location.name"
+* alias -> "location.alternate_name"
+* description -> "location.description"
+* type -> "No Source. Note: This is a GAP in HSDS. This is a Must Support as per Plan-Net profile but it is an optional element."
+* telecom -> "Note: This FHIR structure contains contact details of the location using the ContactPoint datatype (Details for all kinds of technology-mediated contact points for the location, including telephone, email, etc.)."
+* telecom.id -> "No Source. May be excluded from the mapping.
+Note: This data element may be ignored as having the id for the telecom record  isn't essential and not always available in the HSDS (e.g. phone id is available but there is no separate id for email or website URL)."
+* telecom.extension -> "No Source."
+// * telecom.extension[contactpoint-availabletime] -> "No Source. Note: This is a GAP in HSDS. This FHIR extension is added by the Plan-Net profile and represents available hours for the telecom (e.g. customer service phone hours from 8AM-6PM M-F). There is no equivalent mapping to this data element in HSDS since the HSDS schedule table contains details of when a service or location is open and is not related to a phone line associated with a location."
+* telecom.extension[via-intermediary] -> "No Source. Note: This is a GAP in HSDS. This FHIR extension added by the Plan-Net profile represents a reference to an alternative point of contact. HSDS does not have the source data to represent an 'intermediary' as that implies some sort of location relationship."
+* telecom.system -> "if phone.type = 'voice' then system = 'phone'  
+if phone.type = 'cell' then system = 'phone' 
+if phone.type = 'fax' then system = 'fax' 
+if phone.type = 'pager' then system = 'pager' 
+if phone.type = 'text' then system = 'sms' 
+if phone.type = 'textphone' then system = 'sms' 
+if phone.type = 'video' then system = 'other' 
+Note: There are only phone numbers in HSDS for location telecom data so the type will not include 'email' or 'url'. Drawn from the ContactPointSystem value set [http://hl7.org/fhir/ValueSet/contact-point-system]"
+* telecom.value -> "phone.number Note: For phone, HSDS location table will be linked to the  phone table using location.id = phone.location_id. There are only phone numbers in HSDS for location telecom data so the value will not include any email or url records."
+* telecom.use -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work related information, it is possible to set this to 'work' drawn from the ContactPointUse value set http://hl7.org/fhir/R4/valueset-contact-point-use.html."
+* telecom.rank -> "No Source. May be excluded from the mapping. Note: This a GAP in HSDS. In FHIR, it is used to specify a preferred order in which to use a contact point. The parent Plan-Net profile indicates this is a Must Support element but is optional, So iit can be excluded since there is no source."
+* telecom.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
+* address -> "Note: In HSDS,two address  tables are used, one for postal_address, the other for physical_address. This linkage is based on  location.id = address.location_id. If there are multiple  addresses, only the latest one will be used to populate the FHIR address data since it allows only one address."
+* address.id -> "postal_address.id or physical_address_id 
+Note: This data element may be ignored as having the id for the address record  isn't essential. If populated, it should be the id from one of the address tables that particular address  is referring to."
+* address.use -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work related information, it is possible to set this to 'work' drawn from the AddressUse value set http://hl7.org/fhir/R4/valueset-address-use.html."
+* address.type -> "Fixed value  = 'postal' or 'physical'  Note: This is a GAP in HSDS but it can be inferred by which table is used as a source in the HSDS i.e. postal_address or physical_address respectively."
+* address.text -> "Concatenation of address_1, city, state_province, postal_code and country; all separated by comma (,) except dash (-) between state_province and postal_code. Note: The address data elements will be from postal_address or physical_address depending on which address is sourced. In FHIR, this element specifies the entire address as it should be displayed."
+* address.line -> "postal_address.address_1 or physical_address.address_1 Note: address.line in FHIR is an array (list) so address_1 is populated in the first position of the array. If address_2 is available (although deprecated in HSDS), it may be populated in the second position of the array."
+* address.city -> "postal_address.city or physical_address.city"
+* address.district -> "postal_address.region or physical_address.region"
+* address.state -> "postal_address.state_province_code or physical_address.state_province_code"
+* address.postalCode -> "postal_address.postal_code or physical_address.postal_code"
+* address.country -> "postal_address.country or physical_address.country"
+* address.period -> "No Source. May be excluded from the mapping. Note: This a GAP in HSDS. In FHIR, this data element represents the time period when the address was in use for the location."
+* physicalType -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. This element is bound to an example value set location-physical-type that defines a set of codes to indicate the physical form of the Location."
 * position -> "The absolute geographic location in FHIR"
-* position.longitude -> "location.longitude (X coordinate of location expressed in decimal degrees in WGS84 datum.)"
-* position.latitude -> "location.latitude	(Y coordinate of location expressed in decimal degrees in WGS84 datum.)"
+* position.id -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the position record  is not essential and not available in HSDS."
+* position.longitude -> "location.longitude Note: X coordinate of location expressed in decimal degrees in WGS84 datum."
+* position.latitude -> "location.latitude Note: Y coordinate of location expressed in decimal degrees in WGS84 datum."
 * position.altitude -> "GAP in HSDS, optional element in FHIR."
-* managingOrganization -> "This element is of data type Reference and requires populating three subelements: Reference.reference =  location.organization_id reference.type = 'Organization' and reference.display = organization.name"
-* partOf -> "GAP in HSDS. Program is not intended for organizational relationship but it is for structuring service relationship. This is a Must Support but optional element in base Plan-Net profile." 
-* hoursOfOperation -> "This structure identifies the days/times during a week this location is usually open."
-* hoursOfOperation.id -> "schedule.location_id	(The identifier of the location for which this is the regular schedule.)"
-* hoursOfOperation.daysOfWeek	-> "schedule.byday (iCal - Comma seperated days of the week. E.g. SU,MO,TU,WE,TH,FR,SA. Where freq is MONTHLY each part can be preceded by a positive or negative integer to represent which occurrence in a month; e.g. 2MO is the second Monday in a month. -1FR is the last Friday)"
-* hoursOfOperation.allDay	-> "GAP in HSDS. Could be calculated from other HSDS fields if required."
-* hoursOfOperation.openingTime	-> "Schedule.opens_at	(The time when a service or location opens. This should use HH:MM format and should include timezone information, either adding the suffix ‘Z’ when the date is in UTC, or including an offset from UTC (e.g. 09:00-05:00 for 9am EST.))"
-* hoursOfOperation.closingTime	-> "Schedule.closes_at (The time when a service or location closes. This should use HH:MM format and should include timezone information, either adding the suffix ‘Z’ when the date is in UTC, or including an offset from UTC (e.g. 09:00-05:00 for 9am EST.))" 
-* availabilityExceptions	-> "GAP in HSDS. This is a Must Support but optional element in the base Plan-Net profile."
-* endpoint	-> "This is for technical implementation of web services for the location and it is not for source specific business data. It is marked as Must Support in the Plan-Net profile, but is optional. At this point, no specific location specific web services have been identified so it may be ignored."
+* managingOrganization -> "No Source. Note: This a GAP in HSDS. There is no concept of location hierarchy in HSDS."
+* partOf -> "No Source. Note: This a GAP in HSDS. There is no concept of location hierarchy in HSDS." 
+* hoursOfOperation -> "Note: This structure identifies the days/times during a week this location is usually open. Linkage to schedule is from location.id = schedule.location_id."
+* hoursOfOperation.id -> "schedule.id Note: This data element may be ignored as having the id for the schedule record  isn't essential."
+* hoursOfOperation.daysOfWeek	-> "schedule.byday Note: This is a comma-separated value of days of the week. e.g. SU,MO,TU,WE,TH,FR,SA. Where freq is MONTHLY each part can be preceded by a positive or negative integer to represent which occurrence in a month; e.g. 2MO is the second Monday in a month. -1FR is last Friday."
+* hoursOfOperation.allDay -> "No Source. Note: This is a GAP in HSDS. May be derived from other HSDS data elements but may not be an accurate representation."
+* hoursOfOperation.openingTime	-> "schedule.opens_at Note: This should use HH:MM format and should include timezone information, either adding the suffix ‘Z’ when the date is in UTC, or including an offset from UTC (e.g. 09:00-05:00 for 9am EST.)"
+* hoursOfOperation.closingTime	-> "schedule.closes_at Note: This should use HH:MM format and should include timezone information, either adding the suffix ‘Z’ when the date is in UTC, or including an offset from UTC (e.g. 09:00-05:00 for 9am EST.)" 
+* availabilityExceptions -> "No Source. Note: This is a GAP in HSDS. This is a Must Support but optional element in the base Plan-Net profile."
+* endpoint -> "No Source. Note: This is for the technical implementation of web services for the location and it is not for source-specific business data. It is marked as Must Support though optional in the Plan-Net profile. At this point, no  location-specific web services have been identified so it may be ignored."
