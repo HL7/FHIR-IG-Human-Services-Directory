@@ -9,6 +9,14 @@ Title:    "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
 
+* identifier.use = #official (exactly)
+* identifier.type = #TAX (exactly)
+* type = #atyprv (exactly)
+* active = true
+* address.use = #work (exactly)
+// * idenfier.system = "urn:us:gov:irs"
+// * identier.assigner = "www.irs.gov"
+
 
 Mapping: HSDSOrganizationToHSDS
 Source: HSDSOrganization

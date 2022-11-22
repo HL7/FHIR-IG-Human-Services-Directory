@@ -8,25 +8,19 @@ Title:    "HSDSHealthcareService"
 Description: "The HSDSHealthcareService resource describes the social and human services offered by Community-Based Organizations (CBO) at a given location. This resource may be used to encompass a variety of human and social care service interventions that assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
 
 // * extension[newpatients] 0..0 
-// * extension[delivery-method] 0..0 
-// * language 0..0 
-// * text 0..0 
-* active = true
-// * specialty 0..0 
-* identifier.use.value = "official"
-// * identifier.system 0..0 
-// * identifier.value 0..0 
-// * identifier.period 0..0  
-* telecom.use.value = "work" 
-* telecom.rank 0..0 
-* telecom.period 0..0 
-// * eligibility 0..0 
+// * extension[delivery-method] 0..0
+// * telecom.use.value = #work 
+// * telecom.rank 0..0 
+// * telecom.period 0..0 
 // * category.coding = http://211taxonomy.org
 // * category.coding.system = http://211taxonomy.org
 // * category.coding.code = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategoryVS
+ 
+* identifier.use = #official (exactly)
+* identifier.type = #TAX (exactly)
+* telecom.use = #work (exactly)
 * category from HumanServiceCategoryVS (extensible)
 * type from HumanServiceTypeVS (extensible)
-
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService

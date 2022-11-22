@@ -69,18 +69,20 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 - PDEX Plan Net reuses “US Core”
 - The FHIR Human Services and Resource Directory FHIR IG reuses the PDEX Plan Net Provider Directory IG, to create standard FHIR-based APIs that can be used to access a set of human and social service directories by constraining the data elements, terminology, and search capabilities that are specific to Human Services directories which are conformant to the Human Services Data Specification (HSDS)
 
-### Credits
-This IG was developed by FEISystems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
-
-Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living and the Administration for Children and Families (ACF); OpenReferral & Open Data Services; Goldbelt, Zane Networks, 211NJ, and members of HL7 Health & Human Services Work Group members
-
 ### Authors
 The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide:
 
 |**Name**			|**Organization**										|
+|Serafina Versaggi	|[BookZurman, Inc./FEI Systems] (https://www.bookzurman.com/)		|
+|Sean Muir			|[BookZurman, Inc./FEI Systems] (https://www.bookzurman.com/)		|
 |Chirag Bhatt		|[FEI Systems] (https://feisystems.com/)						|
-|Serafina Versaggi	|[BookZurman, Inc./FEI Systems] (https://feisystems.com/)			|
-|Sean Muir			|[BookZurman, Inc./FEI Systems] (https://feisystems.com/)			|
+
+### Credits
+This IG was developed by FEISystems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
+
+Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living and the Administration for Children and Families (ACF); OpenReferral & Open Data Services; Goldbelt, Zane Networks, 211NJ, and members of HL7 Health & Human Services Work Group
+
+|**Name**			|**Organization**										|
 |Greg Bloom			|[Open Referral] (https://docs.openreferral.org/)				|
 |Ken Salyards		|[Administration for Children and Families] (https://www.acf.hhs.gov/)	|
 |Ken Lord			|[MDIX, Inc.] (https://www.mdixinc.com/)						|

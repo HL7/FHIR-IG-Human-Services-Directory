@@ -16,6 +16,12 @@ Id: hsds-Location
 Title:    "HSDSLocation"
 Description: "The HSDSLocation resource describes the physical place where community-based services are provided, practitioners are employed, organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 
+* identifier.use = #official (exactly)
+* status = #active  (exactly) 
+* telecom.use = #work (exactly)
+* address.use = #work (exactly)
+
+
 Mapping: HSDSLocationToHSDS
 Source: HSDSLocation
 Target:   "HSDS"
@@ -47,7 +53,7 @@ Note: This FHIR extension describes accessibility options offered by the locatio
 * identifier.value -> "No Source. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
 * identifier.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
 * identifier.assigner -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
-* status -> "Fixed value = 'true' Note: HSDS location does not have a status but this is required in FHIR so fixed value is proposed to indicate that location  is active."
+* status -> "Fixed value = 'active' Note: HSDS location does not have a status but this is required in FHIR so fixed value is proposed to indicate that location  is active."
 * name -> "location.name"
 * alias -> "location.alternate_name"
 * description -> "location.description"
