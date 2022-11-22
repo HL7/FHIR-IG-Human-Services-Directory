@@ -1,5 +1,5 @@
 Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService
-Alias: HumanServiceCategoryVS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategoryVS
+// Alias: HumanServiceCategoryVS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategoryVS
 
 Profile: HSDSHealthcareService
 Parent: PLANNETHealthcareService
