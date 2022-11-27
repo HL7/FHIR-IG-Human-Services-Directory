@@ -4,6 +4,7 @@ CodeSystem: LA211TaxonomyHumanServicesCS
 Id: 211-taxonomy-human-services
 Title: "211 LA Taxonomy of Human Services"
 Description: "The 211 LA County Taxonomy is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
+* ^url = http://terminology.hl7.org/us/CodeSystem/LA211TaxonomyHumanServicesCS
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #is-a
