@@ -8,9 +8,5 @@ The entire implementation guide (including the HTML files, definitions, validati
 * [XML Examples (zip)](examples.xml.zip)
 * [TTL](definitions.ttl.zip)
 
-// **Dependency Table**
-// {% include dependency-table.xhtml %}
-
-
 
 
