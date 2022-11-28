@@ -14,9 +14,6 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * type = #atyprv (exactly)
 * active = true
 * address.use = #work (exactly)
-// * idenfier.system = "urn:us:gov:irs"
-// * identier.assigner = "www.irs.gov"
-
 
 Mapping: HSDSOrganizationToHSDS
 Source: HSDSOrganization

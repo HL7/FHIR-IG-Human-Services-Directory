@@ -6,7 +6,6 @@ Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/S
 Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
-// Alias: boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 
@@ -37,7 +36,6 @@ Description: "This section describes the way HSDS version 2.0.1 elements are map
     location.extension:accessibility.value[x] = HSDS  
             location.transportation 
     location.extension:accessibility.url = 'pubtrans'; 
-
 For public transportation:     
       location.extension:accessibility.value[x]= 
              accessibility_for_disabilities.accessibility                   

@@ -13,7 +13,7 @@ ValueSet: HumanServiceCategory
 Id: human-services-category
 Title: "Human Services Category Value Set"
 Description: "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 LA Taxonomy of Human Services, except codes included in Level 1 (Y - Target Populations)."
-* ^url = http://terminology.hl7.org/us/ValueSet/HumanServiceCategory
+* ^url = http://terminology.hl7.org/ValueSet/HumanServiceCategory
 * ^compose.include.system = http://211taxonomy.org
 * ^experimental = false
 // * ^compose.include.concept.code = 
@@ -99,7 +99,7 @@ ValueSet: HumanServiceType
 Id: human-services-types
 Title: "Human Services Type Value Set"
 Description: "This example value set represents the more refined classification of human services by which human services directories can be queried. This value set represents codes found in Levels 3-6 of the 211 LA Taxonomy of Human Services, except codes descending from Level 1 (Y - Target Populations)."
-* ^url = http://terminology.hl7.org/us/ValueSet/HumanServiceType
+* ^url = http://terminology.hl7.org/ValueSet/HumanServiceType
 * ^compose.include.system = http://211taxonomy.org
 * ^experimental = false
 * ^compose.include.concept.display = "This value set represents codes descending from Levels 3-6 of the 211 LA Taxonomy of Human Services, except codes descending from Level 1 (Y - Target Populations terms that are modifiers for human services, not categories of services themselves)"

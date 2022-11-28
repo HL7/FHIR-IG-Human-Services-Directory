@@ -91,7 +91,7 @@ Generous assistance in testing this Implementation Guide was provided by the Dep
 |Ami Patel			|[Administration for Communnity Living] (https://acl.gov/)			|
 |Joseph Lugo		|[Administration for Communnity Living] (https://acl.gov/)			|
 |Gilbert Thompson		|[Administration for Communnity Living] (https://acl.gov/)			|
-|Irene Boakye		||[FEI Systems] (https://feisystems.com/)						|
+|Irene Boakye		|[FEI Systems] (https://feisystems.com/)						|
 |Gordon Campbell		|[FEI Systems] (https://feisystems.com/)						|
 |Ken Salyards		|[Administration for Children and Families] (https://www.acf.hhs.gov/)	|
 |Gargi Gajjar 		|[MDIX, Inc.] (https://www.mdixinc.com/)						|
