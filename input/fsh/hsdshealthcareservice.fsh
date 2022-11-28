@@ -102,7 +102,6 @@ Note: This is not an obvious mapping but interpretation services is one of the c
 * availableTime  -> "Note: This structure identifies the days/times during a week this service may be provided. Linkage to the schedule is from service.id = schedule.service_id."
 * availableTime.id  -> "schedule.id  Note: This data element may be ignored as having the id for the schedule record isn't essential."
 * availableTime.extension  -> "extension[0].valueSting = schedule.description Note: This is not an obvious mapping but the extension is available to provide additional details. Since the extension is an array (list), the description will be populated in the first occurrence of the extension."
-* availableTime.modifierExtension  -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS."
 * availableTime.daysOfWeek  -> "schedule.byday Note: This is a comma-separated value of days of the week. e.g. SU,MO,TU,WE,TH,FR,SA. Where freq is MONTHLY each part can be preceded by a positive or negative integer to represent which occurrence in a month; e.g. 2MO is the second Monday in a month. -1FR is last Friday."
 * availableTime.allDay  -> "No Source. Note: This is a GAP in HSDS. May be derived from other HSDS data elements but may not be an accurate representation."
 * availableTime.availableStartTime  -> "schedule.opens_at Note: This should use HH:MM format and should include timezone information, either adding the suffix ‘Z’ when the date is in UTC, or including an offset from UTC (e.g. 09:00-05:00 for 9am EST.)"
