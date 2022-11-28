@@ -1,5 +1,5 @@
 Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService
-// Alias: HumanServiceCategoryVS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategoryVS
+// Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 
 Profile: HSDSHealthcareService
 Parent: PLANNETHealthcareService
@@ -14,13 +14,13 @@ Description: "The HSDSHealthcareService resource describes the social and human 
 // * telecom.period 0..0 
 // * category.coding = http://211taxonomy.org
 // * category.coding.system = http://211taxonomy.org
-// * category.coding.code = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategoryVS
+// * category.coding.code = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
  
 * identifier.use = #official (exactly)
 * identifier.type = #TAX (exactly)
 * telecom.use = #work (exactly)
-* category from HumanServiceCategoryVS (extensible)
-* type from HumanServiceTypeVS (extensible)
+* category from HumanServiceCategory (extensible)
+* type from HumanServiceType (extensible)
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService
@@ -47,12 +47,12 @@ Note: HSDS service.status values are 'active', 'inactive', 'defunct' and 'tempor
 reference.type = 'Organization' 
 reference.display = organization.name
 Note: This element is of data type Reference that refers to the organization resource that provides this service."
-* category  -> "category.coding.system = 'http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCategoryCS'
+* category  -> "category.coding.system = 'http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCategory'
 category.coding.code = taxonomy_term.term
 cateory.coding.display = taxonomy_term.description
 category.text = taxonomy_term.description
 Note: This mapping is to the service category level taxonomy term that will be a parent to service type level taxonomy term.  Linkage to category level term is from service.id = service_attribute_id, service_attribute.taxonomy_term_id = taxonomy_term.id, (child) taxonomy_term.parent.id = (parent) taxonomy_term.id. This assumes a two-level hierarchy of taxonomy terms. If there are more levels of hierarchy, then this will require traversing through the hierarchy until category level taxonomy_term parent is reached.  Service Category binding will be to specific concepts from LA211 taxonomy."
-* type  -> "category.coding.system = 'http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceTypeCS'
+* type  -> "category.coding.system = 'http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceType'
 category.coding.code = taxonomy_term.term
 cateory.coding.display = taxonomy_term.description
 category.text = taxonomy_term.description

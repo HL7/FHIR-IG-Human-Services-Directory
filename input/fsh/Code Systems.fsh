@@ -1,10 +1,10 @@
-Alias: $LA211TaxonomyHumanServicesCS = http://211taxonomy.org
+Alias: $LA211Taxonomy = http://211taxonomy.org
 
-CodeSystem: LA211TaxonomyHumanServicesCS
+CodeSystem: LA211Taxonomy
 Id: 211-taxonomy-human-services
 Title: "211 LA Taxonomy of Human Services"
 Description: "The 211 LA County Taxonomy is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
-* ^url = http://terminology.hl7.org/us/CodeSystem/LA211TaxonomyHumanServicesCS
+* ^url = http://terminology.hl7.org/us/CodeSystem/LA211Taxonomy
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #is-a
