@@ -6,7 +6,7 @@ Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/S
 Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
-Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+// Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 
 Profile: HSDSLocation
