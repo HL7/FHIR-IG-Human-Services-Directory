@@ -24,7 +24,7 @@
     "Location"
   ],
   "type": "string",
-  "expression": "Location.name",
+  "expression": "Location.name | Location.alias",
   "multipleOr": true,
   "multipleAnd": true,
   "modifier": [
