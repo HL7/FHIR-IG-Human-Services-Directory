@@ -6,13 +6,12 @@ The HSDS model is mapped to corresponding elements in the FHIR profiles containe
 The primary focus of this implementation guide is a RESTful API for obtaining data from a FHIR-enabled Human and Social Service Resource Directory. This API currently only supports a one-directional flow of information from a FHIR-enabled Human Services Directory into local environments (i.e., HTTP GETs).
 
 An implementation that is conformant to this IG:
-- SHALL support profiles: Organization, HealthcareService, Location, and maybe PractitionerRole, and Practitioner
-- SHOULD support profiles: Endpoint
+- SHALL support profiles: Organization, HealthcareService, and Location
+- MAY support profiles: Endpoint
 
 The conformance verbs (**SHALL, SHALL NOT, SHOULD, MAY**) used in this guide are defined in [FHIR Conformance Rules](http://hl7.org/fhir/R4/conformance-rules.html).
 
 ### Privacy Considerations
-Access to the Human Services Directory should not require authentication, and the server should not maintain any records that could associate the consumer with the entities that were queried.
 A conformant Human Services Directory **SHALL NOT** require a directory mobile application to send consumer identifying information in order to query content.
 A directory mobile application **SHALL NOT** send consumer identifiable information when querying a Human Services Directory.
 ### Must Support
@@ -36,24 +35,16 @@ When querying the Human Service Resource Directory Profiles defined in this IG, 
 Each profile in this guide requires that the lastUpdate timestamp be provided as part of the profile's data content. Clients that cache query results can track additions or modifications to directory content through queries that filter content using the _lastUpdated search parameter. Clients should periodically check that data cached from past queries has not been deleted by querying for the same elements by _id.
 
 ### General Security Considerations
-
+[
 No Content
 
-###	Representing and Searching Social and Human Service Resource Directory Data
+### FHIR Response Bundle
+By default, the FHIR search result response invoked by the API only includes a FHIR Bundle resource containing resources that match the search criteria.  These resources include references and full URLs to other related resources so the consuming application can request additional related resources (e.g., querying Organization and Location resources associated with a HealthcareService resource). This results in a “chatty” interface since the consuming applications have to make several queries to get all of the information required for social care referrals. The FHIR specification supports **_include** as part of the search parameter to request that the server include the related resources specified by the _include. This means the _include has to specify each related resource linkage. Instead of taking that approach, this Implementation Guide suggests that FHIR servers respond with a FHIR bundle FHIR that includes the requested resource and all its related resources simultaneously. This allows consuming applications to perform a single query in order to receive all relevant data. In addition, this approach mimics the '/complete’ parameter supported by the Human Services Data API (HSDA).  
 
-This section provides examples of the canonical use of the profiles provided in this companion IG to help guide implementers to consistently use the profiles to enable 3rd party applications to access social services directories. 
+###	Representing and Searching Human Services Directory Data
 
-The design is based on the following search types:
-
-| Search               	| Example 	    | Focal Resource and Field                             	| Qualifications of Search 	|
-|----------------------	|---------------|------------------------------------------------------	|--------------------------	|
-| General Search       	| Food Bank     | HealthcareService.category,   HealthcareService.type 	| Location                 	|
-| Organization by Name 	| Sanctuary City| Organization.name                                    	| Location                 	|
-| Service by Language  	| Spanish       | HealthcareService.communication                      	| HealthcareService         	|
+Examples of the canonical use of the profiles are provided in the [**Examples** section](reference.html#Examples) of this IG to help implementers consistently use the profiles to enable third-party applications to access human services directories. The methods for searching human services directories based on the patterns is provided in the SearchParameters section.
  			
-The content in this section of the IG is based on the examples provided and on the patterns provided here.
-Specific examples are referenced in the text below.
-
 #### Search for Active Organizations
 Sample query to search for currently active Organizations (replace date in query with current date):
 provide example query
@@ -63,7 +54,7 @@ If no period is provided, then it is assumed the Organization is active with no 
 #### HealthcareService
 The first type of search starts from HealthcareService.category and/or HealthcareService.type, so it is essential that each organization's services are supported by an appropriate set of HealthcareService instances.
 
-Human and Social Service Resource HealthcareServices are typically provided by community-based organizations which are linked to a set of locations where each service is provided (or identified as a virtual service through an indicated set of virtual modalities within the scope of these requirements). 
+Human Services are typically provided by community-based organizations. These services are linked to a set of locations where each service is provided (or is identified as a virtual service using a set of virtual modalities). 
 
 These examples illustrate an organization that provides three distinct human and social services -- housing, nutrition, and employment -- at all of its locations. Community-based organizations should define and maintain up-to-date information on the set of Human and Social HealthcareServices they provide. 
 
@@ -101,8 +92,5 @@ Organization instances provide information about a specific organizations, inclu
 
 
 #### Endpoints
-An Endpoint instance provides the technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging.
-Scenario	Example Instances
-Payer Portal	AcmeOfCTPortalEndpoint
-
+An Endpoint instance provides the technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging. The Endpoint resource/profile is not currently supported by HSDS and therefore has not been included in the mapping between HSDS and FHIR, so Endpoint can be ignored.
 
