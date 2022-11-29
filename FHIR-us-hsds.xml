@@ -154,11 +154,11 @@
 <artifact deprecated="true" id="ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" key="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" name="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
 <artifact deprecated="true" id="CodeSystem/CMSRemittanceAdviceRemarkCodes" key="CodeSystem-CMSRemittanceAdviceRemarkCodes" name="X12 Remittance Advice Remark Codes"/>
 <artifact id="SearchParameter/hsds-healthcareservice-service-category" key="SearchParameter-hsds-healthcareservice-service-category" name="hsds_sp_healthcareservice_category"/>
-<artifact id="SearchParameter/hsds-healthcareservice-commnication" key="SearchParameter-hsds-healthcareservice-commnication" name="hsds_sp_healthcareservice_communication"/>
+<artifact id="SearchParameter/hsds-healthcareservice-communication" key="SearchParameter-hsds-healthcareservice-communication" name="hsds_sp_healthcareservice_communication"/>
 <artifact id="SearchParameter/hsds-healthcareservice-location" key="SearchParameter-hsds-healthcareservice-location" name="hsds_sp_healthcareservice_location"/>
 <artifact id="SearchParameter/hsds-healthcareservice-name" key="SearchParameter-hsds-healthcareservice-name" name="hsds_sp_healthcareservice_name"/>
 <artifact id="SearchParameter/hsds-healthcareservice-organization" key="SearchParameter-hsds-healthcareservice-organization" name="hsds_sp_healthcareservice_organization"/>
-<artifact id="SearchParameter/ hsds-healthcareservice-program" key="SearchParameter- hsds-healthcareservice-program" name="hsds_sp_healthcareservice_program"/>
+<artifact id="SearchParameter/healthcareservice-program" key="SearchParameter-healthcareservice-program" name="hsds_sp_healthcareservice_program"/>
 <artifact id="SearchParameter/hsds-healthcareservice-service-type" key="SearchParameter-hsds-healthcareservice-service-type" name="hsds_sp_healthcareservice_type"/>
 <artifact id="SearchParameter/hsds-location-accessibility" key="SearchParameter-hsds-location-accessibility" name="hsds_sp_location_accessibility"/>
 <artifact id="SearchParameter/location-address" key="SearchParameter-location-address" name="hsds_sp_location_address"/>
