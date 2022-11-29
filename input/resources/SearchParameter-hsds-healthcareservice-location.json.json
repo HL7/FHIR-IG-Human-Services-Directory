@@ -1,0 +1,33 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "hsds-healthcareservice-location",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-location",
+  "version": "0.1.0",
+  "name": "hsds_sp_healthcareservice_location",
+  "derivedFrom": "http://hl7.org/fhir/SearchParameter/HealthcareService-location",
+  "status": "active",
+  "date": "2018-05-23T00:00:00+00:00",
+  "publisher": "HL7 Human and Social Services Work Group",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.hl7.org/Special/committees/hsswg/index.cfm "
+        }
+      ]
+    }
+  ],
+  "description": "Select Human and Social Services delivered at specified locations",
+  "code": "location",
+  "base": [
+    "HealthcareService"
+  ],
+  "type": "reference",
+  "expression": "HealthcareService.location",
+  "multipleOr": true,
+  "multipleAnd": true,
+  "modifier": [
+    "text"
+  ]
+}
