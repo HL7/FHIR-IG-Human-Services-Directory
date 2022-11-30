@@ -2,6 +2,7 @@
 This page contains miscellaneous information on FHIR implementation. This content is primarily directed at implementers of the Human Services Directory.
 
 The HSDS model is mapped to corresponding elements in the FHIR profiles contained within this Implementation Guide (Organization, Location, HealthcareService).
+
 ### Conformance Requirements
 The primary focus of this implementation guide is a RESTful API for obtaining data from a FHIR-enabled Human and Social Service Resource Directory. This API currently only supports a one-directional flow of information from a FHIR-enabled Human Services Directory into local environments (i.e., HTTP GETs).
 
@@ -17,7 +18,7 @@ A directory mobile application **SHALL NOT** send consumer identifiable informat
 ### Must Support
 When querying the Human Service Resource Directory Profiles defined in this IG, Must Support on any profile data element **SHALL** be interpreted as follows:
 
-#### API Requirements (is this section necessary? Re-write)
+#### API Requirements
 
 - API actors **SHALL* be capable of populating all Must Support data elements as part of the query results.
 - In situations where information on a particular Must Support element is not present and the minimum cardinality is 0, the API actors **SHALL NOT** include the data elements in the resource instances returns as part of the query results.
