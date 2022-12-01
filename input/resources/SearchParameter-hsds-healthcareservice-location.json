@@ -1,6 +1,6 @@
 {
   "resourceType": "SearchParameter",
-  "id": " hsds-healthcareservice-location",
+  "id": "hsds-healthcareservice-location",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-location",
   "version": "0.1.0",
   "name": "hsds_sp_healthcareservice_location",
