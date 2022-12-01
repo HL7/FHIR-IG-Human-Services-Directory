@@ -19,6 +19,8 @@ Description: "The HSDSLocation resource describes the physical place where commu
 * status = #active  (exactly) 
 * telecom.use = #work (exactly)
 * address.use = #work (exactly)
+* extension[region] ^short = "Associated Region (GeoJSON)"
+* managingOrganization only Reference(hsds-Organization)
 
 
 Mapping: HSDSLocationToHSDS

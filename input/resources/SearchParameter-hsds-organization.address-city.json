@@ -1,10 +1,10 @@
 {
   "resourceType": "SearchParameter",
-  "id": "organization-address",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address",
+  "id": "organization-address-city",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-city",
   "version": "0.1.0",
-  "name": "hsds_sp_organization_address",
-  "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address",
+  "name": "hsds_sp_organization_address-city",
+  "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address-city",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",
   "publisher": "HL7 Human and Social Services Work Group",
@@ -18,13 +18,13 @@
       ]
     }
   ],
-  "description": "Select organizations with the specified address (matches any of the string elements of an address)",
-  "code": "address",
+  "description": "Select organizations within the specified city",
+  "code": "address-city",
   "base": [
     "Organization"
   ],
   "type": "string",
-  "expression": "Organization.address",
+  "expression": "Organization.address.city",
   "multipleOr": true,
   "multipleAnd": true,
   "modifier": [

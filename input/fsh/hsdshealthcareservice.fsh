@@ -11,6 +11,8 @@ Description: "The HSDSHealthcareService resource describes the social and human 
 * telecom.use = #work (exactly)
 * category from HumanServiceCategory (extensible)
 * type from HumanServiceType (extensible)
+* providedBy only Reference(hsds-Organization)
+* location only Reference(hsds-Location)
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService

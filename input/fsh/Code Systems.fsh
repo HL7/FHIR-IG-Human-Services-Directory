@@ -1,15 +1,17 @@
-Alias: $LA211Taxonomy = http://211taxonomy.org
+Alias: $LA211Taxonomy = http://211hsis.org
 
 CodeSystem: LA211Taxonomy
 Id: 211-taxonomy-human-services
-Title: "211 LA Taxonomy of Human Services"
-Description: "The 211 LA County Taxonomy is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
+Title: "211 Human Services Indexing System"
+Description: "The 211 Human Services Indexing System, formerly known as 211 LA Taxonomy of Human Services, is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
 * ^url = http://terminology.hl7.org/CodeSystem/LA211Taxonomy
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #is-a
 * ^content = #fragment
-* ^copyright = "As between 211LA and HL7, all intellectual property rights in and to the Taxonomy, including all copyright therein, shall vest and remain with 211LA. HL7 hereby assigns, and agrees to assign, to 211LA all intellectual property rights throughout the world HL7 may have, including all copyrights, in the Taxonomy, which assignment shall be deemed effective as to future contributions to the Taxonomy immediately upon creation thereof."
+* ^copyright = "The 211HSIS and the selection, compilation, collection, arrangement and assembly thereof are protected by U.S. and international copyright, trademark and other laws, and you acknowledge that these rights are valid and enforceable. We [211LA] retain and shall own all right, title and interest in and to the 211HSIS Website and any content contained therein (except for any Public Domain Material) and any derivative works or other modifications thereof, including, without limitation, all copyright, trademark, trade secret and other intellectual rights, subject only to the limited license set forth herein. You hereby assign, and agree to assign, to us all right, title and interest (including all intellectual property rights) throughout the world that you have or may have in the 211HSIS Website or any content contained therein (including with respect to any modifications suggested by, or other contributions made by, you), which assignment shall be deemed effective as to any future modifications or contributions immediately upon the creation thereof. You further irrevocably waive any 'moral rights' or other rights with respect to attribution of authorship or integrity of any modifications suggested by, or other contributions made by, you under any applicable law under any legal theory.
+
+The structure of the services index and definitions of the terms contained in the 211HSIS Website were originally published in A Taxonomy of Human Services A Conceptual Framework with Standardized Terminology and Definitions for the Field, Copyright© 1983-2011 Information and Referral Federation of Los Angeles County, Inc., PO Box 726, San Gabriel, CA 91778. No part of this listing of human services terms and definitions may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electrical, mechanical, photocopying, recording or otherwise without the prior written permission of the Information and Referral Federation of Los Angeles County, Inc."
 * ^content 	= #example
 * #211LA "211LA Taxonomy records" "This example code system contains all taxonomy records in the 211LA Taxonomy of Human Service."
 * #B "Basic Needs" "Programs that furnish survival level resources including food, housing, material goods, transportation and temporary financial assistance for individuals with low or fixed incomes, people who are homeless, older adults and/or people with disabilities who are otherwise unable to adequately provide for themselves and their families. Also included are related services that are available to the community at large."

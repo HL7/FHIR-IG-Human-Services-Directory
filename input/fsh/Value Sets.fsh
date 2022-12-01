@@ -1,7 +1,7 @@
-Alias: $LA211Taxonomy = http://211taxonomy.org
+Alias: $LA211Taxonomy = http://211hsis.org
 // Example value set illustrating the high level categories by which Human Services Directories can be queried
 // The "include" in this rule is optional
-// http://211taxonomy.org can be replaced with an alias
+// http://211hsis.org can be replaced with an alias
 
 // Extension: RulesText
 // Id:  rules-text
