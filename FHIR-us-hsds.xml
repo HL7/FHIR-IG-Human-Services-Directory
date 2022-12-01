@@ -7,7 +7,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/211-taxonomy-human-services" key="CodeSystem-211-taxonomy-human-services" name="211 LA Taxonomy of Human Services"/>
+<artifact id="CodeSystem/211-taxonomy-human-services" key="CodeSystem-211-taxonomy-human-services" name="211 Human Services Indexing System"/>
 <artifact deprecated="true" id="CodeSystem/ADADentalProcedureCode" key="CodeSystem-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature CS"/>
 <artifact deprecated="true" id="ValueSet/ADADentalProcedureCode" key="ValueSet-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature VS"/>
 <artifact deprecated="true" id="CodeSystem/AMACPTCodes" key="CodeSystem-AMACPTCodes" name="AMA CPT Codes"/>
@@ -155,7 +155,8 @@
 <artifact deprecated="true" id="CodeSystem/CMSRemittanceAdviceRemarkCodes" key="CodeSystem-CMSRemittanceAdviceRemarkCodes" name="X12 Remittance Advice Remark Codes"/>
 <artifact id="SearchParameter/hsds-healthcareservice-service-category" key="SearchParameter-hsds-healthcareservice-service-category" name="hsds_sp_healthcareservice_category"/>
 <artifact id="SearchParameter/hsds-healthcareservice-communication" key="SearchParameter-hsds-healthcareservice-communication" name="hsds_sp_healthcareservice_communication"/>
-<artifact id="SearchParameter/hsds-healthcareservice-location" key="SearchParameter-hsds-healthcareservice-location" name="hsds_sp_healthcareservice_location"/>
+<artifact id="SearchParameter/hsds-healthcareservice-extraDetails" key="SearchParameter-hsds-healthcareservice-extraDetails" name="hsds_sp_healthcareservice_extraDetails"/>
+<artifact id="SearchParameter/ hsds-healthcareservice-location" key="SearchParameter- hsds-healthcareservice-location" name="hsds_sp_healthcareservice_location"/>
 <artifact id="SearchParameter/hsds-healthcareservice-name" key="SearchParameter-hsds-healthcareservice-name" name="hsds_sp_healthcareservice_name"/>
 <artifact id="SearchParameter/hsds-healthcareservice-organization" key="SearchParameter-hsds-healthcareservice-organization" name="hsds_sp_healthcareservice_organization"/>
 <artifact id="SearchParameter/healthcareservice-program" key="SearchParameter-healthcareservice-program" name="hsds_sp_healthcareservice_program"/>
@@ -168,6 +169,9 @@
 <artifact id="SearchParameter/location-name" key="SearchParameter-location-name" name="hsds_sp_location_name"/>
 <artifact id="SearchParameter/location-organization" key="SearchParameter-location-organization" name="hsds_sp_location_organization"/>
 <artifact id="SearchParameter/organization-address" key="SearchParameter-organization-address" name="hsds_sp_organization_address"/>
+<artifact id="SearchParameter/organization-address-city" key="SearchParameter-organization-address-city" name="hsds_sp_organization_address-city"/>
+<artifact id="SearchParameter/organization-address-state" key="SearchParameter-organization-address-state" name="hsds_sp_organization_address-state"/>
+<artifact id="SearchParameter/organization-address-postalCode" key="SearchParameter-organization-address-postalCode" name="hsds_sp_organization_address_postalCode"/>
 <artifact id="SearchParameter/organization-name" key="SearchParameter-organization-name" name="hsds_sp_organization_name"/>
 <artifact id="SearchParameter/organization-type" key="SearchParameter-organization-type" name="hsds_sp_organization_type"/>
 <page key="NA" name="(NA)"/>

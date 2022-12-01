@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "Select HealthcareServices available at the specified location",
+  "description": "Select Human and Social Services that are available at the specified location",
   "code": "location",
   "base": [
     "HealthcareService"
@@ -32,7 +32,7 @@
   "multipleAnd": true,
   "chain": [
     "address",
-    "address-postalcode",
+    "address-postalCode",
     "address-city",
     "address-state",
     "organization",

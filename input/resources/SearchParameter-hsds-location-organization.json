@@ -33,7 +33,6 @@
   "chain": [
     "name",
     "address",
-    "partof",
     "type"
   ]
 }
