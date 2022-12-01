@@ -4,7 +4,8 @@ CodeSystem: LA211Taxonomy
 Id: 211-taxonomy-human-services
 Title: "211 Human Services Indexing System"
 Description: "The 211 Human Services Indexing System, formerly known as 211 LA Taxonomy of Human Services, is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
-* ^url = http://terminology.hl7.org/CodeSystem/LA211Taxonomy
+* ^url = http://hl7.org/fhir/us/hsds/CodeSystem/211-taxonomy-human-services
+//* ^url = http://terminology.hl7.org/CodeSystem/LA211Taxonomy
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #is-a

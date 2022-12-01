@@ -1,10 +1,10 @@
 {
   "resourceType": "SearchParameter",
-  "id": "organization-address-postalCode",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-postalCode",
+  "id": "organization-address-postalcode",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-postalcode",
   "version": "0.1.0",
   "name": "hsds_sp_organization_address_postalCode",
-  "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address-postalCode",
+  "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address-postalcode",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",
   "publisher": "HL7 Human and Social Services Work Group",
@@ -19,7 +19,7 @@
     }
   ],
   "description": "Select organizations by the specified postal/zip code",
-  "code": "address-postalCode",
+  "code": "address-postalcode",
   "base": [
     "Organization"
   ],
