@@ -15,6 +15,7 @@ Title: "Human Services Category Value Set"
 Description: "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
 * ^url = http://hl7.org/fhir/us/hsds/ValueSet/human-services-category
 * ^compose.include.system = http://211hsis.org
+// * ^compose.include.system = http://hl7.org/fhir/us/hsds/CodeSystem/211-human-services-indexing-system
 * ^experimental = false
 // * ^compose.include.concept.code = 
 * ^compose.include.concept.display = "This value set represents codes found in Level 2 of the 211 Human Services Indexing System, except for codes descending from Level 1 (Y Target Populations terms that are modifiers for human services, not categories of services themselves)"
