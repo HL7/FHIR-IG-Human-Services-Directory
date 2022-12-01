@@ -1,11 +1,11 @@
-Alias: $LA211Taxonomy = http://211hsis.org
+Alias: $211HSIS = http://211hsis.org
 
-CodeSystem: LA211Taxonomy
-Id: 211-taxonomy-human-services
+CodeSystem: 211HSIS
+Id: 211-human-services-indexing-system
 Title: "211 Human Services Indexing System"
 Description: "The 211 Human Services Indexing System, formerly known as 211 LA Taxonomy of Human Services, is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
-* ^url = http://hl7.org/fhir/us/hsds/CodeSystem/211-taxonomy-human-services
-//* ^url = http://terminology.hl7.org/CodeSystem/LA211Taxonomy
+* ^url = http://hl7.org/fhir/us/hsds/CodeSystem/211-human-services-indexing-system
+//* ^url = http://terminology.hl7.org/CodeSystem/211HSIS
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #is-a
@@ -14,7 +14,7 @@ Description: "The 211 Human Services Indexing System, formerly known as 211 LA T
 
 The structure of the services index and definitions of the terms contained in the 211HSIS Website were originally published in A Taxonomy of Human Services A Conceptual Framework with Standardized Terminology and Definitions for the Field, Copyright© 1983-2011 Information and Referral Federation of Los Angeles County, Inc., PO Box 726, San Gabriel, CA 91778. No part of this listing of human services terms and definitions may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electrical, mechanical, photocopying, recording or otherwise without the prior written permission of the Information and Referral Federation of Los Angeles County, Inc."
 * ^content 	= #example
-* #211LA "211LA Taxonomy records" "This example code system contains all taxonomy records in the 211LA Taxonomy of Human Service."
+* #211HSIS "211HSIS" "The 211HSIS contains more than 10,000 terms that are organized into a hierarchical structure that shows the relationships among terms. There are ten basic service categories with a separate section for target populations or beneficiaries."
 * #B "Basic Needs" "Programs that furnish survival level resources including food, housing, material goods, transportation and temporary financial assistance for individuals with low or fixed incomes, people who are homeless, older adults and/or people with disabilities who are otherwise unable to adequately provide for themselves and their families. Also included are related services that are available to the community at large."
   * #BD "Food" "Programs that seek to meet the basic nutritional needs of the community by providing access to free or low-cost food products"
     * #BD-1800 "Emergency Food" "Programs that provide a limited amount of food for individuals or families during times of personal crisis, or for people who have no food or cannot afford to purchase food at retail costs."

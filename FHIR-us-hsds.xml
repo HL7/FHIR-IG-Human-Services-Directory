@@ -7,7 +7,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/211-taxonomy-human-services" key="CodeSystem-211-taxonomy-human-services" name="211 Human Services Indexing System"/>
+<artifact id="CodeSystem/211-human-services-indexing-system" key="CodeSystem-211-human-services-indexing-system" name="211 Human Services Indexing System"/>
 <artifact deprecated="true" id="CodeSystem/ADADentalProcedureCode" key="CodeSystem-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature CS"/>
 <artifact deprecated="true" id="ValueSet/ADADentalProcedureCode" key="ValueSet-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature VS"/>
 <artifact deprecated="true" id="CodeSystem/AMACPTCodes" key="CodeSystem-AMACPTCodes" name="AMA CPT Codes"/>
