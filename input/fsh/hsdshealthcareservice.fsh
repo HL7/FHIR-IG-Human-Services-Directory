@@ -8,11 +8,14 @@ Description: "The HSDSHealthcareService resource describes the social and human 
  
 * identifier.use = #official (exactly)
 * identifier.type = #TAX (exactly)
+* identifier.system = "http://www.irs.gov"
 * telecom.use = #work (exactly)
 * category from HumanServiceCategory (extensible)
 * type from HumanServiceType (extensible)
 * providedBy only Reference(hsds-Organization)
 * location only Reference(hsds-Location)
+* category ^binding.strength = #example
+* type ^binding.strength = #example
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService

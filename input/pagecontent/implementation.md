@@ -44,6 +44,16 @@ By default, the FHIR search result response invoked by the API only includes a F
 
 ###	Representing and Searching Human Services Directory Data
 
+A key objective for the FHIR IG for Human Services Directories is to address semantic interoperability within the human services domain, so that directory data exchanged between two or more systems is mutually understandable. 
+
+Sematic interoperability enhances and is more desired than syntactic interoperability. With semantic interoperability, the data exchanged between two or more systems is not only able to be exchanged successfully, but the information contained within each exchange can also be understood by each system within the exchange. Semantic interoperability requires common terminologies to be specified so that the implementers and systems that adopt the IG can successfully exchange data more meaningfully.
+
+Syntactic interoperability on the other hand, only supports the ability for two or more systems to exchange data using common structures, but the “meaning” of data contained within the exchange may not be understandable by all parties in the exchange unless certain elements are standardized in a codable manner using appropriate terminologies and taxonomies.
+
+The HSDS specification used as the requirements basis for this IG is agnostic with respect to terminologies/taxonomies, as HSDS acknowledges the variations in human services taxonomies used by referral management systems, regional home-grown platforms, and for reporting requirements.  This IG incorporates the 211 Human Services Indexing System, endorsed by AIRS, solely as an example taxonomy.
+
+The implementation guide was tested using the [Open Eligibility taxonomy](https://support.findhelp.com/hc/en-us/articles/4404055283227-The-Open-Eligibility-Project), consisting of two important concepts:  Human Services and Human Situations.  Other taxonomies for specialty human services, include [CMS' Home- and Community-Based Services (HCBS) taxonomy](https://wms-mmdl.cms.gov/WMS/help/TaxonomyCategoryDefinitions.pdf), [HUD HMIS Data Dictionary](https://www.hudexchange.info/resource/3824/hmis-data-dictionary/), [HMIS Data Standards](https://www.hudexchange.info/resource/3824/hmis-data-dictionary/), as well as other aging services data standardization efforts. Patient/client outcomes are an additional consideration to be met for the development and endorsement of an open-source, universal taxonomy for human and social services.  Given this complexity, this IG currently only provides an example how a common taxonomy could be used to identify human services. The issue of semantic interoperability will be addressed in a future, balloted version of this Implementation Guide.
+
 Examples of the canonical use of the profiles are provided in the [**Examples** section](reference.html#Examples) of this IG to help implementers consistently use the profiles to enable third-party applications to access human services directories. The methods for searching human services directories based on the patterns is provided in the SearchParameters section.
  			
 #### Search for Active Organizations
