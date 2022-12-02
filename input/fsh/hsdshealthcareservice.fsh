@@ -7,11 +7,9 @@ Title:    "HSDSHealthcareService"
 Description: "The HSDSHealthcareService resource describes the social and human services offered by Community-Based Organizations (CBO) at a given location. This resource may be used to encompass a variety of human and social care service interventions that assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
  
 * identifier.use = #official (exactly)
-* identifier.type = #TAX (exactly)
-* identifier.system = "http://www.irs.gov"
 * telecom.use = #work (exactly)
-* category from HumanServiceCategory (extensible)
-* type from HumanServiceType (extensible)
+* category from HumanServiceCategory
+* type from HumanServiceType
 * providedBy only Reference(hsds-Organization)
 * location only Reference(hsds-Location)
 * category ^binding.strength = #example

@@ -11,6 +11,7 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 
 * identifier.use = #official (exactly)
 * identifier.type = #TAX (exactly)
+* identifier.system = "http://www.irs.gov"
 * type = #atyprv (exactly)
 * active = true
 * address.use = #work (exactly)
