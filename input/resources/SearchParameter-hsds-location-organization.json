@@ -3,7 +3,7 @@
   "id": "location-organization",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/location-organization",
   "version": "0.1.0",
-  "name": "hsds_sp_location_organization",
+  "name": "HSDS_sp_location_organization",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Location-organization",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

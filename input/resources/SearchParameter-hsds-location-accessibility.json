@@ -3,7 +3,7 @@
   "id": "hsds-location-accessibility",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-location-accessibility",
   "version": "0.1.0",
-  "name": "hsds_sp_location_accessibility",
+  "name": "HSDS_sp_location_accessibility",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",
   "publisher": "HL7 Human and Social Services Work Group",

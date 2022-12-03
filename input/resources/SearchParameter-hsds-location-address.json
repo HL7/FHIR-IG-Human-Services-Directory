@@ -3,7 +3,7 @@
   "id": "location-address",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/location-address",
   "version": "0.1.0",
-  "name": "hsds_sp_location_address",
+  "name": "HSDS_sp_location_address",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Location-address",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

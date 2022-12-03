@@ -3,7 +3,7 @@
   "id": "location-name",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/location-name",
   "version": "0.1.0",
-  "name": "hsds_sp_location_name",
+  "name": "HSDS_sp_location_name",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Location-name",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

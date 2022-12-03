@@ -3,7 +3,7 @@
   "id": "hsds-healthcareservice-location",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-location",
   "version": "0.1.0",
-  "name": "hsds_sp_healthcareservice_location",
+  "name": "HSDS_sp_healthcareservice_location",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/HealthcareService-location",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

@@ -3,7 +3,7 @@
   "id": "hsds-healthcareservice-organization",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-organization",
   "version": "0.1.0",
-  "name": "hsds_sp_healthcareservice_organization",
+  "name": "HSDS_sp_healthcareservice_organization",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/HealthcareService-organization",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

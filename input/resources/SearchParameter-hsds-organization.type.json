@@ -3,7 +3,7 @@
   "id": "organization-type",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-type",
   "version": "0.1.0",
-  "name": "hsds_sp_organization_type",
+  "name": "HSDS_sp_organization_type",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-type",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

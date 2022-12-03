@@ -3,7 +3,7 @@
   "id": "hsds-healthcareservice-extraDetails",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-extraDetails",
   "version": "0.1.0",
-  "name": "hsds_sp_healthcareservice_extraDetails",
+  "name": "HSDS_sp_healthcareservice_extraDetails",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",
   "publisher": "HL7 Human and Social Services Work Group",

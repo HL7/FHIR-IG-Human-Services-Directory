@@ -3,7 +3,7 @@
   "id": "hsds-healthcareservice-service-category",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-service-category",
   "version": "0.1.0",
-  "name": "hsds_sp_healthcareservice_category",
+  "name": "HSDS_sp_healthcareservice_category",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/HealthcareService-service-category",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

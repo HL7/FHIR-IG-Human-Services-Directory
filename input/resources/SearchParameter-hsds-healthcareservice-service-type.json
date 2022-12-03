@@ -3,7 +3,7 @@
   "id": "hsds-healthcareservice-service-type",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-healthcareservice-service-type",
   "version": "0.1.0",
-  "name": "hsds_sp_healthcareservice_type",
+  "name": "HSDS_sp_healthcareservice_type",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/HealthcareService-service-type",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",

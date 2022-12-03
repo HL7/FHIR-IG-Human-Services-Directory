@@ -1,6 +1,10 @@
+Alias: USE = http://hl7.org/fhir/identifier-use
+Alias: TYPE = http://terminology.hl7.org/CodeSystem/v2-0203 
+Alias: ORGTYPE =  http://terminology.hl7.org/CodeSystem/organization-type
+Alias: HSIS = http://211hsis.org
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Qualification = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification
-
+Alias: IRS = http://www.irs.gov
 
 Profile: HSDSOrganization
 Parent: PLANNETOrganization
@@ -8,13 +12,28 @@ Id: hsds-Organization
 Title:    "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
-
-* identifier.use = #official (exactly)
-* identifier.type = #TAX (exactly)
-* identifier.system = "http://www.irs.gov"
-* type = #atyprv (exactly)
+// * identifier.use = USE#official (exactly)
+// * identifier.type = TYPE#TAX (exactly)
+// * identifier.system = IRS
+* type = ORGTYPE#prov (exactly)
 * active = true
-* address.use = #work (exactly)
+* address.use = TYPE#work (exactly)
+
+
+
+
+
+//  "url": "http://hl7.org/fhir/SearchParameter/example",
+//   "version": "1",
+//   "name": "ID-SEARCH-PARAMETER",
+//   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Resource-id",
+//   "status": "draft",
+//   "experimental": true,
+//   "date": "2013-10-23",
+//   "publisher": "Health Level Seven International (FHIR Infrastructure)",
+
+
+
 
 Mapping: HSDSOrganizationToHSDS
 Source: HSDSOrganization
@@ -115,4 +134,6 @@ Note: For phone, HSDS contact table will be linked to the  phone table using con
 * contact.telecom.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
 * contact.address -> "GAP in HSDs. May need to keep track of a contact party's address for contacting, billing or reporting requirements."
 * endpoint -> "No Source. Note: This is for the technical implementation of web services for the organization and it is not for source-specific business data. It is marked as Must Support though optional in the Plan-Net profile. At this point, no organizayion specific web services have been identified so it may be ignored."
+
+
 

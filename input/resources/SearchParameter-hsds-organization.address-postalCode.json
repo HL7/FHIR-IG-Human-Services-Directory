@@ -3,7 +3,7 @@
   "id": "organization-address-postalcode",
   "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-postalcode",
   "version": "0.1.0",
-  "name": "hsds_sp_organization_address_postalCode",
+  "name": "HSDS_sp_organization_address_postalCode",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address-postalcode",
   "status": "active",
   "date": "2018-05-23T00:00:00+00:00",
