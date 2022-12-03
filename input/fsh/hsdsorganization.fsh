@@ -15,7 +15,7 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 // * identifier.use = USE#official (exactly)
 // * identifier.type = TYPE#TAX (exactly)
 // * identifier.system = IRS
-* type = ORGTYPE#prov (exactly)
+* type = ORGTYPE#cg (exactly)
 * active = true
 * address.use = TYPE#work (exactly)
 

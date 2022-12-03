@@ -11,7 +11,7 @@ Description: "This example value set is intended to represent the high level cat
 * ^compose.include.system = http://211hsis.org
 * ^experimental = false
 * ^compose.include.concept.display = "This value set represents codes found in Level 2 of the 211 Human Services Indexing System, except for codes descending from Level 1 (Y Target Populations terms that are modifiers for human services, not categories of services themselves)"
-* #BD "Food" from system $HSIS211
+// * #BD "Food" from system $HSIS211
 // * #BH "Housing/Shelter" from system $HSIS211
 // * #BM "Material Goods" from system $HSIS211
 // * #BT "Transportation" from system $HSIS211
@@ -38,7 +38,7 @@ Description: "This example value set is intended to represent the high level cat
 // * #JR "Public Safety" from system $HSIS211
 // * #LD "Emergency Medical Care" from system $HSIS211
 // * #LE "General Medical Care" from system $HSIS211
-// * #LF "Health Screening/Diagnostic Services" from system $HSIS211
+* #LF "Health Screening/Diagnostic Services" from system $HSIS211
 // * #LH "Health Supportive Services" from system $HSIS211
 // * #LJ "Human Reproduction" from system $HSIS211
 // * #LL "Inpatient Health Facilities" from system $HSIS211
