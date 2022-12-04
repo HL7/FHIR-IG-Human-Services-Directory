@@ -40,16 +40,16 @@ Note: HSDS service.status values are 'active', 'inactive', 'defunct' and 'tempor
 reference.type = 'Organization' 
 reference.display = organization.name
 Note: This element is of data type Reference that refers to the organization resource that provides this service."
-* category  -> "category.coding.system = 'http://terminology.hl7.org/CodeSystem/LA211Taxonomy'
+* category  -> "category.coding.system = 'http://211hsis.org'
 category.coding.code = taxonomy_term.term
 cateory.coding.display = taxonomy_term.description
 category.text = taxonomy_term.description
-Note: This mapping is to the service category level taxonomy term that will be a parent to service type level taxonomy term.  Linkage to category level term is from service.id = service_attribute_id, service_attribute.taxonomy_term_id = taxonomy_term.id, (child) taxonomy_term.parent.id = (parent) taxonomy_term.id. This assumes a two-level hierarchy of taxonomy terms. If there are more levels of hierarchy, then this will require traversing through the hierarchy until category level taxonomy_term parent is reached.  Service Category binding will be to specific concepts from LA211 taxonomy."
-* type  -> "category.coding.system = 'http://terminology.hl7.org/CodeSystem/LA211Taxonomy'
+Note: This mapping is to the service category level taxonomy term that will be a parent to service type level taxonomy term.  Linkage to category level term is from service.id = service_attribute_id, service_attribute.taxonomy_term_id = taxonomy_term.id, (child) taxonomy_term.parent.id = (parent) taxonomy_term.id. This assumes a two-level hierarchy of taxonomy terms. If there are more levels of hierarchy, then this will require traversing through the hierarchy until category level taxonomy_term parent is reached.  Service Category binding will be to specific concepts from 211 Human Services Indexing System."
+* type  -> "category.coding.system = 'http://211hsis.org'
 category.coding.code = taxonomy_term.term
 cateory.coding.display = taxonomy_term.description
 category.text = taxonomy_term.description
-Note: This mapping is to the service type level taxonomy term that will be directly linked to the service attribute.  Linkage to service type term is from service.id = service_attribute_id, service_attribute.taxonomy_term_id = taxonomy_term.id/.  Service Type binding will be to specific concepts from LA211 taxonomy."
+Note: This mapping is to the service type level taxonomy term that will be directly linked to the service attribute.  Linkage to service type term is from service.id = service_attribute_id, service_attribute.taxonomy_term_id = taxonomy_term.id/.  Service Type binding will be to specific concepts from 211 Human Services Indexing System."
 * specialty  -> "No Source. 
 Note: This is a GAP in HSDS. specialty is defined as Must Support in the Plan-Net profile but optional element. The Plan-Net profile defines as required binding to valueset that refers to the standardized NUCC taxonomy https://taxonomy.nucc.org/. However, this taxonomy does not contain most of the human services specific provider types (except 332U00000X: Home Delivered Meals). This mapping will be ignored for the time being until NUCC is extended to include human service providers and HSDS is modified to include the specialty of providers who can provide this service."
 * location  -> "reference.reference = service_at_location.location_id

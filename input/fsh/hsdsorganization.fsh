@@ -1,7 +1,7 @@
 Alias: USE = http://hl7.org/fhir/identifier-use
 Alias: TYPE = http://terminology.hl7.org/CodeSystem/v2-0203 
 Alias: ORGTYPE =  http://terminology.hl7.org/CodeSystem/organization-type
-Alias: HSIS = http://211hsis.org
+Alias: $211HSIS = http://211hsis.org
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Qualification = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification
 Alias: IRS = http://www.irs.gov
@@ -12,27 +12,10 @@ Id: hsds-Organization
 Title:    "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
-// * identifier.use = USE#official (exactly)
-// * identifier.type = TYPE#TAX (exactly)
-// * identifier.system = IRS
+
 * type = ORGTYPE#cg (exactly)
 * active = true
 * address.use = TYPE#work (exactly)
-
-
-
-
-
-//  "url": "http://hl7.org/fhir/SearchParameter/example",
-//   "version": "1",
-//   "name": "ID-SEARCH-PARAMETER",
-//   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Resource-id",
-//   "status": "draft",
-//   "experimental": true,
-//   "date": "2013-10-23",
-//   "publisher": "Health Level Seven International (FHIR Infrastructure)",
-
-
 
 
 Mapping: HSDSOrganizationToHSDS

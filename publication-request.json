@@ -1,13 +1,13 @@
 {
   "package-id": "hl7.fhir.us.hsds",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "path": "http://hl7.org/fhir/us/hsds/2023Jan",
-  "milestone": true,
+  "milestone": false,
   "status": "ballot",
   "sequence": "STU 1",
   "desc": "FHIR STU Release 1",
   "title": "FHIR IG Human Services Directory",
   "ci-build": "https://build.fhir.org/ig/HL7/FHIR-IG-Human-Services-Directory/",
   "category": "Mappings to Other Standards",
-  "introduction": "The FHIR IG for the Human Service Resource and Provider Directory, is a US Realm published standard, and an intended companion guide to the PDEX Plan-Net Provider Directory. The Human Service Resource and Provider Directory focuses on requirements of real-world implementers of social services directories and leverages analysis of a recognized (US, now International) standard in the human services field that describes social services directories: Open Referral Human Services Data Specification (HSDS) and associated APIs (HSDA). The directory can easily be adapted internationally from the US Realm guide by changes to terminology bindings, as the HSDS standard reflects current international as well as US requirements. The directory allows healthcare providers to search a human and social services directory from within a FHIR-enabled EHR-system, for community-based resources/services during a referral process workflow. Information from the directory is used to make the appropriate selection and to initiate a referral request to help meet the patient's unmet social needs. Additionally, this IG provides a standard for describing information collected by disparate human and social service organizations so the information can be universally understood across entities, including by FHIR-enabled systems used by healthcare providers, healthcare payers, social navigators, other community-based organizations, and consumer-facing applications to locate community-based resources and programs."
+  "introduction": "FHIR API-based data exchange enabling healthcare provider, community-based organization, payer, and consumer-facing application systems to search standardized directories of organizations providing human and social services, providing foundational support for downstream care planning and management use cases, including closed loop referrals, care coordination and care management activities, consumer-based search for assistance, etc. This guide is a US Realm specification."
 }

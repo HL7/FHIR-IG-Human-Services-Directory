@@ -9,10 +9,10 @@ title: "fhir-human-services-directory"
 description: "fhir-human-services-directory"
 status: draft # draft | active | retired | unknown
 name: FHIR-human-services-directory
-version: 0.1.0
+version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2022+
-releaseLabel: ci-draft
+releaseLabel: STU Ballot
 publisher:
   name: HL7 Human and Social Services Work Group
   url: http://www.hl7.org/Special/committees/hsswg/index.cfm
