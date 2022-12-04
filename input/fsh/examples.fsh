@@ -1,4 +1,7 @@
 Alias: IRS = http://www.irs.gov
+Alias: LANGUAGE = urn:ietf:bcp:47
+Alias: $211HSIS = http://211hsis.org
+Alias: ROLECODE = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
 Instance: hsds-organization
 InstanceOf: HSDSOrganization
@@ -37,7 +40,7 @@ Description: "hsds-location"
 * status = #active 
 * name = "CHILDREN'S ADVOCACY CENTER OF SOUTHWEST MICHIGAN"
 // * type = $V3RoleCode#CSC "community service center"
-* type = #CSC "community service center"
+* type = ROLECODE#CSC "community service center"
 * managingOrganization = Reference(hsds-organization)
 // * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 // * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
@@ -86,8 +89,8 @@ Description: "hsds-service"
 // * extension[deliverymethod].extension[type].valueCodeableConcept = DeliveryMethodCS#physical
 // * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
 // * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* category = HealthcareServiceCategoryCS#LF "Health Screening/Diagnostic Services" 
+* category = $211HSIS#LF "Health Screening/Diagnostic Services" 
 * providedBy = Reference(hsds-organization)
 * location[0] = Reference(hsds-location)
-* communication = #es "Spanish"
+* communication = LANGUAGE#es "Spanish"
 * telecom.extension[via-intermediary].valueReference = Reference(hsds-organization)

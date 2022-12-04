@@ -8,7 +8,7 @@ jurisdiction: urn:iso:std:iso:3166#US
 title: "fhir-human-services-directory"
 description: "fhir-human-services-directory"
 status: draft # draft | active | retired | unknown
-name: fhir-human-services-directory
+name: FHIR-human-services-directory
 version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2022+

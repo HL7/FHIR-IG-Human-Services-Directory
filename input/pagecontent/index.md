@@ -127,3 +127,13 @@ Generous assistance in testing this Implementation Guide was provided by the Dep
 |Demri Toop Henderson 	|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
 |Himali Saitwal 		|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
 |Teresa Gerard		|[Guardian Group, LLC, National Nested Networks]				|
+
+
+#### Cross Version Analysis
+{% include cross-version-analysis.xhtml %}
+#### Dependency Table
+{% include dependency-table.xhtml %}
+#### Globals Table
+{% include globals-table.xhtml %}
+#### IP Statements
+{% include ip-statements.xhtml %}
