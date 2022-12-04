@@ -1,7 +1,7 @@
 {
   "resourceType": "SearchParameter",
   "id": "organization-name",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-name",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-organization-name",
   "version": "0.1.0",
   "name": "HSDS_sp_organization_name",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-name",

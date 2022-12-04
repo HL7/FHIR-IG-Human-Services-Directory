@@ -1,7 +1,7 @@
 {
   "resourceType": "SearchParameter",
   "id": "location-name",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/location-name",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-location-name",
   "version": "0.1.0",
   "name": "HSDS_sp_location_name",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Location-name",

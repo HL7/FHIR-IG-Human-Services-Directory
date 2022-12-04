@@ -1,7 +1,7 @@
 {
   "resourceType": "SearchParameter",
   "id": "organization-address-state",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-state",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-organization-address-state",
   "version": "0.1.0",
   "name": "HSDS_sp_organization_address_state",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Organization-address-state",

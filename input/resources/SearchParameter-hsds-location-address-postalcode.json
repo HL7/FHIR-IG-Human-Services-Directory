@@ -1,7 +1,7 @@
 {
   "resourceType": "SearchParameter",
   "id": "location-address-postalcode",
-  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-postalcode",
+  "url": "http://hl7.org/fhir/us/hsds/SearchParameter/hsds-location-address-postalcode",
   "version": "0.1.0",
   "name": "HSDS_sp_location_address_postalcode",
   "derivedFrom": "http://hl7.org/fhir/SearchParameter/Location-address-postalcode",
