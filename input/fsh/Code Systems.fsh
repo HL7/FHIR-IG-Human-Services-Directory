@@ -1,6 +1,6 @@
 // Alias: $211HSIS = http://211hsis.org
 
-CodeSystem: CSHSIS211
+CodeSystem: CS-HSIS211
 Id: 211hsis
 Title: "211 Human Services Indexing System"
 Description: "The 211 Human Services Indexing System, formerly known as 211 LA Taxonomy of Human Services, is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
