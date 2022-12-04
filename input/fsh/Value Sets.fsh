@@ -1,4 +1,5 @@
-Alias: $HSIS211 = http://211hsis.org
+Alias: $211HSIS = http://211hsis.org
+// Alias: $HSIS211 = http://211hsis.org
 // Example value set illustrating the high level categories by which Human Services Directories can be queried
 // The "include" in this rule is optional
 // http://211hsis.org can be replaced with an alias
@@ -38,7 +39,7 @@ Description: "This example value set is intended to represent the high level cat
 // * #JR "Public Safety" from system $HSIS211
 // * #LD "Emergency Medical Care" from system $HSIS211
 // * #LE "General Medical Care" from system $HSIS211
-* #LF "Health Screening/Diagnostic Services" from system $HSIS211
+* #LF "Health Screening/Diagnostic Services" from system $211HSIS
 // * #LH "Health Supportive Services" from system $HSIS211
 // * #LJ "Human Reproduction" from system $HSIS211
 // * #LL "Inpatient Health Facilities" from system $HSIS211
@@ -94,11 +95,11 @@ Description: "This example value set represents the more refined classification 
 * ^experimental = false
 * ^compose.include.concept.display = "This value set represents codes descending from Levels 3-6 of the 211 Human Services Indexing System, except codes descending from Level 1 (Y - Target Populations terms that are modifiers for human services, not categories of services themselves)"
 
-* #BD-1800 "Emergency Food" from system $HSIS211
-* #BD-1800.1000 "Brown Bag Food Programs" from system $HSIS211
-* #BD-1800.2000 "Food Pantries" from system $HSIS211
+* #BD-1800 "Emergency Food" from system $211HSIS
+* #BD-1800.1000 "Brown Bag Food Programs" from system $211HSIS
+* #BD-1800.2000 "Food Pantries" from system $211HSIS
 // * #BD-1800.2000-620 "Occasional Emergency Food Assistance" from system $HSIS211
-* #BD-1800.2000-640 "Ongoing Emergency Food Assistance" from system $HSIS211
+* #BD-1800.2000-640 "Ongoing Emergency Food Assistance" from system $211HSIS
 // * #FT-2700.0500 "Advance Medical Directives" from system $HSIS211
 // * #FT-2700.0500-200 "Durable Power of Attorney for Health Care" from system $HSIS211
 // * #FT-2700.0500-210 "Durable Power of Attorney for Mental Health Care" from system $HSIS211
