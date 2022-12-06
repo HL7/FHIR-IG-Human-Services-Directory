@@ -9,7 +9,7 @@ title: "fhir-human-services-directory"
 description: "fhir-human-services-directory"
 status: draft # draft | active | retired | unknown
 name: FHIR-human-services-directory
-version: 1.0.0
+version: 1.0.0-ballot
 fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: STU Ballot

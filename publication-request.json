@@ -1,6 +1,6 @@
 {
   "package-id": "hl7.fhir.us.hsds",
-  "version": "1.0.0",
+  "version": "1.0.0-ballot",
   "path": "http://hl7.org/fhir/us/hsds/2023Jan",
   "milestone": false,
   "status": "ballot",
