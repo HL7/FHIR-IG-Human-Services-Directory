@@ -7,7 +7,7 @@
   "sequence": "STU 1",
   "desc": "FHIR STU Release 1",
   "title": "FHIR IG Human Services Directory",
-  "ci-build": "http://build.fhir.org/ig/HL7/FHIRIGHumanServicesDirectory/",
+  "ci-build": "http://build.fhir.org/ig/HL7/FHIR-IG-Human-Services-Directory",
   "category": "Mappings to Other Standards",
   "introduction": "FHIR API-based data exchange enabling healthcare provider, community-based organization, payer, and consumer-facing application systems to search standardized directories of organizations providing human and social services, providing foundational support for downstream care planning and management use cases, including closed loop referrals, care coordination and care management activities, consumer-based search for assistance, etc. This guide is a US Realm specification."
 }
