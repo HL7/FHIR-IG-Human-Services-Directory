@@ -15,7 +15,7 @@ copyrightYear: 2022+
 releaseLabel: STU Ballot
 publisher:
   name: HL7 Human and Social Services Work Group
-  url: http://www.hl7.org/Special/committees/hsswg/index.cfm
+  url: http://www.hl7.org/Special/committees/hsswg
   # email: hsswg@lists.hl7.org
 
 dependencies:
