@@ -1,6 +1,7 @@
 Alias: USE = http://hl7.org/fhir/identifier-use
 Alias: TYPE = http://terminology.hl7.org/CodeSystem/v2-0203 
-Alias: ORGTYPE =  http://terminology.hl7.org/CodeSystem/organization-type
+// Alias: ORGTYPE =  http://terminology.hl7.org/CodeSystem/organization-type
+Alias: ORGTYPE =  http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS
 Alias: $211HSIS = http://211hsis.org
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Qualification = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification
@@ -13,9 +14,9 @@ Title:    "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
 
-//* type = ORGTYPE#cg (exactly)
-* type = ORGTYPE#cg
+// * type = ORGTYPE#cg (exactly)
 * active = true
+* type = ORGTYPE#atyprv
 * address.use = TYPE#work (exactly)
 
 

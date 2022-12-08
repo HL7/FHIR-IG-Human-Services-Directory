@@ -8,15 +8,15 @@ Id: human-services-category
 Title: "Human Services Category Value Set"
 Description: "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
 * ^url = http://hl7.org/fhir/us/hsds/ValueSet/human-services-category
-// * ^compose.include.system = http://211hsis.org
 * ^experimental = false
 * ^extension.url = http://hl7.org/fhir/StructureDefinition/valueset-rules-text
-* ^extension.valueMarkdown = "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
+* ^extension.valueMarkdown  = "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
 /* "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
       "valueMarkdown": "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
     }]	*/ 
+// * ^compose.include.system = http://211hsis.org
 // * #BD "Food" from system $CS_211HSIS
 // * #BH "Housing/Shelter" from system $CS_211HSIS
 // * #BM "Material Goods" from system $CS_211HSIS
@@ -96,6 +96,7 @@ Id: human-services-types
 Title: "Human Services Type Value Set"
 Description: "This example value set represents the more refined classification of human services by which human services directories can be queried. This value set represents codes found in Levels 3-6 of the 211 Human Services Indexing System, except codes descending from Level 1 (Y - Target Populations)."
 * ^experimental = false
+* ^url = http://hl7.org/fhir/us/hsds/ValueSet/human-services-types
 * ^extension.url = http://hl7.org/fhir/StructureDefinition/valueset-rules-text
 * ^extension.valueMarkdown = "Testing one two three This example value set represents the more refined classification of human services by which human services directories can be queried. This value set represents codes found in Levels 3-6 of the 211 Human Services Indexing System, except codes descending from Level 1 (Y - Target Populations)."
 /* "extension": [
@@ -103,7 +104,7 @@ Description: "This example value set represents the more refined classification 
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
       "valueMarkdown": "This example value set is intended to represent the high level categories corresponding to human and social services domains. The value set includes values descending from Level 2 of the 211 Human Services Indexing System, except codes included in Level 1 (Y - Target Populations)."
     }]	*/
-* ^url = http://hl7.org/fhir/us/hsds/ValueSet/human-services-types
+
 // * ^compose.include.system = http://211hsis.org
 * ^experimental = false
 // * #BD-1800 "Emergency Food" from system $CS_211HSIS
