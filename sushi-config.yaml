@@ -15,11 +15,11 @@ copyrightYear: 2022+
 releaseLabel: STU Ballot
 publisher:
   name: HL7 Human and Social Services Work Group
-  url: http://www.hl7.org/Special/committees/hsswg
+  url: http://www.hl7.org/Special/committees/hsswg/index.cfm
   # email: hsswg@lists.hl7.org
 
 dependencies:
-  hl7.fhir.us.core: 3.1.1
+  # hl7.fhir.us.core: 3.1.1
   hl7.terminology: 2.1.0
   # hl7.fhir.us.davinci: 1.1.0 
   hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
@@ -32,8 +32,13 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Artifacts: artifacts.html
+  Implementation: 
+    Implementation: implementation.html
+   # Representing and Searching Human Services Directory Data: implementation.html#Representing
+  Artifacts: 
+    Profiles: artifacts.html#2
+    Terminology: artifacts.html#3
+    Search Parameters: artifacts.html#1
+    Capability Statement: artifacts.html#4
   Downloads: downloads.html
   Examples: examples.html
-  Implementation: implementation.html
-  Capability Statement: artifacts.html#1
