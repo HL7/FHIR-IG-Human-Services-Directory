@@ -1,4 +1,4 @@
-	# FHIR Human Services Directory
+# FHIR Human Services Directory
 
 ## Overview
 
@@ -18,30 +18,37 @@ Because the HSDS standard reflects international, as well as US requirements, th
 
 Since this project was initiated in May 2022, the HSDS specification has undergone revision, in part as the result of the mapping analysis based on HSDS v.2.0.1. To ensure continued alignment between HSDS and FHIR, once the new version of HSDS (3.0) has been published, this project will apply those updates to a future, balloted version of this Implementation Guide.
 
-### 	Scope for this release
+### 	Use Case and Scope for STU 1
 
-**Use Cases**
+**Use Case in Scope**
 
-STU1 of this implementation guide supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
+The initial version of this implementation guide (STU 1) supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
 
 These read-only queries can support a range of users and use cases within the context of **service discovery**, such as for example, a care provider seeking resources/services that may help address clients’ social needs using a FHIR-enabled application to query a human services directory in accordance with relevant criteria (geography, goals, relevant personal attributes) . 
 
+**Figure 1** describes the use case in scope for release STU 1 of this implementation guide (IG). 
 
-**Out of Scope for this Release:** 
+<img src="Workflow Analysis.svg" alt="*Use Case Analysis*" width="100%" height="100%" align="center"  />
 
-Assessing eligibility for services is currently out of scope, though may be added to a future release.
+*Figure 1: Use Case Analysis - Human Services Discovery*
 
-This IG does not address questions of user-submitted feedback about the quality of resource directory information (accuracy, clarity, etc); write-enabled ‘bi-directional’ functionality may be specified in future versions. 
-
-This IG does not specify mechanisms for gathering feedback from users about the quality of services themselves.
-
-Queries of federated resource directory information sources is out of scope; this IG addresses only instances in which a single source of resource directory information is made available for querying by a FHIR-enabled client.
-
-**Figure 1** depicts the current scope for this release of the implementation guide (IG). The IG defines the API that exposes a community-based organization’s database for access by a consumer or provider application (EHR-System, consumer mobile app). This is a query-only API (GET) and does not support PUT or POST.
+**Scope for this Release**
+ 
+**Figure 2** depicts the scope for the STU 1 release of this implementation guide (IG). STU 1 defines the APIs that expose a community-based organization’s database for access by a FHIR-enabled consumer or provider application (EHR-System, consumer mobile app). These are read-only APIs (GET) and the IG does not currently support PUT or POST.
 
 <img src="HSD FHIR Implementation Scope.svg" alt="*Human Services Directory Conceptual Flow*" width="100%" height="100%" align="center"  />
 
-*Figure 1: Current Scope - Read Only*
+*Figure 2: STU 1 Scope - Mapping from HSDS to FHIR Profiles - Read-Only Capability*
+
+**Out of Scope for this Release:** 
+
+- Assessing eligibility for services is currently out of scope, though may be added to a future release.
+
+- Queries of federated resource directory information sources is out of scope; this IG addresses only instances in which a single source of resource directory information is made available for query by a FHIR-enabled client.
+
+- This IG does not address questions of user-submitted feedback about the quality of resource directory information (accuracy, clarity, etc.), nor does it specify mechanisms for gathering feedback from users about the quality of services themselves.
+
+- Write-enabled ‘bi-directional’ functionality may be specified in future versions.
 
 ###	Introduction
 
@@ -57,11 +64,11 @@ Many desktop and mobile applications use APIs to retrieve, store, and update dat
 
 The FHIR Implementation Guide for Human and Social Services Resource Directories defines a FHIR interface to directories of social services information provided by community-based organizations at locations in which they operate. Publication of these data through standard FHIR-based APIs enables third parties to develop applications that can be used by healthcare providers, payers, and consumers to query directories of community-based services to help address the circumstances that make it difficult to live healthy lives, and address unmet social needs.
 
-**Figure 2** illustrates the relationship between the FHIR profiles included in this Implementation Guide
+**Figure 3** illustrates the relationship between the FHIR profiles included in this Implementation Guide
 
 <img src="HSD Resource Relationship Diagram.svg" alt="*Profile Relationships*" width="100%" height="100%" align="center" />
 
-*Figure 2: Profile Relationships*
+*Figure 3: Relationship between FHIR profiles in the Human Services Directories (HSD) Implementation Guide*
 
 ###	 Background
 Social determinants of health (SDOH) are the conditions in the environment where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.
@@ -78,11 +85,11 @@ Challenge teams successfully demonstrated approaches to closed loop referral exc
 
 The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR technical standards and implementation guides that support development and testing of FHIR APIs to foster interoperability. CMS identified technical standards for Provider Directories and recommended the DaVinci PDEX Plan Net Provider Directory Implementation Guide. As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, we chose an approach intended to help minimize the effort/burden required to implement FHIR-based human and social services directories into current workflow practices by the healthcare providers, payers, and consumer applications that have implemented the CMS-recognized FHIR standard for accessing healthcare provider directories, the [DaVinci PDEX Plan-Net Provider Directory Implementation Guide (PDEX) version 1.1.0.](http://hl7.org/fhir/us/davinci-pdex-plan-net/)
 
-**Figure 3** illustrates the relationship between this IG and other related FHIR Implementation Guides
+**Figure 4** depicts the relationship between FHIR HSD IG and other derived or related FHIR Implementation Guides
 
 <img src="HSD IG Relationship to Core and Other IGs.svg" width="100%" height="100%" align="center" />
 
-*Figure 3: Relationship between IGs*
+*Figure 4: Relationship between IGs*
 
 - FHIR US Core addresses USCDI and it is designated by the HL7 US Realm Steering Committee as the “base specification” for any US-realm FHIR API
 - PDEX Plan Net reuses “US Core”
