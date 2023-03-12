@@ -22,7 +22,7 @@ Since this project was initiated in May 2022, the HSDS specification has undergo
 
 **Use Case in Scope**
 
-The initial version of this implementation guide (STU 1) supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
+STU 1 of this implementation guide supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
 
 These read-only queries can support a range of users and use cases within the context of **service discovery**, such as for example, a care provider seeking resources/services that may help address clients’ social needs using a FHIR-enabled application to query a human services directory in accordance with relevant criteria (geography, goals, relevant personal attributes) . 
 
