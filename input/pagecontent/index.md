@@ -2,29 +2,29 @@
 
 ## Overview
 
-The FHIR Implementation Guide (IG) for Human Services Directories is a US Realm standard that offers three “new content” profiles to the [DaVinci PDEX Plan-Net Provider Directory Implementation Guide (PDEX)](http://hl7.org/fhir/us/davinci-pdex-plan-net/). This guide re-uses three PDEX Provider Directory profiles: Organization, HealthcareService, and Location, and constrains those profiles using pertinent vocabulary bindings that support searching community-based organization (CBO) human and social services directories for services that can help mitigate the unmet social needs of patients, consumers, and caregivers.
+The Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) for Human Services Directories is a United States (US) Realm standard that offers three “new content” profiles to the [DaVinci PDEX Plan-Net Provider Directory Implementation Guide (PDEX)](http://hl7.org/fhir/us/davinci-pdex-plan-net/). This guide re-uses three PDEX Provider Directory profiles: Organization, HealthcareService, and Location, and constrains those profiles using pertinent vocabulary bindings that support searching community-based organization (CBO) human and social services directories for services that can help mitigate the unmet social needs of patients, consumers, and caregivers.
 
-This approach is intended to encourage adoption of this standard by facilitating the integration of these directories into healthcare provider and payer organization care management workflows by those who have already implemented the DaVinci PDEX Provider Directory Implementation Guide in order to meet the CMS Interoperability and Patient Access Final Rule. This approach can support clients using consumer FHIR-enabled applications to locate appropriate services in a specified coverage area from CBO-directories as well.
+This approach is intended to encourage adoption of this standard by facilitating the integration of these directories into healthcare provider and payer organization care management workflows by those who have already implemented the DaVinci PDEX Provider Directory Implementation Guide in order to meet the Centers for Medicare & Medicaid Services (CMS) Interoperability and Patient Access Final Rule. This approach can support clients using consumer FHIR-enabled applications to locate appropriate services in a specified coverage area from CBO-directories as well.
 
-The primary source of requirements for the FHIR Human Services Directory IG was analysis of the [Open Referral Human Services Data Specification (HSDS)](https://docs.openreferral.org/en/v2.0.1/) [version 2.0.1](https://github.com/openreferral/specification/releases/tag/2.0.1). HSDS is a recognized US and International standard that describes information collected by human and social service organizations – the descriptions of services, institutions that provide services, where and how services can be accessed. The HSDS structure allows directory information to be published in a machine-readable data format that can be universally understood by disparate entities that use HSDS and its associated APIs: [Human Service Data API Suite HSDA](https://docs.openreferral.org/en/v2.0.1/hsda/). HSDS has been adopted by a wide range of social care coordination vendors and has been endorsed by the [Alliance of Information and Referral Systems (AIRS)](https://www.airs.org/i4a/pages/index.cfm?pageid=3581). AIRS is an international association of Information & Referral (I&R) service providers, and a primary source for standards, program accreditation and practitioner certification for the I&R sector.
+The primary source of requirements for the FHIR Human Services Directory IG was analysis of the Open Referral [Human Services Data Specification (HSDS)](https://docs.openreferral.org/en/v2.0.1/) [version 2.0.1](https://github.com/openreferral/specification/releases/tag/2.0.1). HSDS is a recognized US and International standard that describes information collected by human and social service organizations – the descriptions of services, institutions that provide services, where and how services can be accessed. The HSDS structure allows directory information to be published in a machine-readable data format that can be universally understood by disparate entities that use HSDS and its associated application programming interfaces (API): [Human Service Data API Suite (HSDA)](https://docs.openreferral.org/en/v2.0.1/hsda/). HSDS has been adopted by a wide range of social care coordination vendors and has been endorsed by the [Alliance of Information and Referral Systems (AIRS)](https://www.airs.org/i4a/pages/index.cfm?pageid=3581). AIRS is an international association of Information & Referral (I&R) service providers, and a primary source for standards, program accreditation and practitioner certification for the I&R sector.
 
 The HSDS reflects the real-world requirements of users of social services directories. A primary purpose for the FHIR Human Services Directory IG is to provide implementers who are familiar with the HSDS format, a map between HSDS-structure directory data to FHIR profiles, eliminating the need for implementers to have extensive experience mapping local directory data to FHIR in order to implement the standard FHIR APIs that allow FHIR-based applications to access human services directories of community-based resources. 
 
 Health IT standards and interoperability solutions for social care referrals, such as the open-source components described in this IG, will enable transformation, matching, editing and syncing of service directory information across multiple information management systems within the health and social care sectors.
 
-As more healthcare systems begin using FHIR-enabled EHR-systems, interoperable, FHIR-based directories of community-based social services can help providers initiate social care referrals with available social service agencies and improve care coordination and health outcomes for patients and clients across the health care continuum.
+As more healthcare systems begin using FHIR-enabled electronic health record (EHR) systems, interoperable, FHIR-based directories of community-based social services can help providers initiate social care referrals with available social service agencies and improve care coordination and health outcomes for patients and clients across the health care continuum.
 
 Because the HSDS standard reflects international, as well as US requirements, this guide could be adapted internationally through changes to the terminology bindings that are currently constrained in this IG to those used in the US realm.
 
-Since this project was initiated in May 2022, the HSDS specification has undergone revision, in part as the result of the mapping analysis based on HSDS v.2.0.1. To ensure continued alignment between HSDS and FHIR, once the new version of HSDS (3.0) has been published, this project will apply those updates to a future, balloted version of this Implementation Guide.
+Since this project was initiated in May 2022, the HSDS specification has undergone revision, in part the result of mapping analysis based on HSDS v.2.0.1 and FHIR profiles. To ensure continued alignment between HSDS and FHIR, once HSDS v.3.0 has been published, this project will apply updates to the mapping and profiles based on HSDS 3.0 in a future balloted version of this Implementation Guide.
 
-### 	Use Case and Scope for STU 1
+### 	Use Case and Scope for version 1 - Standard for Trial Use (STU 1)
 
 **Use Case in Scope**
 
 STU 1 of this implementation guide supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
 
-These read-only queries can support a range of users and use cases within the context of **service discovery**, such as for example, a care provider seeking resources/services that may help address clients’ social needs using a FHIR-enabled application to query a human services directory in accordance with relevant criteria (geography, goals, relevant personal attributes) . 
+These read-only queries can support a range of users and use cases within the context of **service discovery**, such as for example, a care provider seeking resources/services that may help address clients’ social needs using a FHIR-enabled application to query a human services directory in accordance with relevant search parameters/criteria (geography, goals, relevant personal attributes) . 
 
 **Figure 1** describes the use case in scope for release STU 1 of this implementation guide (IG). 
 
@@ -34,7 +34,7 @@ These read-only queries can support a range of users and use cases within the co
 
 **Scope for this Release**
  
-**Figure 2** depicts the scope for the STU 1 release of this implementation guide (IG). STU 1 defines the APIs that expose a community-based organization’s database for access by a FHIR-enabled consumer or provider application (EHR-System, consumer mobile app). These are read-only APIs (GET) and the IG does not currently support PUT or POST.
+**Figure 2** depicts the scope for the STU 1 release of this implementation guide (IG). STU 1 defines the APIs that expose a community-based organization’s database for access by a FHIR-enabled consumer or provider application (EHR systems, payor systems, consumer mobile applications). These are read-only APIs (GET) as the IG does not currently support PUT or POST.
 
 <img src="HSD FHIR Implementation Scope.svg" alt="*Human Services Directory Conceptual Flow*" width="100%" height="100%" align="center"  />
 
@@ -52,7 +52,7 @@ These read-only queries can support a range of users and use cases within the co
 
 ###	Introduction
 
-Information and Referral (I&R) is the art, science, and practice of bringing people and services together. To accomplish this goal, I&R organizations maintain resource databases that contain information about services for specialized needs (e.g., aging population, respite services, childcare, special education, etc.) or offer comprehensive information about a broad range of health and human services (e.g., 211 call centers). I&Rs maintain directories of vital information about concrete aspects of services and programs, such as program names and addresses, hours of operation, eligibility requirements, and fees and share this information through various channels.
+Information and Referral (I&R) is the art, science, and practice of bringing people and services together. To accomplish this goal, I&R organizations maintain resource databases that contain information about services for specialized needs (e.g., aging population, respite services, childcare, special education, etc.) or offer comprehensive information about a broad range of health and human services (e.g., 2-1-1 call centers). I&Rs maintain directories of vital information about concrete aspects of services and programs, such as program names and addresses, hours of operation, eligibility requirements, and fees and share this information through various channels.
 
 These databases contain information about community, social, health, government programs, and services and are kept up to date by trained Database Curators. People may seek help by making telephone contact, online searches, and during in-person visits to community-based organizations. Some agencies provide information about the social services available within a geographic area; while others are specialized, providing in-depth information about resources for specific population groups such as older adults, children, victims of violence, military personnel and their families, or people with mental health issues.
 
@@ -91,7 +91,7 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 
 *Figure 4: Relationship between IGs*
 
-- FHIR US Core addresses USCDI and it is designated by the HL7 US Realm Steering Committee as the “base specification” for any US-realm FHIR API
+- FHIR US Core addresses data included in the United States Core Data for Interoperability (USCDI), and is designated by the HL7 US Realm Steering Committee as the “base specification” for any US-realm FHIR API
 - PDEX Plan Net reuses “US Core”
 - The FHIR Human Services and Resource Directory FHIR IG reuses the PDEX Plan Net Provider Directory IG (and US Core by inheritance), to create standard FHIR-based APIs that can be used to access a set of human and social service directories by constraining the data elements, terminology, and search capabilities that are specific to Human Services directories which are conformant to the Human Services Data Specification (HSDS)
 
