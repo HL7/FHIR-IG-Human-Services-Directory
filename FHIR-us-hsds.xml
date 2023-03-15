@@ -11,10 +11,11 @@
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
 <artifact id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
+<artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
 <artifact id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
 <artifact id="SearchParameter/healthcareservice-communication" key="SearchParameter-healthcareservice-communication" name="healthcareservice-communication"/>
-<artifact id="SearchParameter/healthcareservice-extraDetails" key="SearchParameter-healthcareservice-extraDetails" name="healthcareservice-extraDetails"/>
+<artifact deprecated="true" id="SearchParameter/healthcareservice-extraDetails" key="SearchParameter-healthcareservice-extraDetails" name="healthcareservice-extraDetails"/>
 <artifact id="SearchParameter/healthcareservice-location" key="SearchParameter-healthcareservice-location" name="healthcareservice-location"/>
 <artifact id="SearchParameter/healthcareservice-name" key="SearchParameter-healthcareservice-name" name="healthcareservice-name"/>
 <artifact id="SearchParameter/healthcareservice-organization" key="SearchParameter-healthcareservice-organization" name="healthcareservice-organization"/>
