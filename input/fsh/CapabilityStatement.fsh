@@ -104,15 +104,15 @@ Usage: #definition
 
 
 * rest[0].resource[2].type = #HealthcareService
-* rest[0].resource[1].profile = "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-HealthcareService"
+* rest[0].resource[2].profile = "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-HealthcareService"
 * rest[0].resource[2].documentation = "Read the details of human and social services resources that are available at a location."
 * rest[0].resource[2].interaction[0].code = #vread
 * rest[0].resource[2].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[2].interaction[0].extension.valueCode = #SHALL
 
-* rest[0].resource[2].interaction[2].code = #search-type
-* rest[0].resource[2].interaction[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].interaction[2].extension.valueCode = #SHALL
+* rest[0].resource[2].interaction[1].code = #search-type
+* rest[0].resource[2].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest[0].resource[2].interaction[1].extension.valueCode = #SHALL
 
 * rest[0].resource[2].searchParam[0].name = "communication"
 * rest[0].resource[2].searchParam[0].type = #string
@@ -126,8 +126,8 @@ Usage: #definition
 * rest[0].resource[2].searchParam[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[2].searchParam[1].extension.valueCode = #SHALL
 
-* rest[0].resource[2].searchParam[1].name = "active"
-* rest[0].resource[2].searchParam[1].type = #string
-* rest[0].resource[2].searchParam[1].documentation = "Search for human and social services by the specified status for the service."
-* rest[0].resource[2].searchParam[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].searchParam[1].extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[2].name = "active"
+* rest[0].resource[2].searchParam[2].type = #string
+* rest[0].resource[2].searchParam[2].documentation = "Search for human and social services by the specified status for the service."
+* rest[0].resource[2].searchParam[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest[0].resource[2].searchParam[2].extension.valueCode = #SHALL
