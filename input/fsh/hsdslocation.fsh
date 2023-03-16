@@ -1,24 +1,20 @@
-// This is a simple example of a FSH file.
-// This file can be renamed, and additional FSH files can be added.
-// SUSHI will look for definitions in any file using the .fsh ending.
-
-Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService
 Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
-Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
 // Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
+Alias: $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 
 Profile: HSDSLocation
 Parent: PLANNETLocation
 Id: hsds-Location
 Title:    "HSDSLocation"
 Description: "The HSDSLocation resource describes the physical place where community-based services are provided, practitioners are employed, organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+* extension[accessibility] ^short = "Accessibility"
+* extension[region] ^short = "Associated Region (GeoJSON)"	
 * identifier.use = #official (exactly)
 * status = #active  (exactly) 
 * telecom.use = #work (exactly)
 * address.use = #work (exactly)
-* extension[region] ^short = "Associated Region (GeoJSON)"
 * managingOrganization only Reference(hsds-Organization)
 
 

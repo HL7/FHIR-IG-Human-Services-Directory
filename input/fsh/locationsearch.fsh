@@ -121,7 +121,6 @@ Usage: #definition
 Instance: location-accessibility
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "location-accessibility"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility"
 * version = "0.1.0"
 * name = "HSDS_sp_location_accessibility"

@@ -1,7 +1,6 @@
 Instance: organization-address-city
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-address-city"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-city"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_address_city"
@@ -22,7 +21,6 @@ Description: "organization-address-city"
 Instance: organization-address-postalcode
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-address-postalcode"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-postalcode"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_address_postalcode"
@@ -43,7 +41,6 @@ Description: "organization-address-postalcode"
 Instance: organization-address-state
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-address-state"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-state"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_address_state"
@@ -64,7 +61,6 @@ Description: "organization-address-state"
 Instance: organization-address
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-address"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_address"
@@ -85,7 +81,6 @@ Description: "organization-address"
 Instance: organization-name
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-name"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-name"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_name"
@@ -106,7 +101,6 @@ Description: "organization-name"
 Instance: organization-type
 InstanceOf: SearchParameter
 Usage: #definition
-Description: "organization-type"
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-type"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_type"
