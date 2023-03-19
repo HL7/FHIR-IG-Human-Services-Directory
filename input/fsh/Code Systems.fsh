@@ -24,15 +24,15 @@ Description: "The 211 Human Services Indexing System, formerly known as 211 LA T
 CodeSystem: OpenEligibilityTaxonomyCS
 Id: OpenEligibilityTaxonomy
 Title: "Open Eligibility Taxonomy Code System"
-Description: "The Open Eligibility taxonomy consists of two important concepts: Human Services and Human Situations. 
+Description: "The Open Eligibility taxonomy consists of two important concepts: Human Services and Human Situations.
 
 Human Services are services offered by government or charitable organizations, and include things such as housing, food pantries or counseling services.
 
 Human Situations are ways of describing attributes of a person that could help them find programs they are looking for, including examples like: veterans, physical disability or seniors."
-
 * ^url = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
 * ^experimental = false
 * ^caseSensitive = false
+* ^contact.telecom.value = "https://company.findhelp.com/"
 * #1101	"Emergency"
 * #1102	"Food"
 * #1103	"Housing"

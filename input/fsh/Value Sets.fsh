@@ -4,6 +4,7 @@ Alias: $HealthcareServiceCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-n
 Alias: $HealthcareServiceTypeVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceTypeVS
 Alias: $CS_211HSISCS = http://211hsis.org
 Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
+
 ValueSet: VS_211HSISCategory
 Id: 211HSIS-category
 Title: "211HSIS Category VS"
@@ -102,7 +103,7 @@ Description: "This  value set represents a more refined classification by which 
 *  OpenEligibilityTaxonomyCS#1149	"Nursing Home"
 *  OpenEligibilityTaxonomyCS#1151	"Safe Housing"
 *  OpenEligibilityTaxonomyCS#1152	"Short-Term Housing"
-*  OpenEligibilityTaxonomyCS#1153	"Nursing Home "
+*  OpenEligibilityTaxonomyCS#1153	"Nursing Home"
 *  OpenEligibilityTaxonomyCS#1154	"Sober Living"
 *  OpenEligibilityTaxonomyCS#1155	"Baby Supplies"
 *  OpenEligibilityTaxonomyCS#1156	"Baby Clothes"
@@ -153,7 +154,7 @@ Description: "This  value set represents a more refined classification by which 
 *  OpenEligibilityTaxonomyCS#1201	"Discounted Healthcare" 
 *  OpenEligibilityTaxonomyCS#1202	"Health Insurance"
 *  OpenEligibilityTaxonomyCS#1203	"Medical Supplies"
-*  OpenEligibilityTaxonomyCS#1204 "Prescription Assistance"
+*  OpenEligibilityTaxonomyCS#1204   "Prescription Assistance"
 *  OpenEligibilityTaxonomyCS#1205	"Transportation for Healthcare"
 *  OpenEligibilityTaxonomyCS#1206	"Primary Care"
 *  OpenEligibilityTaxonomyCS#1207	"Alternative Medicine"
