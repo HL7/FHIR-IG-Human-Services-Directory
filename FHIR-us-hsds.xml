@@ -14,9 +14,10 @@
 <artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDSHealthcareService"/>
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
-<artifact id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category VS"/>
+<artifact id="ValueSet/HumanServiceCategory" key="ValueSet-HumanServiceCategory" name="Human Services Category VS"/>
+<artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
 <artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
-<artifact id="ValueSet/human-services-type" key="ValueSet-human-services-type" name="Human Services Type VS"/>
+<artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Services Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
 <artifact id="CodeSystem/OpenEligibilityTaxonomy" key="CodeSystem-OpenEligibilityTaxonomy" name="Open Eligibility Taxonomy Code System"/>
 <artifact id="ValueSet/OpenEligibilityCategory" key="ValueSet-OpenEligibilityCategory" name="OpenEligibility Category VS"/>
