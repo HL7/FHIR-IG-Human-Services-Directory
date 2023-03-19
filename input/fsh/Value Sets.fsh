@@ -63,9 +63,9 @@ Description: "This  value set represents a more refined classification by which 
 * ^url = http://hl7.org/fhir/us/hsds/ValueSet/OpenEligibilityType
 * ^compose.include.system = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
 
-*  OpenEligibilityTaxonomyCS#1112 "Disaster Response"
-*  OpenEligibilityTaxonomyCS#1113 "Emergency Payments"
-*  OpenEligibilityTaxonomyCS#1114 "Help Pay for Food"
+*  OpenEligibilityTaxonomyCS#1112   "Disaster Response"
+*  OpenEligibilityTaxonomyCS#1113   "Emergency Payments"
+*  OpenEligibilityTaxonomyCS#1114   "Help Pay for Food"
 *  OpenEligibilityTaxonomyCS#1115	"Help Pay for Healthcare"
 *  OpenEligibilityTaxonomyCS#1116	"Help Pay for Housing"
 *  OpenEligibilityTaxonomyCS#1117	"Help Pay for Gas"
