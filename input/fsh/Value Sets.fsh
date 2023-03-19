@@ -331,7 +331,7 @@ Description: "This  value set represents a more refined classification by which 
 // Grouped value set to be bound to HealthcareService.category (extensible)
 
 ValueSet: HumanServiceCategory
-Id: human-services-category
+Id: HumanServiceCategory
 Title: "Human Services Category VS"
 Description: "This is a grouping value set that includes codes from the Plan-Net Healthcare Service Category, the 211HSIS Category, and the OpenEligibility Category value sets."
 * ^experimental = false
@@ -343,7 +343,7 @@ Description: "This is a grouping value set that includes codes from the Plan-Net
 // Grouped value set to be bound to HealthcareService.type (extensible)
 
 ValueSet: HumanServiceType
-Id: human-services-type
+Id: HumanServiceType
 Title: "Human Services Type VS"
 Description: "This is a grouping value set that includes codes from the Plan-Net Healthcare Service Type, the 211HSIS Type, and the OpenEligibility Type value sets.."
 
