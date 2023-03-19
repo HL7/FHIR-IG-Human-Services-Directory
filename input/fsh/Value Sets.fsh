@@ -107,7 +107,7 @@ Description: "This  value set represents a more refined classification by which 
 *  OpenEligibilityTaxonomyCS#1155	"Baby Supplies"
 *  OpenEligibilityTaxonomyCS#1156	"Baby Clothes"
 *  OpenEligibilityTaxonomyCS#1157	"Diapers & Formula"
-*  OpenEligibilityTaxonomyCS#1158 "Clothing"
+*  OpenEligibilityTaxonomyCS#1158   "Clothing"
 *  OpenEligibilityTaxonomyCS#1159	"Baby Clothes"
 *  OpenEligibilityTaxonomyCS#1160	"Clothes for School"
 *  OpenEligibilityTaxonomyCS#1161	"Clothes for Work"

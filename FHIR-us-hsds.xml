@@ -18,7 +18,7 @@
 <artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
 <artifact id="ValueSet/human-services-type" key="ValueSet-human-services-type" name="Human Services Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
-<artifact id="CodeSystem/open-eligibility-taxonomy-code-system" key="CodeSystem-open-eligibility-taxonomy-code-system" name="Open Eligibility Taxonomy Code System"/>
+<artifact id="CodeSystem/OpenEligibilityTaxonomy" key="CodeSystem-OpenEligibilityTaxonomy" name="Open Eligibility Taxonomy Code System"/>
 <artifact id="ValueSet/OpenEligibilityCategory" key="ValueSet-OpenEligibilityCategory" name="OpenEligibility Category VS"/>
 <artifact id="ValueSet/OpenEligibilityType" key="ValueSet-OpenEligibilityType" name="OpenEligibility Type VS"/>
 <artifact id="StructureDefinition/org-description" key="StructureDefinition-org-description" name="Org Description"/>

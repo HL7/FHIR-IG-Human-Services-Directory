@@ -22,7 +22,7 @@ Description: "The 211 Human Services Indexing System, formerly known as 211 LA T
 // Open Eligibility Taxonomy Code System
 
 CodeSystem: OpenEligibilityTaxonomyCS
-Id: open-eligibility-taxonomy-code-system
+Id: OpenEligibilityTaxonomy
 Title: "Open Eligibility Taxonomy Code System"
 Description: "The Open Eligibility taxonomy consists of two important concepts: Human Services and Human Situations. 
 
@@ -84,7 +84,7 @@ Human Situations are ways of describing attributes of a person that could help t
 * #1149	"Nursing Home"
 * #1151	"Safe Housing"
 * #1152	"Short-Term Housing"
-* #1153	"Nursing Home "
+* #1153	"Nursing Home"
 * #1154	"Sober Living"
 * #1155	"Baby Supplies"
 * #1156	"Baby Clothes"
