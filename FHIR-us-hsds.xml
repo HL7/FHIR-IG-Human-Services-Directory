@@ -7,14 +7,20 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="CodeSystem/211hsis" key="CodeSystem-211hsis" name="211 Human Services Indexing System"/>
+<artifact id="ValueSet/211HSIS-category" key="ValueSet-211HSIS-category" name="211HSIS Category VS"/>
+<artifact id="ValueSet/211HSIS-type" key="ValueSet-211HSIS-type" name="211HSIS Type VS"/>
 <artifact id="StructureDefinition/accessibility" key="StructureDefinition-accessibility" name="Accessibility"/>
 <artifact id="StructureDefinition/contactpoint-availabletime" key="StructureDefinition-contactpoint-availabletime" name="Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDSHealthcareService"/>
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
-<artifact id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
+<artifact id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category VS"/>
 <artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
-<artifact id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
+<artifact id="ValueSet/human-services-type" key="ValueSet-human-services-type" name="Human Services Type VS"/>
+<artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
+<artifact id="CodeSystem/open-eligibility-taxonomy-code-system" key="CodeSystem-open-eligibility-taxonomy-code-system" name="Open Eligibility Taxonomy Code System"/>
+<artifact id="ValueSet/OpenEligibilityCategory" key="ValueSet-OpenEligibilityCategory" name="OpenEligibility Category VS"/>
+<artifact id="ValueSet/OpenEligibilityType" key="ValueSet-OpenEligibilityType" name="OpenEligibility Type VS"/>
 <artifact id="StructureDefinition/org-description" key="StructureDefinition-org-description" name="Org Description"/>
 <artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
