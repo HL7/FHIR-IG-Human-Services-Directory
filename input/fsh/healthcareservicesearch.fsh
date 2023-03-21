@@ -11,7 +11,7 @@ Usage: #definition
 * contact.name = "HL7 Human and Social Services Work Group"
 * code = #organization
 * base = #HealthcareService
-* type = #string
+* type = #reference
 * expression = "HealthcareService.organization"
 * multipleOr = true
 * multipleAnd = true
@@ -49,7 +49,7 @@ Usage: #definition
 * description = "Select Human and Social services offered at the specified location"
 * code = #location
 * base = #HealthcareService
-* type = #string
+* type = #reference
 * expression = "HealthcareService.location"
 * multipleOr = true
 * multipleAnd = true
@@ -87,7 +87,7 @@ Usage: #definition
 * description = "Select Human and Social services by the specified category"
 * code = #category
 * base = #HealthcareService
-* type = #string
+* type = #token
 * expression = "HealthcareService.category"
 * multipleOr = true
 * multipleAnd = true
@@ -106,7 +106,7 @@ Usage: #definition
 * description = "Select Human and Social services by the specified type"
 * code = #type
 * base = #HealthcareService
-* type = #string
+* type = #token
 * expression = "HealthcareService.type"
 * multipleOr = true
 * multipleAnd = true
