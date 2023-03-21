@@ -10,7 +10,8 @@ Id: hsds-Location
 Title:    "HSDSLocation"
 Description: "The HSDSLocation resource describes the physical place where community-based services are provided, practitioners are employed, organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * extension[accessibility] ^short = "Accessibility"
-* extension[region] ^short = "Associated Region (GeoJSON)"	
+* extension[region] ^short = "Associated Region (GeoJSON)"
+* extension[newpatients] 0..0 MS
 * identifier.use = #official (exactly)
 * status = #active  (exactly) 
 * telecom.use = #work (exactly)
