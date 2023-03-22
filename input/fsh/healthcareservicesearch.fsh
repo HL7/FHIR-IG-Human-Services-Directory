@@ -12,7 +12,7 @@ Usage: #definition
 * code = #organization
 * base = #HealthcareService
 * type = #reference
-* expression = "HealthcareService.organization"
+* expression = "HealthcareService.providedBy"
 * multipleOr = true
 * multipleAnd = true
 * modifier = #text

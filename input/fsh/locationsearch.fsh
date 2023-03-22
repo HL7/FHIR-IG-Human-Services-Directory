@@ -24,7 +24,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-postalcode"
 * version = "0.1.0"
 * name = "HSDS_sp_location_address_postalcode"
-* derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-postalcode"
+* derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-address-postalcode"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
@@ -108,11 +108,11 @@ Usage: #definition
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select locations with the specified organization"
+* description = "Select locations managed by the specified organization"
 * code = #organization
 * base = #Location
 * type = #reference
-* expression = "Location.name | Location.alias"
+* expression = "Location.managingOrganization"
 * multipleOr = true
 * multipleAnd = true
 * modifier = #exact
