@@ -23,7 +23,7 @@ Source: HSDSHealthcareService
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HealthcareService profile. The left hand column represents the FHIR HealthcareService element name, while the right column contains the HSDS table.element name followed by the element name's description in parenthesis. Comments related to the mapping may follow the HSDS element description."
+Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSHealthcareService profile. The left hand column contains the FHIR HSDSHealthcareService element name; the right column contains the HSDS table.element and any implementation/transformation rules required to support the mapping."
 * id  -> "service.id Note: Each service must have a unique identifier."
 * meta  -> "metadata Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.lastUpdated  -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each location, the latest max(last_action_date) needs to be used from metadata where  service.id =  metadata.resource_id."

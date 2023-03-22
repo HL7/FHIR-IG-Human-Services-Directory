@@ -22,7 +22,7 @@ Source: HSDSOrganization
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR Organization profile. The left hand column represents the FHIR Organization element name, the right column contains the HSDS table.element followed by its description within parenthesis. Comments related to the mapping may follow the HSDS element description."
+Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSOrganization profile. The left hand column contains the FHIR HSDSOrganization element name; the right column contains the HSDS table.element and any implementation/transformation rules required to support the mapping."
 * id  -> "organization.id Note: Each organization must have a unique system identifier in the source system."
 * meta  -> "Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.id -> "metadata.id Note: This data element may be ignored as having the id for the date metadata isn't essential. If populated, it should be id corresponding to the latest action date for given organization as described below."
