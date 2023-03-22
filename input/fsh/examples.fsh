@@ -1,19 +1,20 @@
 Alias: IRS = http://www.irs.gov
 Alias: LANGUAGE = urn:ietf:bcp:47
-Alias: $211HSIS = http://211hsis.org
+Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
 Alias: ROLECODE = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
-Instance: hsds-organization
+Instance: HumanSocialServiceOrganization
 InstanceOf: HSDSOrganization
-Description: "hsds-organization"     
+Description: "Community-Based Organization that provides food pantry services"     
+Usage: #example
 * meta.profile = Canonical(HSDSOrganization) 
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
+* meta.lastUpdated = "2023-03-22T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true
-* name = "CHILDREN'S ADVOCACY CENTER"
-// * type = OrgTypeCS#atyprv "Atypial Provider"
+* name = "Redwood Food Bank"
+* type = OrgTypeCS#atyprv "Atypical Provider"
 * telecom[0].system = #phone
-* telecom[0].value = "(111)-222-3333"
+* telecom[0].value = "(415)-222-3333"
 * telecom[0].rank = 2
 * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
 * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][1].valueCode  = #tue
@@ -23,27 +24,26 @@ Description: "hsds-organization"
 * telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
 * telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[1].system = #url
-* telecom[1].value = "https://childrensadvocacyctr.org/"
+* telecom[1].value = "https://redwoodfoodbank.org/"
 * telecom[1].rank = 1
 * address.line[0] = "788 Meadow Avenue"
 * address.city = "Anycity"
-* address.state = "MI"
-* address.postalCode = "49085"
+* address.state = "CA"
+* address.postalCode = "94952"
+* extension[org-description].valueString = "Community Services Agency of Northern California."
 
 
-Instance: hsds-location
+Instance: HumanSocialServiceLocation
 InstanceOf: HSDSLocation 
-Description: "hsds-location"     
+Description: "Locations associated with Community-Based Organizations" 
+Usage: #example    
 * meta.profile = Canonical(HSDSLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 
-* name = "CHILDREN'S ADVOCACY CENTER OF SOUTHWEST MICHIGAN"
-// * type = $V3RoleCode#CSC "community service center"
+* name = "Redwood Food Bank of Northern California"
 * type = ROLECODE#CSC "community service center"
-* managingOrganization = Reference(hsds-organization)
-// * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
-// * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
+* managingOrganization = Reference(HumanSocialServiceOrganization)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
 * telecom[0].system = #phone
@@ -60,12 +60,12 @@ Description: "hsds-location"
 * telecom[0].extension[contactpoint-availabletime][1].extension[availableStartTime].valueTime = 08:00:00
 * telecom[0].extension[contactpoint-availabletime][1].extension[availableEndTime].valueTime = 17:00:00
 * telecom[1].system = #url
-* telecom[1].value = "https://www.orga.com"
+* telecom[1].value = "https://redwoodfoodbank.org/"
 * telecom[1].rank = 1
 * address.line[0] = "123 Main Street"
 * address.city = "Anytown"
-* address.state = "MI"
-* address.postalCode = "49127-1234"
+* address.state = "CA"
+* address.postalCode = "94901"
 * position.longitude = 3.0
 * position.latitude = 15.0
 * hoursOfOperation[0].daysOfWeek[0]  = #mon 
@@ -79,18 +79,18 @@ Description: "hsds-location"
 * hoursOfOperation[1].openingTime = 08:00:00
 * hoursOfOperation[1].closingTime = 17:00:00
 
-Instance: hsds-service
+
+Instance: HumanSocialServiceResource
 InstanceOf: HSDSHealthcareService
-Description: "hsds-service"  
-* meta.profile = Canonical(HSDSHealthcareService)
-* meta.lastUpdated = "2017-01-01T00:00:00Z"
+Description: "Human and Social Services Resource provided by Community-Based Organization (CBO)"
+Usage: #example
+* meta.profile =  Canonical(HSDSHealthcareService) 
+* meta.lastUpdated = "2023-03-22T11:26:22.0314215+00:00"
+* language = #en-US
 * active = true
-* name = "Child Abuse Prevention Service"
-// * extension[deliverymethod].extension[type].valueCodeableConcept = DeliveryMethodCS#physical
-// * extension[newpatients].extension[acceptingPatients].valueCodeableConcept = AcceptingPatientsCS#existptonly
-// * extension[newpatients].extension[fromNetwork].valueReference = Reference(AcmeofCTStdNet)
-* category = $211HSIS#LF "Health Screening/Diagnostic Services" 
-* providedBy = Reference(hsds-organization)
-* location[0] = Reference(hsds-location)
+* name = "Food Pantry"
+* category = $OpenEligibilityTaxonomyCS#1102 "Food"
+* type = $OpenEligibilityTaxonomyCS#1130 "Food Pantry"
+* providedBy = Reference(HumanSocialServiceOrganization)
+* location[0] = Reference(HumanSocialServiceLocation)
 * communication = LANGUAGE#es "Spanish"
-* telecom.extension[via-intermediary].valueReference = Reference(hsds-organization)

@@ -1,8 +1,5 @@
-Alias: USE = http://hl7.org/fhir/identifier-use
 Alias: TYPE = http://terminology.hl7.org/CodeSystem/v2-0203 
-// Alias: ORGTYPE =  http://terminology.hl7.org/CodeSystem/organization-type
-Alias: ORGTYPE =  http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/OrgTypeCS
-Alias: $211HSIS = http://211hsis.org
+Alias: ORGTYPEVS =  http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/OrgTypeVS
 Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 Alias: Qualification = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification
 Alias: IRS = http://www.irs.gov
@@ -14,9 +11,9 @@ Title:    "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
 
-// * type = ORGTYPE#cg (exactly)
 * active = true
-* type = ORGTYPE#atyprv
+* type from OrgTypeVS (extensible)
+* telecom.extension[via-intermediary] 0..0 MS
 * address.use = TYPE#work (exactly)
 
 
@@ -44,7 +41,7 @@ Note: This is a GAP in HSDS that can be resolved by having qualifications collec
 * identifier.period  -> "organization.year_incorporated Note:  HSDS organization.year_incorporated may not always be the same as when the TAX ID was issued (especially if a company merged or split). Technically year_incorporated  is a GAP in FHIR and should be added as an extension. Also the effective date of the identifier (mapped to period here) is GAP in HSDS. But until both of those GAPs are addressed, the above mapping is proposed as a work around."
 * identifier.assigner -> "Fixed value = 'www.irs.gov' Note: This is GAP in HSDS but it can be implicitly inferred. Since the organization business identifier in HSDS is organization.tax id  which is issued by IRS,  this element is to be set with a fixed value with IRS website link as a reference." 
 * active  -> "Fixed value = 'true' Note: HSDS organization does not have a status but this is required in FHIR so fixed value is proposed to indicate that organization is active."
-* type -> "Fixed values:  type.code = 'atyprv' and type.system = 'http://hl7.org/fhir/us/DaVinci-pdex-plan-net/ValueSet/OrgTypeVS'  Note: This is a GAP in HSDS but required per Plan-Net profile. Among the allowable codes, 'atyprv' is proposed to represent 'Providers that do not provide healthcare' as the most appropriate for the human services providers." 
+* type -> "Any code is allowed from the type.system = 'http://hl7.org/fhir/us/DaVinci-pdex-plan-net/ValueSet/OrgTypeVS'  Note: This is a GAP in HSDS but a required Must Support element in the Plan-Net profile." 
 * name  -> "organization.name"
 * alias  -> "organization.alternate_name Note: Since there is only one alternate name in HSDS but the alias is an array (list) in FHIR, this will map to the first occurrence of the array."
 * telecom -> "Note: This FHIR structure contains contact details of the organization using the ContactPoint datatype (Details for all kinds of technology-mediated contact points for a person or organization, including telephone, email, etc.)."

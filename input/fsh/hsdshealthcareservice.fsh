@@ -8,6 +8,7 @@ Description: "The HSDSHealthcareService resource describes the social and human 
  
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
+* telecom.extension[via-intermediary] 0..0 MS
 * extension[newpatients] 0..0 MS
 * extension[delivery-method] 0..0 MS
 * category from http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory

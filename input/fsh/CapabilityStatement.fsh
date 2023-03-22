@@ -5,7 +5,7 @@ Description: "Describes the expected capabilities of the Human Services Director
 Usage: #definition
 
 * url = "http://hl7.org/fhir/us/hsds/CapabilityStatement/HumanServicesDirectories"
-* name = "Human Services Directories CapabilityStatement"
+* name = "HumanServicesDirectoriesCapabilityStatement"
 * status = #draft
 * date = "2023-03-15"
 * kind = #requirements

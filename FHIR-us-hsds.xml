@@ -19,6 +19,9 @@
 <artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
 <artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Services Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
+<artifact id="Location/HumanSocialServiceLocation" key="Location-HumanSocialServiceLocation" name="HumanSocialServiceLocation"/>
+<artifact id="Organization/HumanSocialServiceOrganization" key="Organization-HumanSocialServiceOrganization" name="HumanSocialServiceOrganization"/>
+<artifact id="HealthcareService/HumanSocialServiceResource" key="HealthcareService-HumanSocialServiceResource" name="HumanSocialServiceResource"/>
 <artifact id="CodeSystem/OpenEligibilityTaxonomy" key="CodeSystem-OpenEligibilityTaxonomy" name="Open Eligibility Taxonomy Code System"/>
 <artifact id="ValueSet/OpenEligibilityCategory" key="ValueSet-OpenEligibilityCategory" name="OpenEligibility Category VS"/>
 <artifact id="ValueSet/OpenEligibilityType" key="ValueSet-OpenEligibilityType" name="OpenEligibility Type VS"/>
@@ -32,9 +35,9 @@
 <artifact id="SearchParameter/healthcareservice-organization" key="SearchParameter-healthcareservice-organization" name="healthcareservice-organization"/>
 <artifact id="SearchParameter/healthcareservice-program" key="SearchParameter-healthcareservice-program" name="healthcareservice-program"/>
 <artifact id="SearchParameter/healthcareservice-type" key="SearchParameter-healthcareservice-type" name="healthcareservice-type"/>
-<artifact id="Location/hsds-location" key="Location-hsds-location" name="hsds-location"/>
-<artifact id="Organization/hsds-organization" key="Organization-hsds-organization" name="hsds-organization"/>
-<artifact id="HealthcareService/hsds-service" key="HealthcareService-hsds-service" name="hsds-service"/>
+<artifact deprecated="true" id="Location/hsds-location" key="Location-hsds-location" name="hsds-location"/>
+<artifact deprecated="true" id="Organization/hsds-organization" key="Organization-hsds-organization" name="hsds-organization"/>
+<artifact deprecated="true" id="HealthcareService/hsds-service" key="HealthcareService-hsds-service" name="hsds-service"/>
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="location-accessibility"/>
 <artifact id="SearchParameter/location-address" key="SearchParameter-location-address" name="location-address"/>
 <artifact id="SearchParameter/location-address-city" key="SearchParameter-location-address-city" name="location-address-city"/>

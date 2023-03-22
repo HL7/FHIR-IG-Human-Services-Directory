@@ -29,10 +29,10 @@ Usage: #definition
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
 * description = "Select locations within the specified postal code"
-* code = #address-postalcode
+* code = #address-postalCode
 * base = #Location
 * type = #string
-* expression = "Location.address.postalcode"
+* expression = "Location.address.postalCode"
 * multipleOr = true
 * multipleAnd = true
 * modifier = #exact
