@@ -8,15 +8,10 @@ Description: "The HSDSHealthcareService resource describes the social and human 
  
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
-* telecom.extension[via-intermediary] 0..0 MS
-* extension[newpatients] 0..0 MS
-* extension[delivery-method] 0..0 MS
 * category from http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 * type from http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
 * providedBy only Reference(hsds-Organization)
 * location only Reference(hsds-Location)
-* category ^binding.strength = #extensible
-* type ^binding.strength = #extensible
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService
