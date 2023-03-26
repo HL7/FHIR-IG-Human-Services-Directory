@@ -1,4 +1,4 @@
-# FHIR Human Services Directory
+f# FHIR Human Services Directory
 
 ## Overview
 
@@ -18,27 +18,25 @@ Because the HSDS standard reflects international, as well as US requirements, th
 
 Since this project was initiated in May 2022, the HSDS specification has undergone revision, in part the result of mapping analysis based on HSDS v.2.0.1 and FHIR profiles. To ensure continued alignment between HSDS and FHIR, once HSDS v.3.0 has been published, this project will apply updates to the mapping and profiles based on HSDS 3.0 in a future balloted version of this Implementation Guide.
 
-### 	Use Case and Scope for version 1 - Standard for Trial Use (STU 1)
+### 	Use Case and Scope
 
-**Use Case in Scope**
+**Scope for this Release**
 
-STU 1 of this implementation guide supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
+This implementation guide (STU 1) supports *read-only queries* of a *single human services directory* by a wide variety of individuals using FHIR-enabled applications as depicted in the *Consuming Applications* swimlane in *Figure 1* below. 
 
 These read-only queries can support a range of users and use cases within the context of **service discovery**, such as for example, a care provider seeking resources/services that may help address clients’ social needs using a FHIR-enabled application to query a human services directory in accordance with relevant search parameters/criteria (geography, goals, relevant personal attributes) . 
 
-**Figure 1** describes the use case in scope for release STU 1 of this implementation guide (IG). 
+**Figure 1** illustrates the scope for STU 1 of this implementation guide (IG). 
 
-<img src="Workflow Analysis.svg" alt="*Use Case Analysis*" width="100%" height="100%" align="center"  />
+<img style="width:60%;height:auto;float:none;align:center;" src="Workflow Analysis.svg"/>
 
-*Figure 1: Use Case Analysis - Human Services Discovery*
-
-**Scope for this Release**
+*Figure 1: STU 1 - Use Case Analysis: Human Services Discovery*
  
 **Figure 2** depicts the scope for the STU 1 release of this implementation guide (IG). STU 1 defines the APIs that expose a community-based organization’s database for access by a FHIR-enabled consumer or provider application (EHR systems, payor systems, consumer mobile applications). These are read-only APIs (GET) as the IG does not currently support PUT or POST.
 
-<img src="HSD FHIR Implementation Scope.svg" alt="*Human Services Directory Conceptual Flow*" width="100%" height="100%" align="center"  />
+<img style="width:75%;height:auto;float:none;align:middle;" src="HSD FHIR Implementation Scope.svg"/>
 
-*Figure 2: STU 1 Scope - Mapping from HSDS to FHIR Profiles - Read-Only Capability*
+*Figure 2: Scope: Mapping between HSDS and FHIR Profiles - Read Only*
 
 **Out of Scope for this Release:** 
 
@@ -63,12 +61,12 @@ An API is an interface that allows one computer program or system to access the 
 Many desktop and mobile applications use APIs to retrieve, store, and update data. Each API can define the standards and protocols that allow an external application to access its system’s data. The world of I&R has no shortage of APIs designed to convey human services directory information. Using a standard FHIR API that has been mapped to HSDS-formatted content will facilitate query access by multiple community resource referral platforms to statewide and regional social service directories.
 
 The FHIR Implementation Guide for Human and Social Services Resource Directories defines a FHIR interface to directories of social services information provided by community-based organizations at locations in which they operate. Publication of these data through standard FHIR-based APIs enables third parties to develop applications that can be used by healthcare providers, payers, and consumers to query directories of community-based services to help address the circumstances that make it difficult to live healthy lives, and address unmet social needs.
+ 
+**Figure 3** shows the relationship between the FHIR profiles included in this Implementation Guide
 
-**Figure 3** illustrates the relationship between the FHIR profiles included in this Implementation Guide
+<img style="width:60%;height:auto;float:none;align:middle;" src="HSD Resource Relationship Diagram.svg"/>
 
-<img src="HSD Resource Relationship Diagram.svg" alt="*Profile Relationships*" width="100%" height="100%" align="center" />
-
-*Figure 3: Relationship between FHIR profiles in the Human Services Directories (HSD) Implementation Guide*
+*Figure 3: Profile Relationships*
 
 ###	 Background
 Social determinants of health (SDOH) are the conditions in the environment where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks.
@@ -87,7 +85,7 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 
 **Figure 4** depicts the relationship between FHIR HSD IG and other derived or related FHIR Implementation Guides
 
-<img src="HSD IG Relationship to Core and Other IGs.svg" width="100%" height="100%" align="center" />
+<img style="width:80%;height:auto;float:none;align:middle;" src="HSD IG Relationship to Core and Other IGs.svg"/>
 
 *Figure 4: Relationship between IGs*
 
@@ -99,9 +97,9 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide:
 
 |**Name**			|**Organization**										|
-|Serafina Versaggi	|[BookZurman, Inc./FEI Systems] (https://www.bookzurman.com/)		|
-|Sean Muir			|[BookZurman, Inc./FEI Systems] (https://www.bookzurman.com/)		|
-|Chirag Bhatt		|[FEI Systems] (https://feisystems.com/)						|
+|Serafina Versaggi	|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
+|Sean Muir			|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
+|Chirag Bhatt		|FEI Systems (https://feisystems.com/)						|
 
 ### Credits
 This IG was developed by FEI Systems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
@@ -109,41 +107,42 @@ This IG was developed by FEI Systems under the direction of the authors using [F
 Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals as follows. Our thanks to these and to the many others not explicitly listed who contributed their time and expertise to this work:
 
 |**Name**			|**Organization**										|
-|Greg Bloom			|[Open Referral] (https://docs.openreferral.org/)				|
-|David Raznick		|[Open Data Services/Open Referral] (https://opendataservices.coop/)	|
-|Kelly Cronin		|[Administration for Community Living] (https://acl.gov/)			|
-|Ami Patel			|[Administration for Community Living] (https://acl.gov/)			|
-|Joseph Lugo		|[Administration for Community Living] (https://acl.gov/)			|
-|Gilbert Thompson		|[Administration for Community Living] (https://acl.gov/)			|
-|Irene Boakye		|[FEI Systems] (https://feisystems.com/)						|
-|Gordon Campbell		|[FEI Systems] (https://feisystems.com/)						|
-|Ken Salyards		|[Administration for Children and Families] (https://www.acf.hhs.gov/)	|
-|Gargi Gajjar 		|[MDIX, Inc.] (https://www.mdixinc.com/)						|
-|Ken Lord			|[MDIX, Inc.] (https://www.mdixinc.com/)						|
-|Jessica Banks		|[Goldbelt] (https://www.goldbelt.com/)						|
-|Sal Rana			|[Goldbelt] (https://www.goldbelt.com/)						|
-|Michelle Zancan		|[Goldbelt] (https://www.goldbelt.com/)						|
-|Llew Brown			|[Zane Networks] (https://www.zanenetworks.com/)				|
-|Samia Warsame		|[Zane Networks] (https://www.zanenetworks.com/)				|
-|Matt Bishop		|[Open City Labs] (https://www.opencitylabs.com/wordpress/)			|
-|Brian Handspicker	|[Open City Labs] (https://www.opencitylabs.com/wordpress/)			|
-|HL7 HSS WG Members	|[HL7 Human and Social Services Work Group] (hsswg@lists.hl7.org)		|									
-|Mohammad Jafari		|[Co-Chair, HL7 HSS Work Group]							|
-|Christopher Shawn	|[Co-Chair, HL7 HSS Work Group]							|
-|Ioana Singureanu		|[U.S. Department Veterans Affairs]							|
-|Hector Beltran		|[Niche Aim Technologies] (www.https://www.https://nicheaim.com/)		|
-|Juan Llera			|[Niche Aim Technologies] (www.https://www.https://nicheaim.com/)		|
-|Oscar Mendoza		|[Niche Aim Technologies] (www.https://www.https://nicheaim.com/)		|
-|Aadli Abdul-Kareem 	|[Electronic Health Network, Inc.] (www.https://www.ehnusa.com/)		|
-|Bob Kreha			|[Brightstreet Group] (www.brightstreetgroup.com/)				|
-|Pete Richardson		|[Brightstreet Group] (www.brightstreetgroup.com/)				|
-|Sheljina Ibrahim		|[Elevance Health] (https://www.elevancehealth.com/)				|
-|Shailaja Madla		|[Elevance Health] (https://www.elevancehealth.com/)				|
-|Evelyn Gallegos		|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
-|Gabriela Gonzalez	|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
-|Demri Toop Henderson 	|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
-|Himali Saitwal 		|[EMI Advisors, Inc.] (https://www.emiadvisors.net/)				|
-|Teresa Gerard		|[Guardian Group, LLC, National Nested Networks]				|
+|Greg Bloom			|Open Referral (https://docs.openreferral.org/)			      	|
+|David Raznick		|Open Data Services/Open Referral (https://opendataservices.coop/)	|
+|Kelly Cronin		|Administration for Community Living (https://acl.gov/)			|
+|Ami Patel			|Administration for Community Living (https://acl.gov/)			|
+|Joseph Lugo		|Administration for Community Living (https://acl.gov/)			|
+|Gilbert Thompson		|Administration for Community Living (https://acl.gov/)			|
+|Irene Boakye		|FEI Systems (https://feisystems.com/)						|
+|Gordon Campbell		|FEI Systems (https://feisystems.com/)						|
+|Ken Salyards		|Administration for Children and Families (https://www.acf.hhs.gov/)	|
+|Gargi Gajjar 		|MDIX, Inc. (https://www.mdixinc.com/)						|
+|Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						|
+|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)						|
+|Sal Rana			|Goldbelt (https://www.goldbelt.com/)						|
+|Michelle Zancan		|Goldbelt (https://www.goldbelt.com/)						|
+|Llew Brown			|Zane Networks (https://www.zanenetworks.com/)				      |
+|Samia Warsame		|Zane Networks (https://www.zanenetworks.com/)				      |
+|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group						|
+|HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)		|	
+|Mohammad Jafari		|Co-Chair, HL7 HSS Work Group						      	|
+|Christopher Shawn	|Co-Chair, HL7 HSS Work Group						      	|
+|Ioana Singureanu		|U.S. Department Veterans Affairs					      	|
+|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Juan Llera			|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Aadli Abdul-Kareem 	|Electronic Health Network, Inc. (www.https://www.ehnusa.com/)		|
+|Bob Kreha			|Brightstreet Group (www.brightstreetgroup.com/)				|
+|Pete Richardson		|Brightstreet Group (www.brightstreetgroup.com/)				|
+|Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)				|
+|Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				|
+|Evelyn Gallegos		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
 
 
 #### Cross Version Analysis
