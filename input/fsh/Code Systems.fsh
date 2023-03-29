@@ -6,7 +6,7 @@ CodeSystem: CS_211HSISCS
 Id: 211hsis
 Title: "211 Human Services Indexing System"
 Description: "The 211 Human Services Indexing System, formerly known as 211 LA Taxonomy of Human Services, is the North American standard for indexing and accessing human services resource databases. The Taxonomy is a hierarchical system that contains more than 9,000 fully-defined terms that cover the complete range of human services."
-* ^url = http://211hsis.org
+* ^url = "http://211hsis.org"
 * ^caseSensitive = false
 * ^experimental = false
 * ^hierarchyMeaning = #is-a
@@ -28,7 +28,7 @@ Description: "The Open Eligibility taxonomy consists of two important concepts: 
 Human Services are services offered by government or charitable organizations, and include things such as housing, food pantries or counseling services.
 
 Human Situations are ways of describing attributes of a person that could help them find programs they are looking for, including examples like: veterans, physical disability or seniors."
-* ^url = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
+* ^url = "http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy"
 * ^experimental = false
 * ^caseSensitive = false
 * ^contact.telecom.value = "https://company.findhelp.com/"
