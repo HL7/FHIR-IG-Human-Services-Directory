@@ -1,0 +1,251 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "HumanServicesDirectories",
+  "url": "http://hl7.org/fhir/us/hsds/CapabilityStatement/HumanServicesDirectories",
+  "status": "draft",
+  "date": "2023-03-15",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "xml",
+    "json"
+  ],
+  "instantiates": [
+    "http://hl7.org/fhir/us/davinci-pdex-plan-net/CapabilityStatement/plan-net"
+  ],
+  "description": "Describes the expected capabilities of the Human Services Directories Server actor responsible for providing responses to the queries submitted by the Human Services Directories Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Human Services Directories Servers are defined.",
+  "text": {
+    "div": "<div></div>",
+    "status": "generated"
+  },
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "Description of the needed resources to be supported by the FHIR server, and the different possible interactions.",
+      "interaction": [
+        {
+          "code": "transaction"
+        },
+        {
+          "code": "search-system"
+        }
+      ],
+      "resource": [
+        {
+          "type": "Location",
+          "profile": "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Location",
+          "documentation": "Read a location (details and position information) for a physical place where human and social services are provided.",
+          "interaction": [
+            {
+              "code": "vread",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "name",
+              "type": "string",
+              "documentation": "Search for locations by location name.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "address.country",
+              "type": "string",
+              "documentation": "Search for locations by country.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "hoursofoperation",
+              "type": "string",
+              "documentation": "Search for locations by hours of operation.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "accessibiity",
+              "definition": "http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility",
+              "type": "string",
+              "documentation": "Search for locations by accessibiity options.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "profile": "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization",
+          "documentation": "Read a formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.",
+          "interaction": [
+            {
+              "code": "vread",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "address.city",
+              "type": "string",
+              "documentation": "Search for organizations by city.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "address.postalCode",
+              "type": "string",
+              "documentation": "Search for organizations by postal code.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "address.state",
+              "type": "string",
+              "documentation": "Search for organizations by state.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "address.country",
+              "type": "string",
+              "documentation": "Search for organizations by country.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "identifier",
+              "type": "string",
+              "documentation": "Search for organizations by tax identifier (business indentifier associated with human services organizations.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "HealthcareService",
+          "profile": "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-HealthcareService",
+          "documentation": "Read the details of human and social services resources that are available at a location.",
+          "interaction": [
+            {
+              "code": "vread",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "communication",
+              "type": "string",
+              "documentation": "Search for human and social services by the language in which services are delivered.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "program",
+              "type": "string",
+              "documentation": "Search for human and social services by the program under which this service is delivered.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "active",
+              "type": "string",
+              "documentation": "Search for human and social services by the specified status for the service.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

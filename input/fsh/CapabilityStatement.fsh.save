@@ -3,18 +3,15 @@ InstanceOf: CapabilityStatement
 Title: "Human Services Directories Capability Statement"
 Description: "Describes the expected capabilities of the Human Services Directories Server actor responsible for providing responses to the queries submitted by the Human Services Directories Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Human Services Directories Servers are defined. Systems implementing this capability statement should meet the CMS FInal Rule requirement for provider directory access. Plan-Net Clients can use the required capabilities to access necessary data based on their local use cases and other contextual requirements."
 Usage: #definition
-
-* url = "http://hl7.org/fhir/us/hsds/CapabilityStatement/HumanServicesDirectories"
-* name = "HumanServicesDirectoriesCapabilityStatement"
 * status = #draft
-* date = "2023-03-15"
+//* date = "2023-03-15"
 * kind = #requirements
 * instantiates = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CapabilityStatement/plan-net"
 * description = "Describes the expected capabilities of the Human Services Directories Server actor responsible for providing responses to the queries submitted by the Human Services Directories Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Human Services Directories Servers are defined."
-* fhirVersion = #4.0.1
-* format[0] = #xml
-* format[1] = #json
-* implementationGuide = "http://hl7.org/fhir/us/hsds/ImplementationGuide/hl7.fhir.us.hsds"
+//* format[0] = #xml
+//* format[1] = #json
+* text.div = "<div></div>"
+* text.status = #generated
 
 * rest[0].mode = #server
 * rest[0].documentation = "Description of the needed resources to be supported by the FHIR server, and the different possible interactions."
