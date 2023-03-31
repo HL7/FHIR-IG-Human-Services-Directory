@@ -114,20 +114,26 @@ Usage: #definition
 * rest[0].resource[2].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[2].interaction[1].extension.valueCode = #SHALL
 
-* rest[0].resource[2].searchParam[0].name = "communication"
-* rest[0].resource[2].searchParam[0].type = #string
-* rest[0].resource[2].searchParam[0].documentation = "Search for human and social services by the language in which services are delivered."
-* rest[0].resource[2].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].searchParam[0].extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[0]
+  * name = "communication"
+  * type = #string
+  * documentation = "Search for human and social services by the language in which services are delivered."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(healthcareservice-communication)
 
-* rest[0].resource[2].searchParam[1].name = "program"
-* rest[0].resource[2].searchParam[1].type = #string
-* rest[0].resource[2].searchParam[1].documentation = "Search for human and social services by the program under which this service is delivered."
-* rest[0].resource[2].searchParam[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].searchParam[1].extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[+]
+  * name = "program"
+  * type = #string
+  * documentation = "Search for human and social services by the program under which this service is delivered."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(healthcareservice-program)
 
-* rest[0].resource[2].searchParam[2].name = "active"
-* rest[0].resource[2].searchParam[2].type = #string
-* rest[0].resource[2].searchParam[2].documentation = "Search for human and social services by the specified status for the service."
-* rest[0].resource[2].searchParam[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].searchParam[2].extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[+]
+  * name = "active"
+  * type = #string
+  * documentation = "Search for human and social services by the specified status for the service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  //* definition =    ==> is this a built in search parameter?
