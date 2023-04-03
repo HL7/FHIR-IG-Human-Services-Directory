@@ -15,8 +15,9 @@ Usage: #definition
 * expression = "Location.address.city"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: location-address-postalcode
 InstanceOf: SearchParameter
@@ -35,8 +36,10 @@ Usage: #definition
 * expression = "Location.address.postalCode"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: location-address-state
 InstanceOf: SearchParameter
@@ -55,8 +58,10 @@ Usage: #definition
 * expression = "Location.address.state"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: location-address
 InstanceOf: SearchParameter
@@ -75,8 +80,10 @@ Usage: #definition
 * expression = "Location.address"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: location-name
 InstanceOf: SearchParameter
@@ -95,8 +102,10 @@ Usage: #definition
 * expression = "Location.name | Location.alias"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: location-organization
 InstanceOf: SearchParameter
@@ -115,8 +124,10 @@ Usage: #definition
 * expression = "Location.managingOrganization"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: location-accessibility
 InstanceOf: SearchParameter
@@ -134,5 +145,6 @@ Usage: #definition
 * expression = "Location.accessibility"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains

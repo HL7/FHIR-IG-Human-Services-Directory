@@ -15,7 +15,10 @@ Usage: #definition
 * expression = "HealthcareService.providedBy"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: healthcareservice-communication
 InstanceOf: SearchParameter
@@ -34,7 +37,9 @@ Usage: #definition
 * expression = "HealthcareService.communication"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: healthcareservice-location
 InstanceOf: SearchParameter
@@ -53,7 +58,9 @@ Usage: #definition
 * expression = "HealthcareService.location"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: healthcareservice-program
 InstanceOf: SearchParameter
@@ -72,7 +79,9 @@ Usage: #definition
 * expression = "HealthcareService.program"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: healthcareservice-category
 InstanceOf: SearchParameter
@@ -91,7 +100,9 @@ Usage: #definition
 * expression = "HealthcareService.category"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: healthcareservice-type
 InstanceOf: SearchParameter
@@ -110,8 +121,9 @@ Usage: #definition
 * expression = "HealthcareService.type"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 Instance: healthcareservice-name
 InstanceOf: SearchParameter
@@ -130,5 +142,6 @@ Usage: #definition
 * expression = "HealthcareService.name"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #text
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains

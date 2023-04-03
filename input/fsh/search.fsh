@@ -15,8 +15,10 @@ Usage: #definition
 * expression = "Organization.address.city"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: organization-address-postalcode
 InstanceOf: SearchParameter
@@ -35,8 +37,10 @@ Usage: #definition
 * expression = "Organization.address.postalCode"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: organization-address-state
 InstanceOf: SearchParameter
@@ -55,8 +59,10 @@ Usage: #definition
 * expression = "Organization.address.state"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: organization-address
 InstanceOf: SearchParameter
@@ -75,8 +81,10 @@ Usage: #definition
 * expression = "Organization.address"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: organization-name
 InstanceOf: SearchParameter
@@ -95,8 +103,10 @@ Usage: #definition
 * expression = "Organization.name | Organization.alias"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
 
 Instance: organization-type
 InstanceOf: SearchParameter
@@ -115,5 +125,6 @@ Usage: #definition
 * expression = "Organization.type"
 * multipleOr = true
 * multipleAnd = true
-* modifier = #exact
-* modifier = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
