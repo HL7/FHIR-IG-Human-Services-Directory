@@ -104,7 +104,8 @@ The project team would like to thank leadership and colleagues for their support
 ### Credits
 This IG was developed by FEI Systems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
 
-Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals as follows. Our thanks to these and to the many others not explicitly listed who contributed their time and expertise to this work:
+Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals. Capability statements were rendered with tools [tools](https://github.com/caspears/CapStatement) developed by Eric Haas and modified by Corey Spears.
+Our thanks to these and to the many others not explicitly listed who contributed their time and expertise to this work:
 
 |**Name**			|**Organization**										|
 |Greg Bloom			|Open Referral (https://docs.openreferral.org/)			      	|
@@ -143,6 +144,8 @@ Generous assistance in testing this Implementation Guide was provided by the Dep
 |Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
 |Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
 |Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
+|Saul Kravitz		|MITRE Corporation (https://www.mitre.org/)					|
+|Corey Spears		|Lantana Consulting Group (https://www.lantanagroup.com/)			|
 
 
 #### Cross Version Analysis

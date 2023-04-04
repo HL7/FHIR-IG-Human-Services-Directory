@@ -129,6 +129,49 @@ Usage: #definition
 * modifier[2] = #contains
 
 
+Instance: location-address-country
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address"
+* version = "0.1.0"
+* name = "HSDS_sp_location_address_country"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-address-country"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select locations by the country specified in the address"
+* code = #address-country
+* base = #Location
+* type = #string
+* expression = "Location.address.country"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
+
+Instance: location-hoursofoperation
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-hoursofoperation"
+* version = "0.1.0"
+* name = "HSDS_sp_location_hoursofoperation"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select locations by the country specified in the address"
+* code = #address-country
+* base = #Location
+* type = #string
+* expression = "Location.address.country"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
+
 Instance: location-accessibility
 InstanceOf: SearchParameter
 Usage: #definition
@@ -138,7 +181,7 @@ Usage: #definition
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select locations with the specified accessibility"
+* description = "Select locations by the specified accessibility options offered by the location."
 * code = #accessibility
 * base = #Location
 * type = #string

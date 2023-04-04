@@ -35,30 +35,77 @@ Usage: #definition
 * rest[0].resource[0].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[0].interaction[1].extension.valueCode = #SHALL
 
-* rest[0].resource[0].searchParam[0].name = "name"
-* rest[0].resource[0].searchParam[0].type = #string
-* rest[0].resource[0].searchParam[0].documentation = "Search for locations by location name."
-* rest[0].resource[0].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].searchParam[0].extension.valueCode = #SHALL
+* rest[0].resource[0].searchParam[0]
+  * name = "name"
+  * type = #string
+  * documentation = "Search for locations by a portion of the location's name or alias."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-name)
 
-* rest[0].resource[0].searchParam[1].name = "address.country"
-* rest[0].resource[0].searchParam[1].type = #string
-* rest[0].resource[0].searchParam[1].documentation = "Search for locations by country."
-* rest[0].resource[0].searchParam[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].searchParam[1].extension.valueCode = #SHALL
+* rest[0].resource[0].searchParam[+]
+  * name = "address.country"
+  * type = #string
+  * documentation = "Search for locations by a country specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-address-country)
 
-* rest[0].resource[0].searchParam[2].name = "hoursofoperation"
-* rest[0].resource[0].searchParam[2].type = #string
-* rest[0].resource[0].searchParam[2].documentation = "Search for locations by hours of operation."
-* rest[0].resource[0].searchParam[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].searchParam[2].extension.valueCode = #SHALL
+* rest[0].resource[0].searchParam[+]
+  * name = "hoursofoperation"
+  * type = #string
+  * documentation = "Search for locations by hours of operation."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-hoursofoperation)
 
-* rest[0].resource[0].searchParam[3].name = "accessibiity"
-* rest[0].resource[0].searchParam[3].definition = "http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility"
-* rest[0].resource[0].searchParam[3].type = #string
-* rest[0].resource[0].searchParam[3].documentation = "Search for locations by accessibiity options."
-* rest[0].resource[0].searchParam[3].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].searchParam[3].extension.valueCode = #SHALL
+* rest[0].resource[0].searchParam[+]
+  * name = "accessibility"
+  * type = #string
+  * documentation = "Search for locations by accessibiity options."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-accessibility)
+
+* rest[0].resource[0].searchParam[+]
+  * name = "address"
+  * type = #string
+  * documentation = "Search for locations by a (part of the) address of the location."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-address)
+
+* rest[0].resource[0].searchParam[+]
+  * name = "address-city"
+  * type = #string
+  * documentation = "Search for locations by city specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-address-city)
+
+* rest[0].resource[0].searchParam[+]
+  * name = "address-state"
+  * type = #string
+  * documentation = "Search for locations by state specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-address-state)
+
+* rest[0].resource[0].searchParam[+]
+  * name = "address-postalcode"
+  * type = #string
+  * documentation = "Search for locations by postal code specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-address-postalcode)
+
+* rest[0].resource[0].searchParam[+]
+  * name = "organization"
+  * type = #string
+  * documentation = "Search for locations that are managed by the specified organization."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(location-organization)
 
 
 * rest[0].resource[1].type = #Organization
@@ -72,35 +119,70 @@ Usage: #definition
 * rest[0].resource[1].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[1].interaction[1].extension.valueCode = #SHALL
 
-* rest[0].resource[1].searchParam[0].name = "address.city"
-* rest[0].resource[1].searchParam[0].type = #string
-* rest[0].resource[1].searchParam[0].documentation = "Search for organizations by city."
-* rest[0].resource[1].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].searchParam[0].extension.valueCode = #SHALL
 
-* rest[0].resource[1].searchParam[1].name = "address.postalCode"
-* rest[0].resource[1].searchParam[1].type = #string
-* rest[0].resource[1].searchParam[1].documentation = "Search for organizations by postal code."
-* rest[0].resource[1].searchParam[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].searchParam[1].extension.valueCode = #SHALL
+* rest[0].resource[1].searchParam[0]
+  * name = "address"
+  * type = #string
+  * documentation = "Search for organizations by matching any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-name)
 
-* rest[0].resource[1].searchParam[2].name = "address.state"
-* rest[0].resource[1].searchParam[2].type = #string
-* rest[0].resource[1].searchParam[2].documentation = "Search for organizations by state."
-* rest[0].resource[1].searchParam[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].searchParam[2].extension.valueCode = #SHALL
+* rest[0].resource[1].searchParam[+]
+  * name = "address.postalCode"
+  * type = #string
+  * documentation = "Search for organizations by postal code specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-address-postalcode)
 
-* rest[0].resource[1].searchParam[3].name = "address.country"
-* rest[0].resource[1].searchParam[3].type = #string
-* rest[0].resource[1].searchParam[3].documentation = "Search for organizations by country."
-* rest[0].resource[1].searchParam[3].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].searchParam[3].extension.valueCode = #SHALL
+* rest[0].resource[1].searchParam[+]
+  * name = "address.state"
+  * type = #string
+  * documentation = "Search for organizations by state specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-address-state)
 
-* rest[0].resource[1].searchParam[4].name = "identifier"
-* rest[0].resource[1].searchParam[4].type = #string
-* rest[0].resource[1].searchParam[4].documentation = "Search for organizations by tax identifier (business indentifier associated with human services organizations."
-* rest[0].resource[1].searchParam[4].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].searchParam[4].extension.valueCode = #SHALL
+* rest[0].resource[1].searchParam[+]
+  * name = "address.city"
+  * type = #string
+  * documentation = "Search for organizations by city specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-address-city)
+
+* rest[0].resource[1].searchParam[+]
+  * name = "identifier"
+  * type = #string
+  * documentation = "Search for organizations by tax identifier (business indentifier) associated with human services organizations."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-identifier)
+
+* rest[0].resource[1].searchParam[+]
+  * name = "address.country"
+  * type = #string
+  * documentation = "Search for organizations by the country specified in an address."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-address-country)
+
+* rest[0].resource[1].searchParam[+]
+  * name = "name"
+  * type = #string
+  * documentation = "Search for organizations by a portion of the organization's name or alias."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-name)
+
+* rest[0].resource[1].searchParam[+]
+  * name = "type"
+  * type = #token
+  * documentation = "Search for organizations by (a code for) the type of organization."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(organization-type)
 
 
 * rest[0].resource[2].type = #HealthcareService
@@ -130,10 +212,47 @@ Usage: #definition
   * extension.valueCode = #SHALL
   * definition = Canonical(healthcareservice-program)
 
-* rest[0].resource[2].searchParam[+]
+  * rest[0].resource[2].searchParam[+]
+  * name = "category"
+  * type = #token
+  * documentation = "Search for human and social services by the specified category of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(healthcareservice-category)
+
+  * rest[0].resource[2].searchParam[+]
+  * name = "type"
+  * type = #token
+  * documentation = "Search for human and social services by the specified type of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * definition = Canonical(healthcareservice-type)
+
+  * rest[0].resource[2].searchParam[+]
   * name = "active"
+  * type = #string
+  * documentation = "Search for human and social services by the specified status of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  //* definition =    ==> is this a built in search parameter?
+
+  * rest[0].resource[2].searchParam[+]
+  * name = "name"
   * type = #string
   * documentation = "Search for human and social services by the specified status for the service."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
-  //* definition =    ==> is this a built in search parameter?
+
+  * rest[0].resource[2].searchParam[+]
+  * name = "location"
+  * type = #reference
+  * documentation = "Search for human and social services offered at the specified location."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  
+  * rest[0].resource[2].searchParam[+]
+  * name = "organization"
+  * type = #reference
+  * documentation = "Search for human and social services offered by the specified organization."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
