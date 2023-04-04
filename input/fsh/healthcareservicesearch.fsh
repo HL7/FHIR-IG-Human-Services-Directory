@@ -145,3 +145,24 @@ Usage: #definition
 * modifier[0] = #text
 * modifier[1] = #exact
 * modifier[2] = #contains
+
+Instance: healthcareservice-active
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-active"
+* version = "0.1.0"
+* name = "HSDS_sp_healthcareservice_active"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-active"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select Human and Social services by the specified  active status"
+* code = #active
+* base = #HealthcareService
+* type = #token
+* expression = "HealthcareService.active"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains

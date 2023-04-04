@@ -74,11 +74,32 @@ Usage: #definition
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select organizations within the specified address"
+* description = "Select organizations by matching any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
 * code = #address
 * base = #Organization
 * type = #string
 * expression = "Organization.address"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
+Instance: organization-address-country
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-country"
+* version = "0.1.0"
+* name = "HSDS_sp_organization_address_country"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-address-country"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select organizations by the country specified in an address"
+* code = #address-country
+* base = #Organization
+* type = #string
+* expression = "Organization.address.country"
 * multipleOr = true
 * multipleAnd = true
 * modifier[0] = #text
@@ -96,7 +117,7 @@ Usage: #definition
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select organizations with the specified name"
+* description = "Select organizations by (a portion of) the organization's name or alias"
 * code = #name
 * base = #Organization
 * type = #string
@@ -118,11 +139,32 @@ Usage: #definition
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select organizations with the specified type"
+* description = "Select  organizations by (a code for) the type of organization"
 * code = #type
 * base = #Organization
 * type = #token
 * expression = "Organization.type"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
+
+Instance: organization-identifier
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-identifier"
+* version = "0.1.0"
+* name = "HSDS_sp_organization_identifier"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select organizations with the specified identifier (Tax ID) supported as an organization identifier"
+* code = #type
+* base = #Organization
+* type = #token
+* expression = "Organization.identifier"
 * multipleOr = true
 * multipleAnd = true
 * modifier[0] = #text
