@@ -124,9 +124,9 @@ Usage: #definition
 * expression = "Location.managingOrganization"
 * multipleOr = true
 * multipleAnd = true
-* modifier[0] = #text
-* modifier[1] = #exact
-* modifier[2] = #contains
+//* modifier[0] = #text
+//* modifier[1] = #exact
+//* modifier[2] = #contains
 
 
 Instance: location-address-country
@@ -184,10 +184,10 @@ Usage: #definition
 * description = "Select locations by the specified accessibility options offered by the location."
 * code = #accessibility
 * base = #Location
-* type = #string
-* expression = "Location.accessibility"
+* type = #token
+* expression = "Location.extension.where(url='http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility').value"
 * multipleOr = true
 * multipleAnd = true
-* modifier[0] = #text
-* modifier[1] = #exact
-* modifier[2] = #contains
+//* modifier[0] = #text
+//* modifier[1] = #exact
+//* modifier[2] = #contains
