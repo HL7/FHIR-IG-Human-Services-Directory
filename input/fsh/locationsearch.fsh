@@ -188,6 +188,6 @@ Usage: #definition
 * expression = "Location.extension.where(url='http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility').value"
 * multipleOr = true
 * multipleAnd = true
-//* modifier[0] = #text
-//* modifier[1] = #exact
-//* modifier[2] = #contains
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains

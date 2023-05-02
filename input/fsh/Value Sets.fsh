@@ -8,30 +8,33 @@ Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEl
 ValueSet: VS_211HSISCategory
 Id: 211HSIS-category
 Title: "211HSIS Category VS"
-Description: "This example value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes all other Level 2 concepts from the 211 Human Services Indexing System (211HSIS). This value set represents the high level categories by which 211 Human Services Indexing System (211HSIS)-based directories can be searched."
-
+Description: "This value set represents the high level categories by which human services directories using the 211 Human Services Indexing System (211HSIS) can be searched. The value set includes Level 2 concepts in the 211HSIS, and excludes concepts descending under Level 1 (Y - Target Populations)."
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/211HSIS-category"
 * ^experimental = false
 * ^compose.include.system = "http://211hsis.org"
+* ^compose.include.filter.property = #code
+// * ^compose.include.filter.property = #concept
+* ^compose.include.filter.op = #descendent-of
+// * ^compose.include.filter.value in (Level 2)
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
-* ^extension.valueMarkdown  = "Rules text This example value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes all other Level 2 concepts from the 211 Human Services Indexing System (211HSIS). This value set represents the high level categories by which 211 Human Services Indexing System (211HSIS)-based directories can be searched."
-
+* ^extension.valueMarkdown  = "Rules TEXT This value set represents high level categories by which human services directories using the 211 Human Services Indexing System (211HSIS) can be searched. The value set includes Level 2 concepts in the 211HSIS, and excludes concepts descending under Level 1 (Y - Target Populations)."
 
 // Example value set illustrating the classification of human services within the OpenEligibility code system by type
 
 ValueSet: VS_211HSISType
 Id: 211HSIS-type
 Title: "211HSIS Type VS"
-Description: "This example value set represents a more refined classification of 211 Human Services Indexing System concepts that can be used to query 211 Human Services Indexing System (211HSIS)-based directories. This value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes concepts descending from Levels 3-6 of the 211 Human Services Indexing System."
 
+Description: "This value set represents a more refined classification by which human services directories using 211 Human Services Indexing System (211HSIS) can be searched. The value set includes concepts descending from Levels 3-6 in the 211 Human Services Indexing System (211HSIS), and excludes concepts descending from Level 1 (Y - Target Populations)."
 * ^experimental = false
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/211HSIS-type"
-* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-rules-text].valueMarkdown = "Rules text This example value set represents a more refined classification of 211 Human Services Indexing System concepts that can be used to query 211 Human Services Indexing System (211HSIS)-based directories. This value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes concepts descending from Levels 3-6 of the 211 Human Services Indexing System."
+* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-rules-text].valueMarkdown = "Rules TEXT This example value set represents a more refined classification of 211 Human Services Indexing System concepts that can be used to query 211 Human Services Indexing System (211HSIS)-based directories. This value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes concepts descending from Levels 3-6 of the 211 Human Services Indexing System."
 * ^compose.include.system = "http://211hsis.org"
-
-// * ^extension.url = http://hl7.org/fhir/StructureDefinition/valueset-rules-text
-/* * ^extension.valueMarkdown = "Rules text This example value set represents a more refined classification of 211 Human Services Indexing System concepts that can be used to query 211 Human Services Indexing System (211HSIS)-based directories. This value set excludes ALL concepts descending from Level 1 (Y - Target Populations), and includes concepts descending from Levels 3-6 of the 211 Human Services Indexing System." */
-
+* ^compose.include.filter.property = #code
+* ^compose.include.filter.op = #descendent-of
+// * ^compose.include.filter.value in (Level 3 - 6)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/valueset-rules-text"
+* ^extension.valueMarkdown = "Rules TEXT This value set represents a more refined classification by which human services directories using 211 Human Services Indexing System (211HSIS) can be searched. The value set includes concepts descending from Levels 3-6 in the 211 Human Services Indexing System (211HSIS), and excludes concepts descending from Level 1 (Y - Target Populations)."
 
 // Value set illustrating the high level categories of human services within the OpenEligibility code system
 
@@ -62,7 +65,8 @@ Description: "This  value set represents a more refined classification by which 
 ValueSet: VS_OpenEligibilityType
 Id: OpenEligibilityType
 Title: "OpenEligibility Type VS"
-Description: "This  value set represents a more refined classification by which human services directories can be queried when using the Open Eligibility Taxonomy. This value set represents codes found in the second, third, and forth levels of the Human Services section within the Open Eligibility Taxonomy Code System. None of the records in the Human Situations portion of the taxonomy are included in this value set."
+
+Description: "This value set represents a more refined classification by which human services directories using the Open Eligibility Taxonomy code system can be searched. The value set includes codes found in the second, third, and forth levels of the Human Services section, and excludes all codes in the Human Situations section of the Open Eligibility Taxonomy Code System."
 
 * ^experimental = false
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/OpenEligibilityType"
@@ -338,19 +342,20 @@ Description: "This  value set represents a more refined classification by which 
 ValueSet: HumanServiceCategory
 Id: HumanServiceCategory
 Title: "Human Services Category VS"
-Description: "This is a grouping value set that includes codes from the Plan-Net Healthcare Service Category, the 211HSIS Category, and the OpenEligibility Category value sets."
+Description: "This value set includes codes from the Plan-Net Healthcare Service Category value set (must support extensible binding), the 211HSIS Category value set, and the OpenEligibility Category value sets."
 * ^experimental = false
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory"
+* codes from valueset OpenEligibilityCategory
 * codes from system HealthcareServiceCategoryCS
 * codes from valueset 211HSIS-category
-* codes from valueset OpenEligibilityCategory
+
 
 // Grouped value set to be bound to HealthcareService.type (extensible)
 
 ValueSet: HumanServiceType
 Id: HumanServiceType
 Title: "Human Services Type VS"
-Description: "This is a grouping value set that includes codes from the Plan-Net Healthcare Service Type, the 211HSIS Type, and the OpenEligibility Type value sets.."
+Description: "This value set that includes codes from the Plan-Net Healthcare Service Type value set (must support extensible binding), the 211HSIS Type value set, and the OpenEligibility Type value sets."
 
 * ^experimental = false
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"

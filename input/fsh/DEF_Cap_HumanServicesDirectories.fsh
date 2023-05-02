@@ -230,7 +230,7 @@ Usage: #definition
 
   * rest[0].resource[2].searchParam[+]
   * name = "active"
-  * type = #string
+  * type = #token
   * documentation = "Search for human and social services by the specified status of service."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
