@@ -123,6 +123,7 @@ Our thanks to these and to the many others not explicitly listed who contributed
 |Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
 |Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
 |Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Rob Hausam, MD		|Hausam Consulting LLC									|
 |Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
 |HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)		|
 |Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)				|
@@ -133,6 +134,8 @@ Our thanks to these and to the many others not explicitly listed who contributed
 |Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						|
 |Joseph Lugo		|Administration for Community Living (https://acl.gov/)			|
 |Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				|
+|Robert McClure, MD	|MD Partners, Inc. 									|
+|Llyod McKenzie		|LM&A Consulting										|
 |Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
 |Ami Patel			|Administration for Community Living (https://acl.gov/)			|
 |Sal Rana			|Goldbelt (https://www.goldbelt.com/)						|
@@ -155,3 +158,4 @@ Our thanks to these and to the many others not explicitly listed who contributed
 {% include globals-table.xhtml %}
 #### IP Statements
 {% include ip-statements.xhtml %}
+The Human Services Data Specification (HSDS), by Open Referral, led by Greg Bloom, is licensed under a Creative Common Attribution-ShareAlike 4.0 International (CC BY SA 4.0) License.

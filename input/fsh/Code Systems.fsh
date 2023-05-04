@@ -32,6 +32,7 @@ Human Situations are ways of describing attributes of a person that could help t
 * ^experimental = false
 * ^caseSensitive = false
 * ^contact.telecom.value = "https://company.findhelp.com/"
+* ^copyright = "Human Services Taxonomy by Aunt Bertha, a Public Benefit Corporation, is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License."
 * #1101	"Emergency"
 * #1102	"Food"
 * #1103	"Housing"
