@@ -108,45 +108,44 @@ Generous assistance in testing this Implementation Guide was provided by the Dep
 Our thanks to these and to the many others not explicitly listed who contributed their time and expertise to this work:
 
 |**Name**			|**Organization**										|
-|Greg Bloom			|Open Referral (https://docs.openreferral.org/)			      	|
-|David Raznick		|Open Data Services/Open Referral (https://opendataservices.coop/)	|
-|Kelly Cronin		|Administration for Community Living (https://acl.gov/)			|
-|Ami Patel			|Administration for Community Living (https://acl.gov/)			|
-|Joseph Lugo		|Administration for Community Living (https://acl.gov/)			|
-|Gilbert Thompson		|Administration for Community Living (https://acl.gov/)			|
-|Irene Boakye		|FEI Systems (https://feisystems.com/)						|
-|Gordon Campbell		|FEI Systems (https://feisystems.com/)						|
-|Ken Salyards		|Administration for Children and Families (https://www.acf.hhs.gov/)	|
-|Gargi Gajjar 		|MDIX, Inc. (https://www.mdixinc.com/)						|
-|Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						|
-|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)						|
-|Sal Rana			|Goldbelt (https://www.goldbelt.com/)						|
-|Michelle Zancan		|Goldbelt (https://www.goldbelt.com/)						|
-|Llew Brown			|Zane Networks (https://www.zanenetworks.com/)				      |
-|Samia Warsame		|Zane Networks (https://www.zanenetworks.com/)				      |
-|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
-|Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Aadli Abdul-Kareem 	|Electronic Health Network, Inc. (www.https://www.ehnusa.com/)		|
 |Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group						|
-|HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)		|	
+|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)						|
+|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Greg Bloom			|Open Referral (https://docs.openreferral.org/)				     	|
+|Irene Boakye		|FEI Systems (https://feisystems.com/)						|
+|Llew Brown			|Zane Networks (https://www.zanenetworks.com/)					|
+|Gordon Campbell		|FEI Systems (https://feisystems.com/)						|
+|Kelly Cronin		|Administration for Community Living (https://acl.gov/)			|
+|Gargi Gajjar 		|MDIX, Inc. (https://www.mdixinc.com/)						|
+|Evelyn Gallegos		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
+|Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
+|Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)		|
+|Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)				|
 |Mohammad Jafari		|Co-Chair, HL7 HSS Work Group						      	|
+|Saul Kravitz		|MITRE Corporation (https://www.mitre.org/)					|
+|Bob Kreha			|Brightstreet Group (www.brightstreetgroup.com/)				|
+|Juan Llera			|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						|
+|Joseph Lugo		|Administration for Community Living (https://acl.gov/)			|
+|Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				|
+|Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
+|Ami Patel			|Administration for Community Living (https://acl.gov/)			|
+|Sal Rana			|Goldbelt (https://www.goldbelt.com/)						|
+|David Raznick		|Open Data Services/Open Referral (https://opendataservices.coop/)	|
+|Pete Richardson		|Brightstreet Group (www.brightstreetgroup.com/)				|
+|Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
+|Ken Salyards		|Administration for Children and Families (https://www.acf.hhs.gov/)	|
 |Christopher Shawn	|Co-Chair, HL7 HSS Work Group						      	|
 |Ioana Singureanu		|U.S. Department Veterans Affairs					      	|
-|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Juan Llera			|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Aadli Abdul-Kareem 	|Electronic Health Network, Inc. (www.https://www.ehnusa.com/)		|
-|Bob Kreha			|Brightstreet Group (www.brightstreetgroup.com/)				|
-|Pete Richardson		|Brightstreet Group (www.brightstreetgroup.com/)				|
-|Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)				|
-|Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				|
-|Evelyn Gallegos		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
-|Saul Kravitz		|MITRE Corporation (https://www.mitre.org/)					|
 |Corey Spears		|Lantana Consulting Group (https://www.lantanagroup.com/)			|
-
+|Gilbert Thompson		|Administration for Community Living (https://acl.gov/)			|
+|Samia Warsame		|Zane Networks (https://www.zanenetworks.com/)					|
+|Michelle Zancan		|Goldbelt (https://www.goldbelt.com/)						|
 
 #### Cross Version Analysis
 {% include cross-version-analysis.xhtml %}
