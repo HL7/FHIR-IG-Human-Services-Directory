@@ -158,4 +158,5 @@ Our thanks to these and to the many others not explicitly listed who contributed
 {% include globals-table.xhtml %}
 #### IP Statements
 {% include ip-statements.xhtml %}
-The Human Services Data Specification (HSDS), by Open Referral, led by Greg Bloom, is licensed under a Creative Common Attribution-ShareAlike 4.0 International (CC BY SA 4.0) License.
+  •	  The Human Services Data Specification (HSDS), by Open Referral, led by Greg Bloom, is licensed under a [Creative Common Attribution-ShareAlike 4.0 International (CC BY SA 4.0) License.](https://creativecommons.org/licenses/by-sa/4.0/)
+
