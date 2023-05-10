@@ -20,7 +20,7 @@ publisher:
 
 dependencies:
   # hl7.fhir.us.core: 3.1.1
-  hl7.terminology: 2.1.0
+  hl7.terminology: 5.1.0
   # hl7.fhir.us.davinci: 1.1.0 
   hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
 
