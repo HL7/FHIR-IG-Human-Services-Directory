@@ -1,4 +1,5 @@
 Alias: $CS_211HSISCS = http://211hsis.org
+Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
 
 // 211 Human Services Indexing System (211HSIS) formerly known as 211LA
 

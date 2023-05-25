@@ -91,7 +91,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-country"
 * version = "0.1.0"
 * name = "HSDS_sp_organization_address_country"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-address-country"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-country"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"

@@ -132,7 +132,7 @@ Usage: #definition
 Instance: location-address-country
 InstanceOf: SearchParameter
 Usage: #definition
-* url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address"
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-country"
 * version = "0.1.0"
 * name = "HSDS_sp_location_address_country"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-address-country"

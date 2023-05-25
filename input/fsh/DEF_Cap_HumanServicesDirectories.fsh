@@ -61,7 +61,7 @@ Usage: #definition
 
 * rest[0].resource[0].searchParam[+]
   * name = "accessibility"
-  * type = #string
+  * type = #token
   * documentation = "Search for locations by accessibiity options."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
@@ -101,7 +101,7 @@ Usage: #definition
 
 * rest[0].resource[0].searchParam[+]
   * name = "organization"
-  * type = #string
+  * type = #reference
   * documentation = "Search for locations that are managed by the specified organization."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
@@ -154,7 +154,7 @@ Usage: #definition
 
 * rest[0].resource[1].searchParam[+]
   * name = "identifier"
-  * type = #string
+  * type = #token
   * documentation = "Search for organizations by tax identifier (business indentifier) associated with human services organizations."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
