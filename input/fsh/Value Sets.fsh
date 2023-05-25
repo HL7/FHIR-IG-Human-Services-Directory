@@ -22,7 +22,7 @@ Description: "This value set represents the high level categories by which human
 // * ^compose.include.concept.display = "Food"
 // * codes from system $CS_211HSISCS where codes = #BD
 * ^compose.include.filter.property = #code
-* ^compose.include.filter.op = #is-a
+* ^compose.include.filter.op = #descendent-of
 * ^compose.include.filter.value = #B
 
 * ^compose.exclude.system = "http://211hsis.org"
