@@ -1,14 +1,16 @@
-f# FHIR Human Services Directory
+# FHIR Human Services Directory
 
 ## Overview
 
-The Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) for Human Services Directories is a United States (US) Realm standard that offers three “new content” profiles to the [DaVinci PDEX Plan-Net Provider Directory Implementation Guide (PDEX)](http://hl7.org/fhir/us/davinci-pdex-plan-net/). This guide re-uses three PDEX Provider Directory profiles: Organization, HealthcareService, and Location, and constrains those profiles using pertinent vocabulary bindings that support searching community-based organization (CBO) human and social services directories for services that can help mitigate the unmet social needs of patients, consumers, and caregivers.
+The Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) for Human Services Directories is a United States (US) Realm standard that offers three “new content” profiles to the [DaVinci PDEX Plan-Net Provider Directory Implementation Guide (PDEX)](http://hl7.org/fhir/us/davinci-pdex-plan-net/). This guide re-uses two PDEX Provider Directory profiles: Organization, and Location, and introduces a Human Services-specific HealthcareService profile in STU 1 that aligns with the Plannet HealthcareService profile to allow the binding strength associated with the Plannet HealthcareService category and type value sets to be relaxed to example bindings. 
 
-This approach is intended to encourage adoption of this standard by facilitating the integration of these directories into healthcare provider and payer organization care management workflows by those who have already implemented the DaVinci PDEX Provider Directory Implementation Guide in order to meet the Centers for Medicare & Medicaid Services (CMS) Interoperability and Patient Access Final Rule. This approach can support clients using consumer FHIR-enabled applications to locate appropriate services in a specified coverage area from CBO-directories as well.
+During development, this guide was tested under two reference implementations (RI) using two standards-based human services taxonomies. One RI tested the IG using a 211 LA-based directory; the other RI, used a directory based the Open Eligibility Taxonomy. Implementers of STU 1 of this IG are free to use the codes (standards-based, or local) deemed useful for searching their human services directories. 
 
-The primary source of requirements for the FHIR Human Services Directory IG was analysis of the Open Referral [Human Services Data Specification (HSDS)](https://docs.openreferral.org/en/v2.0.1/) [version 2.0.1](https://github.com/openreferral/specification/releases/tag/2.0.1). HSDS is a recognized US and International standard that describes information collected by human and social service organizations – the descriptions of services, institutions that provide services, where and how services can be accessed. The HSDS structure allows directory information to be published in a machine-readable data format that can be universally understood by disparate entities that use HSDS and its associated application programming interfaces (API): [Human Service Data API Suite (HSDA)](https://docs.openreferral.org/en/v2.0.1/hsda/). HSDS has been adopted by a wide range of social care coordination vendors and has been endorsed by the [Alliance of Information and Referral Systems (AIRS)](https://www.airs.org/i4a/pages/index.cfm?pageid=3581). AIRS is an international association of Information & Referral (I&R) service providers, and a primary source for standards, program accreditation and practitioner certification for the I&R sector.
+This approach is intended to encourage adoption of this standard by facilitating the integration of these directories into healthcare provider and payer organization care management workflows by those who have already implemented the DaVinci PDEX Provider Directory Implementation Guide. The DaVinci PDEX Provider Directory Implementation Guide is recommended as the provider directory standard by the Centers for Medicare & Medicaid Services (CMS) Interoperability and Patient Access Final Rule (CMS-9115-F). This approach supports clients that use consumer FHIR-enabled applications to locate appropriate comunity-based services offered in a specified coverage area from CBO-directories as well.
 
-The HSDS reflects the real-world requirements of users of social services directories. A primary purpose for the FHIR Human Services Directory IG is to provide implementers who are familiar with the HSDS format, a map between HSDS-structure directory data to FHIR profiles, eliminating the need for implementers to have extensive experience mapping local directory data to FHIR in order to implement the standard FHIR APIs that allow FHIR-based applications to access human services directories of community-based resources. 
+The primary source of requirements for the FHIR Human Services Directory IG was an analysis of the Open Referral [Human Services Data Specification (HSDS)](https://docs.openreferral.org/en/v2.0.1/) [version 2.0.1](https://github.com/openreferral/specification/releases/tag/2.0.1). HSDS is a recognized US and International standard that describes information collected by human and social service organizations – the descriptions of services, institutions that provide services, where and how services can be accessed. The HSDS structure allows directory information to be published in a machine-readable data format that can be universally understood by disparate entities that use HSDS and its associated application programming interfaces (API): [Human Service Data API Suite (HSDA)](https://docs.openreferral.org/en/v2.0.1/hsda/). HSDS has been adopted by a wide range of social care coordination vendors and has been endorsed by the [Alliance of Information and Referral Systems (AIRS)](https://www.airs.org/i4a/pages/index.cfm?pageid=3581). AIRS is an international association of Information & Referral (I&R) service providers, and a primary source for standards, program accreditation and practitioner certification for the I&R sector.
+
+The HSDS reflects real-world requirements of users of social services directories. A primary purpose of the FHIR Human Services Directory IG is to provide implementers who are familiar with the HSDS format, a map between HSDS-structure directory data to FHIR profiles, thereby eliminating the need for implementers to have extensive experience mapping local directory data to FHIR when implementing these standard FHIR APIs which provide FHIR-based applications access to human services directories of community-based resources. 
 
 Health IT standards and interoperability solutions for social care referrals, such as the open-source components described in this IG, will enable transformation, matching, editing and syncing of service directory information across multiple information management systems within the health and social care sectors.
 
@@ -93,62 +95,56 @@ The CMS Interoperability and Patient Access Rule (CMS-9115-F) specified FHIR tec
 - PDEX Plan Net reuses “US Core”
 - The FHIR Human Services and Resource Directory FHIR IG reuses the PDEX Plan Net Provider Directory IG (and US Core by inheritance), to create standard FHIR-based APIs that can be used to access a set of human and social service directories by constraining the data elements, terminology, and search capabilities that are specific to Human Services directories which are conformant to the Human Services Data Specification (HSDS)
 
-### Authors
-The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide:
-
-|**Name**			|**Organization**										|
-|Serafina Versaggi	|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
-|Sean Muir			|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
-|Chirag Bhatt		|FEI Systems (https://feisystems.com/)						|
-
 ### Credits
-This IG was developed by FEI Systems under the direction of the authors using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
+This IG was developed by FEI Systems using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 
 
-Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals. Capability statements were rendered with tools [tools](https://github.com/caspears/CapStatement) developed by Eric Haas and modified by Corey Spears.
+The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide. Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals. Capability statements were rendered with tools [tools](https://github.com/caspears/CapStatement) developed by Eric Haas and modified by Corey Spears.
 Our thanks to these and to the many others not explicitly listed who contributed their time and expertise to this work:
 
 |**Name**			|**Organization**										|
 |Aadli Abdul-Kareem 	|Electronic Health Network, Inc. (www.https://www.ehnusa.com/)		|
-|Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group						|
-|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)						|
-|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
-|Greg Bloom			|Open Referral (https://docs.openreferral.org/)				     	|
-|Irene Boakye		|FEI Systems (https://feisystems.com/)						|
-|Llew Brown			|Zane Networks (https://www.zanenetworks.com/)					|
-|Gordon Campbell		|FEI Systems (https://feisystems.com/)						|
-|Kelly Cronin		|Administration for Community Living (https://acl.gov/)			|
-|Gargi Gajjar 		|MDIX, Inc. (https://www.mdixinc.com/)						|
-|Evelyn Gallegos		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Teresa Gerard		|Guardian Group, LLC, National Nested Networks					|
-|Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)			|
-|Rob Hausam, MD		|Hausam Consulting LLC									|
-|Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)		|
-|Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)				|
-|Mohammad Jafari		|Co-Chair, HL7 HSS Work Group						      	|
-|Saul Kravitz		|MITRE Corporation (https://www.mitre.org/)					|
-|Bob Kreha			|Brightstreet Group (www.brightstreetgroup.com/)				|
-|Juan Llera			|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						|
-|Joseph Lugo		|Administration for Community Living (https://acl.gov/)			|
-|Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				|
-|Robert McClure, MD	|MD Partners, Inc. 									|
-|Llyod McKenzie		|LM&A Consulting										|
-|Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		|
-|Ami Patel			|Administration for Community Living (https://acl.gov/)			|
-|Sal Rana			|Goldbelt (https://www.goldbelt.com/)						|
-|David Raznick		|Open Data Services/Open Referral (https://opendataservices.coop/)	|
-|Pete Richardson		|Brightstreet Group (www.brightstreetgroup.com/)				|
-|Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)				|
-|Ken Salyards		|Administration for Children and Families (https://www.acf.hhs.gov/)	|
-|Christopher Shawn	|Co-Chair, HL7 HSS Work Group						      	|
-|Ioana Singureanu		|U.S. Department Veterans Affairs					      	|
-|Corey Spears		|Lantana Consulting Group (https://www.lantanagroup.com/)			|
-|Gilbert Thompson		|Administration for Community Living (https://acl.gov/)			|
-|Samia Warsame		|Zane Networks (https://www.zanenetworks.com/)					|
-|Michelle Zancan		|Goldbelt (https://www.goldbelt.com/)						|
+|Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group					                  	|
+|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)				                      		|
+|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		    |
+|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)		          	|
+|Greg Bloom			|Open Referral (https://docs.openreferral.org/)				                	|
+|Chirag Bhatt   |FEI Systems (https://feisystems.com/)						                      |
+|Irene Boakye		|FEI Systems (https://feisystems.com/)						                      |
+|Llew Brown			|Zane Networks (https://www.zanenetworks.com/)				                	|
+|Gordon Campbell		|FEI Systems (https://feisystems.com/)			                  			|
+|Kelly Cronin		|Administration for Community Living (https://acl.gov/)			            |
+|Gargi Gajjar 		|MDIX, Inc. (https://www.mdixinc.com/)					                    	|
+|Evelyn Gallegos		|EMI Advisors, Inc. (https://www.emiadvisors.net/)			          	|
+|Teresa Gerard		|Guardian Group, LLC, National Nested Networks					              |
+|Gabriela Gonzalez	|EMI Advisors, Inc. (https://www.emiadvisors.net/)			          	|
+|Brian Handspicker	|Open City Labs (https://www.opencitylabs.com/wordpress/)	      		|
+|Rob Hausam, MD		|Hausam Consulting LLC									                              |
+|Demri Toop Henderson 	|EMI Advisors, Inc. (https://www.emiadvisors.net/)				      |
+|HL7 HSS WG Members	|HL7 Human and Social Services Work Group (hsswg@lists.hl7.org)  		|
+|Sheljina Ibrahim		|Elevance Health (https://www.elevancehealth.com/)			          	|
+|Mohammad Jafari		|Co-Chair, HL7 HSS Work Group						      	                    |
+|Saul Kravitz		|MITRE Corporation (https://www.mitre.org/)				                    	|
+|Bob Kreha			|Brightstreet Group (www.brightstreetgroup.com/)		                		|
+|Juan Llera			|Niche Aim Technologies (www.https://www.https://nicheaim.com/)	      	|
+|Ken Lord			|MDIX, Inc. (https://www.mdixinc.com/)						                        |
+|Joseph Lugo		|Administration for Community Living (https://acl.gov/)			            |
+|Shailaja Madla		|Elevance Health (https://www.elevancehealth.com/)				            |
+|Robert McClure, MD	|MD Partners, Inc. 									                                |
+|Llyod McKenzie		|LM&A Consulting									                                  	|
+|Oscar Mendoza		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		    |
+|Sean Muir        |BookZurman, Inc. (https://www.bookzurman.com/)                       |
+|Ami Patel			|Administration for Community Living (https://acl.gov/)			            |
+|Sal Rana			|Goldbelt (https://www.goldbelt.com/)						                          |
+|David Raznick		|Open Data Services/Open Referral (https://opendataservices.coop/)	  |
+|Pete Richardson		|Brightstreet Group (www.brightstreetgroup.com/)			            	|
+|Himali Saitwal 		|EMI Advisors, Inc. (https://www.emiadvisors.net/)			          	|
+|Ken Salyards		|Administration for Children and Families (https://www.acf.hhs.gov/)  	|
+|Christopher Shawn	|Co-Chair, HL7 HSS Work Group						                           	|
+|Ioana Singureanu		|U.S. Department Veterans Affairs					                         	|
+|Corey Spears		|Lantana Consulting Group (https://www.lantanagroup.com/)		          	|
+|Gilbert Thompson		|Administration for Community Living (https://acl.gov/)		        	|
+|Samia Warsame		|Zane Networks (https://www.zanenetworks.com/)					              |
+|Michelle Zancan		|Goldbelt (https://www.goldbelt.com/)						                    |
 
 #### Cross Version Analysis
 {% include cross-version-analysis.xhtml %}

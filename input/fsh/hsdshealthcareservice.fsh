@@ -1,18 +1,74 @@
 
-Alias: PLANNETHealthcareService = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-HealthcareService
+Alias: PLANNETHealthcareServiceCategory = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceCategoryVS
+Alias: PLANNETHealthcareServiceType = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceTypeVS
+// Alias: PlannetLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
+// Alias: PlannetOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 
 Profile: HSDSHealthcareService
-Parent: PLANNETHealthcareService
+Parent: HealthcareService
 Id: hsds-HealthcareService
 Title:    "HSDSHealthcareService"
 Description: "The HSDSHealthcareService resource describes the social and human services offered by Community-Based Organizations (CBO) at a given location. This resource may be used to encompass a variety of human and social care service interventions that assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
  
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
-* category from http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory (extensible)
-* type from http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType (extensible)
-* providedBy only Reference(hsds-Organization)
-* location only Reference(hsds-Location)
+* meta.lastUpdated 1..1
+/* extension contains
+    NewPatients named newpatients 0..* MS and
+    DeliveryMethod named deliverymethod 0..* MS */
+// * extension[newpatients] ^short = "New Patients"
+// * extension[deliverymethod] ^short = "Delivery Method"
+* identifier.type MS
+* identifier.value MS
+* active 1..1 MS
+* active = true 
+// * providedBy only Reference(PlannetOrganization) 
+* providedBy only Reference(Organization)
+// * providedBy only Reference(PlannetOrganization) 
+* providedBy MS
+* category 1..1 MS
+* category from PLANNETHealthcareServiceCategory (example)
+* category ^short = "Concepts from standard human services taxonomies (e.g., 211 LA (Level 2), Open Eligibility (<services><descriptions><category>)), and the FHIR SDOH Clinical Care IG ServiceCategory value set could be used in addition to the example concepts provided in the Plannet HealthcareServiceCategory value set, ."
+* type MS
+* type from PLANNETHealthcareServiceType (example)
+* type ^short = "Concepts from standard human services taxonomies (e.g., 211 LA (Levels 3-6), Open Eligibility (<services><descriptions><second_level through fourth_level>)), and the FHIR SDOH Clinical Care IG ServiceType value set could be used in addition to the example concepts provided in the Plannet HealthcareServiceTypeVS value set."
+// * specialty MS
+// * specialty from SpecialtiesVS (required)
+// * location only Reference(PlannetLocation)
+// * location only Reference(hsds-Location)
+// * location only Reference(Location)
+* location MS
+* name MS
+* comment MS
+* telecom MS
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+       ViaIntermediary named via-intermediary 0..* MS
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* coverageArea only Reference(Location)
+// * coverageArea only Reference(PlannetLocation)
+* coverageArea MS
+// * serviceProvisionCode MS
+// * eligibility  MS
+// * program  
+// * characteristic MS
+// * referralMethod MS
+* appointmentRequired MS
+* availableTime MS
+* availableTime.daysOfWeek MS
+* availableTime.allDay MS
+* availableTime.availableStartTime MS
+* availableTime.availableEndTime MS
+* notAvailable MS
+* notAvailable.description MS
+* notAvailable.during MS
+* availabilityExceptions MS
+// * endpoint only Reference(PlannetEndpoint)
+// * endpoint MS
+
+
 
 Mapping: HSDSHealthcareServiceToHSDS
 Source: HSDSHealthcareService
@@ -23,8 +79,8 @@ Description: "This section describes the way HSDS version 2.0.1 elements are map
 * id  -> "service.id Note: Each service must have a unique identifier."
 * meta  -> "metadata Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.lastUpdated  -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each location, the latest max(last_action_date) needs to be used from metadata where  service.id =  metadata.resource_id."
-* extension[newpatients]  -> "No Source. Note: This is a GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network."  
-* extension[delivery-method]  -> "No Source. Note: This is a GAP in HSDS. While this is a Must Support element in the parent Plan-Net profile, it is optional and therefore, will be ignored."
+// * extension[newpatients]  -> "No Source. Note: This is a GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network."  
+// * extension[delivery-method]  -> "No Source. Note: This is a GAP in HSDS. While this is a Must Support element in the parent Plan-Net profile, it is optional and therefore, will be ignored."
 * identifier  -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with services in HSDS."
 * identifier.id -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with services in HSDS."
 * identifier.use  -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
