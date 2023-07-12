@@ -13,9 +13,7 @@
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
 <artifact id="ValueSet/HumanServiceCategory" key="ValueSet-HumanServiceCategory" name="Human Service Category VS"/>
-<artifact id="CodeSystem/HSDHumanServiceCharacteristic" key="CodeSystem-HSDHumanServiceCharacteristic" name="Human Service Characteristic"/>
-<artifact id="ValueSet/HumanServiceCharacteristic" key="ValueSet-HumanServiceCharacteristic" name="Human Service Characteristic VS"/>
-<artifact id="CodeSystem/HSDServiceProgram" key="CodeSystem-HSDServiceProgram" name="Human Service Program"/>
+<artifact id="CodeSystem/HumanServiceProgram" key="CodeSystem-HumanServiceProgram" name="Human Service Program"/>
 <artifact id="ValueSet/HumanServiceProgram" key="ValueSet-HumanServiceProgram" name="Human Service Program VS"/>
 <artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Service Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>

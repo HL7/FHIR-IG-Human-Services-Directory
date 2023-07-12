@@ -1,6 +1,8 @@
 Alias: IRS = http://www.irs.gov
 Alias: LANGUAGE = urn:ietf:bcp:47
-Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
+// Alias: $OpenEligibilityTaxonomyCS = http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy
+Alias: $PlannetCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS
+Alias: $PlannetTypeCS = http://terminology.hl7.org/CodeSystem/service-type
 Alias: ROLECODE = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
 Instance: HumanSocialServiceOrganization
@@ -89,8 +91,8 @@ Usage: #example
 * language = #en-US
 * active = true
 * name = "Food Pantry"
-* category = $OpenEligibilityTaxonomyCS#1102 "Food"
-* type = $OpenEligibilityTaxonomyCS#1130 "Food Pantry"
+* category = $PlannetCategoryCS#trans "Transportation"
+* type = $PlannetTypeCS#530 "Disability Care Transport"
 * providedBy = Reference(HumanSocialServiceOrganization)
 * location[0] = Reference(HumanSocialServiceLocation)
 * communication = LANGUAGE#es "Spanish"

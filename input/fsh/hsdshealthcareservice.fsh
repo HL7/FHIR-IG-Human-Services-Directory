@@ -1,8 +1,8 @@
 
 Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
-Alias: HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
-Alias: HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
+Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
+// Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristic
 // Alias: PlannetLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
 // Alias: PlannetOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 
@@ -31,13 +31,15 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * category 1..1 MS
 * category from HumanServiceCategory (example)
 * category ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from the 211 LA or Open Eligibility taxonomies as well as the FHIR SDOHCC ValueSet SDOH Category could be used until the social care community recommends an appropriate standard."
+* type MS
 * type from HumanServiceType (example)
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
+* specialty MS
 * specialty from SpecialtiesVS (required)
 * program from HumanServiceProgram (example)
 * program ^short = "Concepts from this example value set can be used to search for social services by the program under which they are defined"
-* characteristic from HumanServiceCharacteristic (example)
-* characteristic ^short = "A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy)."
+// * characteristic from HumanServiceCharacteristic (example)
+// * characteristic ^short = "A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy)."
 // * location only Reference(PlannetLocation)
 // * location only Reference(hsds-Location)
 // * location only Reference(Location)

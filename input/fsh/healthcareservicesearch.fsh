@@ -71,6 +71,7 @@ Usage: #definition
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/healthcareservice-program"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
+* purpose = "Allow human services directories to be searched by the program under which they fall"
 * contact.name = "HL7 Human and Social Services Work"
 * description = "Select Human and Social services offered under the specified program"
 * code = #program

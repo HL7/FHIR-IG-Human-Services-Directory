@@ -1,7 +1,7 @@
 Alias: $HealthcareServiceCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS
 Alias: $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type
 Alias: $HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS
-Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
+// Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
 
 
 // Example value set containing broad categories of healthcare services being performed or delivered that are relevant to social care services and derived from the Plan-Net HumanServiceCategory code system
@@ -31,7 +31,6 @@ Description: "This example value set includes an subset of service-types codes i
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
-* ^jurisdiction = urn:iso:std:iso:3166#US
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"
 * ^compose.include.system = "http://terminology.hl7.org/CodeSystem/service-type"
 * $ServiceTypeCS#3 "Aged Care Information/Referral" 
@@ -50,12 +49,11 @@ ValueSet: HumanServiceProgramVS
 Id: HumanServiceProgram
 Title: "Human Service Program VS"
 Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
-* ^experimental = true
+* ^experimental = false
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
-* ^jurisdiction = urn:iso:std:iso:3166#US
-* ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS"
+* ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram"
 * ^compose.include.system = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS"
 // * codes from system  HumanServiceProgramCS
 * $HumanServiceProgramCS#CSFP "The Commodity Supplemental Food Program"
@@ -71,20 +69,20 @@ Description: "This example value set includes that describe Programs under which
 
 // Example value set of Human Service Characteristic codes describing unique features associated with community-based social services
 
-ValueSet: HumanServiceCharacteristicVS
-Id: HumanServiceCharacteristic
-Title: "Human Service Characteristic VS"
-Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
-* ^experimental = true
-* ^publisher = "HL7 International - Human and Social Services Work Group"
-* ^contact.name = "HL7 International - Human and Social Services Work Group"
-* ^contact.telecom.system = #url
-* ^jurisdiction = urn:iso:std:iso:3166#US
-* ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
+// ValueSet: HumanServiceCharacteristicVS
+// Id: HumanServiceCharacteristic
+// Title: "Human Service Characteristic VS"
+// Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
+// * ^experimental = false
+// * ^publisher = "HL7 International - Human and Social Services Work Group"
+// * ^contact.name = "HL7 International - Human and Social Services Work Group"
+// * ^contact.telecom.system = #url
+// * ^jurisdiction = urn:iso:std:iso:3166#US
+// * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic"
 // * codes from system  HumanServiceCharacteristicCS
-* ^compose.include.system = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
-* $HumanServiceCharacteristicCS#Wheelchair "Wheelchair Access"
-* $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
-* $HumanServiceCharacteristicCS#Computer "Computer & Internet Access"
-* $HumanServiceCharacteristicCS#Baby "Diapers & Formula"
+// * ^compose.include.system = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
+// * $HumanServiceCharacteristicCS#Wheelchair "Wheelchair Access"
+// * $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
+// * $HumanServiceCharacteristicCS#Computer "Computer & Internet Access"
+// * $HumanServiceCharacteristicCS#Baby "Diapers & Formula"
 
