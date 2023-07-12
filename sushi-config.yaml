@@ -25,7 +25,7 @@ dependencies:
   hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
 
 parameters:
-  special-url: [http://211hsis.org, http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy]
+  special-url: [http://terminology.hl7.org/CodeSystem/OpenEligibilityTaxonomy, http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS, http://hl7.org/fhir/us/hsds/CodeSystem/HSDServiceChaacteristic]
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │

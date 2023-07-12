@@ -1,6 +1,8 @@
 
-Alias: PLANNETHealthcareServiceCategory = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceCategoryVS
-Alias: PLANNETHealthcareServiceType = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/HealthcareServiceTypeVS
+Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
+Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
+Alias: HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
+Alias: HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
 // Alias: PlannetLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
 // Alias: PlannetOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 
@@ -8,7 +10,7 @@ Profile: HSDSHealthcareService
 Parent: HealthcareService
 Id: hsds-HealthcareService
 Title:    "HSDSHealthcareService"
-Description: "The HSDSHealthcareService resource describes the social and human services offered by Community-Based Organizations (CBO) at a given location. This resource may be used to encompass a variety of human and social care service interventions that assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
+Description: "The HSDSHealthcareService profile was introduced in STU 1 of this guide to allow example value sets that are used to search human and social service directories, because based on guidance from the human and social services community, existing human and social services taxonomies have not been deemed suitable for use in the relevant value sets. This profile isbased on the R4 HealthcareService resource, and fully aligned (as opposed to derived from) the Plan-Net HealthcareService profile which enforces use of extensible bindings to the category and type elements.  This profile describes the way a human/social service can be contacted to assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
  
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
@@ -27,13 +29,15 @@ Description: "The HSDSHealthcareService resource describes the social and human 
 // * providedBy only Reference(PlannetOrganization) 
 * providedBy MS
 * category 1..1 MS
-* category from PLANNETHealthcareServiceCategory (example)
-* category ^short = "Concepts from standard human services taxonomies (e.g., 211 LA (Level 2), Open Eligibility (<services><descriptions><category>)), and the FHIR SDOH Clinical Care IG ServiceCategory value set could be used in addition to the example concepts provided in the Plannet HealthcareServiceCategory value set, ."
-* type MS
-* type from PLANNETHealthcareServiceType (example)
-* type ^short = "Concepts from standard human services taxonomies (e.g., 211 LA (Levels 3-6), Open Eligibility (<services><descriptions><second_level through fourth_level>)), and the FHIR SDOH Clinical Care IG ServiceType value set could be used in addition to the example concepts provided in the Plannet HealthcareServiceTypeVS value set."
-// * specialty MS
-// * specialty from SpecialtiesVS (required)
+* category from HumanServiceCategory (example)
+* category ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from the 211 LA or Open Eligibility taxonomies as well as the FHIR SDOHCC ValueSet SDOH Category could be used until the social care community recommends an appropriate standard."
+* type from HumanServiceType (example)
+* type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
+* specialty from SpecialtiesVS (required)
+* program from HumanServiceProgram (example)
+* program ^short = "Concepts from this example value set can be used to search for social services by the program under which they are defined"
+* characteristic from HumanServiceCharacteristic (example)
+* characteristic ^short = "A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy)."
 // * location only Reference(PlannetLocation)
 // * location only Reference(hsds-Location)
 // * location only Reference(Location)
