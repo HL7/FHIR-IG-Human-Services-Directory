@@ -91,7 +91,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-name"
 * version = "0.1.0"
 * name = "HSDS_sp_location_name"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/location-name"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-name"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"

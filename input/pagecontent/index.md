@@ -50,6 +50,12 @@ These read-only queries can support a range of users and use cases within the co
 
 - Write-enabled ‘bi-directional’ functionality may be specified in future versions.
 
+- Individual Providers represented in human services directories: Current requirements in the HSDS model (version 2.0.1) do not reflect capturing information about individual (human) providers in human services directories. The HSDS model contains contact information about human services organizations and the services those organizations provide at various locations.
+A primary purpose for this version of the IG is to provide a mapping between the Human Services Data Specification (HSDS) v.2.0.1) and FHIR profiles and their elements. The intent is to facilitate adoption of the FHIR profiles contained in this guide by human services directory implementers familiar with their directory data and the HSDS specification, but with less detailed knowledge of the FHIR specification itself. 
+If following trial implementations, additional requirements are requested by implementers to include individual provider information in future iterations of this implementation guide, requirements can be submitted via the Jira process [insert link: https://jira.hl7.org/projects/FHIR/summary]  for future consideration.
+Additional profiles (e.g., Practitioner, PractitionerRole) would be required to add individual practitioners to this IG and a subsequent ballot. If there is an intent to add individual providers to the exchange, this requirement should be considered within the context of the structure/content of HSDS so the mapping between HSDS and FHIR can be updated in the implementation guide as well.
+
+
 ###	Introduction
 
 Information and Referral (I&R) is the art, science, and practice of bringing people and services together. To accomplish this goal, I&R organizations maintain resource databases that contain information about services for specialized needs (e.g., aging population, respite services, childcare, special education, etc.) or offer comprehensive information about a broad range of health and human services (e.g., 2-1-1 call centers). I&Rs maintain directories of vital information about concrete aspects of services and programs, such as program names and addresses, hours of operation, eligibility requirements, and fees and share this information through various channels.

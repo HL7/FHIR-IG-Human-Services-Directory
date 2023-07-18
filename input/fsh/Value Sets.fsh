@@ -1,7 +1,7 @@
 Alias: $HealthcareServiceCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS
-Alias: $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type
+Alias: $ServiceTypeCS = http://terminology.hl7.org/3.1.0/CodeSystem/service-type
 Alias: $HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS
-// Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
+Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
 
 
 // Example value set containing broad categories of healthcare services being performed or delivered that are relevant to social care services and derived from the Plan-Net HumanServiceCategory code system
@@ -10,8 +10,8 @@ ValueSet: HumanServiceCategoryVS
 Id: HumanServiceCategory
 Title: "Human Service Category VS"
 Description: "This example value set includes a subset of codes included in the Plan-Net Healthcare Service Category value set (HealthcareServiceCategoryVS)."
-* ^experimental = true
 * ^publisher = "HL7 International - Human and Social Services Work Group"
+* ^experimental = true
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^jurisdiction = urn:iso:std:iso:3166#US
@@ -27,12 +27,12 @@ ValueSet: HumanServiceTypeVS
 Id: HumanServiceType
 Title: "Human Service Type VS"
 Description: "This example value set includes an subset of service-types codes included in the Plan-Net Healthcare Service Type value set (HealthcareServiceTypeVS)."
-* ^experimental = true
 * ^publisher = "HL7 International - Human and Social Services Work Group"
+* ^experimental = true
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"
-* ^compose.include.system = "http://terminology.hl7.org/CodeSystem/service-type"
+* ^compose.include.system = "http://terminology.hl7.org/3.1.0/CodeSystem/service-type"
 * $ServiceTypeCS#3 "Aged Care Information/Referral" 
 * $ServiceTypeCS#8 "Home Care/Housekeeping Assistance" 
 * $ServiceTypeCS#11 "Personal Care for Older Persons" 
@@ -69,20 +69,20 @@ Description: "This example value set includes that describe Programs under which
 
 // Example value set of Human Service Characteristic codes describing unique features associated with community-based social services
 
-// ValueSet: HumanServiceCharacteristicVS
-// Id: HumanServiceCharacteristic
-// Title: "Human Service Characteristic VS"
-// Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
-// * ^experimental = false
-// * ^publisher = "HL7 International - Human and Social Services Work Group"
-// * ^contact.name = "HL7 International - Human and Social Services Work Group"
-// * ^contact.telecom.system = #url
-// * ^jurisdiction = urn:iso:std:iso:3166#US
-// * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic"
+ValueSet: HumanServiceCharacteristicVS
+Id: HumanServiceCharacteristic
+Title: "Human Service Characteristic VS"
+Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
+* ^experimental = false
+* ^publisher = "HL7 International - Human and Social Services Work Group"
+* ^contact.name = "HL7 International - Human and Social Services Work Group"
+* ^contact.telecom.system = #url
+* ^jurisdiction = urn:iso:std:iso:3166#US
+* ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic"
 // * codes from system  HumanServiceCharacteristicCS
-// * ^compose.include.system = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
-// * $HumanServiceCharacteristicCS#Wheelchair "Wheelchair Access"
-// * $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
-// * $HumanServiceCharacteristicCS#Computer "Computer & Internet Access"
-// * $HumanServiceCharacteristicCS#Baby "Diapers & Formula"
+* ^compose.include.system = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
+* $HumanServiceCharacteristicCS#Wheelchair "Wheelchair Access"
+* $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
+* $HumanServiceCharacteristicCS#Computer "Computer & Internet Access"
+* $HumanServiceCharacteristicCS#Baby "Diapers & Formula"
 

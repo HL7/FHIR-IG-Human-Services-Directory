@@ -1,7 +1,7 @@
 // Example Human Service Program code system describing the types of progams under which community-based social services can be delivered
 
 CodeSystem: HumanServiceProgramCS
-Id: HumanServiceProgram
+Id: HumanServiceProgramCS
 Title: "Human Service Program"
 Description: "This code system contains an example set of codes that describe Programs under which community-based social services can be delivered."
 * ^caseSensitive = false
@@ -22,16 +22,16 @@ Description: "This code system contains an example set of codes that describe Pr
 
 // Example Human Service Characteristic code system describing the unique features associated with community-based social services
 
-// CodeSystem: HumanServiceCharacteristicCS
-// Id: HumanServiceCharacteristic
-// Title: "Human Service Characteristic"
-// Description: "This code code system contains an example set of codes that describe the unique features associated with different community-based social services."
-// * ^caseSensitive = false
-// * ^experimental = false
-// * ^content = #example
-// * ^publisher = "HL7 Human and Social Services Work Group"
-// * ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
-// * #Wheelchair "Wheelchair Access" "A method by which someone can enter or leave a place in a wheelchair"
-// * #Interpret "Interpretation Services" "Interpreting services function as a verbal form of translation that is facilitated by a professional interpreter, or a team of interpreters. Interpretation services are used to translate spoken languages into the native or preferred language of a given client."
-// * #Computer	"Computer & Internet Access" "Computers available for use. Internet access is available providing connectivity to the internet using personal computers, laptops or mobile devices."
-// * #Baby	"Diapers & Formula" "Diapers and infant formula are provided."
+CodeSystem: HumanServiceCharacteristicCS
+Id: HumanServiceCharacteristicCS
+Title: "Human Service Characteristic"
+Description: "This code code system contains an example set of codes that describe the unique features associated with different community-based social services."
+* ^caseSensitive = false
+* ^experimental = false
+* ^content = #example
+* ^publisher = "HL7 Human and Social Services Work Group"
+* ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
+* #Wheelchair "Wheelchair Access" "A method by which someone can enter or leave a place in a wheelchair"
+* #Interpret "Interpretation Services" "Interpreting services function as a verbal form of translation that is facilitated by a professional interpreter, or a team of interpreters. Interpretation services are used to translate spoken languages into the native or preferred language of a given client."
+* #Computer	"Computer & Internet Access" "Computers available for use. Internet access is available providing connectivity to the internet using personal computers, laptops or mobile devices."
+* #Baby	"Diapers & Formula" "Diapers and infant formula are provided."

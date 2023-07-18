@@ -1,3 +1,5 @@
+Alias: $HumanServiceTypeVS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
+
 Instance: healthcareservice-organization
 InstanceOf: SearchParameter
 Usage: #definition
@@ -30,7 +32,7 @@ Usage: #definition
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
 * description = "Select Human and Social services that can be delivered by the organization in the specified language"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/healthcareservice-communication"
+// * derivedFrom = "http://hl7.org/fhir/SearchParameter/Healthcareservice-communication"
 * code = #communication
 * base = #HealthcareService
 * type = #string
@@ -68,7 +70,8 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-program"
 * version = "0.1.0"
 * name = "HSDS_sp_healthcareservice_program"
-* derivedFrom = "http://hl7.org/fhir/SearchParameter/healthcareservice-program"
+// * derivedFrom = "http://hl7.org/fhir/SearchParameter/healthcareservice-program"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-program"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * purpose = "Allow human services directories to be searched by the program under which they fall"
@@ -76,7 +79,9 @@ Usage: #definition
 * description = "Select Human and Social services offered under the specified program"
 * code = #program
 * base = #HealthcareService
-* type = #string
+// * name = "program"
+// * target = $HumanServiceTypeVS
+* type = #token
 * expression = "HealthcareService.program"
 * multipleOr = true
 * multipleAnd = true

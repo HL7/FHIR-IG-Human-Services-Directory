@@ -2,6 +2,7 @@ Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/Cod
 Alias: $QualificationStatusVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/QualificationStatusVS
 Alias: $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias: $DaysOfWeekVS = http://hl7.org/fhir/ValueSet/days-of-week
+Alias: $HumanServiceProgramVS = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
 
 Extension: Accessibility
 Id: accessibility
@@ -10,6 +11,21 @@ Description: "An extension to describe accessibility options offered at a Commun
 * value[x] 1..1 
 * value[x] only CodeableConcept 
 * value[x] from AccessibilityVS (extensible)
+
+
+// Extension: HumanServiceDirectoryProgram
+// Id: hsdprogram
+// Title: "Human Service Directory Program"
+// Url: "http://hl7.org/fhir/us/hsds/StructureDefinition/hsdprogram"
+// Description: "Human Service Directory Program indicates the programs under which services offered by community-based organizations are offered. Organizing services under programs helps build more efficient and effective support network and enables communities to better address their unique needs and challenges.
+//              This extension is included in the HealthcareService profile to allow users to search for services by the program under which they fall."
+// * value[x] 0..0
+// * extension contains
+//    program  0..* MS
+// * extension[program].value[x] only CodeableConcept
+// * extension[program] ^short = "Human Service Program"
+// * extension[program].value[x] 0..1
+// * extension[program].value[x] from HumanServiceProgramVS (example)
 
 
 Extension: ContactPointAvailableTime
@@ -64,3 +80,10 @@ Description: "An extension to add qualifications associated for a service provid
 * extension[whereValid].value[x] only CodeableConcept or Reference(HSDSLocation)
 * extension[whereValid].value[x] from $USPSState (required)
 * extension[whereValid].value[x] 1..1
+
+Extension: ViaIntermediary
+Id: via-intermediary
+Title: "Via Intermediary"
+Description: "A reference to an alternative point of contact (Organization, Location) for this organization"
+* value[x] only Reference(PlannetPractitionerRole or PlannetOrganizationAffiliation or PlannetLocation or PlannetOrganization) 
+* value[x] 1..1 MS

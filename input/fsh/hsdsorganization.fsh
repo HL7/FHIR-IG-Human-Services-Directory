@@ -19,7 +19,13 @@ Source: HSDSOrganization
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSOrganization profile. The left hand column contains the FHIR HSDSOrganization element name; the right column contains the HSDS table.element and any implementation/transformation rules required to support the mapping."
+Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to this FHIR HSDSOrganization profile. The left hand column contains the FHIR HSDSOrganization element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
+
+The HSDS specification (v.2.0.1) served as the initial basis for requirements, and the mapping/alignment of HSDS data elements to profiles contained in the FHIR IG for Human Service Directories, STU1. HSDS Version 2.0.1 applies string datatypes to nearly all HSDS table 'id' fields/ data elements, including the id field associated with each HSDS [table] (e.g. organization.id [organization], location.id [location], service.id [service], phone.id [phone], etc.). In the next version of HSDS, v.3.0, each HSDS table.id field will be defined using the UUID data type.
+
+FHIR Resource .ids  (and the .ids in their profiles) are defined using the FHIR id datatype, a string that supports "Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)". 
+
+Because UUIDs provide uniqueness to data/resources when they are exchanged across multiple systems, it is recommended that implementers of the FHIR IG for Human Services Directories support UUIDs in all HSDS id fields that are mapped to FHIR .id data elements."""
 * id  -> "organization.id Note: Each organization must have a unique system identifier in the source system."
 * meta  -> "Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.id -> "metadata.id Note: This data element may be ignored as having the id for the date metadata isn't essential. If populated, it should be id corresponding to the latest action date for given organization as described below."

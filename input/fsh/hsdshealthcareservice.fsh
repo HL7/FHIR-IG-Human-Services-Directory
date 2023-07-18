@@ -1,10 +1,10 @@
 
 Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
-Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
-// Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristic
-// Alias: PlannetLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
-// Alias: PlannetOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
+// Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
+// Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
+// Alias: HSDSLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
+// Alias: HSDSOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
 
 Profile: HSDSHealthcareService
 Parent: HealthcareService
@@ -15,6 +15,9 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
 * meta.lastUpdated 1..1
+// * extension contains
+//   HumanServiceDirectoryProgram named hsdprogram 0..* MS
+// * extension[hsdprogram] ^short = "Human Service Program"
 /* extension contains
     NewPatients named newpatients 0..* MS and
     DeliveryMethod named deliverymethod 0..* MS */
@@ -23,10 +26,8 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * identifier.type MS
 * identifier.value MS
 * active 1..1 MS
-* active = true 
-// * providedBy only Reference(PlannetOrganization) 
+* active = true
 * providedBy only Reference(Organization)
-// * providedBy only Reference(PlannetOrganization) 
 * providedBy MS
 * category 1..1 MS
 * category from HumanServiceCategory (example)
@@ -36,13 +37,10 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
 * specialty MS
 * specialty from SpecialtiesVS (required)
-* program from HumanServiceProgram (example)
-* program ^short = "Concepts from this example value set can be used to search for social services by the program under which they are defined"
+// * program from HumanServiceProgram (example)
+// * program ^short = "Concepts from this example value set can be used to search for social services by the program under which they are defined"
 // * characteristic from HumanServiceCharacteristic (example)
 // * characteristic ^short = "A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy)."
-// * location only Reference(PlannetLocation)
-// * location only Reference(hsds-Location)
-// * location only Reference(Location)
 * location MS
 * name MS
 * comment MS
@@ -54,7 +52,6 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * telecom.system MS
 * telecom.value MS
 * coverageArea only Reference(Location)
-// * coverageArea only Reference(PlannetLocation)
 * coverageArea MS
 // * serviceProvisionCode MS
 // * eligibility  MS
@@ -71,8 +68,6 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * notAvailable.description MS
 * notAvailable.during MS
 * availabilityExceptions MS
-// * endpoint only Reference(PlannetEndpoint)
-// * endpoint MS
 
 
 
@@ -81,7 +76,13 @@ Source: HSDSHealthcareService
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: "This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSHealthcareService profile. The left hand column contains the FHIR HSDSHealthcareService element name; the right column contains the HSDS table.element and any implementation/transformation rules required to support the mapping."
+Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSHealthcareService profile. The left hand column contains the FHIR HSDSHealthcareService element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
+
+The HSDS specification (v.2.0.1) served as the initial basis for requirements, and the mapping/alignment of HSDS data elements to profiles contained in the FHIR IG for Human Service Directories, STU1. HSDS Version 2.0.1 applies string datatypes to nearly all HSDS table 'id' fields/ data elements, including the id field associated with each HSDS [table] (e.g. organization.id [organization], location.id [location], service.id [service], phone.id [phone], etc.)). In the next version of HSDS, v.3.0, each HSDS table.id field will be defined using the UUID data type.
+
+FHIR Resource .ids  (and the .ids in their profiles) are defined using the FHIR id datatype, a string that supports "Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64 characters. (This might be an integer, an un-prefixed OID, UUID or any other identifier pattern that meets these constraints.)". 
+
+Because UUIDs provide uniqueness to data/resources when they are exchanged across multiple systems, it is recommended that implementers of the FHIR IG for Human Services Directories support UUIDs in all HSDS id fields that are mapped to FHIR .id data elements."""
 * id  -> "service.id Note: Each service must have a unique identifier."
 * meta  -> "metadata Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.lastUpdated  -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each location, the latest max(last_action_date) needs to be used from metadata where  service.id =  metadata.resource_id."

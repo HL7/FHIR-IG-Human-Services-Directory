@@ -206,7 +206,7 @@ Usage: #definition
 
 * rest[0].resource[2].searchParam[+]
   * name = "program"
-  * type = #string
+  * type = #token
   * documentation = "Search for human and social services by the program under which this service is delivered."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL

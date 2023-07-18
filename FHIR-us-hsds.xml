@@ -13,7 +13,9 @@
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
 <artifact id="ValueSet/HumanServiceCategory" key="ValueSet-HumanServiceCategory" name="Human Service Category VS"/>
-<artifact id="CodeSystem/HumanServiceProgram" key="CodeSystem-HumanServiceProgram" name="Human Service Program"/>
+<artifact id="CodeSystem/HumanServiceCharacteristicCS" key="CodeSystem-HumanServiceCharacteristicCS" name="Human Service Characteristic"/>
+<artifact id="ValueSet/HumanServiceCharacteristic" key="ValueSet-HumanServiceCharacteristic" name="Human Service Characteristic VS"/>
+<artifact id="CodeSystem/HumanServiceProgramCS" key="CodeSystem-HumanServiceProgramCS" name="Human Service Program"/>
 <artifact id="ValueSet/HumanServiceProgram" key="ValueSet-HumanServiceProgram" name="Human Service Program VS"/>
 <artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Service Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
@@ -24,6 +26,7 @@
 <artifact id="HealthcareService/HumanSocialServiceResource" key="HealthcareService-HumanSocialServiceResource" name="HumanSocialServiceResource"/>
 <artifact id="StructureDefinition/org-description" key="StructureDefinition-org-description" name="Org Description"/>
 <artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
+<artifact id="StructureDefinition/via-intermediary" key="StructureDefinition-via-intermediary" name="Via Intermediary"/>
 <artifact id="SearchParameter/healthcareservice-active" key="SearchParameter-healthcareservice-active" name="healthcareservice-active"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
 <artifact id="SearchParameter/healthcareservice-communication" key="SearchParameter-healthcareservice-communication" name="healthcareservice-communication"/>
