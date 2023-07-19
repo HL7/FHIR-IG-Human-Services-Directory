@@ -1,10 +1,10 @@
 
 Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
-// Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
-// Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
-// Alias: HSDSLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
-// Alias: HSDSOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
+Alias: hsds-Organization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
+Alias: hsds-Location = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Location
+Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
+Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
 
 Profile: HSDSHealthcareService
 Parent: HealthcareService
@@ -15,18 +15,11 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
 * meta.lastUpdated 1..1
-// * extension contains
-//   HumanServiceDirectoryProgram named hsdprogram 0..* MS
-// * extension[hsdprogram] ^short = "Human Service Program"
-/* extension contains
-    NewPatients named newpatients 0..* MS and
-    DeliveryMethod named deliverymethod 0..* MS */
-// * extension[newpatients] ^short = "New Patients"
-// * extension[deliverymethod] ^short = "Delivery Method"
 * identifier.type MS
 * identifier.value MS
 * active 1..1 MS
 * active = true
+// Should be providedBy only Reference(HSDSOrganization) or (hsds-Organization)
 * providedBy only Reference(Organization)
 * providedBy MS
 * category 1..1 MS
@@ -37,10 +30,6 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
 * specialty MS
 * specialty from SpecialtiesVS (required)
-// * program from HumanServiceProgram (example)
-// * program ^short = "Concepts from this example value set can be used to search for social services by the program under which they are defined"
-// * characteristic from HumanServiceCharacteristic (example)
-// * characteristic ^short = "A custom attribute that could be provided at a service (e.g. Wheelchair accessibiliy)."
 * location MS
 * name MS
 * comment MS
@@ -51,12 +40,15 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS
+// Should be coverageArea only Reference(HSDSLocation) or (hsds-Location)
 * coverageArea only Reference(Location)
 * coverageArea MS
 // * serviceProvisionCode MS
 // * eligibility  MS
-// * program  
-// * characteristic MS
+* program from HumanServiceProgram (example)
+* program ^short = "This example value set includes codes that describe Programs under which community-based organizations can organize the social services they deliver."
+* characteristic from HumanServiceCharacteristic (example)
+* characteristic ^short = "This example value set includes codes that describe unique features that can be associated with community-based social services delivered at particular locations."
 // * referralMethod MS
 * appointmentRequired MS
 * availableTime MS

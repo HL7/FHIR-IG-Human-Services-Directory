@@ -20,9 +20,7 @@ publisher:
 
 dependencies:
   # hl7.fhir.us.core: 3.1.1
-  # hl7.fhir.us.davinci: 1.1.0
-  # hl7.terminology.r4: 3.1.0
-  hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
+ hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
 
 parameters:
   special-url: [http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS]
@@ -34,7 +32,7 @@ menu:
   Home: index.html
   Implementation: 
     Implementation: implementation.html
-   # Representing and Searching Human Services Directory Data: implementation.html#Representing
+    Representing and Searching Human Services Directory Data: implementation.html#representing-and-searching-human-services-directory-data
   Artifacts: 
     Profiles: artifacts.html#3
     Extensions: artifacts.html#4
@@ -43,4 +41,4 @@ menu:
     Capability Statement: artifacts.html#1
   Downloads: downloads.html
   Examples: examples.html
-  History       : http://hl7.org/fhir/us/hsds/history.cfml
+  History: http://hl7.org/fhir/us/hsds/history.cfml

@@ -1,5 +1,5 @@
 Alias: $HealthcareServiceCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS
-Alias: $ServiceTypeCS = http://terminology.hl7.org/3.1.0/CodeSystem/service-type
+Alias: $ServiceTypeCS = http://terminology.hl7.org/CodeSystem/service-type
 Alias: $HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS
 Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
 
@@ -11,7 +11,7 @@ Id: HumanServiceCategory
 Title: "Human Service Category VS"
 Description: "This example value set includes a subset of codes included in the Plan-Net Healthcare Service Category value set (HealthcareServiceCategoryVS)."
 * ^publisher = "HL7 International - Human and Social Services Work Group"
-* ^experimental = true
+* ^experimental = false
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^jurisdiction = urn:iso:std:iso:3166#US
@@ -28,7 +28,7 @@ Id: HumanServiceType
 Title: "Human Service Type VS"
 Description: "This example value set includes an subset of service-types codes included in the Plan-Net Healthcare Service Type value set (HealthcareServiceTypeVS)."
 * ^publisher = "HL7 International - Human and Social Services Work Group"
-* ^experimental = true
+* ^experimental = false
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"
@@ -48,7 +48,7 @@ Description: "This example value set includes an subset of service-types codes i
 ValueSet: HumanServiceProgramVS
 Id: HumanServiceProgram
 Title: "Human Service Program VS"
-Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
+Description: "This example value set includes codes that describe Programs under which community-based organizations can organize the social services they deliver."
 * ^experimental = false
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
@@ -72,7 +72,7 @@ Description: "This example value set includes that describe Programs under which
 ValueSet: HumanServiceCharacteristicVS
 Id: HumanServiceCharacteristic
 Title: "Human Service Characteristic VS"
-Description: "This example value set includes that describe Programs under which community-based social services can be delivered."
+Description: "This example value set includes codes that describe unique features that can be associated with community-based social services delivered at particular locations."
 * ^experimental = false
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"

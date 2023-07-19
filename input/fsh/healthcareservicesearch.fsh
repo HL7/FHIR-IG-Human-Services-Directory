@@ -70,7 +70,6 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-program"
 * version = "0.1.0"
 * name = "HSDS_sp_healthcareservice_program"
-// * derivedFrom = "http://hl7.org/fhir/SearchParameter/healthcareservice-program"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-program"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -79,8 +78,6 @@ Usage: #definition
 * description = "Select Human and Social services offered under the specified program"
 * code = #program
 * base = #HealthcareService
-// * name = "program"
-// * target = $HumanServiceTypeVS
 * type = #token
 * expression = "HealthcareService.program"
 * multipleOr = true

@@ -7,8 +7,6 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/211hsis" key="CodeSystem-211hsis" name="211 Human Services Indexing System"/>
-<artifact id="StructureDefinition/accessibility" key="StructureDefinition-accessibility" name="Accessibility"/>
-<artifact id="StructureDefinition/contactpoint-availabletime" key="StructureDefinition-contactpoint-availabletime" name="Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDSHealthcareService"/>
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
@@ -24,9 +22,6 @@
 <artifact id="Location/HumanSocialServiceLocation" key="Location-HumanSocialServiceLocation" name="HumanSocialServiceLocation"/>
 <artifact id="Organization/HumanSocialServiceOrganization" key="Organization-HumanSocialServiceOrganization" name="HumanSocialServiceOrganization"/>
 <artifact id="HealthcareService/HumanSocialServiceResource" key="HealthcareService-HumanSocialServiceResource" name="HumanSocialServiceResource"/>
-<artifact id="StructureDefinition/org-description" key="StructureDefinition-org-description" name="Org Description"/>
-<artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
-<artifact id="StructureDefinition/via-intermediary" key="StructureDefinition-via-intermediary" name="Via Intermediary"/>
 <artifact id="SearchParameter/healthcareservice-active" key="SearchParameter-healthcareservice-active" name="healthcareservice-active"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
 <artifact id="SearchParameter/healthcareservice-communication" key="SearchParameter-healthcareservice-communication" name="healthcareservice-communication"/>
