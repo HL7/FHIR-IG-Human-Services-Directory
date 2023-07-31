@@ -1,18 +1,77 @@
-Alias: TYPE = http://terminology.hl7.org/CodeSystem/v2-0203 
-Alias: ORGTYPEVS =  http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/OrgTypeVS
-Alias: PLANNETOrganization = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization
-Alias: Qualification = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/qualification
+Alias:  $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/NonIndividualSpecialtiesVS
+Alias:  $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
+Alias:  $V2table0360VS = http://terminology.hl7.org/ValueSet/v2-0360 
+Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: IRS = http://www.irs.gov
 
-Profile: HSDSOrganization
-Parent: PLANNETOrganization
-Id: hsds-Organization
-Title:    "HSDSOrganization"
+Profile:       HSDSOrganization
+Parent:        $USCoreOrganization
+Id:            hsds-Organization
+Title:         "HSDSOrganization"
 Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
 
-* address.use = TYPE#work (exactly)
-
+/* Description:   "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice.
+Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text" */
+* meta.lastUpdated 1..1
+* extension contains
+   Qualification named qualification 0..*  and
+   OrgDescription named org-description  0..1 MS
+// * extension[qualification].extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
+* extension[qualification].extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)
+* extension[qualification] ^short = "Qualification"
+* extension[org-description] ^short = "Organization Description"
+* identifier.type MS
+* identifier.value MS
+* active 1..1 MS
+* active = true 
+* name MS
+* partOf MS  
+* partOf only Reference(HSDSOrganization)
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier ^comment = "Tax ID preferred."
+* identifier.system ..1 MS
+* identifier.system only uri
+* identifier.value ..1 MS
+* identifier.value only string
+* identifier contains
+    IRS 0..* MS 
+* identifier[IRS] ^short = "United States Tax ID"
+* identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
+* identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
+* identifier[IRS] ^mustSupport = true
+// * address 1..* MS
+// * address.extension contains $GeolocationExtension named geolocation 0..1 MS
+// * address.type MS
+// * address.type MS
+// * address.text MS
+// * address.line MS 
+// * address.city MS
+// * address.state MS
+// * address.postalCode MS
+// * address.country MS
+* contact MS
+* contact.telecom MS
+* contact.telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* and
+       ViaIntermediary named via-intermediary 0..* 
+* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.telecom.value MS
+* contact.telecom.system MS
+* contact.telecom.use MS
+* telecom MS
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+       ViaIntermediary named via-intermediary 0..* MS
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
+* telecom.rank MS
+* type 1..* MS
+* type from OrgTypeVS (extensible)
 
 Mapping: HSDSOrganizationToHSDS
 Source: HSDSOrganization
@@ -73,9 +132,9 @@ Note: For phone, HSDS  organization linkage is to HSDS phone table using  organi
 * telecom.use -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work related information, it is possible to set this to 'work' drawn from the ContactPointUse value set http://hl7.org/fhir/R4/valueset-contact-point-use.html."
 * telecom.rank -> "No Source. Note: This a GAP in HSDS. In FHIR, it is used to specify a preferred order in which to use a contact point. The parent Plan-Net profile indicates this is a Must Support element but is optional, So it can be excluded since there is no source."
 * telecom.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
-* address  -> "Note: HSDS does not have an address associated with the organization. So the Location table is used to capture address details associated with locations that are part of that organization. Two HSDS tables are used, one for postal_address, the other for physical_address. This linkage is based on  organization.id =   location.organization_id and location.id = address.location_id. If there are multiple locations and associated addresses, all of those can be included for organization level addresses since there is no indication to identify which location or address is primary to be used as organization address."
+* address  -> "GAP in HSDS: HSDS does not associate an address directly with an organization. The Location table is used to capture address details associated with locations that are part of that organization. Two HSDS tables are used to represent the postal versus physical address for locations in version 2.0.1, HSDS postal_address and HSDS physical_address. Address information is based on linking organization.id =   location.organization_id and location.id = address.location_id. If there are multiple locations/associated addresses, all addresses can be included for organization level addresses since there is no way to identify which location or address is the primary one to be used as the organization's headquarter address."
 * address.id  -> "postal_address.id or physical_address_id Note: This data element may be ignored as having the id for the address record  isn't essential. If populated, it should be the id from one of the address tables that particular address  is referring to."
-* address.extension[geolocation] -> "location.latitude Note: There is no location in HSDS at the organization level."
+// * address.extension[geolocation] -> "location.latitude Note: There is no location in HSDS at the organization level."
 * address.use  -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work related information, it is possible to set this to 'work' drawn from the AddressUse value set http://hl7.org/fhir/R4/valueset-address-use.html."
 * address.type -> "Fixed value  = 'postal' or 'physical' Note: This is a GAP in HSDS but it can be inferred by which table is used as a source in the HSDS i.e. postal_address or physical_address respectively."
 * address.text -> "Concatenation of address_1, city, state_province, postal_code and country; all separated by comma (,) except dash (-) between state_province and postal_code. Note: The address data elements will be from postal_address or physical_address depending on which address is sourced. In FHIR, this element specifies the entire address as it should be displayed."
@@ -93,8 +152,8 @@ physical_address.address_1 Note: address.line in FHIR is an array (list) so addr
 * contact.extension  -> "contact.department Note: This is a GAP in FHIR. Proposed publishing a new StructureDefinition for this extension, e.g., http://hl7.org/fhir/us/FHIR-IG-Human-Services-Directory/StructureDefinition/contact-department"
 * contact.purpose  -> "No Source. May be excluded from the mapping. Note: This is a GAP In HSDS. In FHIR, this element is used to indicate the purpose of which the contact can be reached."
 * contact.name  -> "contact.name"
-* contact.telecom
-* contact.telecom.id -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the telecom record  isn't essential and not always available in the HSDS (e.g. phone id is available but there is no separate id for email)."
+* contact.telecom -> "No Source. May be excluded from the mapping."
+* contact.telecom.id -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the telecom record isn't essential and not always available in the HSDS (e.g. phone id is available but there is no separate id for email)."
 * contact.telecom.extension[contactpoint-availabletime] -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. This FHIR extension is added by Plan-Net profile and represents available hours for the telecom (e.g. customer service phone hours from 8AM-6PM M-F). There is no equivalent mapping to this data element in  HSDS since the HSDS schedule table contains details of when a service or location is open, and is not a phone line associated with a contact."
 * contact.telecom.extension[via-intermediary] -> "No Source. May be excluded from the mapping. Note: This is GAP in HSDS. This FHIR extension added by Plan-Net profile represents a reference to an alternative point of contact. HSDS does not have the source data to represent 'intermediary' as that implies some sort of contact relationship."
 * contact.telecom.system -> "For Phone: 
@@ -112,12 +171,10 @@ Note: There are multiple sources in HSDS for the telecom in FHIR so the system w
     value = phone.number 
 For Email,
     value = conact.email
-Note: For phone, HSDS contact table will be linked to the  phone table using contact.id = phone.contact_id."
+Note: For phone, HSDS contact table will be linked to the phone table using contact.id = phone.contact_id."
 * contact.telecom.use  -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work-related information, it is possible to set this to 'work' drawn from the ContactPointUse value set http://hl7.org/fhir/R4/valueset-contact-point-use.html"
 * contact.telecom.rank -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, it is used to specify a preferred order in which to use a contact point. The parent Plan-Net profile indicates this is a Must Support element but is optional, So it can be excluded since there is no source."
 * contact.telecom.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
 * contact.address -> "GAP in HSDs. May need to keep track of a contact party's address for contacting, billing or reporting requirements."
 * endpoint -> "No Source. Note: This is for the technical implementation of web services for the organization and it is not for source-specific business data. It is marked as Must Support though optional in the Plan-Net profile. At this point, no organizayion specific web services have been identified so it may be ignored."
-
-
 

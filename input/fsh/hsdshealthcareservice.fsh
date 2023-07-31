@@ -6,6 +6,7 @@ Alias: hsds-Location = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Loca
 Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
 Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
 
+
 Profile: HSDSHealthcareService
 Parent: HealthcareService
 Id: hsds-HealthcareService
@@ -19,9 +20,9 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * identifier.value MS
 * active 1..1 MS
 * active = true
-// Should be providedBy only Reference(HSDSOrganization) or (hsds-Organization)
-* providedBy only Reference(Organization)
-* providedBy MS
+* providedBy only Reference(hsds-Organization)
+// * providedBy only Reference(Organization)
+* providedBy 1..1 MS
 * category 1..1 MS
 * category from HumanServiceCategory (example)
 * category ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from the 211 LA or Open Eligibility taxonomies as well as the FHIR SDOHCC ValueSet SDOH Category could be used until the social care community recommends an appropriate standard."
@@ -30,6 +31,7 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
 * specialty MS
 * specialty from SpecialtiesVS (required)
+* location only Reference(hsds-Location)
 * location MS
 * name MS
 * comment MS
@@ -41,7 +43,7 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * telecom.system MS
 * telecom.value MS
 // Should be coverageArea only Reference(HSDSLocation) or (hsds-Location)
-* coverageArea only Reference(Location)
+* coverageArea only Reference(hsds-Location)
 * coverageArea MS
 // * serviceProvisionCode MS
 // * eligibility  MS

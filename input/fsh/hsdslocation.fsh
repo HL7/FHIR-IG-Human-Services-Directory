@@ -1,4 +1,5 @@
 Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
+Alias: hsds-Organization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
 Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
@@ -12,7 +13,9 @@ Description: "The HSDSLocation resource describes the physical place where commu
 * telecom.use = #work (exactly)
 * address.use = #work (exactly)
 // This Reference IS working...but not using the computable name for the profile
-* managingOrganization only Reference(hsds-Organization)
+// * managingOrganization only Reference(hsds-Organization)
+// * managingOrganization only Reference(hsds-Organization)
+// * partOf only Reference(hsds-Organization)
 
 
 Mapping: HSDSLocationToHSDS

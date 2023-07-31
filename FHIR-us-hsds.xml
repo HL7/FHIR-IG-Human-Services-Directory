@@ -7,6 +7,9 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/211hsis" key="CodeSystem-211hsis" name="211 Human Services Indexing System"/>
+<artifact id="Organization/FoodBank" key="Organization-FoodBank" name="FoodBank"/>
+<artifact id="Location/FoodBankLocation" key="Location-FoodBankLocation" name="FoodBankLocation"/>
+<artifact id="HealthcareService/FoodPantryService" key="HealthcareService-FoodPantryService" name="FoodPantryService"/>
 <artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDSHealthcareService"/>
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
@@ -19,9 +22,14 @@
 <artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
 <artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
-<artifact id="Location/HumanSocialServiceLocation" key="Location-HumanSocialServiceLocation" name="HumanSocialServiceLocation"/>
-<artifact id="Organization/HumanSocialServiceOrganization" key="Organization-HumanSocialServiceOrganization" name="HumanSocialServiceOrganization"/>
-<artifact id="HealthcareService/HumanSocialServiceResource" key="HealthcareService-HumanSocialServiceResource" name="HumanSocialServiceResource"/>
+<artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
+<artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
+<artifact id="StructureDefinition/org-description" key="StructureDefinition-org-description" name="Org Description"/>
+<artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
+<artifact id="StructureDefinition/via-intermediary" key="StructureDefinition-via-intermediary" name="Via Intermediary"/>
+<artifact id="HealthcareService/WhistlestopTransportationService" key="HealthcareService-WhistlestopTransportationService" name="WhistlestopTransportationService"/>
+<artifact id="Organization/WhistlestopWheels" key="Organization-WhistlestopWheels" name="WhistlestopWheels"/>
+<artifact id="Location/WhistlestopwheelsLocation" key="Location-WhistlestopwheelsLocation" name="WhistlestopwheelsLocation"/>
 <artifact id="SearchParameter/healthcareservice-active" key="SearchParameter-healthcareservice-active" name="healthcareservice-active"/>
 <artifact id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
 <artifact id="SearchParameter/healthcareservice-communication" key="SearchParameter-healthcareservice-communication" name="healthcareservice-communication"/>
