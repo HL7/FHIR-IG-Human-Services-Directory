@@ -102,7 +102,7 @@ Description: "This example value set includes codes that describe unique feature
 ValueSet: NonIndividualSpecialtiesVS
 Id: NonIndividualSpecialties
 Title: "Non-Individual Specialties"
-Description: "Non-Individual Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set."
+Description: "Non-Individual Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set copied from Plan-Net used to allow example value set binding in HSDOrganization profile."
 * ^experimental = false
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"

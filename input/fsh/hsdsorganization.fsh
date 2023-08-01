@@ -1,5 +1,6 @@
 Alias:  $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/NonIndividualSpecialtiesVS
+// Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/NonIndividualSpecialtiesVS
+Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
 Alias:  $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
 Alias:  $V2table0360VS = http://terminology.hl7.org/ValueSet/v2-0360 
 Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
