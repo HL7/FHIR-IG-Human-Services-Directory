@@ -1,22 +1,54 @@
-Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
+// Alias: PLANNETLocation = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location
+Alias: $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Alias: hsds-Organization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
 Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
-Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+Alias: $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
+// Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
+Alias: LocationStatus = http://hl7.org/fhir/location-status 
 
 Profile: HSDSLocation
-Parent: PLANNETLocation
+Parent: $USCoreLocation
 Id: hsds-Location
 Title:    "HSDSLocation"
 Description: "The HSDSLocation resource describes the physical place where community-based services are provided, practitioners are employed, organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
 * identifier.use = #official (exactly)
+* meta.lastUpdated 1..1
+* extension contains
+    NewPatients named newpatients 0..* MS and
+    Accessibility named accessibility 0..* MS and
+    $R4GeoJSONExtension named region 0..1 MS
+* extension[newpatients] ^short = "New Patients"
+* extension[accessibility] ^short = "Accessibility"
+* extension[region] ^short = "Associated Region (GeoJSON)"
+* identifier.type MS
+* identifier.value MS
+* status 1..1 MS
+* status = LocationStatus#active  (exactly) 
+* alias MS
+* description MS
+* mode 0..0
+* type MS
+* telecom MS
 * telecom.use = #work (exactly)
+* telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
+       ViaIntermediary named via-intermediary 0..* MS
+* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.system MS
+* telecom.value MS
 * address.use = #work (exactly)
-// This Reference IS working...but not using the computable name for the profile
-// * managingOrganization only Reference(hsds-Organization)
-// * managingOrganization only Reference(hsds-Organization)
-// * partOf only Reference(hsds-Organization)
-
+* position MS
+* managingOrganization 0..1 MS
+* managingOrganization only Reference(HSDSOrganization)
+* partOf 0..1 MS
+* partOf only Reference(HSDSLocation)
+* hoursOfOperation MS
+* hoursOfOperation.daysOfWeek MS
+* hoursOfOperation.allDay MS
+* hoursOfOperation.openingTime MS
+* hoursOfOperation.closingTime MS
+* availabilityExceptions MS
 
 Mapping: HSDSLocationToHSDS
 Source: HSDSLocation
@@ -43,7 +75,8 @@ For public transportation:
              accessibility_for_disabilities.accessibility                   
        location.extension:accessibility.url = 'adacomp'.
 Note: This FHIR extension describes accessibility options offered by the location. Based on the the Accessibility valuset defined for this extension i.e.  http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/AccessibilityVS, there are two different data sources in HSDS that may be mapped. However, the HSDS source for this is not coded data so the content in value may not be in sync with the code used as extension.url."
-* extension[location-boundary-geojson] -> "No Source. Note: This is a GAP in HSDS. This is a Plan-Net extension to represent the location boundary in GEOJson format as an Attachment data type."
+* extension[$R4GeoJSONExtension] -> "No Source. Note: This is a GAP in HSDS. This is a Plan-Net extension to represent the location boundary in GEOJson format as an Attachment data type."
+// * extension[location-boundary-geojson] -> "No Source. Note: This is a GAP in HSDS. This is a Plan-Net extension to represent the location boundary in GEOJson format as an Attachment data type."
 * identifier -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
 * identifier.id -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
 * identifier.use -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
