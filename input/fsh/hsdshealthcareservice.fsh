@@ -23,28 +23,28 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * providedBy only Reference(hsds-Organization)
 // * providedBy only Reference(Organization)
 * providedBy 1..1 MS
-* category 1..1 MS
+* category 1..1
 * category from HumanServiceCategory (example)
 * category ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from the 211 LA or Open Eligibility taxonomies as well as the FHIR SDOHCC ValueSet SDOH Category could be used until the social care community recommends an appropriate standard."
-* type MS
+* type
 * type from HumanServiceType (example)
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
-* specialty MS
+* specialty 0..0
 * specialty from SpecialtiesVS (required)
 * location only Reference(hsds-Location)
 * location MS
 * name MS
-* comment MS
-* telecom MS
+* comment
+* telecom
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
-       ViaIntermediary named via-intermediary 0..* MS
+       ContactPointAvailableTime named contactpoint-availabletime 0..0 and
+       ViaIntermediary named via-intermediary 0..0
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* telecom.system MS
-* telecom.value MS
+* telecom.system
+* telecom.value
 // Should be coverageArea only Reference(HSDSLocation) or (hsds-Location)
 * coverageArea only Reference(hsds-Location)
-* coverageArea MS
+* coverageArea
 // * serviceProvisionCode MS
 // * eligibility  MS
 * program from HumanServiceProgram (example)
@@ -52,16 +52,16 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 * characteristic from HumanServiceCharacteristic (example)
 * characteristic ^short = "This example value set includes codes that describe unique features that can be associated with community-based social services delivered at particular locations."
 // * referralMethod MS
-* appointmentRequired MS
-* availableTime MS
-* availableTime.daysOfWeek MS
-* availableTime.allDay MS
-* availableTime.availableStartTime MS
-* availableTime.availableEndTime MS
-* notAvailable MS
-* notAvailable.description MS
-* notAvailable.during MS
-* availabilityExceptions MS
+* appointmentRequired
+* availableTime
+* availableTime.daysOfWeek
+* availableTime.allDay
+* availableTime.availableStartTime
+* availableTime.availableEndTime
+* notAvailable
+* notAvailable.description
+* notAvailable.during
+* availabilityExceptions
 
 
 

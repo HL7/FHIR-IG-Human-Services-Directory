@@ -50,6 +50,7 @@ Usage: #example
 * contact.telecom.system = #phone
 * contact.telecom.value = "(999)-111-2231"
 * contact.telecom.use = ContactPointUse#work "work"
+* extension[contact-department].extension[name].valueString = "Inventory Department"
 
 
 Instance: WhistlestopWheels

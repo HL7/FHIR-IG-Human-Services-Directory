@@ -6,6 +6,9 @@ Alias: $R4GeoJSONExtension = http://hl7.org/fhir/StructureDefinition/location-bo
 // Alias: location-boundary-geojson = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson
 Alias: ContactPointAvailableTime  = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 Alias: LocationStatus = http://hl7.org/fhir/location-status 
+Alias: NewPatients = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients
+Alias: Accessibility = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/accessibility
+Alias: ViaIntermediary = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary
 
 Profile: HSDSLocation
 Parent: $USCoreLocation
@@ -15,7 +18,7 @@ Description: "The HSDSLocation resource describes the physical place where commu
 * identifier.use = #official (exactly)
 * meta.lastUpdated 1..1
 * extension contains
-    NewPatients named newpatients 0..* MS and
+    NewPatients named newpatients 0..0 and
     Accessibility named accessibility 0..* MS and
     $R4GeoJSONExtension named region 0..1 MS
 * extension[newpatients] ^short = "New Patients"
@@ -32,8 +35,8 @@ Description: "The HSDSLocation resource describes the physical place where commu
 * telecom MS
 * telecom.use = #work (exactly)
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
-       ViaIntermediary named via-intermediary 0..* MS
+       ContactPointAvailableTime named contactpoint-availabletime 0..0 MS and
+       ViaIntermediary named via-intermediary 0..0 MS
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system MS
 * telecom.value MS

@@ -1,14 +1,20 @@
-Alias:  $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
+Alias: $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
+Alias: QualificationStatusVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/QualificationStatusVS
+Alias: AccessibilityVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/AccessibilityVS
 
+Extension: ContactDepartment
+Id: contact-department
+Title: "Contact Department"
+Description: "An extension to describe the department where the named contact person for the organization works."
+* extension contains
+   identifier 0..* and
+   name 0..*
+* extension[identifier].value[x] only Identifier 
+* extension[identifier].value[x] 0..1
+* extension[name].value[x] only string 
+* extension[name].value[x] 0..1
 
-Extension: ViaIntermediary
-Id: via-intermediary
-Title: "Via Intermediary"
-Description: "A reference to an alternative point of contact (plannet-Organization) for this organization"
-// * value[x] only Reference(PlannetOrganization)
-* value[x] only Reference(HSDSOrganization)
-* value[x] 1..1 MS
 
 Extension: Qualification
 Id: qualification
@@ -40,9 +46,17 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[whereValid].value[x] from $USPSState (required)
 * extension[whereValid].value[x] 0..1
 
-Extension: OrgDescription
-Id: org-description
-Title: "Org Description"
-Description: "An extension to provide a human-readable description of an organization."
-* value[x] 1..1 MS
-* value[x] only string 
+// Extension: OrgDescription
+// Id: org-description
+// Title: "Org Description"
+// Description: "An extension to provide a human-readable description of an organization."
+// * value[x] 1..1 MS
+// * value[x] only string 
+
+// Extension: Accessibility
+// Id: accessibility
+// Title: "Accessibility"
+// Description: "An extension to describe accessibility options offered by a practitioner or at a location."
+// * value[x] 1..1 
+// * value[x] only CodeableConcept 
+// * value[x] from AccessibilityVS (extensible)

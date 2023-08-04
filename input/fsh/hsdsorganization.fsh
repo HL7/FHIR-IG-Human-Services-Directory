@@ -1,10 +1,13 @@
 Alias:  $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
 // Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/NonIndividualSpecialtiesVS
-Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
-Alias:  $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
-Alias:  $V2table0360VS = http://terminology.hl7.org/ValueSet/v2-0360 
-Alias:  $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
+Alias: IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
+Alias: $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
+Alias: $V2table0360VS = http://terminology.hl7.org/ValueSet/v2-0360 
+Alias: $V2table0360CS = http://terminology.hl7.org/CodeSystem/v2-0360
+Alias: OrgDescription = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/org-description
 Alias: IRS = http://www.irs.gov
+Alias: ViaIntermediary = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary
+Alias: ContactPointAvailableTime = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 
 Profile:       HSDSOrganization
 Parent:        $USCoreOrganization
@@ -28,18 +31,41 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * active 1..1 MS
 * active = true 
 * name MS
-* partOf MS  
-* partOf only Reference(HSDSOrganization)
+* partOf 0..0
+// * partOf only Reference(HSDSOrganization)
+// constraining out NPI 0..0
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+// * identifier[NPI] ^mustSupport = true
+* identifier[NPI] ^short = "NPI identifier not currently applicable to human services organizations"
+// * identifier.system 0..0
+// * identifier.system only uri
+// * identifier.value 0..0
+/* * identifier contains
+    NPI 0..0 */
+// constraining out CLIA identifier 0..0
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+// * idenfifier[CLIA] ^mustSupport = true
+* identifier[CLIA] ^short = "CLIA identifier not applicable to human services organizations"
+// * identifier.system 0..0
+// * identifier.system only uri
+// * identifier.value 0..0
+/* * identifier contains
+    CLIA 0..0 */
+// Added Tax ID for Organization identifier using IRS Tax ID
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier ^comment = "Tax ID preferred."
-* identifier.system ..1 MS
+* identifier.system 0..1 MS
 * identifier.system only uri
-* identifier.value ..1 MS
+* identifier.value 0..1 MS
 * identifier.value only string
 * identifier contains
-    IRS 0..* MS 
+    IRS 0..1
 * identifier[IRS] ^short = "United States Tax ID"
 * identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
 * identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
@@ -54,24 +80,25 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 // * address.state MS
 // * address.postalCode MS
 // * address.country MS
-* contact MS
-* contact.telecom MS
+* contact 0..*
+* contact.extension contains
+       ContactDepartment named contact-department 0..* 
+* contact.telecom
 * contact.telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* and
-       ViaIntermediary named via-intermediary 0..* 
+       ContactPointAvailableTime named contactpoint-availabletime 0..0 and
+       ViaIntermediary named via-intermediary 0..0
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* contact.telecom.value MS
-* contact.telecom.system MS
-* contact.telecom.use MS
-* telecom MS
+* contact.telecom.value
+* contact.telecom.system
+* contact.telecom.use
 * telecom.extension contains
-       ContactPointAvailableTime named contactpoint-availabletime 0..* MS and
-       ViaIntermediary named via-intermediary 0..* MS
+       ContactPointAvailableTime named contactpoint-availabletime 0..0 and
+       ViaIntermediary named via-intermediary 0..0
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
-* telecom.system MS
-* telecom.value MS
-* telecom.rank MS
-* type 1..* MS
+* telecom.system
+* telecom.value
+* telecom.rank
+* type 1..*
 * type from OrgTypeVS (extensible)
 
 Mapping: HSDSOrganizationToHSDS
