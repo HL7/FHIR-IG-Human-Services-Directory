@@ -3,9 +3,17 @@
 ### Overview
 The Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) for Human Services Directories is a United States (US) Realm standard that offers three “new content” profiles that are conceptually based and aligned with the [DaVinci PDEX Plan Net Provider Directory Implementation Guide STU v.1.1.0](http://hl7.org/fhir/us/davinci-pdex-plan-net/). This approach was taken because the DaVinci PDEX Provider Directory Implementation Guide, STU 1.0  has been recommended for use as the health care provider directory standard by the Centers for Medicare & Medicaid Services [(CMS)](https://www.cms.gov/) in the [Interoperability and Patient Access Final Rule (CMS-9115-F)](https://www.cms.gov/about-cms/obrhi/interoperability/policies-and-regulations/cms-interoperability-and-patient-access-final-rule-cms-9115-f).
 
-This guide re-uses and aligns with three PDEX Provider Directory profiles, [PlannetOrganization](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-Organization.html), [PlannetHealthcareService](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-HealthcareService.html), and the [PlannetLocation](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-Location.html) profiles to create new human and social service-specific profiles. The intent is to facilitate adoption of the new “human services-specific” profiles by organizations that have implemented, or intend to implement, the DaVinci PDEX Provider Directory Implementation Guide.
+The terms [human services](https://en.wikipedia.org/wiki/Human_services) and [social services](https://en.wikipedia.org/wiki/Social_services) refer to assistance that helps to meet people’s basic needs. These services often target underrepresented, disadvantaged, and underserved individuals — such as homeless and poverty-stricken populations, as well as disabled and senior communities.
 
-**Figure 1** shows the relationship between the FHIR profiles included in this Implementation Guide *(should update diagram so the cardinality between the HSDSHealthcareService and HSDOrganization profiles to (1..1) to reflect the requirement in HSDS)*
+Human services may be delivered by a broad range of occupations, including counselors, psychologists, and social workers. These professionals may work on prevention, remediation, or both and seek to improve access to basic needs, from mental healthcare to shelter to individuals in need. Human services focus on community-based work, and help to coordinate services between agencies that are provided by private and independent organizations, administered by government agencies, and the healthcare delivery sector.
+
+Social services is often considered to be one of the many subsets of human services. Social service providers also connect people with the services they need.
+
+Within the context of this implementation guide, these terms may be used interchangeably and are intended to distinguish these types of services from the healthcare services and interventions that are provided by clinicians and that are accessed from a healthcare service directory such as the National Provider or Plan-Net Provider Directories.
+
+The Human Services Directories FHIR implementation guide is intended to facilitate adoption of new “human services-specific” profiles by organizations that have implemented, or intend to implement, the DaVinci PDEX Provider Directory Implementation Guide, by re-using and aligning with three of the PDEX Provider Directory profiles: [PlannetOrganization](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-Organization.html), [PlannetHealthcareService](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-HealthcareService.html), and the [PlannetLocation](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-plannet-Location.html) profiles to create new human and social service-specific profiles. In addition, this guide is also designed for use by organizations and applications seeking to implement FHIR-based access to human services directories when they familiar with the relationship between their local service directory data and [Open Referral's](https://docs.openreferral.org/en/latest/) [Human Services Data Specification version (HSDS)](https://docs.openreferral.org/en/v2.0.1/hsds/reference/#).
+
+**Figure 1** illustrates the relationship between the FHIR profiles included in this Implementation Guide
 
 <img style="width:60%;height:auto;float:none;align:middle;" src="HSD Resource Relationship Diagram.svg"/>
 
@@ -65,21 +73,11 @@ The profiles described in this IG allow the service directory information to be 
 
 This guide also supports FHIR-enabled consumer (mobile) applications used by individuals/clients seeking to locate appropriate community-based services offered in a specified coverage area to search CBO-directories.
 
-STU 1 of this implementation guide supports read-only queries of a single human services directory by FHIR-enabled applications as depicted in the Consuming Applications swimlane in Figure 2 below. *(need to update this diagram to include a swimlane called Consuming Applications or change the sentence)*
-
-**Figure 2** illustrates the read-only scope for this implementation guide (IG) in the STU 1 publication.
-
-<img style="width:60%;height:auto;float:none;align:center;" src="Workflow Analysis.svg"/>
-
-*Figure 2: Scope for STU 1: Human Services Discovery*
-
-These read-only queries support a wide range of users and use cases within the context of service discovery to a human services directory using FHIR-enabled applications in accordance with relevant criteria/search parameters (e.g., organization, program, geography, accessibility, hours of operation, etc.).
-
-**Figure 3** emphasises the read-only scope (GET) for these APIs, where a community-based organization database is accessed by FHIR-enabled provider, payer, and consumer applications (EHR systems, payor systems, consumer mobile applications). STU 1 does not support PUT or POST, but may do so in a future iteration of this implementation guide.
+**Figure 2** emphasises the scope, including mapping & transformation and read-only (GET) purpose for the APIs, where a community-based organization database is accessed by FHIR-enabled provider, payer, and consumer applications (EHR systems, payor systems, consumer mobile applications). STU 1 does not support PUT or POST, but may do so in a future iteration of this implementation guide.
 
 <img style="width:75%;height:auto;float:none;align:middle;" src="HSD FHIR Implementation Scope.svg"/>
 
-*Figure 3: Scope: Provide a Map between HSDS and FHIR Profiles for Read Only Capabilities*
+*Figure 2: Scope: Provide a Map between HSDS and FHIR Profiles for Read Only Capabilities*
 
 **Out of Scope for this Release:**
 
@@ -105,6 +103,23 @@ Example use cases supported by this guide include:
 
 - Healthcare payers offering care management programs and care coordination seeking community services to help improve their member's health outcomes and quality of life.
 
+**Figure 3** depicts the Use Case Analysis for the IG
+
+<img style="width:45%;height:auto;float:none;align:center;" src="Use Case Analysis.svg"/>
+
+*Figure 3: Use Case Analysis for STU1*
+
+STU 1 of the implementation guide supports read-only queries of a single human services directory by FHIR-enabled applications as depicted in the Consuming Applications swimlane in Figure 4 below.
+
+**Figure 4** illustrates the workflow and read-only scope for STU 1
+
+<img style="width:70%;height:auto;float:none;align:center;" src="Workflow Analysis.svg"/>
+
+*Figure 4: Workflow Analysis Suporting Use Cases -- STU 1: Human Services Discovery*
+
+These read-only queries support a wide range of users and use cases within the context of service discovery to a human services directory using FHIR-enabled applications in accordance with relevant criteria/search parameters (e.g., organization, program, geography, accessibility, hours of operation, etc.).
+
+
 #### Testing and Future Efforts
 
 This guide was tested during its development under two reference implementations (RI) using two standards-based human services taxonomies. One RI tested the IG using a [211 LA](https://211la.org/ )-based directory; the other RI used a directory based the open-source [Open Eligibility](https://auntbertha.atlassian.net/servicedesk/customer/portals) taxonomy. In recognition that neither taxonomy is being universally implemented by the diverse social care community, and the fact that each code system has challenges related to its consistent use, specifically the proprietary nature of 211 LA as a barrier to broader adoption, implementers of this IG (STU1) are free to use any taxonomy (standards-based or local, home-grown codes) as deemed useful within the human services directory.
@@ -121,13 +136,13 @@ The [CMS Interoperability and Patient Access Rule (CMS-9115-F)](https://www.cms.
 
 As healthcare providers and payers seek to incorporate social determinants of health screening assessments and referrals to social care agencies into their care management processes, aligning with the PDEX Provider Directory is intended to minimize the burden for healthcare providers and payers that have implemented (or intend to implement PDEX), to incorporate human services directories into the care management workflows in their systems.
 
-In addition, corresponding profiles included in other related FHIR implementation guides were reviewed and taken into consideration during the development process to ensure aligment and to facilitate adoption of this standard as well. These implementation guides include the [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/) (VHDir IG), versions of the National Healthcare Directory Exchange: [Sept 2022 release](http://hl7.org/fhir/us/directory-exchange/2022Sep/) and its [current build](http://build.fhir.org/ig/HL7/fhir-directory-exchange/), and implementation guides produced by the [Gravity Project](https://thegravityproject.net/) (e.g., the [Social Determinants of Health (SDOH) Clinical Care Implementation Guide](http://hl7.org/fhir/us/sdoh-clinicalcare/)).
+In addition, corresponding profiles included in other related FHIR implementation guides were reviewed and considered during the development process to ensure aligment and to facilitate adoption of this standard as well. These implementation guides include the [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/) (VHDir IG), versions of the National Healthcare Directory Exchange: [Sept 2022 release](http://hl7.org/fhir/us/directory-exchange/2022Sep/) and its [current build](http://build.fhir.org/ig/HL7/fhir-directory-exchange/), and implementation guides produced by the [Gravity Project](https://thegravityproject.net/) (e.g., the [Social Determinants of Health (SDOH) Clinical Care Implementation Guide](http://hl7.org/fhir/us/sdoh-clinicalcare/)).
 
-**Figure 4** depicts the relationship between FHIR Human Services Directory IG and other related FHIR Implementation Guides *(update this diagram to include VhDir and the use of this guide by the Gravity SDOH Clinical Care guide)*
+**Figure 5** describes the relationship between FHIR Human Services Directory IG and other related FHIR Implementation Guides
 
 <img style="width:80%;height:auto;float:none;align:middle;" src="HSD IG Relationship to Core and Other IGs.svg"/>
 
-*Figure 4: Relationship to US Core and other FHIR Implementation Guides*
+*Figure 5: Relationship to US Core and other FHIR Implementation Guides*
 
 ### Alignment with PDEX and related FHIR IGs
 
@@ -139,24 +154,37 @@ FHIR US Core Release 3.1.1 addresses data included in the United States Core Dat
 
 PDEX Plan-Net reuses two [US Core profiles](http://hl7.org/fhir/us/core/STU3.1.1/index.html#us-core-profiles) relevant to this implementation guide: ([us-core-organization](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-organization.html) and [us-core-location](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-location.html)). Because US Core does not include a HealthcareService profile (even in the latest [published version](http://hl7.org/fhir/us/core/)), Plan-Net developed its PlannetHealthcareService profile using the base FHIR R4 [HealthcareService](http://hl7.org/fhir/R4B/healthcareservice.html#8.8) *Resource* and applied new constraints (e.g., active flag is required (1..1), and Must Support (MS) to various elements). The HealthcareService profile included in the Human Services directory is based on the R4 FHIR HealthcareService resource similar to the Plannet IG.
 
-A number of new (but optional) extensions were added to the three Plannet profiles references in the HSD IG to support Plannet requirements (see the Differential table in the Formal Views of Profile Content section for each [profile](http://hl7.org/fhir/us/davinci-pdex-plan-net/artifacts.html#3)). The extensions added to the Plannet Organization, Location, and HealthcareService profiles are defined as [Must Support](https://hl7.org/fhir/r4b/profiling.html#mustsupport), while the cardinality for these extensions is specifed as optional (0..*). Some of the Plannet extensions can be mapped to HSDS in the HSD profile, while others cannot due to a lack of source data in the current HSDS model and therefore have been constrained out of (not included) the corresponding Human Services Directory profiles.
+Some new extensions were added to the three profiles referenced in this IG to support Plannet requirements (see the Differential table in the Formal Views of Profile Content section for each [profile](http://hl7.org/fhir/us/davinci-pdex-plan-net/artifacts.html#3)). 
 
-The Plannet extensions included in this IG are the following:
+Extensions included in this implementation guide are either derived from the Plannet IG, or have been created in alignment with Plannet extensions in order to modify value set bindings. In addition, some of the Plannet extensions defined as [Must Support](https://hl7.org/fhir/r4b/profiling.html#mustsupport) but which are optional based on their cardinality (0..*) have been excluded from the IG given the lack of source data in the HSDS model.
 
-- [Accessibility](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-accessibility.html), 
-- [OrgDescription](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-org-description.html), and 
-- [Qualification](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-qualification.html)
+The extensions included in this IG include:
 
-The Plannet extensions omitted from the HSDS IG include:
+- [Accessibility](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-accessibility.html) used in the HSDLocation profile, and 
+- [OrgDescription](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-org-description.html) used in the HSDOrganization profile
 
-- [NewPatients](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-newpatients.html),
+Both of these extensions were directly derived from Plannet (as opposed to *aligned with*). 
+
+In addition, two new extensions were created that are specific to the Human Services IG. 
+
+The first was modeled on a corresponding Plannet extension to allow example binding to the [Non-Individual Specialties](http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties) value set. This was done in order to exclude the [Individual and Group Specialties](http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/IndividualAndGroupSpecialtiesVS) codes from the qualification value set since those codes are likely not applicable to qualifications associated with community-based organizations:
+ 
+- [Qualification](http://hl7.org/fhir/us/hsds/StructureDefinition/qualification)
+
+The second, is a new one: 
+
+- [ContactDepartment](http://hl7.org/fhir/us/hsds/StructureDefinition/contact-department) created to support additional contact information described in the HSDS model for Organizations that is not included in the Plannet IG. The ContactDepartment extension describes the department in which the named contact person for an organization works.
+
+The following extensions have been omitted from the new Human Services Directory profiles that were aligned with Plannet due to a lack of source data in the HSDS model:
+
+- [NewPatients](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-newpatients.html), 
 - [DeliveryMethod](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-delivery-method.html),
 - [ContactPointAvailableTime](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-contactpoint-availabletime.html), and
 - [ViaIntermediary](http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition-via-intermediary.html)
 
-Additional SearchParameters were added to the new Human Services Directory profiles to ensure that the Human Services Directory are conformant with the Human Services Data Specification (HSDS).
+Additional SearchParameters were added to the new Human Services Directory profiles to ensure that the Human Services Directory are conformant with the Human Services Data Specification (HSDS). *to be elaborated once the SearchParameters section has been updated prior to publication*
 
-This alignment approach is used to facilitate adoption of the new Human Services Directory profiles by implementers who have implemented the US Core, Plan-Net, and National Directory implementation guides. Because the Plan-Net Provider and National Directory IGs are conceptually based on the [Validated Healthcare Directory Implementation Guide (VHDir IG)](http://build.fhir.org/ig/HL7/VhDir/), VHDir was included in the analysis for this project as well.
+This alignment approach is used to facilitate the adoption of these new Human Services Directory profiles by implementers who have implemented the US Core, Plan-Net, and FAST National Directory implementation guides. Because the Plan-Net Provider and National Directory IGs are based conceptually on the [Validated Healthcare Directory Implementation Guide (VHDir IG)](http://build.fhir.org/ig/HL7/VhDir/), the VHDir guide was also included in the analysis for this project.
 
 ### Credits
 This IG was developed by FEI Systems using [FHIR Shorthand (FSH)](https://build.fhir.org/ig/HL7/fhir-shorthand/) and the [SUSHI toolkit](https://fshschool.org/docs/sushi/) (an acronym for "SUSHI Unshortens SHorthand Inputs"), a free, open source toolchain from the MITRE Corporation. 

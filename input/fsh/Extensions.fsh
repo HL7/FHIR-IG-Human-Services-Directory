@@ -2,6 +2,7 @@ Alias: $USPSState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
 Alias: QualificationStatusVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/QualificationStatusVS
 Alias: AccessibilityVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/AccessibilityVS
+Alias: IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
 
 Extension: ContactDepartment
 Id: contact-department
@@ -31,7 +32,8 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[identifier].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 0..1
-* extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (example)
+// * extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (example)
+* extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)
 * extension[issuer].value[x] 0..1
 // * extension[issuer].value[x] only Reference(PlannetOrganization)
 * extension[issuer].value[x] only Reference(HSDSOrganization)

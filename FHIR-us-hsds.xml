@@ -21,8 +21,8 @@
 <artifact id="ValueSet/HumanServiceProgram" key="ValueSet-HumanServiceProgram" name="Human Service Program VS"/>
 <artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Service Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
-<artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="Human Services Directories Capability Statement"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
+<artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="HumanServicesDirectories"/>
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
 <artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
