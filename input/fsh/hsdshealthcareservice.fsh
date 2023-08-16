@@ -1,11 +1,12 @@
 
 Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
-Alias: hsds-Organization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
-Alias: hsds-Location = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Location
+Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
+Alias: HSDLocation = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Location
 Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
 Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
 Alias: CommonLanguages = http://hl7.org/fhir/ValueSet/languages
+Alias: NonIndividualSpecialtiesVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
 
 
 
@@ -22,7 +23,7 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * identifier.value MS
 * active 1..1 MS
 * active = true
-* providedBy only Reference(hsds-Organization)
+* providedBy only Reference(HSDOrganization)
 // * providedBy only Reference(Organization)
 * providedBy 1..1 MS
 * category 1..1
@@ -31,9 +32,10 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * type
 * type from HumanServiceType (example)
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
-* specialty 0..0
-* specialty from SpecialtiesVS (required)
-* location only Reference(hsds-Location)
+* specialty 0..*
+// * specialty from SpecialtiesVS (required)
+* specialty from NonIndividualSpecialtiesVS (preferred)
+* location only Reference(HSDLocation)
 * location MS
 * communication from CommonLanguages (preferred)
 * name MS
@@ -45,8 +47,8 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system
 * telecom.value
-// Should be coverageArea only Reference(HSDSLocation) or (hsds-Location)
-* coverageArea only Reference(hsds-Location)
+// Should be coverageArea only Reference(HSDSLocation) or (HSDLocation)
+* coverageArea only Reference(HSDLocation)
 * coverageArea
 // * serviceProvisionCode MS
 // * eligibility  MS
