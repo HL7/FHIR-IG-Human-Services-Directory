@@ -16,7 +16,7 @@ releaseLabel: STU Ballot
 publisher:
   name: HL7 Human and Social Services Work Group
   url: http://www.hl7.org/Special/committees/hsswg/index.cfm
-  # email: hsswg@lists.hl7.org
+  email: hsswg@lists.hl7.org
 
 dependencies:
  hl7.fhir.us.core: 3.1.1

@@ -5,7 +5,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-organization"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_organization"
+* name = "HSD_sp_healthcareservice_organization"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/healthcareservice-organization"
 * description = "Select Human and Social services offered by the specified organization"
 * status = #active
@@ -27,7 +27,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-communication"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_communication"
+* name = "HSD_sp_healthcareservice_communication"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
@@ -48,7 +48,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-location"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_location"
+* name = "HSD_sp_healthcareservice_location"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/healthcareservice-location"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -69,7 +69,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-program"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_program"
+* name = "HSD_sp_healthcareservice_program"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-program"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -91,7 +91,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-category"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_category"
+* name = "HSD_sp_healthcareservice_category"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/healthcareservice-service-category"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -112,7 +112,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-type"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_type"
+* name = "HSD_sp_healthcareservice_type"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/healthcareservice-service-type"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -133,7 +133,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-name"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_name"
+* name = "HSD_sp_healthcareservice_name"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/healthcareservice-name"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -154,7 +154,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/healthcareservice-active"
 * version = "0.1.0"
-* name = "HSDS_sp_healthcareservice_active"
+* name = "HSD_sp_healthcareservice_active"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/HealthcareService-active"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"

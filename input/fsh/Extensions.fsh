@@ -32,33 +32,21 @@ Description: "An extension to add qualifications for an organization (e.g. accre
 * extension[identifier].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 0..1
-// * extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (example)
 * extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)
 * extension[issuer].value[x] 0..1
-// * extension[issuer].value[x] only Reference(PlannetOrganization)
-* extension[issuer].value[x] only Reference(HSDSOrganization)
+* extension[issuer].value[x] only Reference(HSDOrganization)
 * extension[status].value[x] 0..1
 * extension[status].value[x] only  code 
 * extension[status].valueCode from QualificationStatusVS (example)
 * extension[status].valueCode = $QualificationStatusCS#active (exactly)
 * extension[period].value[x] only Period 
 * extension[period].value[x] 0..1
-// * extension[whereValid].value[x] only CodeableConcept or Reference(PlannetLocation)
-* extension[whereValid].value[x] only CodeableConcept or Reference(HSDSLocation)
+* extension[whereValid].value[x] only CodeableConcept or Reference(HSDLocation)
 * extension[whereValid].value[x] from $USPSState (required)
 * extension[whereValid].value[x] 0..1
 
-// Extension: OrgDescription
-// Id: org-description
-// Title: "Org Description"
-// Description: "An extension to provide a human-readable description of an organization."
-// * value[x] 1..1 MS
-// * value[x] only string 
-
-// Extension: Accessibility
-// Id: accessibility
-// Title: "Accessibility"
-// Description: "An extension to describe accessibility options offered by a practitioner or at a location."
-// * value[x] 1..1 
-// * value[x] only CodeableConcept 
-// * value[x] from AccessibilityVS (extensible)
+// Extension: LocationBoundaryGeojson
+// Id: location-boundary-geojson
+// Title: "LocationBoundaryGeojson"
+// Description: "A boundary shape that represents the outside edge of the location (in GeoJSON format) This shape may have holes, and disconnected shapes."
+// * value[x] 0..1* value[x] only string 

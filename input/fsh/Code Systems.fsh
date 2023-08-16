@@ -1,4 +1,4 @@
-// Example Human Service Program code system describing the types of progams under which community-based social services can be delivered
+// Example Human Service Directory Program code system describing the types of progams under which community-based social services can be delivered
 
 CodeSystem: HumanServiceProgramCS
 Id: HumanServiceProgramCS

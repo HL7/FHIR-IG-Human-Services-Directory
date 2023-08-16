@@ -11,9 +11,9 @@
 <artifact id="Organization/FoodBank" key="Organization-FoodBank" name="FoodBank"/>
 <artifact id="Location/FoodBankLocation" key="Location-FoodBankLocation" name="FoodBankLocation"/>
 <artifact id="HealthcareService/FoodPantryService" key="HealthcareService-FoodPantryService" name="FoodPantryService"/>
-<artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDSHealthcareService"/>
-<artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDSLocation"/>
-<artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDSOrganization"/>
+<artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDHealthcareService"/>
+<artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDLocation"/>
+<artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDOrganization"/>
 <artifact id="ValueSet/HumanServiceCategory" key="ValueSet-HumanServiceCategory" name="Human Service Category VS"/>
 <artifact id="CodeSystem/HumanServiceCharacteristicCS" key="CodeSystem-HumanServiceCharacteristicCS" name="Human Service Characteristic"/>
 <artifact id="ValueSet/HumanServiceCharacteristic" key="ValueSet-HumanServiceCharacteristic" name="Human Service Characteristic VS"/>
@@ -21,8 +21,8 @@
 <artifact id="ValueSet/HumanServiceProgram" key="ValueSet-HumanServiceProgram" name="Human Service Program VS"/>
 <artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Service Type VS"/>
 <artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
+<artifact id="CapabilityStatement/HumanServicesDirectory" key="CapabilityStatement-HumanServicesDirectory" name="Human Services Directory Capability Statement"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
-<artifact id="CapabilityStatement/HumanServicesDirectories" key="CapabilityStatement-HumanServicesDirectories" name="HumanServicesDirectories"/>
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
 <artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
@@ -52,7 +52,6 @@
 <artifact id="SearchParameter/location-organization" key="SearchParameter-location-organization" name="location-organization"/>
 <artifact id="SearchParameter/organization-address" key="SearchParameter-organization-address" name="organization-address"/>
 <artifact id="SearchParameter/organization-address-city" key="SearchParameter-organization-address-city" name="organization-address-city"/>
-<artifact id="SearchParameter/organization-address-country" key="SearchParameter-organization-address-country" name="organization-address-country"/>
 <artifact id="SearchParameter/organization-address-postalcode" key="SearchParameter-organization-address-postalcode" name="organization-address-postalcode"/>
 <artifact id="SearchParameter/organization-address-state" key="SearchParameter-organization-address-state" name="organization-address-state"/>
 <artifact id="SearchParameter/organization-identifier" key="SearchParameter-organization-identifier" name="organization-identifier"/>

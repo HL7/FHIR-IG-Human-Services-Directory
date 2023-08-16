@@ -6,13 +6,13 @@ Alias: IdentifierUse = http://hl7.org/fhir/identifier-use
 Alias: IdentifierType = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: ContactPointUse = http://hl7.org/fhir/contact-point-use
 Alias: ContactNameUse = http://hl7.org/fhir/name-use
-Alias: HSDSOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
+Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
 
 Instance: FoodBank
-InstanceOf: HSDSOrganization
+InstanceOf: HSDOrganization
 Description: "Community-Based Organization that provides food pantry services. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided."     
 Usage: #example
-* meta.profile = Canonical(HSDSOrganization) 
+* meta.profile = Canonical(HSDOrganization) 
 * meta.lastUpdated = "2023-07-22T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -54,10 +54,10 @@ Usage: #example
 
 
 Instance: WhistlestopWheels
-InstanceOf: HSDSOrganization
+InstanceOf: HSDOrganization
 Description: "Community-Based Organization that provides transportation services for the elderly. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided."     
 Usage: #example
-* meta.profile = Canonical(HSDSOrganization) 
+* meta.profile = Canonical(HSDOrganization) 
 * meta.lastUpdated = "2023-07-22T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -97,10 +97,10 @@ Usage: #example
 
 
 Instance: FoodBankLocation
-InstanceOf: HSDSLocation 
+InstanceOf: HSDLocation 
 Description: "Locations associated with services provided by the Redwood Food Bank" 
 Usage: #example    
-* meta.profile = Canonical(HSDSLocation) 
+* meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 
@@ -128,10 +128,10 @@ Usage: #example
 * hoursOfOperation[1].closingTime = 17:00:00
 
 Instance: WhistlestopwheelsLocation
-InstanceOf: HSDSLocation 
+InstanceOf: HSDLocation 
 Description: "Locations associated with services provided by Whistlestop Wheels" 
 Usage: #example    
-* meta.profile = Canonical(HSDSLocation) 
+* meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * status = #active 
@@ -159,10 +159,10 @@ Usage: #example
 * hoursOfOperation[1].closingTime = 17:00:00
 
 Instance: MealsOnWheels
-InstanceOf: HSDSHealthcareService
+InstanceOf: HSDHealthcareService
 Description: "Food assistance provided to the elderly and low income at their homes."
 Usage: #example
-* meta.profile =  Canonical(HSDSHealthcareService) 
+* meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-07-24T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -174,10 +174,10 @@ Usage: #example
 * communication = LANGUAGE#es "Spanish"
 
 Instance: WhistlestopTransportationService
-InstanceOf: HSDSHealthcareService
+InstanceOf: HSDHealthcareService
 Description: "Transportation services for the disabled and elderly."
 Usage: #example
-* meta.profile =  Canonical(HSDSHealthcareService) 
+* meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-07-24T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -189,10 +189,10 @@ Usage: #example
 * communication = LANGUAGE#es "Spanish"
 
 Instance: FoodPantryService
-InstanceOf: HSDSHealthcareService
+InstanceOf: HSDHealthcareService
 Description: "Human and Social Services Resource provided by Community-Based Organization (CBO)"
 Usage: #example
-* meta.profile =  Canonical(HSDSHealthcareService) 
+* meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-06-28T11:26:22.0314215+00:00"
 * language = #en-US
 * active = true

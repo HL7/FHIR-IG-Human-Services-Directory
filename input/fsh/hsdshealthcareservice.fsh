@@ -7,11 +7,11 @@ Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServicePr
 Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
 
 
-Profile: HSDSHealthcareService
+Profile: HSDHealthcareService
 Parent: HealthcareService
 Id: hsds-HealthcareService
-Title:    "HSDSHealthcareService"
-Description: "The HSDSHealthcareService profile was introduced in STU 1 of this guide to allow example value sets that are used to search human and social service directories, because based on guidance from the human and social services community, existing human and social services taxonomies have not been deemed suitable for use in the relevant value sets. This profile isbased on the R4 HealthcareService resource, and fully aligned (as opposed to derived from) the Plan-Net HealthcareService profile which enforces use of extensible bindings to the category and type elements.  This profile describes the way a human/social service can be contacted to assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
+Title:    "HSDHealthcareService"
+Description: "The HSD HealthcareService profile was introduced in STU 1 of this guide to allow example value sets that are used to search human and social service directories, because based on guidance from the human and social services community, existing human and social services taxonomies have not been deemed suitable for use in the relevant value sets. This profile isbased on the R4 HealthcareService resource, and fully aligned (as opposed to derived from) the Plan-Net HealthcareService profile which enforces use of extensible bindings to the category and type elements.  This profile describes the way a human/social service can be contacted to assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
  
 * identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
@@ -65,12 +65,12 @@ Description: "The HSDSHealthcareService profile was introduced in STU 1 of this 
 
 
 
-Mapping: HSDSHealthcareServiceToHSDS
-Source: HSDSHealthcareService
+Mapping: HSDHealthcareServiceToHSDS
+Source: HSDHealthcareService
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDSHealthcareService profile. The left hand column contains the FHIR HSDSHealthcareService element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
+Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to the FHIR HSDHealthcareService profile. The left hand column contains the FHIR HSDHealthcareService element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
 
 The HSDS specification (v.2.0.1) served as the initial basis for requirements, and the mapping/alignment of HSDS data elements to profiles contained in the FHIR IG for Human Service Directories, STU1. HSDS Version 2.0.1 applies string datatypes to nearly all HSDS table 'id' fields/ data elements, including the id field associated with each HSDS [table] (e.g. organization.id [organization], location.id [location], service.id [service], phone.id [phone], etc.)). In the next version of HSDS, v.3.0, each HSDS table.id field will be defined using the UUID data type.
 

@@ -9,11 +9,11 @@ Alias: IRS = http://www.irs.gov
 Alias: ViaIntermediary = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary
 Alias: ContactPointAvailableTime = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
 
-Profile:       HSDSOrganization
+Profile:       HSDOrganization
 Parent:        $USCoreOrganization
 Id:            hsds-Organization
-Title:         "HSDSOrganization"
-Description: "The HSDSOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
+Title:         "HSDOrganization"
+Description: "The HSDOrganization resource is a formal or informal grouping of people or organizations set up to assist people in coping with issues related to various social issues, including but not limited to: adequate housing, substance abuse, domestic conflict, mental health and/or personal/familial problems.
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.name.text."
 
 /* Description:   "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice.
@@ -32,7 +32,7 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * active = true 
 * name MS
 * partOf 0..0
-// * partOf only Reference(HSDSOrganization)
+// * partOf only Reference(HSDOrganization)
 // constraining out NPI 0..0
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
@@ -101,12 +101,12 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * type 1..*
 * type from OrgTypeVS (extensible)
 
-Mapping: HSDSOrganizationToHSDS
-Source: HSDSOrganization
+Mapping: HSDOrganizationToHSDS
+Source: HSDOrganization
 Target:   "HSDS"
 Id:       hsds
 Title:    "HSDS"
-Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to this FHIR HSDSOrganization profile. The left hand column contains the FHIR HSDSOrganization element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
+Description: """This section describes the way HSDS version 2.0.1 elements are mapped from HSDS tables to this FHIR HSDOrganization profile. The left hand column contains the FHIR HSDOrganization element name; the right hand column contains the HSDS table.element and any implementation/transformation rules required to support the mapping.
 
 The HSDS specification (v.2.0.1) served as the initial basis for requirements, and the mapping/alignment of HSDS data elements to profiles contained in the FHIR IG for Human Service Directories, STU1. HSDS Version 2.0.1 applies string datatypes to nearly all HSDS table 'id' fields/ data elements, including the id field associated with each HSDS [table] (e.g. organization.id [organization], location.id [location], service.id [service], phone.id [phone], etc.). In the next version of HSDS, v.3.0, each HSDS table.id field will be defined using the UUID data type.
 

@@ -3,7 +3,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-city"
 * version = "0.1.0"
-* name = "HSDS_sp_location_address_city"
+* name = "HSD_sp_location_address_city"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-address-city"
 * status = #active
 * description = "Select locations within the specified city"
@@ -24,7 +24,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-postalcode"
 * version = "0.1.0"
-* name = "HSDS_sp_location_address_postalcode"
+* name = "HSD_sp_location_address_postalcode"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-address-postalcode"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -46,7 +46,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-state"
 * version = "0.1.0"
-* name = "HSDS_sp_location_address_state"
+* name = "HSD_sp_location_address_state"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-address-state"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -68,7 +68,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address"
 * version = "0.1.0"
-* name = "HSDS_sp_location_address"
+* name = "HSD_sp_location_address"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-address"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -90,7 +90,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-name"
 * version = "0.1.0"
-* name = "HSDS_sp_location_name"
+* name = "HSD_sp_location_name"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-name"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -112,7 +112,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-organization"
 * version = "0.1.0"
-* name = "HSDS_sp_location_organization"
+* name = "HSD_sp_location_organization"
 * derivedFrom = "http://hl7.org/fhir/us/davinci-pdex-plan-net/SearchParameter/location-organization"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -134,7 +134,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-address-country"
 * version = "0.1.0"
-* name = "HSDS_sp_location_address_country"
+* name = "HSD_sp_location_address_country"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Location-address-country"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
@@ -156,7 +156,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-hoursofoperation"
 * version = "0.1.0"
-* name = "HSDS_sp_location_hoursofoperation"
+* name = "HSD_sp_location_hoursofoperation"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
@@ -177,7 +177,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/location-accessibility"
 * version = "0.1.0"
-* name = "HSDS_sp_location_accessibility"
+* name = "HSD_sp_location_accessibility"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
