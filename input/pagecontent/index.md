@@ -190,20 +190,20 @@ This IG was developed by FEI Systems using [FHIR Shorthand (FSH)](https://build.
 
 The project team would like to thank leadership and colleagues for their support in the development of this Implementation Guide.
 
-|**Name**			|**Organization**										|
+|**Name**			      |**Organization**									                                	|
 |Serafina Versaggi	|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
-|Sean Muir			|BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
-|Chirag Bhatt		|FEI Systems (https://feisystems.com/)						|
+|Sean Muir			    |BookZurman, Inc./FEI Systems (https://www.bookzurman.com/)		      |
+|Chirag Bhatt		    |FEI Systems (https://feisystems.com/)			                  			|
 
 Generous assistance in testing this Implementation Guide was provided by the Departments of Health and Human Services Administration for Commuity Living (ACL) and the Administration for Children and Families (ACF) as well as other organizations and individuals. Capability statements were rendered with tools [tools](https://github.com/caspears/CapStatement) developed by Eric Haas and modified by Corey Spears. Our thanks to these contributors and to the many others not explicitly listed who contributed their time and expertise to this work:
 
-|**Name**			|**Organization**										|
-|Aadli Abdul-Kareem 	|Electronic Health Network, Inc. (www.https://www.ehnusa.com/)		|
-|Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group					                  	|
-|Jessica Banks		|Goldbelt (https://www.goldbelt.com/)				                      		|
-|Hector Beltran		|Niche Aim Technologies (www.https://www.https://nicheaim.com/)		    |
-|Matt Bishop		|Open City Labs (https://www.opencitylabs.com/wordpress/)		          	|
-|Greg Bloom			|Open Referral (https://docs.openreferral.org/)				                	|
+|**Name**			      |**Organization**										|
+|Aadli Abdul-Kareem |Electronic Health Network, Inc. (www.https://www.ehnusa.com/)	    |
+|Courtney Baldridge	|USAging & Co-Chair, HL7 HSS Work Group					                 	  |
+|Jessica Banks		  |Goldbelt (https://www.goldbelt.com/)				                   	  	|
+|Hector Beltran		  |Niche Aim Technologies (www.https://www.https://nicheaim.com/)     |
+|Matt Bishop		    |Open City Labs (https://www.opencitylabs.com/wordpress/)		      	|
+|Greg Bloom			    |Open Referral (https://docs.openreferral.org/)				            	|
 |Chirag Bhatt   |FEI Systems (https://feisystems.com/)						                      |
 |Irene Boakye		|FEI Systems (https://feisystems.com/)						                      |
 |Llew Brown			|Zane Networks (https://www.zanenetworks.com/)				                	|

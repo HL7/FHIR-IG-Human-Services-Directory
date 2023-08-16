@@ -5,6 +5,8 @@ Alias: hsds-Organization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-
 Alias: hsds-Location = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Location
 Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceProgram
 Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
+Alias: CommonLanguages = http://hl7.org/fhir/ValueSet/languages
+
 
 
 Profile: HSDHealthcareService
@@ -33,6 +35,7 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * specialty from SpecialtiesVS (required)
 * location only Reference(hsds-Location)
 * location MS
+* communication from CommonLanguages (preferred)
 * name MS
 * comment
 * telecom
