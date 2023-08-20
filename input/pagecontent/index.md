@@ -107,7 +107,7 @@ STU 1 of the implementation guide supports read-only queries of a single human s
 
 **Figure 3** illustrates the workflow and read-only scope in support for use cases in STU 1
 
-<img style="width:70%;height:auto;float:none;align:center;" src="Workflow Analysis.svg"/>
+<img style="width:70%;height:auto;float:none;align:center;" src="Workflow analysis.svg"/>
 
 *Figure 3: Workflow Analysis Suporting Use Cases -- STU 1: Human Services Discovery*
 

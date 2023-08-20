@@ -2,7 +2,7 @@ Instance: organization-address-city
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-city"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_address_city"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-city"
 * status = #active
@@ -24,7 +24,7 @@ Instance: organization-address-postalcode
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-postalcode"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_address_postalcode"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-postalcode"
 * status = #active
@@ -46,7 +46,7 @@ Instance: organization-address-state
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-state"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_address_state"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-state"
 * status = #active
@@ -68,10 +68,9 @@ Instance: organization-address
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_address"
 * derivedFrom = "http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-address"
-// * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
@@ -86,44 +85,43 @@ Usage: #definition
 * modifier[1] = #exact
 * modifier[2] = #contains
 
-// Instance: organization-address-country
-// InstanceOf: SearchParameter
-// Usage: #definition
-// * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-country"
-// * version = "0.1.0"
-// * name = "HSD_sp_organization_address_country"
-// * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-country"
-// * status = #active
-// * publisher = "HL7 Human and Social Services Work Group"
-// * contact.name = "HL7 Human and Social Services Work"
-// * description = "Select organizations by the country specified in an address"
-// * code = #address-country
-// * base = #Organization
-// * type = #string
-// * expression = "Organization.address.country"
-// * multipleOr = true
-// * multipleAnd = true
-// * modifier[0] = #text
-// * modifier[1] = #exact
-//  * modifier[2] = #contains
+Instance: organization-address-country
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-address-country"
+* version = "1.0.0"
+* name = "HSD_sp_organization_address_country"
+* derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-address-country"
+* status = #active
+* publisher = "HL7 Human and Social Services Work Group"
+* contact.name = "HL7 Human and Social Services Work"
+* description = "Select organizations by the country specified in an address"
+* code = #address-country
+* base = #Organization
+* type = #string
+* expression = "Organization.address.country"
+* multipleOr = true
+* multipleAnd = true
+* modifier[0] = #text
+* modifier[1] = #exact
+* modifier[2] = #contains
 
 
 Instance: organization-name
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-name"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_name"
 * derivedFrom = "http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-name"
-// * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-name"
 * status = #active
 * publisher = "HL7 Human and Social Services Work Group"
 * contact.name = "HL7 Human and Social Services Work"
-* description = "Select organizations by (a portion of) the organization's name or alias"
+* description = "Select organizations by (a portion of) the organization's name"
 * code = #name
 * base = #Organization
 * type = #string
-* expression = "Organization.name | Organization.alias"
+* expression = "Organization.name"
 * multipleOr = true
 * multipleAnd = true
 * modifier[0] = #text
@@ -135,7 +133,7 @@ Instance: organization-type
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-type"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_type"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-type"
 * status = #active
@@ -156,7 +154,7 @@ Instance: organization-identifier
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/hsds/SearchParameter/organization-identifier"
-* version = "0.1.0"
+* version = "1.0.0"
 * name = "HSD_sp_organization_identifier"
 * derivedFrom = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
 * status = #active

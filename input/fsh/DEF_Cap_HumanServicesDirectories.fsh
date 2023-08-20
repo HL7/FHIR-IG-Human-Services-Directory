@@ -129,6 +129,7 @@ Description: "Describes the expected capabilities of the Human Services Director
 * rest[0].resource[1].type = #Organization
 * rest[0].resource[1].profile = "http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization"
 * rest[0].resource[1].documentation = "Read a formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc."
+
 * rest[0].resource[1].interaction[0].code = #vread
 * rest[0].resource[1].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[1].interaction[0].extension.valueCode = #SHALL
@@ -146,7 +147,7 @@ Description: "Describes the expected capabilities of the Human Services Director
   * extension.valueCode = #SHALL
   * definition = Canonical(organization-address)
 
-/* * rest[0].resource[1].searchParam[+]
+* rest[0].resource[1].searchParam[+]
   * name = "address.postalCode"
   * type = #string
   * documentation = "Search for organizations by postal code specified in an address."
@@ -168,7 +169,7 @@ Description: "Describes the expected capabilities of the Human Services Director
   * documentation = "Search for organizations by city specified in an address."
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
-  * definition = Canonical(organization-address-city) */
+  * definition = Canonical(organization-address-city)
 
 * rest[0].resource[1].searchParam[+]
   * name = "identifier"
@@ -222,49 +223,49 @@ Description: "Describes the expected capabilities of the Human Services Director
   * extension.valueCode = #SHALL
   * definition = Canonical(healthcareservice-program)
 
-// * rest[0].resource[2].searchParam[+]
-//  * name = "category"
-// * type = #token
-//  * documentation = "Search for human and social services by the specified category of service."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
-// * definition = Canonical(healthcareservice-category)
-//  * definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-category"
+* rest[0].resource[2].searchParam[+]
+  * name = "category"
+  * type = #token
+  * documentation = "Search for human and social services by the specified category of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+//* definition = Canonical(healthcareservice-category)
+  * definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-category"
 
-//  * rest[0].resource[2].searchParam[+]
-//  * name = "type"
-//  * type = #token
-//  * documentation = "Search for human and social services by the specified type of service."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
-//  * definition = Canonical(healthcareservice-type)
-//  * definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-type"
+* rest[0].resource[2].searchParam[+]
+  * name = "type"
+  * type = #token
+  * documentation = "Search for human and social services by the specified type of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+//* definition = Canonical(healthcareservice-type)
+  * definition = "http://hl7.org/fhir/SearchParameter/HealthcareService-service-type"
 
-//  * rest[0].resource[2].searchParam[+]
-//  * name = "active"
-//  * type = #token
-//  * documentation = "Search for human and social services by the specified status of service."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
-//  * definition =    ==> is this a built in search parameter?
+* rest[0].resource[2].searchParam[+]
+  * name = "active"
+  * type = #token
+  * documentation = "Search for human and social services by the specified status of service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+ // * definition =    ==> is this a built in search parameter?
 
-//  * rest[0].resource[2].searchParam[+]
-//  * name = "name"
-//  * type = #string
-//  * documentation = "Search for human and social services by the specified status for the service."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[+]
+  * name = "name"
+  * type = #string
+  * documentation = "Search for human and social services by the specified status for the service."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
 
-//  * rest[0].resource[2].searchParam[+]
-//  * name = "location"
-//  * type = #reference
-//  * documentation = "Search for human and social services offered at the specified location."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[+]
+  * name = "location"
+  * type = #reference
+  * documentation = "Search for human and social services offered at the specified location."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
   
-//  * rest[0].resource[2].searchParam[+]
-//  * name = "organization"
-//  * type = #reference
-//  * documentation = "Search for human and social services offered by the specified organization."
-//  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-//  * extension.valueCode = #SHALL
+* rest[0].resource[2].searchParam[+]
+  * name = "organization"
+  * type = #reference
+  * documentation = "Search for human and social services offered by the specified organization."
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
