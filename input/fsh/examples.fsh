@@ -7,6 +7,8 @@ Alias: IdentifierType = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: ContactPointUse = http://hl7.org/fhir/contact-point-use
 Alias: ContactNameUse = http://hl7.org/fhir/name-use
 Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
+Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
+Alias: $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
 
 Instance: FoodBank
 InstanceOf: HSDOrganization
@@ -51,6 +53,12 @@ Usage: #example
 * contact.telecom.value = "(999)-111-2231"
 * contact.telecom.use = ContactPointUse#work "work"
 * extension[contact-department].extension[name].valueString = "Inventory Department"
+/* * extension[qualification].extension[identifier] = 
+* extension[qualification].extension[code] = $NUCCProviderTaxonomy
+* extension[qualification].extension[code].valueCodeableConcept.code = "251T00000X"
+* extension[qualification].extension[code].valueCodeableConcept.code = "251T00000X"
+* extension[qualification].extension[code].valueCode.display = "PACE Provider Organization"
+* extension[qualification].extension[status] = $QualificationStatusCS#active */
 
 
 Instance: WhistlestopWheels
@@ -94,6 +102,11 @@ Usage: #example
 * contact.telecom.system = #phone
 * contact.telecom.value = "(999)-555-2222"
 * contact.telecom.use = ContactPointUse#work "work"
+/* * extension[contact-department].extension[name].valueString = "Inventory Department"
+* extension[qualification].extension[identifier]
+* extension[qualification].extension[code].valueString = 342000000X
+* extension[qualification].extension[issuer].display = "Transportation Network Company"
+* extension[qualification].extension[status] = $QualificationStatusCS#active */
 
 
 Instance: FoodBankLocation

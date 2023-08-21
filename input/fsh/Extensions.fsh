@@ -8,6 +8,8 @@ Extension: ContactDepartment
 Id: contact-department
 Title: "Contact Department"
 Description: "An extension to describe the department where the named contact person for the organization works."
+Context: Organization
+// Context: Organization.contact
 * extension contains
    identifier 0..* and
    name 0..*
@@ -21,6 +23,7 @@ Extension: Qualification
 Id: qualification
 Title: "Qualification"
 Description: "An extension to add qualifications for an organization (e.g. accreditation)."
+Context: Organization
 * extension contains
    identifier 0..* and 
    code 0..1 and
