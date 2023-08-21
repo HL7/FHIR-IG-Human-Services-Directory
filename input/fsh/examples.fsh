@@ -201,4 +201,5 @@ Usage: #example
 * type = $PlannetTypeCS#344 "Food"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
-* communication = LANGUAGE#es "Spanish"
+* communication[0] = LANGUAGE#es "Spanish"
+* communication[1] = LANGUAGE#ru "Russian"
