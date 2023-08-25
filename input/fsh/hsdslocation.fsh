@@ -21,11 +21,8 @@ Description: "The HSDLocation resource describes the physical place where commun
     NewPatients named newpatients 0..0 and
     Accessibility named accessibility 0..* and
     $R4GeoJSONExtension named location-boundary-geojson 0..1
-//     $R4GeoJSONExtension named region 0..1 MS
-// * extension[newpatients] ^short = "New Patients"
 * extension[accessibility] ^short = "Accessibility"
 * extension[location-boundary-geojson] ^short = "Associated Region (GeoJSON)"
-// * extension[region] ^short = "Associated Region (GeoJSON)"
 * identifier.type MS
 * identifier.value MS
 * status 1..1 MS
@@ -46,8 +43,7 @@ Description: "The HSDLocation resource describes the physical place where commun
 * position MS
 * managingOrganization 0..1 MS
 * managingOrganization only Reference(HSDOrganization)
-* partOf 0..1 MS
-* partOf only Reference(HSDLocation)
+* partOf 0..0
 * hoursOfOperation MS
 * hoursOfOperation.daysOfWeek MS
 * hoursOfOperation.allDay MS

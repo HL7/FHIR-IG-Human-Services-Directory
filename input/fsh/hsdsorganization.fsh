@@ -1,5 +1,4 @@
 Alias:  $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-// Alias:  IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/NonIndividualSpecialtiesVS
 Alias: IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
 Alias: $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
 Alias: $V2table0360VS = http://terminology.hl7.org/ValueSet/v2-0360 
@@ -22,67 +21,48 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * extension contains
    Qualification named qualification 0..*  and
    OrgDescription named org-description  0..1 MS
-// * extension[qualification].extension[code].value[x] from SpecialtyAndDegreeLicenseCertificateVS (extensible)
-* extension[qualification].extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)
+* extension[qualification].extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[qualification] ^short = "Qualification"
 * extension[org-description] ^short = "Organization Description"
-* identifier.type MS
-* identifier.value MS
 * active 1..1 MS
 * active = true 
 * name MS
+* address 0..0
 * partOf 0..0
-// * partOf only Reference(HSDOrganization)
-// constraining out NPI 0..0
+// constrain out NPI 0..0 as it is not relevant to human and social services providers and resources 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-// * identifier[NPI] ^mustSupport = true
 * identifier[NPI] ^short = "NPI identifier not currently applicable to human services organizations"
-// * identifier.system 0..0
-// * identifier.system only uri
-// * identifier.value 0..0
-/* * identifier contains
-    NPI 0..0 */
-// constraining out CLIA identifier 0..0
+// constraining out CLIA identifier 0..0 as it is not relevant to human and social services providers and resources 
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-// * idenfifier[CLIA] ^mustSupport = true
 * identifier[CLIA] ^short = "CLIA identifier not applicable to human services organizations"
-// * identifier.system 0..0
-// * identifier.system only uri
-// * identifier.value 0..0
-/* * identifier contains
-    CLIA 0..0 */
 // Added Tax ID for Organization identifier using IRS Tax ID
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier ^comment = "Tax ID preferred."
-* identifier.system 0..1 MS
+* identifier 0..*
+* identifier.use = #official (exactly)
+* identifier.type = #TAX (exactly)
+* identifier.system 0..1
 * identifier.system only uri
-* identifier.value 0..1 MS
+* identifier.system = "urn:us:gov:irs" (exactly)
+* identifier.value 0..1
 * identifier.value only string
-* identifier contains
+* identifier.assigner.display = "http://www.irs.gov"
+/* * identifier contains
     IRS 0..1
 * identifier[IRS] ^short = "United States Tax ID"
 * identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
 * identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
-* identifier[IRS] ^mustSupport = true
-// * address 1..* MS
-// * address.extension contains $GeolocationExtension named geolocation 0..1 MS
-// * address.type MS
-// * address.type MS
-// * address.text MS
-// * address.line MS 
-// * address.city MS
-// * address.state MS
-// * address.postalCode MS
-// * address.country MS
+* identifier[IRS] ^mustSupport = true */
 * contact 0..*
-* contact.extension contains
-       ContactDepartment named contact-department 0..* 
+* contact.telecom.extension contains
+       OrgContactInfo named org-contactinfo 0..* 
+* contact.telecom.extension[org-contactinfo] ^short = "Organization's Contacts details"
 * contact.telecom
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
@@ -90,7 +70,7 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * contact.telecom.value
 * contact.telecom.system
-* contact.telecom.use
+* contact.telecom.use = #work (exactly)
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
        ViaIntermediary named via-intermediary 0..0
@@ -177,7 +157,7 @@ physical_address.address_1 Note: address.line in FHIR is an array (list) so addr
 * partOf  -> "No Source. Note: This a GAP in HSDS. There is no concept of organization hierarchy in HSDS."
 * contact  -> "Note: contact Table The HSDS contact table contains details of the named contacts associated with the organization. This linkage is based on FHIR organization.id = HSDS contact.organization_id. If there are multiple contacts, all of those can be included for organization level contacts in FHIR since there is no indication to identify which contact is primary." 
 * contact.id -> "contact.id  Note: This data element may be ignored as having the id for the contact record  isn't essential."
-* contact.extension  -> "contact.department Note: This is a GAP in FHIR. Proposed publishing a new StructureDefinition for this extension, e.g., http://hl7.org/fhir/us/FHIR-IG-Human-Services-Directory/StructureDefinition/contact-department"
+* contact.extension  -> "contact.department Note: This is a GAP in FHIR. Proposed publishing a new StructureDefinition for this extension, e.g., file:///C:/Users/seraf/OneDrive/Documents/GitHub/FHIR-IG-Human-Services-Directory2/FHIR-IG-Human-Services-Directory/output/StructureDefinition-org-contactinfo.html"
 * contact.purpose  -> "No Source. May be excluded from the mapping. Note: This is a GAP In HSDS. In FHIR, this element is used to indicate the purpose of which the contact can be reached."
 * contact.name  -> "contact.name"
 * contact.telecom -> "No Source. May be excluded from the mapping."
@@ -201,8 +181,7 @@ For Email,
     value = conact.email
 Note: For phone, HSDS contact table will be linked to the phone table using contact.id = phone.contact_id."
 * contact.telecom.use  -> "Fixed value  = 'work' Note: This is a GAP in HSDS but since it is for work-related information, it is possible to set this to 'work' drawn from the ContactPointUse value set http://hl7.org/fhir/R4/valueset-contact-point-use.html"
-* contact.telecom.rank -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, it is used to specify a preferred order in which to use a contact point. The parent Plan-Net profile indicates this is a Must Support element but is optional, So it can be excluded since there is no source."
-* contact.telecom.period -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
-* contact.address -> "GAP in HSDs. May need to keep track of a contact party's address for contacting, billing or reporting requirements."
+* contact.telecom.rank -> "No Source. GAP in HSDS. May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, it is used to specify a preferred order in which to use a contact point. The parent Plan-Net profile indicates this is a Must Support element but is optional, So it can be excluded since there is no source."
+* contact.telecom.period -> "No Source.GAP in HSDS.  May be excluded from the mapping. Note: This is a GAP in HSDS. In FHIR, this data element captures the time period when the contact point was/is in use. But it can be excluded since there is no source and it is optional."
+* contact.address -> "No Source. GAP in HSDS. Addresses are only associated with locations in the HSDS model."
 * endpoint -> "No Source. Note: This is for the technical implementation of web services for the organization and it is not for source-specific business data. It is marked as Must Support though optional in the Plan-Net profile. At this point, no organizayion specific web services have been identified so it may be ignored."
-

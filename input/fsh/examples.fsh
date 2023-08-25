@@ -10,13 +10,13 @@ Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Or
 Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
 Alias: $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
 
+
 Instance: FoodBank
 InstanceOf: HSDOrganization
-Description: "Community-Based Organization that provides food pantry services. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided."     
+Description: "Community-Based Organization that provides food pantry services. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided. In addition, information that is mapped from the HSDS Contact table is mapped to a new extension: OrgContactInfo."     
 Usage: #example
 * meta.profile = Canonical(HSDOrganization) 
-* meta.lastUpdated = "2023-07-22T11:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Redwood Food Bank"
 * type = OrgTypeCS#atyprv "Atypical Provider"
@@ -25,88 +25,77 @@ Usage: #example
 * telecom[0].value = "(999)-222-3333"
 * telecom[0].use = ContactPointUse#work "work"
 // Since this is a GAP in HSDS, the contactpoint extension is not relevant to Organizations (the HSDS schedule table only contains details of when a service or location is open)
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][1].valueCode  = #tue
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][2].valueCode  = #wed
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][3].valueCode  = #thu
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][4].valueCode  = #fri 
-// * telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-// * telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
 * telecom[1].system = #url
 * telecom[1].value = "https://redwoodfoodbank.org/"
 * telecom[1].use = ContactPointUse#work "work"
-// * address.line[0] = "788 Meadow Avenue"
-// * address.city = "Anycity"
-// * address.state = "CA"
-// * address.postalCode = "94952"
-* extension[org-description].valueString = "This community services agency distributes over a ton of food each work day to low income individuals and familie throughout Northern California."
-* identifier[0].use = IdentifierUse#official
-* identifier[0].type = IdentifierType#TAX
-* identifier[0].system = "http://www.irs.gov"
-* identifier[0].value =  "xx-xxxxxxx"
-* identifier[0].period.start = 2010-07-01
-// * identifier[0].assigner = (Organization)
-* contact.name.use = ContactNameUse#usual "usual"
-* contact.name.family = "Doe"
-* contact.name.given = "John"
+// address is excluded because there is no source in HSDS organization table
+* extension[org-description].valueString = "This community services agency distributes over a ton of food each work day to low income individuals and families throughout Northern California."
+* identifier.use = IdentifierUse#official
+* identifier.type = IdentifierType#TAX
+* identifier.system = "urn:us:gov:irs"
+* identifier.value =  "xx-xxxxxxx"
+* identifier.assigner.display = "http://www.irs.gov"
+* identifier.period.start = 2010-07-01
 * contact.telecom.system = #phone
 * contact.telecom.value = "(999)-111-2231"
 * contact.telecom.use = ContactPointUse#work "work"
-* extension[contact-department].extension[name].valueString = "Inventory Department"
-/* * extension[qualification].extension[identifier] = 
-* extension[qualification].extension[code] = $NUCCProviderTaxonomy
-* extension[qualification].extension[code].valueCodeableConcept.code = "251T00000X"
-* extension[qualification].extension[code].valueCodeableConcept.code = "251T00000X"
-* extension[qualification].extension[code].valueCode.display = "PACE Provider Organization"
-* extension[qualification].extension[status] = $QualificationStatusCS#active */
+* contact.name.use = ContactNameUse#usual "usual"
+* contact.name.family = "Smith"
+* contact.name.given = "Gerald"
+* contact.telecom.extension[org-contactinfo].extension[title].valueString = "Food Bank Director"
+* contact.telecom.extension[org-contactinfo].extension[department].valueString = "Executive Services"
+* contact.telecom.extension[org-contactinfo].extension[email].valueString = "gsmith@redwoodfoodbank.org"
+
 
 
 Instance: WhistlestopWheels
 InstanceOf: HSDOrganization
-Description: "Community-Based Organization that provides transportation services for the elderly. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided."     
+Description: "Community-Based Organization that provides food pantry services. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided. In addition, information that is mapped from the HSDS Contact table is mapped to a new extension: OrgContactInfo."     
 Usage: #example
 * meta.profile = Canonical(HSDOrganization) 
-* meta.lastUpdated = "2023-07-22T11:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Whistlestop Wheels"
 * type = OrgTypeCS#atyprv "Atypical Provider"
 * telecom[0].system = #phone
 * telecom[0].value = "(999)-222-9999"
 * telecom[0].use = ContactPointUse#work "work"
-// Since this is a GAP in HSDS, the contactpoint extension is not relevant to Organizations (the HSDS schedule table only contains details of when a service or location is open)
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][0].valueCode = #mon 
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][1].valueCode  = #tue
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][2].valueCode  = #wed
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][3].valueCode  = #thu
-// * telecom[0].extension[contactpoint-availabletime][0].extension[daysOfWeek][4].valueCode  = #fri 
-// * telecom[0].extension[contactpoint-availabletime][0].extension[availableStartTime].valueTime = 08:00:00
-// * telecom[0].extension[contactpoint-availabletime][0].extension[availableEndTime].valueTime = 17:00:00
+// Since extension is a GAP in HSDS, the contactpoint extension is not relevant to Organizations (the HSDS schedule table only contains details of when a service or location is open)
 * telecom[1].system = #url
 * telecom[1].value = "https://whistlestop.org/"
 * telecom[1].use = ContactPointUse#work "work"
-// * address.line[0] = "1260 Union Street"
-// * address.city = "Anycity"
-// * address.state = "CA"
-// * address.postalCode = "94903"
+// Description of the organization
 * extension[org-description].valueString = "This community services agency contracts with various organizations to provide transport services for the elderly and low-income clients, to and from medical appointments, various assisted living facilities, as well as to grocery shopping and other activites to stay active and connected."
-* identifier[0].use = IdentifierUse#official
-* identifier[0].type = IdentifierType#TAX
-* identifier[0].system = "http://www.irs.gov"
-* identifier[0].value =  "xx-xxxxxxx"
-* identifier[0].period.start = 2020-11-01
-// * identifier[0].assigner = Reference(Organization)
+// Community-based organizations identified using their IRS Tax ID at the present time
+* identifier.use = IdentifierUse#official
+* identifier.type = IdentifierType#TAX
+* identifier.system = "urn:us:gov:irs"
+* identifier.value =  "xx-xxxxxxx"
+* identifier.period.start = 2020-11-01
+* identifier.assigner.display = "http://www.irs.gov"
 * contact.name.use = ContactNameUse#usual "usual"
-* contact.name.family = "Smith"
-* contact.name.given = "Samantha"
+* contact.name.family = "Cunningham"
+* contact.name.given = "Harry"
+* contact.telecom.extension[org-contactinfo].extension[title].valueString = "Manager, Automotive Repairs"
+* contact.telecom.extension[org-contactinfo].extension[department].valueString = "Transportation Services"
+* contact.telecom.extension[org-contactinfo].extension[email].valueString = "sryan@whistlestop.org"
 * contact.telecom.system = #phone
 * contact.telecom.value = "(999)-555-2222"
 * contact.telecom.use = ContactPointUse#work "work"
-/* * extension[contact-department].extension[name].valueString = "Inventory Department"
-* extension[qualification].extension[identifier]
-* extension[qualification].extension[code].valueString = 342000000X
-* extension[qualification].extension[issuer].display = "Transportation Network Company"
+* contact[1].name.use = ContactNameUse#usual "usual"
+* contact[1].name.family = "Ryan"
+* contact[1].name.given = "Samantha"
+* contact[1].telecom.extension[org-contactinfo].extension[title].valueString = "Director, Transportation Services"
+* contact[1].telecom.extension[org-contactinfo].extension[department].valueString = "Executive Services"
+* contact[1].telecom.extension[org-contactinfo].extension[email].valueString = "sryan@whistlestop.org"
+* contact[1].telecom.system = #phone
+* contact[1].telecom.value = "(999)-555-7321"
+* contact[1].telecom.use = ContactPointUse#work "work"
+/* * extension[qualification].extension[code] = $NUCCProviderTaxonomy
+* extension[qualification].extension[code].valueCodeableConcept.code = "342000000X"
+* extension[qualification].extension[code].valueCode.display = "Transportation Network Company"
 * extension[qualification].extension[status] = $QualificationStatusCS#active */
+
 
 
 Instance: FoodBankLocation
@@ -114,8 +103,7 @@ InstanceOf: HSDLocation
 Description: "Locations associated with services provided by the Redwood Food Bank" 
 Usage: #example    
 * meta.profile = Canonical(HSDLocation) 
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T13:26:22.0314215+00:00"
 * status = #active 
 * name = "Redwood Food Bank of Anytown California"
 * managingOrganization = Reference(FoodBank)
@@ -145,8 +133,7 @@ InstanceOf: HSDLocation
 Description: "Locations associated with services provided by Whistlestop Wheels" 
 Usage: #example    
 * meta.profile = Canonical(HSDLocation) 
-* meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2020-08-24T13:26:22.0314215+00:00"
 * status = #active 
 * name = "Whistlestop Wheels of Anytown USA"
 * managingOrganization = Reference(WhistlestopWheels)
@@ -176,38 +163,39 @@ InstanceOf: HSDHealthcareService
 Description: "Food assistance provided to the elderly and low income at their homes."
 Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
-* meta.lastUpdated = "2023-07-24T11:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Meals on Wheels"
+* identifier.use = IdentifierUse#official
 * category = $PlannetCategoryCS#home "Home Health"
 * type = $PlannetTypeCS#548 "Food Relief/Food/Meals"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
-* communication = LANGUAGE#es "Spanish"
+* communication[0] = LANGUAGE#es "Spanish"
+* communication[1] = LANGUAGE#en-US "English"
+* communication[2] = LANGUAGE#zh "Chinese"
 
 Instance: WhistlestopTransportationService
 InstanceOf: HSDHealthcareService
 Description: "Transportation services for the disabled and elderly."
 Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
-* meta.lastUpdated = "2023-07-24T11:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Meals on Wheels"
 * category = $PlannetCategoryCS#trans "Transportation"
 * type = $PlannetTypeCS#531 "Aged Care Transport"
 * providedBy = Reference(WhistlestopWheels)
 * location[0] = Reference(WhistlestopwheelsLocation)
-* communication = LANGUAGE#es "Spanish"
+* communication[0] = LANGUAGE#es "Spanish"
+* communication[1] = LANGUAGE#en-US "English"
 
 Instance: FoodPantryService
 InstanceOf: HSDHealthcareService
 Description: "Human and Social Services Resource provided by Community-Based Organization (CBO)"
 Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
-* meta.lastUpdated = "2023-06-28T11:26:22.0314215+00:00"
-* language = #en-US
+* meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Food Pantry"
 * category = $PlannetCategoryCS#home "Home Health"
@@ -216,3 +204,4 @@ Usage: #example
 * location[0] = Reference(FoodBankLocation)
 * communication[0] = LANGUAGE#es "Spanish"
 * communication[1] = LANGUAGE#ru "Russian"
+* communication[2] = LANGUAGE#en-US "English"

@@ -7,7 +7,6 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/211hsis" key="CodeSystem-211hsis" name="211 Human Services Indexing System"/>
-<artifact id="StructureDefinition/contact-department" key="StructureDefinition-contact-department" name="Contact Department"/>
 <artifact id="Organization/FoodBank" key="Organization-FoodBank" name="FoodBank"/>
 <artifact id="Location/FoodBankLocation" key="Location-FoodBankLocation" name="FoodBankLocation"/>
 <artifact id="HealthcareService/FoodPantryService" key="HealthcareService-FoodPantryService" name="FoodPantryService"/>
@@ -25,7 +24,7 @@
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
-<artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
+<artifact id="StructureDefinition/org-contactinfo" key="StructureDefinition-org-contactinfo" name="Organization Contact Information"/>
 <artifact id="HealthcareService/WhistlestopTransportationService" key="HealthcareService-WhistlestopTransportationService" name="WhistlestopTransportationService"/>
 <artifact id="Organization/WhistlestopWheels" key="Organization-WhistlestopWheels" name="WhistlestopWheels"/>
 <artifact id="Location/WhistlestopwheelsLocation" key="Location-WhistlestopwheelsLocation" name="WhistlestopwheelsLocation"/>

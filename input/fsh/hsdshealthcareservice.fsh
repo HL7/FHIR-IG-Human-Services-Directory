@@ -7,6 +7,9 @@ Alias: HumanServiceProgram = http://hl7.org/fhir/us/hsds/ValueSet/HumanServicePr
 Alias: HumanServiceCharacteristic = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCharacteristic
 Alias: CommonLanguages = http://hl7.org/fhir/ValueSet/languages
 Alias: NonIndividualSpecialtiesVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
+Alias: MaxBinding = http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet
+Alias: max-binding = http://hl7.org/fhir/R4/valueset-all-languages.html#4.4.1.338
+Alias: AllLanguages = http://hl7.org/fhir/R4/valueset-all-languages.html#4.4.1.338
 
 
 
@@ -16,7 +19,6 @@ Id: hsds-HealthcareService
 Title:    "HSDHealthcareService"
 Description: "The HSD HealthcareService profile was introduced in STU 1 of this guide to allow example value sets that are used to search human and social service directories, because based on guidance from the human and social services community, existing human and social services taxonomies have not been deemed suitable for use in the relevant value sets. This profile isbased on the R4 HealthcareService resource, and fully aligned (as opposed to derived from) the Plan-Net HealthcareService profile which enforces use of extensible bindings to the category and type elements.  This profile describes the way a human/social service can be contacted to assist patients and clients with unmet social needs. Examples include food, housing/shelter, income & employment, public transportation, public education, legal services, disability and aging and mental and physical health."
  
-* identifier.use = #official (exactly)
 * telecom.use = #work (exactly)
 * meta.lastUpdated 1..1
 * identifier.type MS
@@ -24,7 +26,6 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * active 1..1 MS
 * active = true
 * providedBy only Reference(HSDOrganization)
-// * providedBy only Reference(Organization)
 * providedBy 1..1 MS
 * category 1..1
 * category from HumanServiceCategory (example)
@@ -33,11 +34,15 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * type from HumanServiceType (example)
 * type ^short = "This is an example value set. In addition to the Plan-Net codes defined in this IG, concepts drawn from either the 211 LA or Open Eligibility taxonomies could be used until the social care community recommends an appropriate standard."
 * specialty 0..*
-// * specialty from SpecialtiesVS (required)
 * specialty from NonIndividualSpecialtiesVS (preferred)
 * location only Reference(HSDLocation)
 * location MS
-* communication from CommonLanguages (preferred)
+// * communication from CommonLanguages (preferred)
+// * communication ^short = "The language this service is offered in"
+/* * communication.extension contains
+    MaxBinding named max-binding 0..*
+* communication.extension[max-binding] ^short = "Max Binding" */
+// * communication from AllLanguages 
 * name MS
 * comment
 * telecom
@@ -49,14 +54,11 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * telecom.value
 // Should be coverageArea only Reference(HSDSLocation) or (HSDLocation)
 * coverageArea only Reference(HSDLocation)
-* coverageArea
-// * serviceProvisionCode MS
-// * eligibility  MS
+// * coverageArea
 * program from HumanServiceProgram (example)
 * program ^short = "This example value set includes codes that describe Programs under which community-based organizations can organize the social services they deliver."
 * characteristic from HumanServiceCharacteristic (example)
 * characteristic ^short = "This example value set includes codes that describe unique features that can be associated with community-based social services delivered at particular locations."
-// * referralMethod MS
 * appointmentRequired
 * availableTime
 * availableTime.daysOfWeek
