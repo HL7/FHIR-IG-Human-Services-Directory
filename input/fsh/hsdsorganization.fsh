@@ -20,7 +20,7 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * meta.lastUpdated 1..1
 * extension contains
    Qualification named qualification 0..*  and
-   OrgDescription named org-description  0..1 MS
+   OrgDescription named org-description  0..1
 * extension[qualification].extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (extensible)
 * extension[qualification] ^short = "Qualification"
 * extension[org-description] ^short = "Organization Description"
@@ -29,36 +29,55 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * name MS
 * address 0..0
 * partOf 0..0
-// constrain out NPI 0..0 as it is not relevant to human and social services providers and resources 
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "$this"
-* identifier ^slicing.rules = #open
-* identifier[NPI] ^short = "NPI identifier not currently applicable to human services organizations"
-// constraining out CLIA identifier 0..0 as it is not relevant to human and social services providers and resources 
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "$this"
-* identifier ^slicing.rules = #open
-* identifier[CLIA] ^short = "CLIA identifier not applicable to human services organizations"
-// Added Tax ID for Organization identifier using IRS Tax ID
+// NPI is not relevant to human and social services providers and resources 
+// * identifier ^slicing.discriminator.type = #pattern
+// * identifier ^slicing.discriminator.path = "$this"
+// * identifier ^slicing.rules = #open
+* identifier[NPI] ^short = "National Provider Identifier (NPI) identifiers are not currently applicable to human services organizations"
+* identifier[NPI] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-npi"
+// CLIA identifier is not relevant to human and social services providers and resources 
+// * identifier ^slicing.discriminator.type = #pattern
+// * identifier ^slicing.discriminator.path = "$this"
+// * identifier ^slicing.rules = #open
+* identifier[CLIA] ^short = "Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories identifier is not currently applicable to human services organizations"
+* identifier[CLIA] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.7"
+// Add Tax ID for Organization identifier using IRS Tax ID
+* identifier contains
+    IRS 0..1
+* identifier[IRS] ^short = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
+* identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+// * identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier ^comment = "Tax ID preferred."
-* identifier 0..*
-* identifier.use = #official (exactly)
-* identifier.type = #TAX (exactly)
+* identifier 0..1
+* identifier[IRS].use = #official
+* identifier[IRS].type = #TAX (exactly)
 * identifier.system 0..1
 * identifier.system only uri
-* identifier.system = "urn:us:gov:irs" (exactly)
+// * identifier.system = "urn:us:gov:irs"
 * identifier.value 0..1
 * identifier.value only string
-* identifier.assigner.display = "http://www.irs.gov"
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+// Previous code
 /* * identifier contains
     IRS 0..1
 * identifier[IRS] ^short = "United States Tax ID"
 * identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
-* identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
-* identifier[IRS] ^mustSupport = true */
+// * identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
+* identifier[IRS].type = #TAX (exactly)
+* identifier[IRS].system 0..1
+// * identifier[IRS].system only uri
+* identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+* identifier[IRS].assigner.display ^short = "Business identifiers used for identifying CBOs are assigned by the IRS"
+* identifier[IRS] ^short = "United States Tax ID"
+* identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
+// * identifier[IRS] ^patternIdentifier.asssigner.display = "http://www.irs.gov"
+// * identifier[IRS] ^mustSupport = true
+* identifier[IRS].use = #official */
+// Previous code ends
 * contact 0..*
 * contact.telecom.extension contains
        OrgContactInfo named org-contactinfo 0..* 
@@ -98,17 +117,19 @@ Because UUIDs provide uniqueness to data/resources when they are exchanged acros
 * meta.id -> "metadata.id Note: This data element may be ignored as having the id for the date metadata isn't essential. If populated, it should be id corresponding to the latest action date for given organization as described below."
 * meta.lastUpdated  -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each organization, the latest max(last_action_date) needs to be used from metadata where (FHIR) Organization.id = (HSDS) metadata.resource_id."
 * text -> "No Source. May be excluded from the mapping. Note: This DomainResource.text is meant for textual summary of the resource so organization description is mapped to the org-description extension added by Plan-Net profile."
-* extension[qualification]  -> "extension[qualification]:code.url = 'code' extension[qualification]:code.valueCodeableConcept.text = service.accreditations 
+* extension[qualification] -> "extension[qualification]:code.url = 'code' extension[qualification]:code.valueCodeableConcept.text = service.accreditations 
 Note: This is a GAP in HSDS that can be resolved by having qualifications collected at the organization level. As a workaround, suggested mapping uses the unique set of accreditations from service and concatenated for the organization level as described below."
 * extension[org-description]  -> "organization.description Note: This Plan-Net profile added this extension for organization description as opposed to using DomainResource.text data element which is meant for textual summary of the resource."
-* identifier
-* identifier.id  -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the identifier record  isn't essential and is not available in HSDS since the tax ID is directly on the organization table."
-* identifier.use  -> "Fixed value = 'official' Note: Since the organization business identifier in HSDS is organization.tax id  which is used for official purpose,  this element is to be set with a fixed value 'official' drawn from the code system IdentifierUse http://hl7.org/fhir/identifier-use."
-* identifier.type -> "Fixed value = 'TAX' Note: Since the organization business identifier in HSDS is organization.tax id  which is used for the tax,  this element is to be set with a fixed value 'TAX'  drawn from the IdentifierType code system – http://terminology.hl7.org/CodeSystem/v2-0203 [an HL7-defined code system of concepts specifying type of identifier]."
-* identifier.system -> "Fixed value = 'urn:us:gov:irs' Note: Since the organization business identifier in HSDS is organization.tax id  which is issued by IRS,  this element is to be set with a fixed value with IRS URN."
-* identifier.value  -> "organization.tax_id Note: This is the only business identifier in HSDS at this time."
-* identifier.period  -> "organization.year_incorporated Note:  HSDS organization.year_incorporated may not always be the same as when the TAX ID was issued (especially if a company merged or split). Technically year_incorporated  is a GAP in FHIR and should be added as an extension. Also the effective date of the identifier (mapped to period here) is GAP in HSDS. But until both of those GAPs are addressed, the above mapping is proposed as a work around."
-* identifier.assigner -> "Fixed value = 'www.irs.gov' Note: This is GAP in HSDS but it can be implicitly inferred. Since the organization business identifier in HSDS is organization.tax id  which is issued by IRS,  this element is to be set with a fixed value with IRS website link as a reference." 
+* identifier[NPI] -> "NPI identifiers are not relevant to the identification of community based organizations at this time."
+* identifier[CLIA] -> "CLIA identifiers are also currently not relevant for use in the identification of community based organizations."
+* identifier[IRS] -> "For Community Based Organizations, the closest identifier usedfor the purpose of identifying the organization is a government issued identifier used for the purpose of tax administration."
+* identifier[IRS].id  -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the identifier record  isn't essential and is not available in HSDS since the tax ID is directly on the organization table."
+* identifier[IRS].use  -> "Fixed value = 'official' Note: Since the organization business identifier in HSDS is organization.tax id  which is used for official purpose,  this element is to be set with a fixed value 'official' drawn from the code system IdentifierUse http://hl7.org/fhir/identifier-use."
+* identifier[IRS].type -> "Fixed value = 'TAX' Note: Since the organization business identifier in HSDS is organization.tax id  which is used for the tax,  this element is to be set with a fixed value 'TAX'  drawn from the IdentifierType code system – http://terminology.hl7.org/CodeSystem/v2-0203 [an HL7-defined code system of concepts specifying type of identifier]."
+* identifier[IRS].system -> "Fixed value = 'urn:us:gov:irs' Note: Since the organization business identifier in HSDS is organization.tax id  which is issued by IRS,  this element is to be set with a fixed value with IRS URN."
+* identifier[IRS].value  -> "organization.tax_id Note: This is the only business identifier in HSDS at this time."
+* identifier[IRS].period  -> "organization.year_incorporated Note:  HSDS organization.year_incorporated may not always be the same as when the TAX ID was issued (especially if a company merged or split). Technically year_incorporated  is a GAP in FHIR and should be added as an extension. Also the effective date of the identifier (mapped to period here) is GAP in HSDS. But until both of those GAPs are addressed, the above mapping is proposed as a work around."
+* identifier[IRS].assigner.display -> "Fixed value = 'www.irs.gov' Note: This is GAP in HSDS but it can be implicitly inferred. Since the organization business identifier in HSDS is organization.tax id  which is issued by IRS,  this element is to be set with a fixed value with IRS website link as a reference." 
 * active  -> "Fixed value = 'true' Note: HSDS organization does not have a status but this is required in FHIR so fixed value is proposed to indicate that organization is active."
 * type -> "Any code is allowed from the type.system = 'http://hl7.org/fhir/us/DaVinci-pdex-plan-net/ValueSet/OrgTypeVS'  Note: This is a GAP in HSDS but a required Must Support element in the Plan-Net profile." 
 * name  -> "organization.name"

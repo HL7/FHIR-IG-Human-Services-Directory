@@ -30,12 +30,13 @@ Usage: #example
 * telecom[1].use = ContactPointUse#work "work"
 // address is excluded because there is no source in HSDS organization table
 * extension[org-description].valueString = "This community services agency distributes over a ton of food each work day to low income individuals and families throughout Northern California."
-* identifier.use = IdentifierUse#official
-* identifier.type = IdentifierType#TAX
-* identifier.system = "urn:us:gov:irs"
-* identifier.value =  "xx-xxxxxxx"
-* identifier.assigner.display = "http://www.irs.gov"
-* identifier.period.start = 2010-07-01
+* identifier[IRS].use = IdentifierUse#official
+* identifier[IRS].type = IdentifierType#TAX
+// * identifier[IRS].system = "urn:us:gov:irs"
+// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+* identifier[IRS].value =  "xx-xxxxxxx"
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+* identifier[IRS].period.start = 2010-07-01
 * contact.telecom.system = #phone
 * contact.telecom.value = "(999)-111-2231"
 * contact.telecom.use = ContactPointUse#work "work"
@@ -67,12 +68,13 @@ Usage: #example
 // Description of the organization
 * extension[org-description].valueString = "This community services agency contracts with various organizations to provide transport services for the elderly and low-income clients, to and from medical appointments, various assisted living facilities, as well as to grocery shopping and other activites to stay active and connected."
 // Community-based organizations identified using their IRS Tax ID at the present time
-* identifier.use = IdentifierUse#official
-* identifier.type = IdentifierType#TAX
-* identifier.system = "urn:us:gov:irs"
-* identifier.value =  "xx-xxxxxxx"
-* identifier.period.start = 2020-11-01
-* identifier.assigner.display = "http://www.irs.gov"
+* identifier[IRS].use = IdentifierUse#official
+* identifier[IRS].type = IdentifierType#TAX
+// * identifier[IRS].system = "urn:us:gov:irs"
+// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+* identifier[IRS].value =  "xx-xxxxxxx"
+* identifier[IRS].period.start = 2020-11-01
+* identifier[IRS].assigner.display = "http://www.irs.gov"
 * contact.name.use = ContactNameUse#usual "usual"
 * contact.name.family = "Cunningham"
 * contact.name.given = "Harry"
