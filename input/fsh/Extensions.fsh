@@ -46,24 +46,24 @@ Context: Organization.contact.telecom
 * extension[email].value[x] only string
 * extension[email].value[x] 0..1
 
-/* Extension: Qualification
+Extension: Qualification
 Id: qualification
 Title: "Qualification"
 Description: "An extension to add qualifications for an organization (e.g. accreditation)."
 Context: Organization
-/* * extension contains
+* extension contains
    identifier 0..* and 
    code 0..1 and
    issuer 0..1 and
    status 1..1 and
    period 0..1 and 
-   whereValid 0..* */
-/* * extension[identifier].value[x] only Identifier 
+   whereValid 0..*
+* extension[identifier].value[x] only Identifier 
 * extension[identifier].value[x] 1..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 0..1 
 * extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)
-/* * extension[issuer].value[x] 0..1
+* extension[issuer].value[x] 0..1
 * extension[issuer].value[x] only Reference(HSDOrganization)
 * extension[status].value[x] 0..1
 * extension[status].value[x] only  code 
@@ -73,4 +73,4 @@ Context: Organization
 * extension[period].value[x] 0..1
 * extension[whereValid].value[x] only CodeableConcept or Reference(HSDLocation)
 * extension[whereValid].value[x] from $USPSState (required)
-* extension[whereValid].value[x] 0..1 */
+* extension[whereValid].value[x] 1..1

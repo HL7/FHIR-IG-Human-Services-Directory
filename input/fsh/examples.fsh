@@ -9,6 +9,8 @@ Alias: ContactNameUse = http://hl7.org/fhir/name-use
 Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
 Alias: $QualificationStatusCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/QualificationStatusCS
 Alias: $NUCCProviderTaxonomy  = http://nucc.org/provider-taxonomy
+Alias: $HumanServiceProgramCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS
+Alias: $HumanServiceCharacteristicCS = http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS
 
 
 Instance: FoodBank
@@ -47,6 +49,41 @@ Usage: #example
 * contact.telecom.extension[org-contactinfo].extension[department].valueString = "Executive Services"
 * contact.telecom.extension[org-contactinfo].extension[email].valueString = "gsmith@redwoodfoodbank.org"
 
+Instance: SFCrisisAndDomesticHotline
+InstanceOf: HSDOrganization
+Description: "Community-Based Organization that provides emergency crisis hotline services. Since the HSDS source for Organizations does not include organization address, address information has been omitted from the examples. Address information is associated with the locations at which services provided by community-based organizations are provided. In addition, information that is mapped from the HSDS Contact table is mapped to a new extension: OrgContactInfo."     
+Usage: #example
+* meta.profile = Canonical(HSDOrganization) 
+* meta.lastUpdated = "2023-08-26T11:26:22.0314215+00:00"
+* active = true
+* name = "Crisis Hotline of San Francisco"
+* type = OrgTypeCS#atyprv "Atypical Provider"
+* alias = "SF Domestic Crisis Hotline"
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-123-4567"
+* telecom[0].use = ContactPointUse#work "work"
+// Since this is a GAP in HSDS, the contactpoint extension is not relevant to Organizations (the HSDS schedule table only contains details of when a service or location is open)
+* telecom[1].system = #url
+* telecom[1].value = "https://SF911forall.org/"
+* telecom[1].use = ContactPointUse#work "work"
+// address is excluded because there is no source in HSDS organization table
+* extension[org-description].valueString = "This community services agency serves residents of San Francisco and responds to requests for help with obtaining restraining orders, shelter, or legal aid agencies that help people ask for a restraining order."
+* identifier[IRS].use = IdentifierUse#official
+* identifier[IRS].type = IdentifierType#TAX
+// * identifier[IRS].system = "urn:us:gov:irs"
+// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+* identifier[IRS].value =  "xx-xxxxxxx"
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+* identifier[IRS].period.start = 2020-01-01
+* contact.telecom.system = #phone
+* contact.telecom.value = "(999)-987-6543"
+* contact.telecom.use = ContactPointUse#work "work"
+* contact.name.use = ContactNameUse#usual "usual"
+* contact.name.family = "Conrad"
+* contact.name.given = "Arthur"
+* contact.telecom.extension[org-contactinfo].extension[title].valueString = "Crisis Center Director"
+* contact.telecom.extension[org-contactinfo].extension[department].valueString = "Domestic Violence Services"
+* contact.telecom.extension[org-contactinfo].extension[email].valueString = "aconrad@SF911forall.org"
 
 
 Instance: WhistlestopWheels
@@ -93,11 +130,11 @@ Usage: #example
 * contact[1].telecom.system = #phone
 * contact[1].telecom.value = "(999)-555-7321"
 * contact[1].telecom.use = ContactPointUse#work "work"
-/* * extension[qualification].extension[code] = $NUCCProviderTaxonomy
-* extension[qualification].extension[code].valueCodeableConcept.code = "342000000X"
-* extension[qualification].extension[code].valueCode.display = "Transportation Network Company"
-* extension[qualification].extension[status] = $QualificationStatusCS#active */
-
+// * extension[qualification].extension[identifier] 
+// * extension[qualification].extension[code] = $NUCCProviderTaxonomy#342000000X
+// * extension[qualification].extension[code].valueCodeableConcept.code = "342000000X"
+// * extension[qualification].extension[code].valueCodeableConcept.display = "Transportation Network Company"
+// * extension[qualification].extension[status] = $QualificationStatusCS#active 
 
 
 Instance: FoodBankLocation
@@ -109,8 +146,8 @@ Usage: #example
 * status = #active 
 * name = "Redwood Food Bank of Anytown California"
 * managingOrganization = Reference(FoodBank)
-* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#pubtrans
-* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#handiaccess
+* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#handiaccess "handicap accessible"
+* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#pubtrans "public transit options"
 * address.line[0] = "123 Main Street"
 * address.city = "Anytown"
 * address.state = "CA"
@@ -123,16 +160,78 @@ Usage: #example
 * hoursOfOperation[0].daysOfWeek[2] = #wed
 * hoursOfOperation[0].daysOfWeek[3] = #thu
 * hoursOfOperation[0].daysOfWeek[4]  = #fri 
-* hoursOfOperation[1].openingTime = 08:00:00
-* hoursOfOperation[1].closingTime = 20:00:00
+* hoursOfOperation[0].openingTime = 08:00:00
+* hoursOfOperation[0].closingTime = 20:00:00
 * hoursOfOperation[1].daysOfWeek[0]  = #sat
 * hoursOfOperation[1].daysOfWeek[1]  = #sun
 * hoursOfOperation[1].openingTime = 08:00:00
 * hoursOfOperation[1].closingTime = 17:00:00
 
+Instance: MealsOnWheelsLocation
+InstanceOf: HSDLocation 
+Description: "Locations associated with services provided by Meals on Wheels" 
+Usage: #example    
+* meta.profile = Canonical(HSDLocation) 
+* meta.lastUpdated = "2020-08-26T13:26:22.0314215+00:00"
+* status = #active 
+* name = "Meals on Wheels Deilvery by Whistlestop Wheels"
+* managingOrganization = Reference(FoodBank)
+* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#cultcomp "Cultural competence"
+* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp "ADA compliant"
+* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#cognitive "cognitive"
+* address.line[0] = "282 Broadway"
+* address.city = "Anytown"
+* address.state = "CA"
+* address.postalCode = "99999"
+* address.district = "Yolo"
+* position.longitude = 121.9018
+* position.latitude = 38.732967
+* hoursOfOperation[0].daysOfWeek[0]  = #mon 
+* hoursOfOperation[0].daysOfWeek[1] = #tue
+* hoursOfOperation[0].daysOfWeek[2] = #wed
+* hoursOfOperation[0].daysOfWeek[3] = #thu
+* hoursOfOperation[0].daysOfWeek[4]  = #fri
+* hoursOfOperation[0].openingTime = 08:00:00
+* hoursOfOperation[0].closingTime = 20:00:00
+* hoursOfOperation[1].daysOfWeek[0]  = #sat
+* hoursOfOperation[1].daysOfWeek[1]  = #sun
+* hoursOfOperation[1].openingTime = 08:00:00
+* hoursOfOperation[1].closingTime = 16:00:00
+
+
 Instance: WhistlestopwheelsLocation
 InstanceOf: HSDLocation 
 Description: "Locations associated with services provided by Whistlestop Wheels" 
+Usage: #example    
+* meta.profile = Canonical(HSDLocation) 
+* meta.lastUpdated = "2020-08-26T13:26:22.0314215+00:00"
+* status = #active 
+* name = "Whistlestop Wheels of Anytown USA"
+* managingOrganization = Reference(WhistlestopWheels)
+* extension[accessibility][1].valueCodeableConcept = AccessibilityCS#mobility
+* extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
+* address.line[0] = "999 South Avenue"
+* address.city = "Anytown"
+* address.state = "CA"
+* address.postalCode = "99999"
+* address.district = "Marin"
+* position.longitude = -122.7400
+* position.latitude = 38.0400
+* hoursOfOperation[0].daysOfWeek[0]  = #mon 
+* hoursOfOperation[0].daysOfWeek[1] = #tue
+* hoursOfOperation[0].daysOfWeek[2] = #wed
+* hoursOfOperation[0].daysOfWeek[3] = #thu
+* hoursOfOperation[0].daysOfWeek[4]  = #fri 
+* hoursOfOperation[0].openingTime = 08:00:00
+* hoursOfOperation[0].closingTime = 20:00:00
+* hoursOfOperation[1].daysOfWeek[0]  = #sat
+* hoursOfOperation[1].daysOfWeek[1]  = #sun
+* hoursOfOperation[1].openingTime = 08:00:00
+* hoursOfOperation[1].closingTime = 17:00:00
+
+Instance: SF9114AllLocation
+InstanceOf: HSDLocation 
+Description: "Locations associated with crisis and domestic violence services provided by Whistlestop Wheels" 
 Usage: #example    
 * meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-08-24T13:26:22.0314215+00:00"
@@ -152,13 +251,12 @@ Usage: #example
 * hoursOfOperation[0].daysOfWeek[1] = #tue
 * hoursOfOperation[0].daysOfWeek[2] = #wed
 * hoursOfOperation[0].daysOfWeek[3] = #thu
-* hoursOfOperation[0].daysOfWeek[4]  = #fri 
-* hoursOfOperation[1].openingTime = 08:00:00
-* hoursOfOperation[1].closingTime = 20:00:00
-* hoursOfOperation[1].daysOfWeek[0]  = #sat
-* hoursOfOperation[1].daysOfWeek[1]  = #sun
-* hoursOfOperation[1].openingTime = 08:00:00
-* hoursOfOperation[1].closingTime = 17:00:00
+* hoursOfOperation[0].daysOfWeek[4]  = #fri
+// * hoursOfOperation[0].allDay = true
+* hoursOfOperation[0].daysOfWeek[5]  = #sat
+* hoursOfOperation[0].daysOfWeek[6]  = #sun
+* hoursOfOperation[0].allDay = true
+
 
 Instance: MealsOnWheels
 InstanceOf: HSDHealthcareService
@@ -168,13 +266,17 @@ Usage: #example
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * name = "Meals on Wheels"
-* identifier.use = IdentifierUse#official
 * category = $PlannetCategoryCS#home "Home Health"
 * type = $PlannetTypeCS#548 "Food Relief/Food/Meals"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
+* location[1] = Reference(MealsOnWheelsLocation)
+* program[0] = $HumanServiceProgramCS#ONHPP "Nutrition and Health Promotion Programs"
+* program[1] = $HumanServiceProgramCS#SNAP "Suplemental Nutrition Assistance Program"
+* characteristic[0] = $HumanServiceCharacteristicCS#Wheelchair "Wheelchair Access"
+* characteristic[1] = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
 * communication[0] = LANGUAGE#es "Spanish"
-* communication[1] = LANGUAGE#en-US "English"
+* communication[1] = LANGUAGE#en-US "English (United States)"
 * communication[2] = LANGUAGE#zh "Chinese"
 
 Instance: WhistlestopTransportationService
@@ -184,17 +286,19 @@ Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
-* name = "Meals on Wheels"
+* name = "Whistlestop Transportation Services"
 * category = $PlannetCategoryCS#trans "Transportation"
 * type = $PlannetTypeCS#531 "Aged Care Transport"
 * providedBy = Reference(WhistlestopWheels)
-* location[0] = Reference(WhistlestopwheelsLocation)
+* location = Reference(WhistlestopwheelsLocation)
+* characteristic = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
+* program = $HumanServiceProgramCS#ForDisabled "Programs for Persons with Disabilities"
 * communication[0] = LANGUAGE#es "Spanish"
-* communication[1] = LANGUAGE#en-US "English"
+* communication[1] = LANGUAGE#en-US "English (United States)"
 
 Instance: FoodPantryService
 InstanceOf: HSDHealthcareService
-Description: "Human and Social Services Resource provided by Community-Based Organization (CBO)"
+Description: "Food Pantry Services provided by a Community-Based Organization (CBO)"
 Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
@@ -204,6 +308,27 @@ Usage: #example
 * type = $PlannetTypeCS#344 "Food"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
+* program = $HumanServiceProgramCS#TEFAP "The Emergency Food Assistance Program"
+* characteristic = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
 * communication[0] = LANGUAGE#es "Spanish"
 * communication[1] = LANGUAGE#ru "Russian"
-* communication[2] = LANGUAGE#en-US "English"
+* communication[2] = LANGUAGE#en-US "English (United States)"
+
+Instance: SFCrisisAndDomesticHotlineServices
+InstanceOf: HSDHealthcareService
+Description: "Crisis Hotline Services provided by the Crisis Hotline of San Francisco"
+Usage: #example
+* meta.profile =  Canonical(HSDHealthcareService) 
+* meta.lastUpdated = "2023-08-26T11:26:22.0314215+00:00"
+* active = true
+* name = "Crisis and Domestic Hotline"
+* category = $PlannetCategoryCS#emerg "Emergency care"
+* type = $PlannetTypeCS#70 "Crisis Counselling"
+* providedBy = Reference(SFCrisisAndDomesticHotline)
+* location = Reference(SF9114AllLocation)
+* program = $HumanServiceProgramCS#WIC "SF9114AllLocation"
+* characteristic = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
+* communication[0] = LANGUAGE#es "Spanish"
+* communication[1] = LANGUAGE#zh "Chinese"
+* communication[2] = LANGUAGE#ru "Russian"
+* communication[3] = LANGUAGE#en-US "English (United States)"

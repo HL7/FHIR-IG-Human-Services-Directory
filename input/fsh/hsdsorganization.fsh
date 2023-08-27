@@ -29,6 +29,28 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * name MS
 * address 0..0
 * partOf 0..0
+* identifier ..* MS
+* identifier only Identifier
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier ^comment = "Tax ID preferred."
+* identifier.system 0..1 MS
+* identifier.system only uri
+* identifier.value 0..1 MS
+* identifier.value only string
+* identifier contains
+    IRS 0..1
+* identifier[IRS] only Identifier
+* identifier[IRS] ^short = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)"
+* identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+/* * identifier[IRS] ^mustSupport = false
+* identifier ^comment = "Tax ID preferred."
+* identifier[IRS].use = #official
+* identifier[IRS].type = #TAX
+* identifier[IRS].assigner.display = "http://www.irs.gov"
+/* 
 // NPI is not relevant to human and social services providers and resources 
 // * identifier ^slicing.discriminator.type = #pattern
 // * identifier ^slicing.discriminator.path = "$this"
@@ -51,33 +73,15 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier ^comment = "Tax ID preferred."
-* identifier 0..1
+* identifier 0..*
 * identifier[IRS].use = #official
-* identifier[IRS].type = #TAX (exactly)
+* identifier[IRS].type = #TAX
+// * identifier.system 0..1
+// * identifier.system only uri
 * identifier.system 0..1
-* identifier.system only uri
-// * identifier.system = "urn:us:gov:irs"
 * identifier.value 0..1
 * identifier.value only string
-* identifier[IRS].assigner.display = "http://www.irs.gov"
-// Previous code
-/* * identifier contains
-    IRS 0..1
-* identifier[IRS] ^short = "United States Tax ID"
-* identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
-// * identifier[IRS] ^patternIdentifier.system = "http://www.irs.gov"
-* identifier[IRS].type = #TAX (exactly)
-* identifier[IRS].system 0..1
-// * identifier[IRS].system only uri
-* identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
-* identifier[IRS].assigner.display = "http://www.irs.gov"
-* identifier[IRS].assigner.display ^short = "Business identifiers used for identifying CBOs are assigned by the IRS"
-* identifier[IRS] ^short = "United States Tax ID"
-* identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
-// * identifier[IRS] ^patternIdentifier.asssigner.display = "http://www.irs.gov"
-// * identifier[IRS] ^mustSupport = true
-* identifier[IRS].use = #official */
-// Previous code ends
+* identifier[IRS].assigner.display = "http://www.irs.gov" */
 * contact 0..*
 * contact.telecom.extension contains
        OrgContactInfo named org-contactinfo 0..* 

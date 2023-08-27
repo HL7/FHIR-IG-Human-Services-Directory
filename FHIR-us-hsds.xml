@@ -23,8 +23,13 @@
 <artifact id="CapabilityStatement/HumanServicesDirectory" key="CapabilityStatement-HumanServicesDirectory" name="Human Services Directory Capability Statement"/>
 <artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
+<artifact id="Location/MealsOnWheelsLocation" key="Location-MealsOnWheelsLocation" name="MealsOnWheelsLocation"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
 <artifact id="StructureDefinition/org-contactinfo" key="StructureDefinition-org-contactinfo" name="Organization Contact Information"/>
+<artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
+<artifact id="Location/SF9114AllLocation" key="Location-SF9114AllLocation" name="SF9114AllLocation"/>
+<artifact id="Organization/SFCrisisAndDomesticHotline" key="Organization-SFCrisisAndDomesticHotline" name="SFCrisisAndDomesticHotline"/>
+<artifact id="HealthcareService/SFCrisisAndDomesticHotlineServices" key="HealthcareService-SFCrisisAndDomesticHotlineServices" name="SFCrisisAndDomesticHotlineServices"/>
 <artifact id="HealthcareService/WhistlestopTransportationService" key="HealthcareService-WhistlestopTransportationService" name="WhistlestopTransportationService"/>
 <artifact id="Organization/WhistlestopWheels" key="Organization-WhistlestopWheels" name="WhistlestopWheels"/>
 <artifact id="Location/WhistlestopwheelsLocation" key="Location-WhistlestopwheelsLocation" name="WhistlestopwheelsLocation"/>

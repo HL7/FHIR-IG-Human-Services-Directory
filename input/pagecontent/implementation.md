@@ -57,11 +57,11 @@ This version of the IG (STU 1) supports but does not require, the use of any sta
 
 Given this complexity, this version of the IG only provides an example of how a common taxonomy could be used to search directories and to identify services. The issue of semantic interoperability may be addressed in a future, balloted version of this Implementation Guide.
 
-| **Search**            | **Example**                             | **Focal Resource and Field**                             | **Qualifications of Search** |
-|-----------------------|-----------------------------------------|----------------------------------------------------------|------------------------------|
-| General Search        | Any Service                             | HSDHealthcareService.category, HSDHealthcareService.type  | HSDLocation                  |
-| Service, by Name      | Food Bank     | HealthcareService.name                                                             | HSDLocation                  |
-| Organization by Name  | West County Community Food Pantry                                                                  |                              |
+| **Search**            | **Example**                             | **Focal Resource and Field**                                        | **Qualifications of Search** |
+|-----------------------|-----------------------------------------|---------------------------------------------------------------------|------------------------------|
+| General Search        | Any Service                             | HSDHealthcareService.category, HSDHealthcareService.type            | HSDLocation                  |
+| Service, by Name      | Whistlestop Transportation Services     | HSDHealthcareService.                                               | HSDLocation                  |
+| Organization by Name  | Redwood Food Bank                       | HSDOrganization.qualification.extension.whereValid.valueReference   | HSDOrganization              |
 
 Examples of the canonical use of the profiles are provided in the [Examples section](examples.html) of this IG to help implementers consistently use the profiles to enable third-party applications to access human services directories. The method for searching human services directories based on these patterns is provided in the [SearchParameters section](artifacts.html#behavior-search-parameters).
  			
@@ -90,29 +90,33 @@ The HSDHealthcareService.category and HSDHealthcareService.type fields generally
 
 Relevant examples:
 
-| Scenario                          	| Example Instances         	     |
-|-----------------------------------	|-----------------------------     |
-| Food Bank Organization   	     	    | [Food Pantry Service](http://hl7.org/fhir/us/hsds/HealthcareService-FoodPantryService.html)      |
-| Home-Delivered Meals Organization     | [Meals on Wheels](http://hl7.org/fhir/us/hsds/HealthcareService-MealsOnWheels.html) 	           |
-| Transportation Services Organization 	| [Whistlestop Transportation Service](http://hl7.org/fhir/us/hsds/HealthcareService-WhistlestopTransportationService.html)      |
+| Scenario                          	    | Example Instances         	                 |
+|------------------------------------------ |----------------------------------------------  |
+| Food Bank Services Organization           | [Food Pantry Service](http://hl7.org/fhir/us/hsds/HealthcareService-FoodPantryService)  |
+| Home-Delivered Meals Organization         | [Meals on Wheels](http://hl7.org/fhir/us/hsds/HealthcareService-MealsOnWheels)   |
+| Transportation Services Organization      | [Whistlestop Transportation Service](http://hl7.org/fhir/us/hsds/HealthcareService-WhistlestopTransportationService)  |
+| Crisis and Domestic Hotline Organization  | [SF Crisis And Domestic Hotline Services](http://hl7.org/fhir/us/hsds/HealthcareService-SFCrisisAndDomesticHotlineServices) |
 
 #### Location
 Location instances provide information about the locations where organizations provide various services. Location information includes contact information, physical address, accessibility options, and hours of operation, as well as position (longitude and latitude). Locations can be used to represent regions using an associated or attached GeoJSON object.
 
 Relevant examples:
 
-| Scenario                      	| Example Instances 	|
-|-----------------------------------|-----------------------|
-| CBO Location #1                	| [FoodBankLocation](http://hl7.org/fhir/us/hsds/FoodBankLocation.html)|
+| Scenario                      	| Example Instances            |
+|-----------------------------------|------------------------------|
+| Food Bank Location               	| [FoodBankLocation](http://hl7.org/fhir/us/hsds/Location-FoodBankLocation)|
+| Meals Delivery Service Location   | [MealsOnWheelsLocation](http://hl7.org/fhir/us/hsds//Location-MealsOnWheelsLocation)|
+| Transportation Services Location 	| [WhistlestopwheelsLocation](http://hl7.org/fhir/us/hsds/Location-WhistlestopwheelsLocation)|
+| Crisis Services Location         	| [SF9114AllLocation](http://hl7.org/fhir/us/hsds/Location-SF9114AllLocation)|
 
 #### Organization
 Organization instances provide specific information about a commmunity-based organization including its name, alias (alternate name), organization type, address and contact information. 
 
 | Scenario                                           	| Example Instances         	|
 |----------------------------------------------------	|---------------------------	|
-| CBO providing Food                       	            | [Redwood Food Bank](http://hl7.org/fhir/us/hsds/FoodBank) 	|
-| CBO providing transportation 	                        | [Whistlestop Wheels](http://hl7.org/fhir/us/hsds/WhistlestopWheels)         	|
+| CBO providing food                       	            | [Redwood Food Bank](http://hl7.org/fhir/us/hsds/Organization-FoodBank) 	|
+| CBO providing transportation 	                        | [Whistlestop Wheels](http://hl7.org/fhir/us/hsds/Organization-WhistlestopWheels)  |
+| CBO providing crisis services                         | [SF Crisis Hotline](http://hl7.org/fhir/us/hsds/Organization-SFCrisisAndDomesticHotline)
 
 #### Endpoints
 An Endpoint instance provides the technical details of an endpoint that can be used for electronic services, such as a portal or FHIR REST services, messaging or operations, or DIRECT messaging. The Endpoint resource/profile is not currently supported by HSDS and therefore has not been included in the mapping between HSDS and FHIR, so Endpoint can be ignored.
-

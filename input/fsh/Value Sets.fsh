@@ -71,7 +71,7 @@ Description: "This example value set includes codes that describe Programs under
 // * codes from system  HumanServiceProgramCS
 * $HumanServiceProgramCS#CSFP "The Commodity Supplemental Food Program"
 * $HumanServiceProgramCS#ForDisabled "Programs for Persons with Disabilities"
-* $HumanServiceProgramCS#Food "Assistance	Food Assistance"
+* $HumanServiceProgramCS#Food "Food Assistance Program"
 * $HumanServiceProgramCS#ForSeniors "Program for Seniors"
 * $HumanServiceProgramCS#Homelessness "Homelessness Prevention Programs"
 * $HumanServiceProgramCS#ONHPP "Nutrition and Health Promotion Programs"
