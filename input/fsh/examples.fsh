@@ -174,7 +174,7 @@ Usage: #example
 * meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-08-26T13:26:22.0314215+00:00"
 * status = #active 
-* name = "Meals on Wheels Deilvery by Whistlestop Wheels"
+* name = "Meals on Wheels Delivery by Whistlestop Wheels"
 * managingOrganization = Reference(FoodBank)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#cultcomp "Cultural competence"
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp "ADA compliant"
@@ -201,7 +201,7 @@ Usage: #example
 
 Instance: WhistlestopwheelsLocation
 InstanceOf: HSDLocation 
-Description: "Locations associated with services provided by Whistlestop Wheels" 
+Description: "Locations associated with transportation services provided by Whistlestop Wheels" 
 Usage: #example    
 * meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-08-26T13:26:22.0314215+00:00"
@@ -236,7 +236,7 @@ Usage: #example
 * meta.profile = Canonical(HSDLocation) 
 * meta.lastUpdated = "2020-08-24T13:26:22.0314215+00:00"
 * status = #active 
-* name = "Whistlestop Wheels of Anytown USA"
+* name = "Crisis and Domestic Violence Services of San Francisco (SF9114All)"
 * managingOrganization = Reference(WhistlestopWheels)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#mobility
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
@@ -303,7 +303,7 @@ Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
-* name = "Food Pantry"
+* name = "Food Pantry Service"
 * category = $PlannetCategoryCS#home "Home Health"
 * type = $PlannetTypeCS#344 "Food"
 * providedBy = Reference(FoodBank)
