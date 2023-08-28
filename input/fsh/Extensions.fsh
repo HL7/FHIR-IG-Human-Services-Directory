@@ -82,7 +82,13 @@ Context: Organization
    period 0..1 and 
    whereValid 0..*
 * extension[identifier].value[x] only Identifier 
-* extension[identifier].value[x] 1..1
+* extension[identifier].value[x] 0..1
+// changed cardinality above from 1..1 to 0..1 and added next two lines for identifier
+// * extension[identifier].valueIdentifier.system = http://nucc.org/provider-taxonomy
+// * extension[identifier].valueIdentifier.value = "NUCC Provider Taxonomy"
+// * extension[qualification].extension[identifier].valueIdentifier.system = http://nucc.org/provider-taxonomy
+// * extension[qualification].extension[status].valueCode = #active
+* extension[identifier].value[x] 0..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 0..1 
 * extension[code].value[x] from IndividualSpecialtyAndDegreeLicenseCertificateVS (example)

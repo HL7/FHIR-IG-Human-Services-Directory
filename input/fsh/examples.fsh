@@ -130,11 +130,8 @@ Usage: #example
 * contact[1].telecom.system = #phone
 * contact[1].telecom.value = "(999)-555-7321"
 * contact[1].telecom.use = ContactPointUse#work "work"
-// * extension[qualification].extension[identifier] 
-// * extension[qualification].extension[code] = $NUCCProviderTaxonomy#342000000X
-// * extension[qualification].extension[code].valueCodeableConcept.code = "342000000X"
-// * extension[qualification].extension[code].valueCodeableConcept.display = "Transportation Network Company"
-// * extension[qualification].extension[status] = $QualificationStatusCS#active 
+* extension[qualification].extension[code].valueCodeableConcept = $NUCCProviderTaxonomy#342000000X "Transportation Network Company"
+* extension[qualification].extension[status].valueCode = #active
 
 
 Instance: FoodBankLocation
