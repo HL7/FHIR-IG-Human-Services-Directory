@@ -26,23 +26,46 @@ Alias: IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us
 // * value[x] 0..*
 // * value[x] only string
 
-
 Extension: OrgContactInfo
 Id: org-contactinfo
-Title: "Organization Contact Information"
-Description: "An extension to describe the additional details for named contacts for organizations not included in contact.telecom element."
+Title: "Community-Based Organization Contacts"
+Description: "An extension to describe the additional details for named contacts for organizations not included in the contact.telecom element."
 Context: Organization.contact.telecom
 * extension contains
    title 0..* and
    department 0..* and
    email 0..*
-* extension[title] ^short = "Org Contact Title"
+* extension[title] ^short = "Organization Contact's Title"
 * extension[title].value[x] only string
 * extension[title].value[x] 0..1
-* extension[department] ^short = "Org Contact Department"
+* extension[department] ^short = "Organization Contact's Department"
 * extension[department].value[x] only string
 * extension[department].value[x] 0..1
-* extension[email] ^short = "Org Contact Email Address"
+* extension[email] ^short = "Organization Contact's Email Address"
+* extension[email].value[x] only string
+* extension[email].value[x] 0..1
+
+
+Extension: ServiceContactInfo
+Id: service-contactinfo
+Title: "Community-Based Services Contacts"
+Description: "An extension to describe the additional details for named contacts for services not included in the telecom element."
+Context: HealthcareService.telecom
+* extension contains
+   name 0..* and
+   title 0..* and
+   department 0..* and
+   email 0..*
+* extension[name] ^short = "Service Contact's Title"
+* extension[name].value[x] only string
+* extension[name].value[x] 0..1
+* extension[title] ^short = "Service Contact's Title"
+* extension[title].value[x] only string
+* extension[title].value[x] 0..1
+* extension[department] ^short = "Service Contac's' Department"
+* extension[department].value[x] only string
+* extension[department].value[x] 0..1
+* extension[email] ^short = "Service Contact's Email Address"
 * extension[email].value[x] only string
 * extension[email].value[x] 0..1
 

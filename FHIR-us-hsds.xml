@@ -7,6 +7,8 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" id="CodeSystem/211hsis" key="CodeSystem-211hsis" name="211 Human Services Indexing System"/>
+<artifact id="StructureDefinition/org-contactinfo" key="StructureDefinition-org-contactinfo" name="Community-Based Organization Contacts"/>
+<artifact id="StructureDefinition/service-contactinfo" key="StructureDefinition-service-contactinfo" name="Community-Based Services Contacts"/>
 <artifact id="Organization/FoodBank" key="Organization-FoodBank" name="FoodBank"/>
 <artifact id="Location/FoodBankLocation" key="Location-FoodBankLocation" name="FoodBankLocation"/>
 <artifact id="HealthcareService/FoodPantryService" key="HealthcareService-FoodPantryService" name="FoodPantryService"/>
@@ -25,7 +27,6 @@
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
 <artifact id="Location/MealsOnWheelsLocation" key="Location-MealsOnWheelsLocation" name="MealsOnWheelsLocation"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
-<artifact id="StructureDefinition/org-contactinfo" key="StructureDefinition-org-contactinfo" name="Organization Contact Information"/>
 <artifact id="StructureDefinition/qualification" key="StructureDefinition-qualification" name="Qualification"/>
 <artifact id="Location/SF9114AllLocation" key="Location-SF9114AllLocation" name="SF9114AllLocation"/>
 <artifact id="Organization/SFCrisisAndDomesticHotline" key="Organization-SFCrisisAndDomesticHotline" name="SFCrisisAndDomesticHotline"/>

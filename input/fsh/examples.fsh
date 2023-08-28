@@ -295,6 +295,10 @@ Usage: #example
 * program = $HumanServiceProgramCS#ForDisabled "Programs for Persons with Disabilities"
 * communication[0] = LANGUAGE#es "Spanish"
 * communication[1] = LANGUAGE#en-US "English (United States)"
+* telecom.extension[service-contactinfo].extension[name].valueString = "Harry Cunningham"
+* telecom.extension[service-contactinfo].extension[title].valueString = "Director of Transportation Services"
+* telecom.extension[service-contactinfo].extension[department].valueString = "Executive Staff"
+* telecom.extension[service-contactinfo].extension[email].valueString = "cunninghamh@whistlestopwheels.org"
 
 Instance: FoodPantryService
 InstanceOf: HSDHealthcareService

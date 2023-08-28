@@ -45,59 +45,22 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * identifier[IRS] ^short = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)"
 * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
 * identifier[IRS].assigner.display = "http://www.irs.gov"
-/* * identifier[IRS] ^mustSupport = false
-* identifier ^comment = "Tax ID preferred."
-* identifier[IRS].use = #official
-* identifier[IRS].type = #TAX
-* identifier[IRS].assigner.display = "http://www.irs.gov"
-/* 
-// NPI is not relevant to human and social services providers and resources 
-// * identifier ^slicing.discriminator.type = #pattern
-// * identifier ^slicing.discriminator.path = "$this"
-// * identifier ^slicing.rules = #open
-* identifier[NPI] ^short = "National Provider Identifier (NPI) identifiers are not currently applicable to human services organizations"
-* identifier[NPI] ^patternIdentifier.system = "http://hl7.org/fhir/sid/us-npi"
-// CLIA identifier is not relevant to human and social services providers and resources 
-// * identifier ^slicing.discriminator.type = #pattern
-// * identifier ^slicing.discriminator.path = "$this"
-// * identifier ^slicing.rules = #open
-* identifier[CLIA] ^short = "Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories identifier is not currently applicable to human services organizations"
-* identifier[CLIA] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.7"
-// Add Tax ID for Organization identifier using IRS Tax ID
-* identifier contains
-    IRS 0..1
-* identifier[IRS] ^short = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
-* identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
-// * identifier[IRS] ^comment = "U.S. Tax ID (sometimes called Employer Identification Number (EIN)."
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "$this"
-* identifier ^slicing.rules = #open
-* identifier ^comment = "Tax ID preferred."
-* identifier 0..*
-* identifier[IRS].use = #official
-* identifier[IRS].type = #TAX
-// * identifier.system 0..1
-// * identifier.system only uri
-* identifier.system 0..1
-* identifier.value 0..1
-* identifier.value only string
-* identifier[IRS].assigner.display = "http://www.irs.gov" */
 * contact 0..*
-* contact.telecom.extension contains
-       OrgContactInfo named org-contactinfo 0..* 
-* contact.telecom.extension[org-contactinfo] ^short = "Organization's Contacts details"
+
 * contact.telecom
 * contact.telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
-       ViaIntermediary named via-intermediary 0..0
-* contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+       ViaIntermediary named via-intermediary 0..0 and
+       OrgContactInfo named org-contactinfo 0..* 
+// * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* contact.telecom.extension[org-contactinfo] ^short = "Organization's Additional Contacts details"
 * contact.telecom.value
 * contact.telecom.system
 * contact.telecom.use = #work (exactly)
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
        ViaIntermediary named via-intermediary 0..0
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+// * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system
 * telecom.value
 * telecom.rank
@@ -182,13 +145,16 @@ physical_address.address_1 Note: address.line in FHIR is an array (list) so addr
 * partOf  -> "No Source. Note: This a GAP in HSDS. There is no concept of organization hierarchy in HSDS."
 * contact  -> "Note: contact Table The HSDS contact table contains details of the named contacts associated with the organization. This linkage is based on FHIR organization.id = HSDS contact.organization_id. If there are multiple contacts, all of those can be included for organization level contacts in FHIR since there is no indication to identify which contact is primary." 
 * contact.id -> "contact.id  Note: This data element may be ignored as having the id for the contact record  isn't essential."
-* contact.extension  -> "contact.department Note: This is a GAP in FHIR. Proposed publishing a new StructureDefinition for this extension, e.g., file:///C:/Users/seraf/OneDrive/Documents/GitHub/FHIR-IG-Human-Services-Directory2/FHIR-IG-Human-Services-Directory/output/StructureDefinition-org-contactinfo.html"
 * contact.purpose  -> "No Source. May be excluded from the mapping. Note: This is a GAP In HSDS. In FHIR, this element is used to indicate the purpose of which the contact can be reached."
 * contact.name  -> "contact.name"
 * contact.telecom -> "No Source. May be excluded from the mapping."
 * contact.telecom.id -> "No Source. May be excluded from the mapping. Note: This data element may be ignored as having the id for the telecom record isn't essential and not always available in the HSDS (e.g. phone id is available but there is no separate id for email)."
 * contact.telecom.extension[contactpoint-availabletime] -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. This FHIR extension is added by Plan-Net profile and represents available hours for the telecom (e.g. customer service phone hours from 8AM-6PM M-F). There is no equivalent mapping to this data element in  HSDS since the HSDS schedule table contains details of when a service or location is open, and is not a phone line associated with a contact."
 * contact.telecom.extension[via-intermediary] -> "No Source. May be excluded from the mapping. Note: This is GAP in HSDS. This FHIR extension added by Plan-Net profile represents a reference to an alternative point of contact. HSDS does not have the source data to represent 'intermediary' as that implies some sort of contact relationship."
+* contact.telecom.extension[org-contactinfo]  -> "This is a GAP in FHIR. Created a new extension org-contactinfo to map HSDS contact.title, contact.department, and contact.email"
+// * contact.telecom.extension[org-contactinfo].title.valueString -> "contact.title"
+// * contact.telecom.extension[org-contactinfo].department.valueString -> "contact.department"
+// * contact.telecom.extension[org-contactinfo].email.valueString -> "contact.email"
 * contact.telecom.system -> "For Phone: 
     if phone.type = 'voice' then system = 'phone'  
     if phone.type = 'cell' then system = 'phone' 

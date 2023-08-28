@@ -11,8 +11,6 @@ Alias: MaxBinding = http://hl7.org/fhir/StructureDefinition/elementdefinition-ma
 Alias: max-binding = http://hl7.org/fhir/R4/valueset-all-languages.html#4.4.1.338
 Alias: AllLanguages = http://hl7.org/fhir/R4/valueset-all-languages.html#4.4.1.338
 
-
-
 Profile: HSDHealthcareService
 Parent: HealthcareService
 Id: hsds-HealthcareService
@@ -37,19 +35,15 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * specialty from NonIndividualSpecialtiesVS (preferred)
 * location only Reference(HSDLocation)
 * location MS
-// * communication from CommonLanguages (preferred)
-// * communication ^short = "The language this service is offered in"
-/* * communication.extension contains
-    MaxBinding named max-binding 0..*
-* communication.extension[max-binding] ^short = "Max Binding" */
-// * communication from AllLanguages 
 * name MS
 * comment
 * telecom
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
-       ViaIntermediary named via-intermediary 0..0
-* telecom.extension[via-intermediary] ^short = "Via Intermediary"
+       ViaIntermediary named via-intermediary 0..0 and 
+       ServiceContactInfo named service-contactinfo 0..* 
+// * telecom.extension[via-intermediary] ^short = "Via Intermediary"
+* telecom.extension[service-contactinfo] ^short = "Additional contact information for services"
 * telecom.system
 * telecom.value
 // Should be coverageArea only Reference(HSDSLocation) or (HSDLocation)
@@ -69,8 +63,6 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
 * notAvailable.description
 * notAvailable.during
 * availabilityExceptions
-
-
 
 Mapping: HSDHealthcareServiceToHSDS
 Source: HSDHealthcareService
@@ -128,6 +120,11 @@ Note: This element is of data type Reference that refers to the location resourc
 * telecom.extension[contactpoint-availabletime]  -> "No Source.
 Note: This is a GAP in HSDS. This FHIR extension is added by the Plan-Net profile and represents available hours for the telecom (e.g. customer service phone hours from 8AM-6PM M-F). There is no equivalent mapping to this data element in HSDS since the HSDS schedule table contains details of when a service or location is open and is not related to a phone line associated with a location."
 * telecom.extension[via-intermediary] -> "No Source. Note: This is a GAP in HSDS. This FHIR extension added by the Plan-Net profile represents a reference to an alternative point of contact. HSDS does not have the source data to represent an 'intermediary' as that implies some sort of location relationship."
+* telecom.extension[service-contactinfo] -> "This is a GAP in FHIR. Created a new extension: service-contactinfo to map HSDS contact.name, contact.title, contact.department, and contact.email"
+/* * telecom.extension[service-contactinfo].name.valueString -> "contact.name"
+* telecom.extension[service-contactinfo].title.name.valueString -> "contact.title"
+* telecom.extension[service-contactinfo].department.name.valueString -> "contact.department"
+* telecom.extension[service-contactinfo].email.name.valueString -> "contact.email" */
 * telecom.system  -> "For Phone: 
     if phone.type = 'voice' then system = 'phone'  
     if phone.type = 'cell' then system = 'phone' 
