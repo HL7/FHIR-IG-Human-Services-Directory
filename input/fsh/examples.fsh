@@ -1,3 +1,4 @@
+Alias: $NarrativeStatus = http://hl7.org/fhir/narrative-status
 Alias: LANGUAGE = urn:ietf:bcp:47
 Alias: $PlannetCategoryCS = http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS
 Alias: $PlannetTypeCS = http://terminology.hl7.org/CodeSystem/service-type
@@ -70,8 +71,6 @@ Usage: #example
 * extension[org-description].valueString = "This community services agency serves residents of San Francisco and responds to requests for help with obtaining restraining orders, shelter, or legal aid agencies that help people ask for a restraining order."
 * identifier[IRS].use = IdentifierUse#official
 * identifier[IRS].type = IdentifierType#TAX
-// * identifier[IRS].system = "urn:us:gov:irs"
-// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
 * identifier[IRS].value =  "xx-xxxxxxx"
 * identifier[IRS].assigner.display = "http://www.irs.gov"
 * identifier[IRS].period.start = 2020-01-01
@@ -93,6 +92,8 @@ Usage: #example
 * meta.profile = Canonical(HSDOrganization) 
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p><b>Generated Narrative: Organization</b><a name=\"WhistlestopWheels\"> </a></p>     <div         style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\">         <p style=\"margin-bottom: 0px\">Resource Organization &quot;WhistlestopWheels&quot;             Updated &quot;2023-08-24 11:26:22+0000&quot; </p>         <p style=\"margin-bottom: 0px\">Profile: <a             href=\"StructureDefinition-hsds-Organization.html\">HSDOrganization</a></p>     </div>     <p><b>Org Description</b>: This community services agency contracts with various         organizations to provide transport services for the elderly and low-income clients,         to and from medical appointments, various assisted living facilities, as well as to         grocery shopping and other activites to stay active and connected.</p>     <p><b>qualification: </b></p>     <blockquote><b>url: </b><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code     </a><b>, value:</b> Transportation Network Company <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (provider-taxonomy#342000000X)</span><p><b>url: </b><code>status</code><b>,             value: </b> active </p></blockquote>     <p><b>identifier</b>: Tax ID number:         xx-xxxxxxx\u00a0(use:\u00a0OFFICIAL,\u00a0period:\u00a02020-11-01 --&gt;         (ongoing))</p>     <p><b>active</b>: true</p>     <p><b>type</b>: Atypical Provider <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (<a             href=\"http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/CodeSystem-OrgTypeCS.html\"             >Organization Type</a>#atyprv)</span></p>     <p><b>name</b>: Whistlestop Wheels</p>     <p><b>telecom</b>: ph: (999)-222-9999(WORK), <a href=\"https://whistlestop.org/\"         >https://whistlestop.org/</a></p>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Harry Cunningham </p><p><b>telecom</b>: ph:         (999)-555-2222(WORK)</p></blockquote>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Samantha Ryan </p><p><b>telecom</b>: ph:         (999)-555-7321(WORK)</p></blockquote> </div>"
+* text.status = $NarrativeStatus#additional "additional"
 * name = "Whistlestop Wheels"
 * type = OrgTypeCS#atyprv "Atypical Provider"
 * telecom[0].system = #phone
@@ -107,8 +108,6 @@ Usage: #example
 // Community-based organizations identified using their IRS Tax ID at the present time
 * identifier[IRS].use = IdentifierUse#official
 * identifier[IRS].type = IdentifierType#TAX
-// * identifier[IRS].system = "urn:us:gov:irs"
-// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
 * identifier[IRS].value =  "xx-xxxxxxx"
 * identifier[IRS].period.start = 2020-11-01
 * identifier[IRS].assigner.display = "http://www.irs.gov"

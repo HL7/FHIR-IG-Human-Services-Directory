@@ -17,7 +17,6 @@ Description: "This example value set includes a subset of codes included in the 
 * ^contact.telecom.system = #url
 * ^jurisdiction = urn:iso:std:iso:3166#US
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory"
-// * ^compose.include.system = "http://hl7.org/fhir/us/davinci-pdex-plan-net/CodeSystem/HealthcareServiceCategoryCS"
 * $HealthcareServiceCategoryCS#other "Other"
 * HealthcareServiceCategoryCS#emerg	"Emergency care" 
 * HealthcareServiceCategoryCS#group	"Medical Provider"
@@ -35,7 +34,6 @@ Description: "This example value set includes an subset of service-types codes i
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"
-// * ^compose.include.system = "http://terminology.hl7.org/CodeSystem/service-type"
 * $ServiceTypeCS#3 "Aged Care Information/Referral"
 * $ServiceTypeCS#8 "Home Care/Housekeeping Assistance"
 * $ServiceTypeCS#11 "Personal Care for Older Persons"

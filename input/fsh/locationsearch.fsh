@@ -124,9 +124,9 @@ Usage: #definition
 * expression = "Location.managingOrganization"
 * multipleOr = true
 * multipleAnd = true
-//* modifier[0] = #text
-//* modifier[1] = #exact
-//* modifier[2] = #contains
+* chain[0] = "name"
+* chain[+] = "address"
+* chain[+] = "type"
 
 
 Instance: location-address-country

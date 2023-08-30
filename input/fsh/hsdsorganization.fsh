@@ -52,7 +52,6 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
        ViaIntermediary named via-intermediary 0..0 and
        OrgContactInfo named org-contactinfo 0..* 
-// * contact.telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * contact.telecom.extension[org-contactinfo] ^short = "Organization's Additional Contacts details"
 * contact.telecom.value
 * contact.telecom.system
@@ -60,7 +59,6 @@ Guidance:   When the contact is a department name, rather than a human (e.g., pa
 * telecom.extension contains
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
        ViaIntermediary named via-intermediary 0..0
-// * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.system
 * telecom.value
 * telecom.rank

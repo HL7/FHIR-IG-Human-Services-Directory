@@ -1,4 +1,7 @@
-
+Alias: NewPatients = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/newpatients
+Alias: DeliveryMethod = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/delivery-method
+Alias: ContactPointAvailableTime = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/contactpoint-availabletime
+Alias: ViaIntermediary = http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/via-intermediary
 Alias: HumanServiceCategory = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceCategory
 Alias: HumanServiceType = http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType
 Alias: HSDOrganization = http://hl7.org/fhir/us/hsds/StructureDefinition/hsds-Organization
@@ -19,6 +22,9 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
  
 * telecom.use = #work (exactly)
 * meta.lastUpdated 1..1
+* extension contains
+    NewPatients named newpatients 0..0 and
+    DeliveryMethod named deliverymethod 0..0
 * identifier.type MS
 * identifier.value MS
 * active 1..1 MS
@@ -42,13 +48,11 @@ Description: "The HSD HealthcareService profile was introduced in STU 1 of this 
        ContactPointAvailableTime named contactpoint-availabletime 0..0 and
        ViaIntermediary named via-intermediary 0..0 and 
        ServiceContactInfo named service-contactinfo 0..* 
-// * telecom.extension[via-intermediary] ^short = "Via Intermediary"
 * telecom.extension[service-contactinfo] ^short = "Additional contact information for services"
 * telecom.system
 * telecom.value
-// Should be coverageArea only Reference(HSDSLocation) or (HSDLocation)
+// Should be coverageArea only Reference(HSDLocation)
 * coverageArea only Reference(HSDLocation)
-// * coverageArea
 * program from HumanServiceProgram (example)
 * program ^short = "This example value set includes codes that describe Programs under which community-based organizations can organize the social services they deliver."
 * characteristic from HumanServiceCharacteristic (example)
@@ -79,8 +83,9 @@ Because UUIDs provide uniqueness to data/resources when they are exchanged acros
 * id  -> "service.id Note: Each service must have a unique identifier."
 * meta  -> "metadata Note: The HSDS metadata table contains a record of the changes that have been made to the data in order to maintain provenance information."
 * meta.lastUpdated  -> "metadata.last_action_date Note: The date when data was changed. Since there may be more than one metadata record for each location, the latest max(last_action_date) needs to be used from metadata where  service.id =  metadata.resource_id."
-// * extension[newpatients]  -> "No Source. Note: This is a GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network."  
-// * extension[delivery-method]  -> "No Source. Note: This is a GAP in HSDS. While this is a Must Support element in the parent Plan-Net profile, it is optional and therefore, will be ignored."
+// originally commented out extension mapping comment for next two lines
+* extension[newpatients]  -> "No Source. Note: This is a GAP in HSDS. This extension indicates whether new patients are being accepted in general, or from a specific network."  
+* extension[delivery-method]  -> "No Source. Note: This is a GAP in HSDS. While this is a Must Support element in the parent Plan-Net profile, it is optional and therefore, will be ignored."
 * identifier  -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with services in HSDS."
 * identifier.id -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with services in HSDS."
 * identifier.use  -> "No Source. May be excluded from the mapping. Note: This is a GAP in HSDS. There are no business identifiers associated with locations in HSDS."
@@ -121,10 +126,6 @@ Note: This element is of data type Reference that refers to the location resourc
 Note: This is a GAP in HSDS. This FHIR extension is added by the Plan-Net profile and represents available hours for the telecom (e.g. customer service phone hours from 8AM-6PM M-F). There is no equivalent mapping to this data element in HSDS since the HSDS schedule table contains details of when a service or location is open and is not related to a phone line associated with a location."
 * telecom.extension[via-intermediary] -> "No Source. Note: This is a GAP in HSDS. This FHIR extension added by the Plan-Net profile represents a reference to an alternative point of contact. HSDS does not have the source data to represent an 'intermediary' as that implies some sort of location relationship."
 * telecom.extension[service-contactinfo] -> "This is a GAP in FHIR. Created a new extension: service-contactinfo to map HSDS contact.name, contact.title, contact.department, and contact.email"
-/* * telecom.extension[service-contactinfo].name.valueString -> "contact.name"
-* telecom.extension[service-contactinfo].title.name.valueString -> "contact.title"
-* telecom.extension[service-contactinfo].department.name.valueString -> "contact.department"
-* telecom.extension[service-contactinfo].email.name.valueString -> "contact.email" */
 * telecom.system  -> "For Phone: 
     if phone.type = 'voice' then system = 'phone'  
     if phone.type = 'cell' then system = 'phone' 

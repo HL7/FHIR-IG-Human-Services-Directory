@@ -4,28 +4,6 @@ Alias: QualificationStatusVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/Valu
 Alias: AccessibilityVS = http://hl7.org/fhir/us/davinci-pdex-plan-net/ValueSet/AccessibilityVS
 Alias: IndividualSpecialtyAndDegreeLicenseCertificateVS = http://hl7.org/fhir/us/hsds/ValueSet/NonIndividualSpecialties
 
-// Extension: ContactDepartment
-// Id: contact-department
-// Title: "Contact Department"
-// Description: "An extension to describe the department where the named contact person for the organization works."
-// Context: Organization
-/* * extension contains
-   identifier 0..* and
-   name 0..*
-* extension[identifier].value[x] only Identifier 
-* extension[identifier].value[x] 0..1
-* extension[name].value[x] only string 
-* extension[name].value[x] 0..1 */
-
-
-// Extension: ContactDepartment
-// Id: contact-department
-// Title: "Contact Department"
-// Description: "An extension to describe the department where the named contact person for the organization works."
-// Context: Organization
-// * value[x] 0..*
-// * value[x] only string
-
 Extension: OrgContactInfo
 Id: org-contactinfo
 Title: "Community-Based Organization Contacts"
@@ -82,12 +60,7 @@ Context: Organization
    period 0..1 and 
    whereValid 0..*
 * extension[identifier].value[x] only Identifier 
-* extension[identifier].value[x] 0..1
-// changed cardinality above from 1..1 to 0..1 and added next two lines for identifier
-// * extension[identifier].valueIdentifier.system = http://nucc.org/provider-taxonomy
-// * extension[identifier].valueIdentifier.value = "NUCC Provider Taxonomy"
-// * extension[qualification].extension[identifier].valueIdentifier.system = http://nucc.org/provider-taxonomy
-// * extension[qualification].extension[status].valueCode = #active
+// changed cardinality from 1..1 to 0..1 and added next two lines for identifier
 * extension[identifier].value[x] 0..1
 * extension[code].value[x] only CodeableConcept
 * extension[code].value[x] 0..1 
