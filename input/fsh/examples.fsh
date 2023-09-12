@@ -35,8 +35,6 @@ Usage: #example
 * extension[org-description].valueString = "This community services agency distributes over a ton of food each work day to low income individuals and families throughout Northern California."
 * identifier[IRS].use = IdentifierUse#official
 * identifier[IRS].type = IdentifierType#TAX
-// * identifier[IRS].system = "urn:us:gov:irs"
-// * identifier[IRS] ^patternIdentifier.system = "urn:us:gov:irs"
 * identifier[IRS].value =  "xx-xxxxxxx"
 * identifier[IRS].assigner.display = "http://www.irs.gov"
 * identifier[IRS].period.start = 2010-07-01
@@ -93,7 +91,6 @@ Usage: #example
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p><b>Extensions Narrative: Organization</b><a name=\"WhistlestopWheels\"> </a></p>     <div         style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\">         <p style=\"margin-bottom: 0px\">Resource Organization &quot;WhistlestopWheels&quot;             Updated &quot;2023-08-24 11:26:22+0000&quot; </p>         <p style=\"margin-bottom: 0px\">Profile: <a             href=\"StructureDefinition-hsds-Organization.html\">HSDOrganization</a></p>     </div>     <p><b>Org Description</b>: This community services agency contracts with various         organizations to provide transport services for the elderly and low-income clients,         to and from medical appointments, various assisted living facilities, as well as to         grocery shopping and other activites to stay active and connected.</p>     <p><b>qualification: </b></p>     <blockquote><b>url: </b><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code     </a><b>, value:</b> Transportation Network Company <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (provider-taxonomy#342000000X)</span><p><b>url: </b><code>status</code><b>,             value: </b> active </p></blockquote>     <p><b>identifier</b>: Tax ID number:         xx-xxxxxxx\u00a0(use:\u00a0OFFICIAL,\u00a0period:\u00a02020-11-01 --&gt;         (ongoing))</p>     <p><b>active</b>: true</p>     <p><b>type</b>: Atypical Provider <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (<a             href=\"http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/CodeSystem-OrgTypeCS.html\"             >Organization Type</a>#atyprv)</span></p>     <p><b>name</b>: Whistlestop Wheels</p>     <p><b>telecom</b>: ph: (999)-222-9999(WORK), <a href=\"https://whistlestop.org/\"         >https://whistlestop.org/</a></p>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Harry Cunningham </p><p><b>telecom</b>: ph:         (999)-555-2222(WORK)</p></blockquote>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Samantha Ryan </p><p><b>telecom</b>: ph:         (999)-555-7321(WORK)</p></blockquote> </div>"
-// * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p><b>Generated Narrative: Organization</b><a name=\"WhistlestopWheels\"> </a></p>     <div         style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\">         <p style=\"margin-bottom: 0px\">Resource Organization &quot;WhistlestopWheels&quot;             Updated &quot;2023-08-24 11:26:22+0000&quot; </p>         <p style=\"margin-bottom: 0px\">Profile: <a             href=\"StructureDefinition-hsds-Organization.html\">HSDOrganization</a></p>     </div>     <p><b>Org Description</b>: This community services agency contracts with various         organizations to provide transport services for the elderly and low-income clients,         to and from medical appointments, various assisted living facilities, as well as to         grocery shopping and other activites to stay active and connected.</p>     <p><b>qualification: </b></p>     <blockquote><b>url: </b><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code     </a><b>, value:</b> Transportation Network Company <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (provider-taxonomy#342000000X)</span><p><b>url: </b><code>status</code><b>,             value: </b> active </p></blockquote>     <p><b>identifier</b>: Tax ID number:         xx-xxxxxxx\u00a0(use:\u00a0OFFICIAL,\u00a0period:\u00a02020-11-01 --&gt;         (ongoing))</p>     <p><b>active</b>: true</p>     <p><b>type</b>: Atypical Provider <span         style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\">         (<a             href=\"http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/CodeSystem-OrgTypeCS.html\"             >Organization Type</a>#atyprv)</span></p>     <p><b>name</b>: Whistlestop Wheels</p>     <p><b>telecom</b>: ph: (999)-222-9999(WORK), <a href=\"https://whistlestop.org/\"         >https://whistlestop.org/</a></p>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Harry Cunningham </p><p><b>telecom</b>: ph:         (999)-555-2222(WORK)</p></blockquote>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Samantha Ryan </p><p><b>telecom</b>: ph:         (999)-555-7321(WORK)</p></blockquote> </div>"
 * text.status = $NarrativeStatus#extensions "Extensions"
 * name = "Whistlestop Wheels"
 * type = OrgTypeCS#atyprv "Atypical Provider"
@@ -145,6 +142,9 @@ Usage: #example
 * managingOrganization = Reference(FoodBank)
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#handiaccess "handicap accessible"
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#pubtrans "public transit options"
+* telecom.system = #phone
+* telecom.value = "(999)-555-4401"
+* telecom.use = ContactPointUse#work "work"
 * address.line[0] = "123 Main Street"
 * address.city = "Anytown"
 * address.state = "CA"
@@ -176,6 +176,9 @@ Usage: #example
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#cultcomp "Cultural competence"
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp "ADA compliant"
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#cognitive "cognitive"
+* telecom.system = #phone
+* telecom.value = "(999)-555-9827"
+* telecom.use = ContactPointUse#work "work"
 * address.line[0] = "282 Broadway"
 * address.city = "Anytown"
 * address.state = "CA"
@@ -207,6 +210,9 @@ Usage: #example
 * managingOrganization = Reference(WhistlestopWheels)
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#mobility
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
+* telecom.system = #phone
+* telecom.value = "(999)-555-9528"
+* telecom.use = ContactPointUse#work "work"
 * address.line[0] = "999 South Avenue"
 * address.city = "Anytown"
 * address.state = "CA"
@@ -235,6 +241,9 @@ Usage: #example
 * status = #active 
 * name = "Crisis and Domestic Violence Services of San Francisco (SF9114All)"
 * managingOrganization = Reference(WhistlestopWheels)
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-415-3333"
+* telecom[0].use = ContactPointUse#work "work"
 * extension[accessibility][1].valueCodeableConcept = AccessibilityCS#mobility
 * extension[accessibility][0].valueCodeableConcept = AccessibilityCS#adacomp
 * address.line[0] = "999 South Avenue"
@@ -265,6 +274,15 @@ Usage: #example
 * name = "Meals on Wheels"
 * category = $PlannetCategoryCS#home "Home Health"
 * type = $PlannetTypeCS#548 "Food Relief/Food/Meals"
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-555-3241"
+* telecom[0].use = ContactPointUse#work "work"
+* telecom[1].system = #url
+* telecom[1].value = "https://whistlestop.org/"
+* telecom[1].use = ContactPointUse#work "work"
+* telecom[2].system = #email
+* telecom[2].value = "andysmith@whistlestop.org"
+* telecom[2].use = ContactPointUse#work "work"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
 * location[1] = Reference(MealsOnWheelsLocation)
@@ -283,9 +301,14 @@ Usage: #example
 * meta.profile =  Canonical(HSDHealthcareService) 
 * meta.lastUpdated = "2023-08-24T11:26:22.0314215+00:00"
 * active = true
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">     <p><b>Generated Narrative: HealthcareService</b></p>     <div         style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\">         <p style=\"margin-bottom: 0px\">Resource HealthcareService             &quot;WhistlestopTransportationService&quot; Updated &quot;2023-08-24             11:26:22+0000&quot; </p>         <p style=\"margin-bottom: 0px\">Profile: <a                 href=\"StructureDefinition-hsds-HealthcareService.html\">HSDHealthcareService</a></p>     </div>     <p><b>active</b>: true</p>     <p><b>providedBy</b>: <a href=\"Organization-WhistlestopWheels.html\"             >Organization/WhistlestopWheels</a> &quot;Whistlestop Wheels&quot;</p>     <p><b>category</b>: Transportation <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/CodeSystem-HealthcareServiceCategoryCS.html\"                 >Healthcare Service Category</a>#trans)</span></p>     <p><b>type</b>: Aged Care Transport <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"http://terminology.hl7.org/5.0.0/CodeSystem-service-type.html\">Service                 type</a>#531)</span></p>     <p><b>location</b>: <a href=\"Location-WhistlestopwheelsLocation.html\"             >Location/WhistlestopwheelsLocation</a> &quot;Whistlestop Wheels of Anytown         USA&quot;</p>     <p><b>name</b>: Whistlestop Transportation Services</p>     <p><b>contact</b></p>     <blockquote><p><b>name</b>: Harry Cunningham</p><p><b>title </b>: Director, Transportation             Services</p><p><b>department</b>: Executive Staff</p><p><b>email</b>:             hcunningham@whistlestopwheels.org</p><p><b>phone</b>:         (999)-555-2222(WORK)</p></blockquote>     <p><b>program</b>: Programs for Persons with Disabilities <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"CodeSystem-HumanServiceProgramCS.html\">Human Service             Program</a>#ForDisabled)</span></p>     <p><b>characteristic</b>: Interpretation Services <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"CodeSystem-HumanServiceCharacteristicCS.html\">Human Service             Characteristic</a>#Interpret)</span></p>     <p><b>communication</b>: Spanish <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"https://terminology.hl7.org/CodeSystem-v3-ietf3066.html\">Tags for the                 Identification of Languages</a>#es)</span>, English (United States) <span             style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a                 href=\"https://terminology.hl7.org/CodeSystem-v3-ietf3066.html\">Tags for the                 Identification of Languages</a>#en-US)</span></p> </div> "
+* text.status = $NarrativeStatus#extensions "Extensions"
 * name = "Whistlestop Transportation Services"
 * category = $PlannetCategoryCS#trans "Transportation"
 * type = $PlannetTypeCS#531 "Aged Care Transport"
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-555-8645"
+* telecom[0].use = ContactPointUse#work "work"
 * providedBy = Reference(WhistlestopWheels)
 * location = Reference(WhistlestopwheelsLocation)
 * characteristic = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
@@ -307,6 +330,9 @@ Usage: #example
 * name = "Food Pantry Service"
 * category = $PlannetCategoryCS#home "Home Health"
 * type = $PlannetTypeCS#344 "Food"
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-914-8873"
+* telecom[0].use = ContactPointUse#work "work"
 * providedBy = Reference(FoodBank)
 * location[0] = Reference(FoodBankLocation)
 * program = $HumanServiceProgramCS#TEFAP "The Emergency Food Assistance Program"
@@ -325,6 +351,9 @@ Usage: #example
 * name = "Crisis and Domestic Hotline"
 * category = $PlannetCategoryCS#emerg "Emergency care"
 * type = $PlannetTypeCS#70 "Crisis Counselling"
+* telecom[0].system = #phone
+* telecom[0].value = "(999)-555-5028"
+* telecom[0].use = ContactPointUse#work "work"
 * providedBy = Reference(SFCrisisAndDomesticHotline)
 * location = Reference(SF9114AllLocation)
 * program = $HumanServiceProgramCS#WIC "SF9114AllLocation"
