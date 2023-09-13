@@ -7,12 +7,13 @@ canonical: http://hl7.org/fhir/us/hsds
 jurisdiction: urn:iso:std:iso:3166#US
 title: "fhir-human-services-directory"
 description: "fhir-human-services-directory"
-status: draft # draft | active | retired | unknown
-name: FHIR-human-services-directory
-version: 1.0.0-ballot
+status: active # draft | active | retired | unknown
+name: FHIR-Human-Services-Directory
+version: 1.0.0
 fhirVersion: 4.0.1
-copyrightYear: 2022+
-releaseLabel: STU Ballot
+license: CC0-1.0
+copyrightYear: 2023+
+releaseLabel: STU1
 publisher:
   name: HL7 Human and Social Services Work Group
   url: http://www.hl7.org/Special/committees/hsswg/index.cfm
@@ -23,7 +24,8 @@ dependencies:
  hl7.fhir.us.davinci-pdex-plan-net: 1.1.0 
 
 parameters:
-  special-url: [http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS]
+  show-inherited-invariants: false
+#  special-url: [http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS]
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
