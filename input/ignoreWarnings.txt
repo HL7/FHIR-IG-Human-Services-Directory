@@ -1,8 +1,7 @@
 == Suppressed Messages ==
 # The Service-Type table (http://terminology.hl7.org/CodeSystem/service-type) has been defined as draft and will be updated in THO following the Sept 2023 WGM
-WARNING: HealthcareService/FoodPantryService: HealthcareService.type[0].coding[0]: The system "Food" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#344'
-WARNING: HealthcareService/MealsOnWheels: HealthcareService.type[0].coding[0]: The system "Food Relief/Food/Meals" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#548'
-WARNING: HealthcareService/WhistlestopTransportationService: HealthcareService.type[0].coding[0]: The system "Aged Care Transport" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#531'
+
+WARNING: HealthcareService/SFCrisisAndDomesticHotlineServices: HealthcareService​.type[0]​.coding[0]" The system "Crisis Counselling" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from Tx-Server) for 'http://terminology.hl7.org/CodeSystem/service-type#70'
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
