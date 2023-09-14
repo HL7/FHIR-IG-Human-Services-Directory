@@ -356,7 +356,7 @@ Usage: #example
 * telecom[0].use = ContactPointUse#work "work"
 * providedBy = Reference(SFCrisisAndDomesticHotline)
 * location = Reference(SF9114AllLocation)
-* program = $HumanServiceProgramCS#WIC "SF9114AllLocation"
+* program = $HumanServiceProgramCS#WIC "Women, Infants, & Children"
 * characteristic = $HumanServiceCharacteristicCS#Interpret "Interpretation Services"
 * communication[0] = LANGUAGE#es "Spanish"
 * communication[1] = LANGUAGE#zh "Chinese"

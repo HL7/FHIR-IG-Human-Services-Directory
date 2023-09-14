@@ -4,11 +4,11 @@ CodeSystem: HumanServiceProgramCS
 Id: HumanServiceProgramCS
 Title: "Human Service Program"
 Description: "This example code system provides an example set of codes that describe Programs under which community-based organizations can organize the social services they deliver."
-* ^status = #active
+* ^status = #draft
 * ^version = "1.0.0"
 * ^caseSensitive = false
 * ^experimental = false
-* ^content = #example
+* ^content = #fragment
 * ^purpose = "The purpose of this code system is to provide a starter set of Program names under which community-based organizations can organize the social services resources that they deliver for use in searching for services by Program."
 * ^publisher = "HL7 Human and Social Services Work Group"
 * ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS"
@@ -29,10 +29,11 @@ CodeSystem: HumanServiceCharacteristicCS
 Id: HumanServiceCharacteristicCS
 Title: "Human Service Characteristic"
 Description: "This example code system provides an example set of codes that describe unique features that can be associated with community-based social services delivered at particular locations."
-* ^status = #active
+* ^status = #draft
+* ^version = "1.0.0"
 * ^caseSensitive = false
 * ^experimental = false
-* ^content = #example
+* ^content = #fragment
 * ^purpose = "The purpose of this code system is to provide a starter set of features associated with community-based social services delivered at particular locations for use in searching for services."
 * ^publisher = "HL7 Human and Social Services Work Group"
 * ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"

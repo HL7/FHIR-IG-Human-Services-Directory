@@ -13,6 +13,7 @@ Title: "Human Service Category VS"
 Description: "This example value set includes a subset of codes included in the Plan-Net Healthcare Service Category value set (HealthcareServiceCategoryVS)."
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^experimental = false
+* ^status = #draft
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^jurisdiction = urn:iso:std:iso:3166#US
@@ -31,6 +32,7 @@ Title: "Human Service Type VS"
 Description: "This example value set includes an subset of service-types codes included in the Plan-Net Healthcare Service Type value set (HealthcareServiceTypeVS)."
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^experimental = false
+* ^status = #draft
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
 * ^url = "http://hl7.org/fhir/us/hsds/ValueSet/HumanServiceType"
@@ -61,6 +63,7 @@ Id: HumanServiceProgram
 Title: "Human Service Program VS"
 Description: "This example value set includes codes that describe Programs under which community-based organizations can organize the social services they deliver."
 * ^experimental = false
+* ^status = #draft
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
@@ -69,7 +72,7 @@ Description: "This example value set includes codes that describe Programs under
 // * codes from system  HumanServiceProgramCS
 * $HumanServiceProgramCS#CSFP "The Commodity Supplemental Food Program"
 * $HumanServiceProgramCS#ForDisabled "Programs for Persons with Disabilities"
-* $HumanServiceProgramCS#Food "Food Assistance Program"
+* $HumanServiceProgramCS#FoodAssistance "Food Assistance Program"
 * $HumanServiceProgramCS#ForSeniors "Program for Seniors"
 * $HumanServiceProgramCS#Homelessness "Homelessness Prevention Programs"
 * $HumanServiceProgramCS#ONHPP "Nutrition and Health Promotion Programs"
@@ -85,6 +88,7 @@ Id: HumanServiceCharacteristic
 Title: "Human Service Characteristic VS"
 Description: "This example value set includes codes that describe unique features that can be associated with community-based social services delivered at particular locations."
 * ^experimental = false
+* ^status = #draft
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
@@ -102,6 +106,7 @@ Id: NonIndividualSpecialties
 Title: "Non-Individual Specialties"
 Description: "Non-Individual Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set copied from Plan-Net used to allow example value set binding in HSDOrganization profile."
 * ^experimental = false
+* ^status = #draft
 * ^publisher = "HL7 International - Human and Social Services Work Group"
 * ^contact.name = "HL7 International - Human and Social Services Work Group"
 * ^contact.telecom.system = #url
