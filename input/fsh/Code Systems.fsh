@@ -4,9 +4,12 @@ CodeSystem: HumanServiceProgramCS
 Id: HumanServiceProgramCS
 Title: "Human Service Program"
 Description: "This example code system provides an example set of codes that describe Programs under which community-based organizations can organize the social services they deliver."
+* ^status = #active
+* ^version = "1.0.0"
 * ^caseSensitive = false
 * ^experimental = false
 * ^content = #example
+* ^purpose = "The purpose of this code system is to provide a starter set of Program names under which community-based organizations can organize the social services resources that they deliver for use in searching for services by Program."
 * ^publisher = "HL7 Human and Social Services Work Group"
 * ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceProgramCS"
 * #CSFP	"The Commodity Supplemental Food Program" "Program that provides food assistance for low-income seniors with a monthly package of healthy USDA commodities."
@@ -26,9 +29,11 @@ CodeSystem: HumanServiceCharacteristicCS
 Id: HumanServiceCharacteristicCS
 Title: "Human Service Characteristic"
 Description: "This example code system provides an example set of codes that describe unique features that can be associated with community-based social services delivered at particular locations."
+* ^status = #active
 * ^caseSensitive = false
 * ^experimental = false
 * ^content = #example
+* ^purpose = "The purpose of this code system is to provide a starter set of features associated with community-based social services delivered at particular locations for use in searching for services."
 * ^publisher = "HL7 Human and Social Services Work Group"
 * ^url = "http://hl7.org/fhir/us/hsds/CodeSystem/HumanServiceCharacteristicCS"
 * #Wheelchair "Wheelchair Access" "A method by which someone can enter or leave a place in a wheelchair"
