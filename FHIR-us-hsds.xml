@@ -16,15 +16,13 @@
 <artifact id="StructureDefinition/hsds-HealthcareService" key="StructureDefinition-hsds-HealthcareService" name="HSDHealthcareService"/>
 <artifact id="StructureDefinition/hsds-Location" key="StructureDefinition-hsds-Location" name="HSDLocation"/>
 <artifact id="StructureDefinition/hsds-Organization" key="StructureDefinition-hsds-Organization" name="HSDOrganization"/>
-<artifact id="ValueSet/HumanServiceCategory" key="ValueSet-HumanServiceCategory" name="Human Service Category VS"/>
+<artifact id="ValueSet/HumanServiceCategory" key="ValueSet-human-services-category" name="Human Service Category VS"/>
 <artifact id="CodeSystem/HumanServiceCharacteristicCS" key="CodeSystem-HumanServiceCharacteristicCS" name="Human Service Characteristic"/>
 <artifact id="ValueSet/HumanServiceCharacteristic" key="ValueSet-HumanServiceCharacteristic" name="Human Service Characteristic VS"/>
 <artifact id="CodeSystem/HumanServiceProgramCS" key="CodeSystem-HumanServiceProgramCS" name="Human Service Program"/>
 <artifact id="ValueSet/HumanServiceProgram" key="ValueSet-HumanServiceProgram" name="Human Service Program VS"/>
-<artifact id="ValueSet/HumanServiceType" key="ValueSet-HumanServiceType" name="Human Service Type VS"/>
-<artifact deprecated="true" id="ValueSet/human-services-category" key="ValueSet-human-services-category" name="Human Services Category Value Set"/>
+<artifact id="ValueSet/HumanServiceType" key="ValueSet-human-services-types" name="Human Service Type VS"/>
 <artifact id="CapabilityStatement/HumanServicesDirectory" key="CapabilityStatement-HumanServicesDirectory" name="Human Services Directory Capability Statement"/>
-<artifact deprecated="true" id="ValueSet/human-services-types" key="ValueSet-human-services-types" name="Human Services Type Value Set"/>
 <artifact id="HealthcareService/MealsOnWheels" key="HealthcareService-MealsOnWheels" name="MealsOnWheels"/>
 <artifact id="Location/MealsOnWheelsLocation" key="Location-MealsOnWheelsLocation" name="MealsOnWheelsLocation"/>
 <artifact id="ValueSet/NonIndividualSpecialties" key="ValueSet-NonIndividualSpecialties" name="Non-Individual Specialties"/>
@@ -32,23 +30,18 @@
 <artifact id="Location/SF9114AllLocation" key="Location-SF9114AllLocation" name="SF9114AllLocation"/>
 <artifact id="Organization/SFCrisisAndDomesticHotline" key="Organization-SFCrisisAndDomesticHotline" name="SFCrisisAndDomesticHotline"/>
 <artifact id="HealthcareService/SFCrisisAndDomesticHotlineServices" key="HealthcareService-SFCrisisAndDomesticHotlineServices" name="SFCrisisAndDomesticHotlineServices"/>
-<artifact id="HealthcareService/WhistlestopTransportationService" key="HealthcareService-WhistlestopTransportationService" name="WhistlestopTransportationService"/>
-<artifact id="Organization/WhistlestopWheels" key="Organization-WhistlestopWheels" name="WhistlestopWheels"/>
-<artifact id="Location/WhistlestopwheelsLocation" key="Location-WhistlestopwheelsLocation" name="WhistlestopwheelsLocation"/>
+<artifact id="HealthcareService/WhistlestopTransportationService" key="HealthcareService-hsds-service" name="WhistlestopTransportationService"/>
+<artifact id="Organization/WhistlestopWheels" key="Organization-hsds-organization" name="WhistlestopWheels"/>
+<artifact id="Location/WhistlestopwheelsLocation" key="Location-hsds-location" name="WhistlestopwheelsLocation"/>
 <artifact id="SearchParameter/healthcareservice-active" key="SearchParameter-healthcareservice-active" name="healthcareservice-active"/>
-<artifact deprecated="true" id="SearchParameter/healthcareservice-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-category"/>
 <artifact id="SearchParameter/healthcareservice-communication" key="SearchParameter-healthcareservice-communication" name="healthcareservice-communication"/>
 <artifact deprecated="true" id="SearchParameter/healthcareservice-extraDetails" key="SearchParameter-healthcareservice-extraDetails" name="healthcareservice-extraDetails"/>
 <artifact id="SearchParameter/healthcareservice-location" key="SearchParameter-healthcareservice-location" name="healthcareservice-location"/>
 <artifact id="SearchParameter/healthcareservice-name" key="SearchParameter-healthcareservice-name" name="healthcareservice-name"/>
 <artifact id="SearchParameter/healthcareservice-organization" key="SearchParameter-healthcareservice-organization" name="healthcareservice-organization"/>
 <artifact id="SearchParameter/healthcareservice-program" key="SearchParameter-healthcareservice-program" name="healthcareservice-program"/>
-<artifact id="SearchParameter/healthcareservice-service-category" key="SearchParameter-healthcareservice-service-category" name="healthcareservice-service-category"/>
-<artifact id="SearchParameter/healthcareservice-service-type" key="SearchParameter-healthcareservice-service-type" name="healthcareservice-service-type"/>
-<artifact deprecated="true" id="SearchParameter/healthcareservice-type" key="SearchParameter-healthcareservice-type" name="healthcareservice-type"/>
-<artifact deprecated="true" id="Location/hsds-location" key="Location-hsds-location" name="hsds-location"/>
-<artifact deprecated="true" id="Organization/hsds-organization" key="Organization-hsds-organization" name="hsds-organization"/>
-<artifact deprecated="true" id="HealthcareService/hsds-service" key="HealthcareService-hsds-service" name="hsds-service"/>
+<artifact id="SearchParameter/healthcareservice-service-category" key="SearchParameter-healthcareservice-category" name="healthcareservice-service-category"/>
+<artifact id="SearchParameter/healthcareservice-service-type" key="SearchParameter-healthcareservice-type" name="healthcareservice-service-type"/>
 <artifact id="SearchParameter/location-accessibility" key="SearchParameter-location-accessibility" name="location-accessibility"/>
 <artifact id="SearchParameter/location-address" key="SearchParameter-location-address" name="location-address"/>
 <artifact id="SearchParameter/location-address-city" key="SearchParameter-location-address-city" name="location-address-city"/>
