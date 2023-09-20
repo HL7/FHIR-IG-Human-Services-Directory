@@ -5,7 +5,7 @@
 id: hl7.fhir.us.hsds
 canonical: http://hl7.org/fhir/us/hsds
 jurisdiction: urn:iso:std:iso:3166#US
-title: "fhir-human-services-directory"
+title: "FHIR Human Services Directory"
 description: "fhir-human-services-directory"
 status: active # draft | active | retired | unknown
 name: FHIR-Human-Services-Directory
