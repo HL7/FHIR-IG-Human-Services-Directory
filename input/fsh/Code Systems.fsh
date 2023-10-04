@@ -4,7 +4,7 @@ CodeSystem: HumanServiceProgramCS
 Id: HumanServiceProgramCS
 Title: "Human Service Program"
 Description: "This example code system provides an example set of codes that describe Programs under which community-based organizations can organize the social services they deliver."
-* ^status = #draft
+* ^status = #active
 * ^version = "1.0.0"
 * ^caseSensitive = false
 * ^experimental = false
@@ -29,7 +29,7 @@ CodeSystem: HumanServiceCharacteristicCS
 Id: HumanServiceCharacteristicCS
 Title: "Human Service Characteristic"
 Description: "This example code system provides an example set of codes that describe unique features that can be associated with community-based social services delivered at particular locations."
-* ^status = #draft
+* ^status = #active
 * ^version = "1.0.0"
 * ^caseSensitive = false
 * ^experimental = false
